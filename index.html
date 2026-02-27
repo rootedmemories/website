@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rooted Memories — Preserve your family story</title>
+  <meta name="description" content="Build your family tree, save photos and stories, and create a private family archive that lasts for generations." />
+
+  <style>
+    :root{
+      --forest:#0f3a2f;
+      --forest-2:#0b2f26;
+      --cream:#f3ece4;
+      --cream-2:#e9dfd2;
+      --accent:#b06b50;     /* warm terracotta */
+      --text:#0f1a15;
+      --muted:rgba(255,255,255,.75);
+      --shadow: 0 18px 45px rgba(0,0,0,.25);
+      --shadow-soft: 0 12px 30px rgba(0,0,0,.18);
+      --radius: 22px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:#fff;
+      background:
+        radial-gradient(1200px 600px at 20% 20%, rgba(176,107,80,.35), transparent 60%),
+        radial-gradient(1000px 650px at 80% 10%, rgba(243,236,228,.12), transparent 55%),
+        linear-gradient(180deg, #081f18 0%, #071a14 60%, #061612 100%);
+      min-height:100vh;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px 18px 70px;
+    }
+
+    /* Top bar */
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:28px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:#fff;
+    }
+    .mark{
+      width:40px;height:40px;
+      border-radius:14px;
+      background: linear-gradient(135deg, rgba(176,107,80,.95), rgba(176,107,80,.55));
+      box-shadow: var(--shadow-soft);
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      letter-spacing:.5px;
+    }
+    .brand span{
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .pill{
+      border:1px solid rgba(255,255,255,.16);
+      color:rgba(255,255,255,.9);
+      background: rgba(255,255,255,.06);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:14px;
+      text-decoration:none;
+      backdrop-filter: blur(10px);
+    }
+    .pill:hover{ background: rgba(255,255,255,.1); }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    .hero-left{
+      padding:26px 22px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .glow{
+      position:absolute;
+      inset:-120px -180px auto auto;
+      width:380px; height:380px;
+      border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(176,107,80,.55), transparent 60%);
+      filter: blur(2px);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(34px, 4.2vw, 54px);
+      line-height: 1.05;
+      letter-spacing: .2px;
+    }
+    .sub{
+      margin:0 0 18px;
+      font-size: 18px;
+      line-height:1.55;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .hook{
+      margin:18px 0 18px;
+      padding:14px 14px;
+      border-radius:16px;
+      background: rgba(176,107,80,.12);
+      border:1px solid rgba(176,107,80,.35);
+      color: rgba(255,255,255,.92);
+      font-size:15px;
+      line-height:1.45;
+    }
+    .hook b{ color:#fff; }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .btn{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius: 16px;
+      font-weight:700;
+      letter-spacing:.2px;
+      transition: transform .08s ease, background .2s ease, border .2s ease;
+      min-width: 160px;
+    }
+    .btn:active{ transform: translateY(1px); }
+
+    .btn-primary{
+      background: var(--cream);
+      color: var(--text);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,.2);
+    }
+    .btn-primary:hover{ background: #fff; }
+
+    .btn-secondary{
+      background: transparent;
+      color: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,255,255,.22);
+    }
+    .btn-secondary:hover{ background: rgba(255,255,255,.08); }
+
+    .micro{
+      margin-top:10px;
+      font-size: 13px;
+      color: rgba(255,255,255,.62);
+    }
+
+    /* Feature cards (the vibe you sent) */
+    .hero-right{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      padding:10px;
+    }
+
+    .tile{
+      background: rgba(243,236,228,.92);
+      color: #1b2b23;
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,.55);
+      padding:14px 14px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      transform: rotate(-3deg);
+    }
+    .tile:nth-child(2){ transform: rotate(-6deg); }
+    .tile:nth-child(3){ transform: rotate(-4deg); }
+
+    .icon{
+      width:44px;height:44px;
+      border-radius: 14px;
+      background: var(--accent);
+      display:grid;
+      place-items:center;
+      color:#fff;
+      flex: 0 0 auto;
+      box-shadow: 0 10px 20px rgba(0,0,0,.18);
+    }
+    .tile p{
+      margin:0;
+      font-weight:700;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .tile small{
+      display:block;
+      margin-top:2px;
+      font-weight:500;
+      opacity:.75;
+    }
+
+    /* Section */
+    .section{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .section{ grid-template-columns: 1fr; }
+    }
+    .card{
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding:16px;
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:16px;
+      font-weight:800;
+    }
+    .card p{
+      margin:0;
+      color: rgba(255,255,255,.75);
+      line-height:1.5;
+      font-size:14px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:34px;
+      color: rgba(255,255,255,.55);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      padding-top:12px;
+    }
+    footer a{ color: rgba(255,255,255,.7); text-decoration:none; }
+    footer a:hover{ text-decoration:underline; }
+
+    /* Simple inline icons */
+    .svg{ width:22px; height:22px; display:block; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#">
+        <div class="mark">RM</div>
+        <span>Rooted Memories</span>
+      </a>
+      <div class="nav">
+        <a class="pill" href="#how">How it works</a>
+        <a class="pill" href="#privacy">Privacy</a>
+        <a class="pill" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-left">
+        <div class="glow"></div>
+
+        <h1>Welcome to Rooted Memories</h1>
+        <p class="sub">
+          A private family archive to <b>store photos, stories, and voices</b> — organised by your family tree — so nothing gets lost when phones break, people pass, or time moves on.
+        </p>
+
+        <div class="hook">
+          <b>The hook:</b> most families don’t lose memories in one big moment — they lose them in <b>a thousand tiny ones</b>.
+          A phone upgrade. A lost password. A WhatsApp chat that disappears. A relative who’s “always meaning to write it down”.
+          <b>Rooted Memories turns family history into something that actually survives.</b>
+        </div>
+
+        <div class="cta-row">
+          <!-- Replace these later with real links (app waitlist / prototype / email) -->
+          <a class="btn btn-primary" href="#contact">Get started</a>
+          <a class="btn btn-secondary" href="#how">Log in</a>
+        </div>
+
+        <div class="micro">
+          Built for: parents • grandparents • anyone who wants a “family filing cabinet” that lasts.
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <div class="tile">
+          <div class="icon">
+            <svg class="svg" viewBox="0 0 24 24" fill="none">
+              <path d="M10.5 18.5a7 7 0 1 1 4.95-11.95A7 7 0 0 1 10.5 18.5Z" stroke="white" stroke-width="2"/>
+              <path d="M16 16l5 5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <p>Discover your heritage</p>
+            <small>Names, dates, stories — connected properly</small>
+          </div>
+        </div>
+
+        <div class="tile">
+          <div class="icon">
+            <svg class="svg" viewBox="0 0 24 24" fill="none">
+              <path d="M6 7.5A2.5 2.5 0 0 1 8.5 5H18a1 1 0 0 1 1 1v13a0 0 0 0 1 0 0H8.5A2.5 2.5 0 0 1 6 16.5v-9Z" stroke="white" stroke-width="2"/>
+              <path d="M6 16.5A2.5 2.5 0 0 1 8.5 14H19" stroke="white" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <p>Keep family stories safe</p>
+            <small>One place for photos, letters, voice notes</small>
+          </div>
+        </div>
+
+        <div class="tile">
+          <div class="icon">
+            <svg class="svg" viewBox="0 0 24 24" fill="none">
+              <path d="M7 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" stroke="white" stroke-width="2"/>
+              <path d="M17 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" stroke="white" stroke-width="2"/>
+              <path d="M17 15a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" stroke="white" stroke-width="2"/>
+              <path d="M9.5 10.5 14.5 7.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M9.5 12.5 14.5 16.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <p>Build your family tree</p>
+            <small>Structure first — memories second — clarity forever</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="how" class="section">
+      <div class="card">
+        <h3>1) Build the tree</h3>
+        <p>Add relatives once. Everything else attaches to the right person — not scattered across apps.</p>
+      </div>
+      <div class="card">
+        <h3>2) Drop in the memories</h3>
+        <p>Photos, captions, voice notes, letters, and “tell me about…” prompts that actually get answers.</p>
+      </div>
+      <div class="card">
+        <h3>3) Pass it forward</h3>
+        <p>A living archive your kids can open in 20 years and still feel like they know everyone.</p>
+      </div>
+    </div>
+
+    <div id="privacy" class="section" style="grid-template-columns:1fr;">
+      <div class="card">
+        <h3>Privacy-first by design</h3>
+        <p>
+          Your family history isn’t social media. Rooted Memories is built to be <b>private</b>, <b>invite-only</b>, and organised.
+          (As the product grows, you’ll have clear controls for who can view, add, and edit.)
+        </p>
+      </div>
+    </div>
+
+    <div id="contact" class="section" style="grid-template-columns:1fr;">
+      <div class="card">
+        <h3>Want early access?</h3>
+        <p>
+          Email: <b>ketan@rootedmemories.co.uk</b><br/>
+          Tell me you want early access and I’ll send the prototype link / updates.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div>© <span id="y"></span> Rooted Memories</div>
+      <div>
+        <a href="#privacy">Privacy</a> ·
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
