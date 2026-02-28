@@ -79,8 +79,8 @@
     }
 
     .nav{
-      display:flex; 
-      gap:10px; 
+      display:flex;
+      gap:10px;
       flex-wrap:wrap;
       margin-top:12px;
     }
@@ -135,7 +135,6 @@
       letter-spacing: .2px;
     }
 
-    /* ✅ Fix: you were using subline but only .sub existed */
     .subline{
       margin:0 0 18px;
       font-size: 18px;
@@ -236,22 +235,24 @@
       font-size:14px;
     }
 
-    /* ✅ NEW: App store buttons section */
+    /* ✅ App store buttons section (terracotta vibe) */
     .app-section{
       margin-top:26px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
       border-radius: 18px;
       padding:18px 16px;
+      background: rgba(176,107,80,.12);
+      border: 1px solid rgba(176,107,80,.35);
+      box-shadow: var(--shadow-soft);
     }
     .app-section h3{
       margin:0 0 6px;
       font-size:16px;
       font-weight:800;
+      color: rgba(255,255,255,.96);
     }
     .app-section p{
       margin:0 0 14px;
-      color: rgba(255,255,255,.75);
+      color: rgba(255,255,255,.80);
       line-height:1.5;
       font-size:14px;
       max-width: 70ch;
@@ -272,17 +273,20 @@
       text-decoration:none;
       font-weight:800;
       letter-spacing:.2px;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06);
-      color: rgba(255,255,255,.92);
+
+      /* terracotta button */
+      border: 1px solid rgba(176,107,80,.55);
+      background: rgba(176,107,80,.22);
+      color: rgba(255,255,255,.95);
+
       backdrop-filter: blur(10px);
       min-width: 210px;
       box-shadow: var(--shadow-soft);
       transition: transform .08s ease, background .2s ease, border .2s ease;
     }
     .store-btn:hover{
-      background: rgba(255,255,255,.10);
-      border-color: rgba(255,255,255,.26);
+      background: rgba(176,107,80,.30);
+      border-color: rgba(176,107,80,.70);
     }
     .store-btn:active{ transform: translateY(1px); }
     .store-btn .label{
@@ -292,8 +296,8 @@
     }
     .store-btn .small{
       font-size:11px;
-      opacity:.7;
-      font-weight:700;
+      opacity:.8;
+      font-weight:800;
       letter-spacing:.4px;
       text-transform:uppercase;
     }
@@ -302,7 +306,7 @@
       font-weight:900;
     }
     .store-btn.disabled{
-      opacity:.55;
+      opacity:.65;
       pointer-events:none;
     }
 
@@ -365,7 +369,7 @@
           </p>
 
           <p>
-            Rooted Memories gives your family <strong>one private place</strong> for photos, names, and stories, structured cleanly and kept safe. Every memory is connected to the right person, so relatives across cities or countries can stay part of the <strong>same family record</strong>.
+            Rooted Memories gives your family <strong>one private place</strong> for photos, names, and stories, structured clearly and kept safe. Every memory is connected to the right person, so relatives across cities or countries can stay part of the <strong>same family record</strong>.
           </p>
 
           <p>
@@ -438,7 +442,17 @@
       </div>
     </div>
 
-    <!-- ✅ NEW: Download section with two buttons side-by-side -->
+    <div id="privacy" class="section" style="grid-template-columns:1fr;">
+      <div class="card">
+        <h3>Privacy-first by design</h3>
+        <p>
+          Your family history isn’t social media. Rooted Memories is built to be <b>private</b>, <b>invite-only</b>, and organised,
+          with clear controls for who can view, add, and edit.
+        </p>
+      </div>
+    </div>
+
+    <!-- ✅ MOVED: App box now BELOW privacy and ABOVE early access -->
     <div class="app-section" id="download">
       <h3>Download the app</h3>
       <p>
@@ -471,16 +485,6 @@
             <span class="big">Google Play</span>
           </span>
         </a>
-      </div>
-    </div>
-
-    <div id="privacy" class="section" style="grid-template-columns:1fr;">
-      <div class="card">
-        <h3>Privacy-first by design</h3>
-        <p>
-          Your family history isn’t social media. Rooted Memories is built to be <b>private</b>, <b>invite-only</b>, and organised,
-          with clear controls for who can view, add, and edit.
-        </p>
       </div>
     </div>
 
