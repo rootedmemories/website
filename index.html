@@ -54,19 +54,20 @@
     }
 
     .logo{
-  height:280px;          /* mobile default */
-  width:auto;
-  display:block;
-  margin-top:-58px;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.22));
-}
+      height:280px;          /* mobile default */
+      width:auto;
+      display:block;
+      margin-top:-58px;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.22));
+    }
 
-@media (min-width:900px){
-  .logo{
-    height:380px;       /* laptop / desktop size */
-  }
-}
-    /* Keep the text hidden but accessible (so the brand is still “ories” for SEO/screen readers) */
+    @media (min-width:900px){
+      .logo{
+        height:380px;       /* laptop / desktop size */
+      }
+    }
+
+    /* Keep the text hidden but accessible (so the brand is still “Rooted Memories” for SEO/screen readers) */
     .brand span{
       position:absolute;
       width:1px;height:1px;
@@ -133,7 +134,9 @@
       line-height: 1.05;
       letter-spacing: .2px;
     }
-    .sub{
+
+    /* ✅ Fix: you were using subline but only .sub existed */
+    .subline{
       margin:0 0 18px;
       font-size: 18px;
       line-height:1.55;
@@ -233,6 +236,76 @@
       font-size:14px;
     }
 
+    /* ✅ NEW: App store buttons section */
+    .app-section{
+      margin-top:26px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding:18px 16px;
+    }
+    .app-section h3{
+      margin:0 0 6px;
+      font-size:16px;
+      font-weight:800;
+    }
+    .app-section p{
+      margin:0 0 14px;
+      color: rgba(255,255,255,.75);
+      line-height:1.5;
+      font-size:14px;
+      max-width: 70ch;
+    }
+    .store-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .store-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius: 14px;
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.2px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      min-width: 210px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .08s ease, background .2s ease, border .2s ease;
+    }
+    .store-btn:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.26);
+    }
+    .store-btn:active{ transform: translateY(1px); }
+    .store-btn .label{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .store-btn .small{
+      font-size:11px;
+      opacity:.7;
+      font-weight:700;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+    }
+    .store-btn .big{
+      font-size:15px;
+      font-weight:900;
+    }
+    .store-btn.disabled{
+      opacity:.55;
+      pointer-events:none;
+    }
+
     /* Footer */
     footer{
       margin-top:34px;
@@ -250,6 +323,15 @@
 
     /* Simple inline icons */
     .svg{ width:22px; height:22px; display:block; }
+
+    /* Small icon for store buttons */
+    .store-ic{
+      width:22px;
+      height:22px;
+      display:block;
+      opacity:.95;
+      flex:0 0 auto;
+    }
   </style>
 </head>
 
@@ -257,8 +339,8 @@
   <div class="wrap">
     <div class="top">
       <a class="brand" href="#">
-        <img class="logo" src="logo.png" alt="ories" />
-        <span>ories</span>
+        <img class="logo" src="logo.png" alt="Rooted Memories" />
+        <span>Rooted Memories</span>
       </a>
       <div class="nav">
         <a class="pill" href="#how">How it works</a>
@@ -272,23 +354,25 @@
         <div class="glow"></div>
 
         <h1>Welcome to Rooted Memories</h1>
+
         <p class="subline">
-  <strong>One private place for your family’s photos and stories. Structured clearly and kept safe.</strong>
-</p>
+          <strong>One private place for your family’s photos and stories. Structured clearly and kept safe.</strong>
+        </p>
 
- <div class="hook">
-  <p>
-    Family photos end up everywhere. On different phones. In different apps. In old group chats. Some get saved. Some get lost. Most are never <strong>organised properly</strong>.
-  </p>
+        <div class="hook">
+          <p>
+            Family photos end up everywhere. On different phones. In different apps. In old group chats. Some get saved. Some get lost. Most are never <strong>organised properly</strong>.
+          </p>
 
-  <p>
-    Rooted Memories gives your family <strong>one private place</strong> for photos, names, and stories, structured clearly and kept safe. Every memory is connected to the right person, so relatives across cities or countries can stay part of the <strong>same family record</strong>.
-  </p>
+          <p>
+            Rooted Memories gives your family <strong>one private place</strong> for photos, names, and stories, structured clearly and kept safe. Every memory is connected to the right person, so relatives across cities or countries can stay part of the <strong>same family record</strong>.
+          </p>
 
-  <p>
-    You are not just storing pictures. You are building a <strong>clear record of your family</strong> that your children can grow up with and add to. And maybe one day, their children too.
-  </p>
-</div>
+          <p>
+            You are not just storing pictures. You are building a <strong>clear record of your family</strong> that your children can grow up with and add to. And maybe one day, their children too.
+          </p>
+        </div>
+
         <div class="micro">
           Built for parents, grandparents, and anyone who wants a private family filing cabinet that lasts.
         </div>
@@ -351,6 +435,42 @@
       <div class="card">
         <h3>3) Pass it forward</h3>
         <p>A living archive your kids can open in 20 years and still feel like they know everyone.</p>
+      </div>
+    </div>
+
+    <!-- ✅ NEW: Download section with two buttons side-by-side -->
+    <div class="app-section" id="download">
+      <h3>Download the app</h3>
+      <p>
+        Rooted Memories is in development. These buttons will go live as soon as the iOS and Android apps are released.
+      </p>
+
+      <div class="store-row">
+        <!-- Replace href="#" later with your real App Store URL -->
+        <a class="store-btn disabled" href="#" aria-disabled="true">
+          <svg class="store-ic" viewBox="0 0 24 24" fill="none">
+            <path d="M16.7 13.3c0 2.9 2.6 3.9 2.6 3.9s-2.0 5.1-4.7 5.1c-1.0 0-1.8-.6-2.9-.6s-1.9.6-3 .6C6.2 22.3 4 17.6 4 14.1c0-2.9 1.9-4.4 3.7-4.4 1 0 1.9.7 2.8.7s1.9-.7 3.2-.7c.5 0 2.2.0 3.3 1.7-3 .8-3.3 2.8-3.3 3.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.7 3.9c-.7.9-1.8 1.6-2.9 1.5-.1-1.1.4-2.2 1.1-3 .7-.8 1.9-1.4 2.9-1.4.1 1.1-.3 2.1-1.1 2.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="label">
+            <span class="small">Coming soon on</span>
+            <span class="big">App Store</span>
+          </span>
+        </a>
+
+        <!-- Replace href="#" later with your real Google Play URL -->
+        <a class="store-btn disabled" href="#" aria-disabled="true">
+          <svg class="store-ic" viewBox="0 0 24 24" fill="none">
+            <path d="M5.2 3.8 15.7 14.3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M5.2 20.2 15.7 9.7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M15.7 9.7 19.6 12c.5.3.5 1 0 1.3l-3.9 2.3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.2 3.8c-.7.7-.7 15.7 0 16.4" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span class="label">
+            <span class="small">Coming soon on</span>
+            <span class="big">Google Play</span>
+          </span>
+        </a>
       </div>
     </div>
 
