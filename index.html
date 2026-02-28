@@ -237,7 +237,7 @@
 
     /* ✅ App store buttons section (terracotta vibe) */
     .app-section{
-      margin-top:26px;
+      margin-top:30px;
       border-radius: 18px;
       padding:18px 16px;
       background: rgba(176,107,80,.12);
@@ -257,38 +257,55 @@
       font-size:14px;
       max-width: 70ch;
     }
+
+    /* ✅ FIX: side-by-side on mobile, pro spacing */
     .store-row{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:6px;
     }
+    @media (max-width:420px){
+      .store-row{
+        grid-template-columns: 1fr;
+      }
+    }
+
     .store-btn{
-      display:inline-flex;
+      display:flex;
       align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius: 14px;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:16px;
       text-decoration:none;
       font-weight:800;
       letter-spacing:.2px;
 
-      /* terracotta button */
-      border: 1px solid rgba(176,107,80,.55);
-      background: rgba(176,107,80,.22);
-      color: rgba(255,255,255,.95);
+      border:1px solid rgba(176,107,80,.75);
+      background: linear-gradient(
+        145deg,
+        rgba(176,107,80,.38),
+        rgba(176,107,80,.22)
+      );
 
-      backdrop-filter: blur(10px);
-      min-width: 210px;
-      box-shadow: var(--shadow-soft);
-      transition: transform .08s ease, background .2s ease, border .2s ease;
+      color:#fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      transition: all .15s ease;
+      width:100%;
+      justify-content:flex-start;
     }
     .store-btn:hover{
-      background: rgba(176,107,80,.30);
-      border-color: rgba(176,107,80,.70);
+      background: linear-gradient(
+        145deg,
+        rgba(176,107,80,.50),
+        rgba(176,107,80,.30)
+      );
+      border-color: rgba(176,107,80,.9);
+      transform: translateY(-2px);
     }
-    .store-btn:active{ transform: translateY(1px); }
+    .store-btn:active{
+      transform: translateY(0);
+    }
     .store-btn .label{
       display:flex;
       flex-direction:column;
@@ -296,18 +313,19 @@
     }
     .store-btn .small{
       font-size:11px;
-      opacity:.8;
-      font-weight:800;
-      letter-spacing:.4px;
+      opacity:.85;
+      font-weight:700;
+      letter-spacing:.6px;
       text-transform:uppercase;
     }
     .store-btn .big{
-      font-size:15px;
+      font-size:16px;
       font-weight:900;
     }
     .store-btn.disabled{
-      opacity:.65;
+      opacity:.75;
       pointer-events:none;
+      transform:none !important;
     }
 
     /* Footer */
@@ -369,7 +387,7 @@
           </p>
 
           <p>
-            Rooted Memories gives your family <strong>one private place</strong> for photos, names, and stories, structured cleanly and kept safe. Every memory is connected to the right person, so relatives across cities or countries can stay part of the <strong>same family record</strong>.
+            Rooted Memories gives your family <strong>one private place</strong> for photos, names, and stories, structured clearly and kept safe. Every memory is connected to the right person, so relatives across cities or countries can stay part of the <strong>same family record</strong>.
           </p>
 
           <p>
@@ -452,7 +470,7 @@
       </div>
     </div>
 
-    <!-- ✅ MOVED: App box now BELOW privacy and ABOVE early access -->
+    <!-- ✅ App box now BELOW privacy and ABOVE early access -->
     <div class="app-section" id="download">
       <h3>Download the app</h3>
       <p>
