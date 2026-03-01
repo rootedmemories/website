@@ -1,5 +1,3 @@
-Html
-Copy code
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -389,6 +387,33 @@ Copy code
       font-size:13px;
       opacity:.65;
     }
+
+    /* ✅ Inline success/error message styling */
+    .form-msg{
+      margin-top:12px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      display:none;
+      line-height:1.4;
+      font-size:14px;
+    }
+    .form-msg.success{
+      border-color: rgba(94, 214, 137, .55);
+      background: rgba(94, 214, 137, .10);
+      color: rgba(255,255,255,.95);
+    }
+    .form-msg.error{
+      border-color: rgba(255, 120, 120, .55);
+      background: rgba(255, 120, 120, .10);
+      color: rgba(255,255,255,.95);
+    }
+    .form-msg.loading{
+      border-color: rgba(176,107,80,.55);
+      background: rgba(176,107,80,.10);
+      color: rgba(255,255,255,.92);
+    }
   </style>
 </head>
 
@@ -539,7 +564,7 @@ Copy code
       </div>
     </div>
 
-    <!-- ✅ EARLY ACCESS: now includes capture form -->
+    <!-- ✅ EARLY ACCESS: stays on same page + inline thank-you -->
     <div id="contact" class="section" style="grid-template-columns:1fr;">
       <div class="card">
         <h3>Want early access?</h3>
@@ -548,10 +573,12 @@ Copy code
           Be the parent who built something for them.
         </p>
 
-        <form class="early-form" action="https://formspree.io/f/mqedopdn" method="POST">
+        <form id="earlyAccessForm" class="early-form" action="https://formspree.io/f/mqedopdn" method="POST" novalidate>
           <input class="early-input" type="email" name="email" placeholder="Enter your email" required />
           <button class="early-btn" type="submit">Get Early Access</button>
         </form>
+
+        <div id="earlyMsg" class="form-msg" role="status" aria-live="polite"></div>
 
         <div class="fineprint">Private updates only. No spam.</div>
       </div>
@@ -568,6 +595,55 @@ Copy code
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // ✅ Keep user on page and show inline message (no Formspree redirect)
+    (function(){
+      const form = document.getElementById('earlyAccessForm');
+      const msg  = document.getElementById('earlyMsg');
+      const btn  = form.querySelector('button[type="submit"]');
+      const input = form.querySelector('input[type="email"]');
+
+      function setMsg(type, text){
+        msg.className = 'form-msg ' + type;
+        msg.style.display = 'block';
+        msg.textContent = text;
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // basic email validity
+        if (!input.value || !input.checkValidity()){
+          setMsg('error', 'Please enter a valid email address.');
+          input.focus();
+          return;
+        }
+
+        btn.disabled = true;
+        setMsg('loading', 'Sending…');
+
+        try{
+          const formData = new FormData(form);
+
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok){
+            form.reset();
+            setMsg('success', "Thank you. Check your inbox (maybe in spam).");
+          } else {
+            setMsg('error', "That didn’t send. Please try again.");
+          }
+        } catch(err){
+          setMsg('error', "Network issue — please try again.");
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    })();
   </script>
 </body>
 </html>
