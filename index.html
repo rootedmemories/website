@@ -347,6 +347,46 @@
       opacity:.95;
       flex:0 0 auto;
     }
+
+    /* ✅ EARLY ACCESS FORM STYLES (matches site) */
+    .early-form{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:stretch;
+    }
+    .early-input{
+      flex:1 1 260px;
+      padding:14px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.20);
+      background: rgba(255,255,255,.08);
+      color:#fff;
+      font-size:16px;
+      outline:none;
+    }
+    .early-input::placeholder{ color: rgba(255,255,255,.6); }
+    .early-btn{
+      flex:0 0 auto;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(176,107,80,.80);
+      background: linear-gradient(145deg, rgba(176,107,80,.55), rgba(176,107,80,.28));
+      color:#fff;
+      font-weight:900;
+      font-size:16px;
+      cursor:pointer;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18);
+      transition: transform .15s ease, opacity .2s ease;
+    }
+    .early-btn:hover{ transform: translateY(-2px); opacity:.95; }
+    .early-btn:active{ transform: translateY(-1px); }
+    .fineprint{
+      margin-top:10px;
+      font-size:13px;
+      opacity:.65;
+    }
   </style>
 </head>
 
@@ -471,7 +511,6 @@
       </p>
 
       <div class="store-row">
-        <!-- Replace href="#" later with your real App Store URL -->
         <a class="store-btn disabled" href="#" aria-disabled="true">
           <svg class="store-ic" viewBox="0 0 24 24" fill="none">
             <path d="M16.7 13.3c0 2.9 2.6 3.9 2.6 3.9s-2.0 5.1-4.7 5.1c-1.0 0-1.8-.6-2.9-.6s-1.9.6-3 .6C6.2 22.3 4 17.6 4 14.1c0-2.9 1.9-4.4 3.7-4.4 1 0 1.9.7 2.8.7s1.9-.7 3.2-.7c.5 0 2.2.0 3.3 1.7-3 .8-3.3 2.8-3.3 3.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -483,7 +522,6 @@
           </span>
         </a>
 
-        <!-- Replace href="#" later with your real Google Play URL -->
         <a class="store-btn disabled" href="#" aria-disabled="true">
           <svg class="store-ic" viewBox="0 0 24 24" fill="none">
             <path d="M5.2 3.8 15.7 14.3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
@@ -499,13 +537,21 @@
       </div>
     </div>
 
+    <!-- ✅ EARLY ACCESS: now includes capture form -->
     <div id="contact" class="section" style="grid-template-columns:1fr;">
       <div class="card">
         <h3>Want early access?</h3>
         <p>
-          Email: <b>ketan@rootedmemories.co.uk</b><br/>
-          Tell me you want early access and I’ll send the prototype link and updates.
+          One day your kids will ask for their childhood.<br/>
+          Be the parent who built something for them.
         </p>
+
+        <form class="early-form" action="https://formspree.io/f/mqedopdn" method="POST">
+          <input class="early-input" type="email" name="email" placeholder="Enter your email" required />
+          <button class="early-btn" type="submit">Get Early Access</button>
+        </form>
+
+        <div class="fineprint">Private updates only. No spam.</div>
       </div>
     </div>
 
