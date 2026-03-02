@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -607,7 +608,7 @@
         </div>
 
         <!-- Above-fold early access -->
-        <div class="divider"></div>
+        <div class="divider" id="early-access"></div>
 
         <form id="earlyAccessFormTop" class="early-form" action="https://formspree.io/f/mqedopdn" method="POST" novalidate>
           <input class="early-input" type="email" name="email" placeholder="Enter your email for early access" required />
@@ -722,7 +723,7 @@
       </div>
     </div>
 
-    <!-- BOTTOM SIGNUP (SECOND TOUCHPOINT) -->
+    <!-- BOTTOM CTA (BUTTON ONLY) -->
     <div class="section" style="grid-template-columns:1fr; margin-top:18px;">
       <div class="card">
         <h3>Get early access (free)</h3>
@@ -730,15 +731,9 @@
           If this resonates, join the founding list. You’ll be first in line when we open early access.
         </p>
 
-        <form id="earlyAccessFormBottom" class="early-form" action="https://formspree.io/f/mqedopdn" method="POST" novalidate>
-          <input class="early-input" type="email" name="email" placeholder="Enter your email" required />
-          <button class="early-btn" type="submit">
-            <span class="btn-text">Join the list</span>
-            <span class="btn-dots" aria-hidden="true"><span></span><span></span><span></span></span>
-          </button>
-        </form>
-
-        <div id="earlyMsgBottom" class="form-msg" role="status" aria-live="polite"></div>
+        <a class="store-btn" href="#early-access" style="justify-content:center;">
+          Get Early Access
+        </a>
 
         <div class="fineprint">Private updates only. No spam.</div>
       </div>
@@ -818,7 +813,7 @@
     })();
 
     // ==========================
-    // Form handler (reused)
+    // Form handler
     // ==========================
     function wireEarlyAccessForm(formId, msgId){
       const form = document.getElementById(formId);
@@ -880,7 +875,6 @@
     }
 
     wireEarlyAccessForm('earlyAccessFormTop', 'earlyMsgTop');
-    wireEarlyAccessForm('earlyAccessFormBottom', 'earlyMsgBottom');
   </script>
 </body>
 </html>
