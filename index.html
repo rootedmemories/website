@@ -712,24 +712,30 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
             headers: { 'Accept': 'application/json' }
           });
 
-          if (res.ok){
+          if (res.ok) {
   form.reset();
 
+  // Fire Meta Pixel events safely
   if (window.fbq) {
     fbq('track', 'Lead');
+    fbq('trackCustom', 'EarlyAccessSignup');
   }
 
-  setMsg('success', "You're on the list — thank you. I’ll personally send early access details soon. Keep an eye on your inbox (and spam just in case).");
+  setMsg(
+    'success',
+    "You're on the list — thank you. I’ll personally send early access details soon. Keep an eye on your inbox (and spam just in case)."
+  );
+
+} else {
+  setMsg('error', "That didn’t send. Please try again.");
 }
-          else {
-            setMsg('error', "That didn’t send. Please try again.");
-          }
-        } catch(err){
-          setMsg('error', "Network issue — please try again.");
-        } finally {
-          btn.disabled = false;
-          btn.classList.remove('loading');
-        }
+
+} catch(err) {
+  setMsg('error', "Network issue — please try again.");
+} finally {
+  btn.disabled = false;
+  btn.classList.remove('loading');
+}
       });
     })();
   </script>
