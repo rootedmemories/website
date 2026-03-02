@@ -1,51 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '963784012989378');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '963784012989378');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Rooted Memories | Preserve your family story</title>
-
-  <!-- Canonical (helps avoid 301/share-preview issues) -->
+  <title>Rooted Memories | Your private family archive</title>
   <link rel="canonical" href="https://rootedmemories.co.uk/" />
 
-  <!-- SEO -->
-  <meta name="description" content="A private family archive to build your family tree, save photos and stories, and preserve your family history for generations." />
+  <meta name="description" content="Rooted Memories is your private family archive: organise photos and stories by person, build a family tree, and preserve your family history for generations." />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Rooted Memories" />
-  <meta property="og:title" content="Rooted Memories | Preserve your family story" />
-  <meta property="og:description" content="One private place for your family’s photos and stories. Structured clearly and kept safe." />
+  <meta property="og:title" content="Rooted Memories | Your private family archive" />
+  <meta property="og:description" content="One private place for your family’s photos + stories, organised by person — not lost in group chats." />
   <meta property="og:url" content="https://rootedmemories.co.uk/" />
   <meta property="og:image" content="https://rootedmemories.co.uk/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rooted Memories | Preserve your family story" />
-  <meta name="twitter:description" content="One private place for your family’s photos and stories. Structured clearly and kept safe." />
+  <meta name="twitter:title" content="Rooted Memories | Your private family archive" />
+  <meta name="twitter:description" content="One private place for your family’s photos + stories, organised by person — not lost in group chats." />
   <meta name="twitter:image" content="https://rootedmemories.co.uk/og-image.png" />
 
-  <!-- Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon2.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon2.png" />
   <meta name="theme-color" content="#0f3a2f" />
@@ -56,7 +51,7 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
       --forest-2:#0b2f26;
       --cream:#f3ece4;
       --cream-2:#e9dfd2;
-      --accent:#b06b50;     /* warm terracotta */
+      --accent:#b06b50;
       --text:#0f1a15;
       --muted:rgba(255,255,255,.75);
       --shadow: 0 18px 45px rgba(0,0,0,.25);
@@ -87,8 +82,9 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
       align-items:flex-start;
       justify-content:space-between;
       gap:16px;
-      margin-bottom:3px;
+      margin-bottom:8px;
     }
+
     .brand{
       display:flex;
       align-items:center;
@@ -96,22 +92,16 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
       text-decoration:none;
       color:#fff;
     }
-
     .logo{
-      height:280px;          /* mobile default */
+      height:210px;
       width:auto;
       display:block;
-      margin-top:-58px;
+      margin-top:-48px;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,.22));
     }
-
     @media (min-width:900px){
-      .logo{
-        height:380px;       /* laptop / desktop size */
-      }
+      .logo{ height:320px; }
     }
-
-    /* Keep the text hidden but accessible (so the brand is still “Rooted Memories” for SEO/screen readers) */
     .brand span{
       position:absolute;
       width:1px;height:1px;
@@ -127,6 +117,7 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
       gap:10px;
       flex-wrap:wrap;
       margin-top:12px;
+      justify-content:flex-end;
     }
     .pill{
       border:1px solid rgba(255,255,255,.16);
@@ -140,15 +131,16 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
     }
     .pill:hover{ background: rgba(255,255,255,.1); }
 
-    /* Hero */
+    /* HERO */
     .hero{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.15fr .85fr;
       gap:22px;
       align-items:stretch;
     }
     @media (max-width: 900px){
       .hero{ grid-template-columns: 1fr; }
+      .nav{ justify-content:flex-start; }
     }
 
     .hero-left{
@@ -163,7 +155,7 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
     .glow{
       position:absolute;
       inset:-120px -180px auto auto;
-      width:380px; height:380px;
+      width:420px; height:420px;
       border-radius:50%;
       background: radial-gradient(circle at 30% 30%, rgba(176,107,80,.55), transparent 60%);
       filter: blur(2px);
@@ -171,8 +163,26 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
       pointer-events:none;
     }
 
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color: rgba(255,255,255,.9);
+      margin-bottom:12px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: rgba(94, 214, 137, .9);
+      box-shadow: 0 0 0 4px rgba(94, 214, 137, .12);
+    }
+
     h1{
-      margin:0 0 12px;
+      margin:0 0 10px;
       font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
       font-size: clamp(34px, 4.2vw, 54px);
       line-height: 1.05;
@@ -180,219 +190,37 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
     }
 
     .subline{
-      margin:0 0 18px;
+      margin:0 0 14px;
       font-size: 18px;
       line-height:1.55;
       color: var(--muted);
       max-width: 62ch;
     }
 
-    .hook{
-      margin:18px 0 0;
+    .bullets{
+      margin:14px 0 0;
       padding:14px 14px;
       border-radius:16px;
       background: rgba(176,107,80,.12);
       border:1px solid rgba(176,107,80,.35);
       color: rgba(255,255,255,.92);
-      font-size:15px;
-      line-height:1.45;
     }
-    .hook b{ color:#fff; }
-
+    .bullets ul{
+      margin:0;
+      padding-left:18px;
+    }
+    .bullets li{
+      margin:8px 0;
+      line-height:1.45;
+      font-size:15px;
+    }
     .micro{
-      margin-top:12px;
+      margin-top:10px;
       font-size: 13px;
       color: rgba(255,255,255,.62);
     }
 
-    /* Feature cards */
-    .hero-right{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      padding:10px;
-    }
-
-    .tile{
-      background: rgba(243,236,228,.92);
-      color: #1b2b23;
-      border-radius: 18px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(255,255,255,.55);
-      padding:14px 14px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-      transform: rotate(-3deg);
-    }
-    .tile:nth-child(2){ transform: rotate(-6deg); }
-    .tile:nth-child(3){ transform: rotate(-4deg); }
-
-    .icon{
-      width:44px;height:44px;
-      border-radius: 14px;
-      background: var(--accent);
-      display:grid;
-      place-items:center;
-      color:#fff;
-      flex: 0 0 auto;
-      box-shadow: 0 10px 20px rgba(0,0,0,.18);
-    }
-    .tile p{
-      margin:0;
-      font-weight:700;
-      font-size:16px;
-      letter-spacing:.2px;
-    }
-    .tile small{
-      display:block;
-      margin-top:2px;
-      font-weight:500;
-      opacity:.75;
-    }
-
-    /* Section */
-    .section{
-      margin-top:26px;
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width: 900px){
-      .section{ grid-template-columns: 1fr; }
-    }
-    .card{
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 18px;
-      padding:16px;
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-size:16px;
-      font-weight:800;
-    }
-    .card p{
-      margin:0;
-      color: rgba(255,255,255,.75);
-      line-height:1.5;
-      font-size:14px;
-    }
-
-    /* ✅ App store buttons section (terracotta vibe) */
-    .app-section{
-      margin-top:30px;
-      border-radius: 18px;
-      padding:18px 16px;
-      background: rgba(176,107,80,.12);
-      border: 1px solid rgba(176,107,80,.35);
-      box-shadow: var(--shadow-soft);
-    }
-    .app-section h3{
-      margin:0 0 6px;
-      font-size:16px;
-      font-weight:800;
-      color: rgba(255,255,255,.96);
-    }
-    .app-section p{
-      margin:0 0 14px;
-      color: rgba(255,255,255,.80);
-      line-height:1.5;
-      font-size:14px;
-      max-width: 70ch;
-    }
-
-    /* ✅ side-by-side on mobile, pro spacing */
-    .store-row{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      margin-top:6px;
-    }
-    @media (max-width:420px){
-      .store-row{ grid-template-columns: 1fr; }
-    }
-
-    /* ✅ Button upgrade: more “badge-like” + premium sheen */
-    .store-btn{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:14px 16px;
-      border-radius:16px;
-      text-decoration:none;
-      font-weight:800;
-      letter-spacing:.2px;
-
-      border:1px solid rgba(176,107,80,.80);
-      background: linear-gradient(145deg, rgba(176,107,80,.45), rgba(176,107,80,.22));
-      color:#fff;
-
-      box-shadow:
-        0 10px 25px rgba(0,0,0,.25),
-        inset 0 1px 0 rgba(255,255,255,.18);
-
-      transition: transform .15s ease, background .2s ease, border .2s ease;
-      width:100%;
-      justify-content:flex-start;
-    }
-    .store-btn:hover{
-      background: linear-gradient(145deg, rgba(176,107,80,.58), rgba(176,107,80,.28));
-      border-color: rgba(176,107,80,.95);
-      transform: translateY(-2px);
-    }
-    .store-btn:active{ transform: translateY(-1px); }
-
-    .store-btn .label{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
-    .store-btn .small{
-      font-size:11px;
-      opacity:.9;
-      font-weight:800;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-    }
-    .store-btn .big{
-      font-size:16px;
-      font-weight:900;
-    }
-    .store-btn.disabled{
-      opacity:.75;
-      pointer-events:none;
-      transform:none !important;
-    }
-
-    /* Footer */
-    footer{
-      margin-top:34px;
-      color: rgba(255,255,255,.55);
-      font-size:13px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      padding-top:12px;
-    }
-    footer a{ color: rgba(255,255,255,.7); text-decoration:none; }
-    footer a:hover{ text-decoration:underline; }
-
-    /* Simple inline icons */
-    .svg{ width:22px; height:22px; display:block; }
-
-    /* Small icon for store buttons */
-    .store-ic{
-      width:22px;
-      height:22px;
-      display:block;
-      opacity:.95;
-      flex:0 0 auto;
-    }
-
-    /* ✅ EARLY ACCESS FORM STYLES (matches site) */
+    /* EARLY ACCESS FORM */
     .early-form{
       margin-top:14px;
       display:flex;
@@ -431,13 +259,13 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
     }
     .early-btn:hover{ transform: translateY(-2px); opacity:.95; }
     .early-btn:active{ transform: translateY(-1px); }
+
     .fineprint{
       margin-top:10px;
       font-size:13px;
       opacity:.65;
     }
 
-    /* ✅ Inline success/error message styling */
     .form-msg{
       margin-top:12px;
       padding:12px 12px;
@@ -464,7 +292,6 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
       color: rgba(255,255,255,.92);
     }
 
-    /* ✅ Sexy dot loader (1-2-3 pulse) */
     .btn-dots{
       display:none;
       align-items:center;
@@ -481,15 +308,261 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
     }
     .btn-dots span:nth-child(2){ animation-delay:.2s; }
     .btn-dots span:nth-child(3){ animation-delay:.4s; }
-
     @keyframes dotPulse{
       0%, 80%, 100% { opacity:.2; transform: scale(1); }
       40% { opacity:1; transform: scale(1.2); }
     }
-
-    /* Loading state */
     .early-btn.loading .btn-text{ opacity:.65; }
     .early-btn.loading .btn-dots{ display:flex; }
+
+    /* RIGHT SIDE: CAROUSEL CARD */
+    .hero-right{
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow-soft);
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      overflow:hidden;
+    }
+
+    .carousel-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .carousel-head h2{
+      margin:0;
+      font-size:16px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .carousel-head p{
+      margin:4px 0 0;
+      font-size:13px;
+      color: rgba(255,255,255,.70);
+      line-height:1.45;
+      max-width: 44ch;
+    }
+
+    .carousel{
+      position:relative;
+      border-radius:18px;
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.10);
+      padding:14px;
+      overflow:hidden;
+    }
+
+    .track{
+      display:flex;
+      gap:12px;
+      overflow:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom:6px;
+    }
+    .track::-webkit-scrollbar{ height:8px; }
+    .track::-webkit-scrollbar-thumb{
+      background: rgba(255,255,255,.16);
+      border-radius:999px;
+    }
+
+    .shot{
+      flex:0 0 auto;
+      scroll-snap-align:center;
+      width: 210px;
+      max-width: 60vw;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 12px 25px rgba(0,0,0,.25);
+      background: rgba(255,255,255,.04);
+    }
+    @media (min-width: 900px){
+      .shot{ width: 240px; }
+    }
+    .shot img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .car-controls{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      margin-top:10px;
+    }
+    .car-btn{
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:800;
+      font-size:14px;
+      transition: transform .12s ease, background .2s ease;
+    }
+    .car-btn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
+    .car-btn:active{ transform: translateY(0px); }
+
+    .car-dots{
+      display:flex;
+      gap:6px;
+      align-items:center;
+      justify-content:center;
+      flex:1 1 auto;
+    }
+    .car-dots button{
+      width:8px;height:8px;border-radius:50%;
+      border:0;
+      background: rgba(255,255,255,.22);
+      cursor:pointer;
+      padding:0;
+    }
+    .car-dots button[aria-current="true"]{
+      background: rgba(176,107,80,.95);
+      box-shadow: 0 0 0 4px rgba(176,107,80,.18);
+    }
+
+    /* SECTIONS */
+    .section{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .section{ grid-template-columns: 1fr; }
+    }
+    .card{
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding:16px;
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:16px;
+      font-weight:900;
+    }
+    .card p{
+      margin:0;
+      color: rgba(255,255,255,.75);
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .divider{
+      margin-top:20px;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+
+    /* APP STORE PLACEHOLDERS */
+    .app-section{
+      margin-top:22px;
+      border-radius: 18px;
+      padding:18px 16px;
+      background: rgba(176,107,80,.12);
+      border: 1px solid rgba(176,107,80,.35);
+      box-shadow: var(--shadow-soft);
+    }
+    .app-section h3{
+      margin:0 0 6px;
+      font-size:16px;
+      font-weight:900;
+      color: rgba(255,255,255,.96);
+    }
+    .app-section p{
+      margin:0 0 14px;
+      color: rgba(255,255,255,.80);
+      line-height:1.55;
+      font-size:14px;
+      max-width: 70ch;
+    }
+
+    .store-row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:6px;
+    }
+    @media (max-width:420px){
+      .store-row{ grid-template-columns: 1fr; }
+    }
+    .store-btn{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:16px;
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.2px;
+      border:1px solid rgba(176,107,80,.80);
+      background: linear-gradient(145deg, rgba(176,107,80,.45), rgba(176,107,80,.22));
+      color:#fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18);
+      transition: transform .15s ease, background .2s ease, border .2s ease;
+      width:100%;
+      justify-content:flex-start;
+    }
+    .store-btn:hover{
+      background: linear-gradient(145deg, rgba(176,107,80,.58), rgba(176,107,80,.28));
+      border-color: rgba(176,107,80,.95);
+      transform: translateY(-2px);
+    }
+    .store-btn:active{ transform: translateY(-1px); }
+    .store-btn.disabled{
+      opacity:.75;
+      pointer-events:none;
+      transform:none !important;
+    }
+    .store-btn .label{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .store-btn .small{
+      font-size:11px;
+      opacity:.9;
+      font-weight:900;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+    }
+    .store-btn .big{
+      font-size:16px;
+      font-weight:900;
+    }
+    .store-ic{
+      width:22px;
+      height:22px;
+      display:block;
+      opacity:.95;
+      flex:0 0 auto;
+    }
+
+    footer{
+      margin-top:34px;
+      color: rgba(255,255,255,.55);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      padding-top:12px;
+    }
+    footer a{ color: rgba(255,255,255,.7); text-decoration:none; }
+    footer a:hover{ text-decoration:underline; }
+
+    .svg{ width:22px; height:22px; display:block; }
   </style>
 </head>
 
@@ -503,114 +576,123 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
       <div class="nav">
         <a class="pill" href="#how">How it works</a>
         <a class="pill" href="#privacy">Privacy</a>
-        <a class="pill" href="#contact">Contact</a>
+        <a class="pill" href="#download">Download</a>
       </div>
     </div>
 
     <div class="hero">
+      <!-- LEFT: COPY + ABOVE-FOLD SIGNUP -->
       <div class="hero-left">
         <div class="glow"></div>
 
-        <h1>Welcome to Rooted Memories</h1>
+        <div class="kicker"><span class="dot"></span> Early access is free (limited places)</div>
+
+        <h1>Your family’s memories — in one private place.</h1>
 
         <p class="subline">
-          <strong>The private place for your family’s photos and stories. Structured clearly and kept safe.</strong>
+          Photos and stories shouldn’t die in group chats or get lost across phones.
+          Rooted Memories organises everything <strong>by person</strong>, so your family history stays clear, private, and easy to add to over time.
         </p>
 
-        <div class="hook">
-          <p>
-            Family photos end up everywhere. On different phones. In different apps. In old group chats. Some get saved. Some get lost. Most are never <strong>organised properly</strong>.
-          </p>
-
-          <p>
-            Rooted Memories gives your family <strong>one private place</strong> for photos, names, and stories, structured clearly and kept safe. Every memory is connected to the right person, so relatives across cities or countries can stay part of the <strong>same family record</strong>.
-          </p>
-
-          <p>
-            You are not just storing pictures. You are building a <strong>clear record of your family</strong> that your children can grow up with and add to. And maybe one day, their children too.
-          </p>
+        <div class="bullets">
+          <ul>
+            <li><strong>Stop the chaos:</strong> one home for photos, stories, dates, and names.</li>
+            <li><strong>Organised properly:</strong> every memory attached to the right person.</li>
+            <li><strong>Invite-only:</strong> your family sees it — not the public internet.</li>
+          </ul>
         </div>
 
         <div class="micro">
-          Built for parents, grandparents, and anyone who wants a private family filing cabinet that lasts.
+          Built for parents (especially mums) who actually keep the family together — and want a record their kids can grow up with.
+        </div>
+
+        <!-- Above-fold early access -->
+        <div class="divider"></div>
+
+        <form id="earlyAccessFormTop" class="early-form" action="https://formspree.io/f/mqedopdn" method="POST" novalidate>
+          <input class="early-input" type="email" name="email" placeholder="Enter your email for early access" required />
+          <button class="early-btn" type="submit">
+            <span class="btn-text">Get Early Access</span>
+            <span class="btn-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+          </button>
+        </form>
+
+        <div id="earlyMsgTop" class="form-msg" role="status" aria-live="polite"></div>
+
+        <div class="fineprint">
+          Free early access • Limited founding members • Private updates only (no spam)
         </div>
       </div>
 
-      <div class="hero-right" aria-hidden="true">
-        <div class="tile">
-          <div class="icon">
-            <svg class="svg" viewBox="0 0 24 24" fill="none">
-              <path d="M10.5 18.5a7 7 0 1 1 4.95-11.95A7 7 0 0 1 10.5 18.5Z" stroke="white" stroke-width="2"/>
-              <path d="M16 16l5 5" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
+      <!-- RIGHT: CAROUSEL -->
+      <div class="hero-right">
+        <div class="carousel-head">
           <div>
-            <p>Discover your heritage</p>
-            <small>Names, dates, stories connected properly</small>
+            <h2>Preview the app</h2>
+            <p>These are real screens from the build — portrait previews, swipe to view.</p>
           </div>
         </div>
 
-        <div class="tile">
-          <div class="icon">
-            <svg class="svg" viewBox="0 0 24 24" fill="none">
-              <path d="M6 7.5A2.5 2.5 0 0 1 8.5 5H18a1 1 0 0 1 1 1v13a0 0 0 0 1 0 0H8.5A2.5 2.5 0 0 1 6 16.5v-9Z" stroke="white" stroke-width="2"/>
-              <path d="M6 16.5A2.5 2.5 0 0 1 8.5 14H19" stroke="white" stroke-width="2"/>
-            </svg>
+        <div class="carousel" aria-label="App screenshots carousel">
+          <div class="track" id="shotTrack">
+            <div class="shot"><img src="app-1.png" alt="Rooted Memories app screenshot 1" loading="lazy"></div>
+            <div class="shot"><img src="app-2.png" alt="Rooted Memories app screenshot 2" loading="lazy"></div>
+            <div class="shot"><img src="app-3.png" alt="Rooted Memories app screenshot 3" loading="lazy"></div>
+            <div class="shot"><img src="app-4.png" alt="Rooted Memories app screenshot 4" loading="lazy"></div>
+            <div class="shot"><img src="app-5.png" alt="Rooted Memories app screenshot 5" loading="lazy"></div>
           </div>
-          <div>
-            <p>Keep family stories safe</p>
-            <small>Photos, captions, dates, and a full family feed</small>
+
+          <div class="car-controls">
+            <button class="car-btn" type="button" id="prevBtn" aria-label="Previous screenshot">‹ Prev</button>
+
+            <div class="car-dots" id="carDots" aria-label="Carousel position"></div>
+
+            <button class="car-btn" type="button" id="nextBtn" aria-label="Next screenshot">Next ›</button>
           </div>
         </div>
 
-        <div class="tile">
-          <div class="icon">
-            <svg class="svg" viewBox="0 0 24 24" fill="none">
-              <path d="M7 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" stroke="white" stroke-width="2"/>
-              <path d="M17 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" stroke="white" stroke-width="2"/>
-              <path d="M17 15a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" stroke="white" stroke-width="2"/>
-              <path d="M9.5 10.5 14.5 7.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              <path d="M9.5 12.5 14.5 16.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <p>Build your family tree</p>
-            <small>Add relatives once. Send a secure invite to let them help build your family's story. In one place.</small>
-          </div>
+        <div class="card" style="margin-top:0;">
+          <h3>What you’ll be able to do</h3>
+          <p>
+            Build your family tree once, then drop in photos, captions, and stories —
+            all connected to the right person so it stays organised as the years go by.
+          </p>
         </div>
       </div>
     </div>
 
+    <!-- HOW IT WORKS -->
     <div id="how" class="section">
       <div class="card">
         <h3>1) Build the tree</h3>
-        <p>Add relatives once. Send a secure invite to let them help build your family's story. In one place.</p>
+        <p>Add relatives once. Invite family so they can contribute safely — without the mess of endless group chats.</p>
       </div>
       <div class="card">
-        <h3>2) Drop in the memories</h3>
-        <p>Photos, captions, dates, and a full family feed. So your family never misses a memory that matters.</p>
+        <h3>2) Add memories to people</h3>
+        <p>Photos + stories actually make sense when they’re attached to the right person (with dates and context).</p>
       </div>
       <div class="card">
-        <h3>3) Pass it forward</h3>
-        <p>A living archive your kids can open in 20 years and still feel like they know everyone.</p>
+        <h3>3) Keep it for life</h3>
+        <p>A living archive your kids can open in 10–20 years and still feel like they know everyone.</p>
       </div>
     </div>
 
+    <!-- PRIVACY -->
     <div id="privacy" class="section" style="grid-template-columns:1fr;">
       <div class="card">
         <h3>Privacy-first by design</h3>
         <p>
-          Your family history isn’t social media. Rooted Memories is built to be <b>private</b>, <b>invite-only</b>, and organised,
-          with clear controls for who can view, add, and edit.
+          Your family history isn’t social media. Rooted Memories is <strong>private</strong> and <strong>invite-only</strong>.
+          You control who can view, add, and edit — and nothing is public by default.
         </p>
       </div>
     </div>
 
-    <!-- ✅ App box now BELOW privacy and ABOVE early access -->
+    <!-- DOWNLOAD PLACEHOLDER -->
     <div class="app-section" id="download">
       <h3>Download the app</h3>
       <p>
-        Rooted Memories is in development. These buttons will go live as soon as the iOS and Android apps are released.
+        Rooted Memories is in development. Early access members will get first access when iOS + Android are ready.
       </p>
 
       <div class="store-row">
@@ -640,25 +722,23 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <!-- ✅ EARLY ACCESS: stays on same page + inline thank-you -->
-    <div id="contact" class="section" style="grid-template-columns:1fr;">
+    <!-- BOTTOM SIGNUP (SECOND TOUCHPOINT) -->
+    <div class="section" style="grid-template-columns:1fr; margin-top:18px;">
       <div class="card">
-        <h3>Want early access?</h3>
+        <h3>Get early access (free)</h3>
         <p>
-          Join as an early tester<br/>
-          Free access<br/>
-          Limited founding members
+          If this resonates, join the founding list. You’ll be first in line when we open early access.
         </p>
 
-        <form id="earlyAccessForm" class="early-form" action="https://formspree.io/f/mqedopdn" method="POST" novalidate>
+        <form id="earlyAccessFormBottom" class="early-form" action="https://formspree.io/f/mqedopdn" method="POST" novalidate>
           <input class="early-input" type="email" name="email" placeholder="Enter your email" required />
           <button class="early-btn" type="submit">
-            <span class="btn-text">Get Early Access</span>
+            <span class="btn-text">Join the list</span>
             <span class="btn-dots" aria-hidden="true"><span></span><span></span><span></span></span>
           </button>
         </form>
 
-        <div id="earlyMsg" class="form-msg" role="status" aria-live="polite"></div>
+        <div id="earlyMsgBottom" class="form-msg" role="status" aria-live="polite"></div>
 
         <div class="fineprint">Private updates only. No spam.</div>
       </div>
@@ -668,7 +748,8 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
       <div>© <span id="y"></span> Rooted Memories</div>
       <div>
         <a href="#privacy">Privacy</a> ·
-        <a href="#contact">Contact</a>
+        <a href="#how">How it works</a> ·
+        <a href="#download">Download</a>
       </div>
     </footer>
   </div>
@@ -676,10 +757,72 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // ✅ Keep user on page and show inline message (no Formspree redirect)
+    // ==========================
+    // Screenshot carousel logic
+    // ==========================
     (function(){
-      const form = document.getElementById('earlyAccessForm');
-      const msg  = document.getElementById('earlyMsg');
+      const track = document.getElementById('shotTrack');
+      const shots = Array.from(track.querySelectorAll('.shot'));
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsWrap = document.getElementById('carDots');
+
+      let activeIndex = 0;
+
+      function scrollToIndex(i){
+        activeIndex = Math.max(0, Math.min(i, shots.length - 1));
+        const el = shots[activeIndex];
+        el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        updateDots();
+      }
+
+      function updateDots(){
+        const dots = Array.from(dotsWrap.querySelectorAll('button'));
+        dots.forEach((d, idx) => d.setAttribute('aria-current', String(idx === activeIndex)));
+      }
+
+      // build dots
+      shots.forEach((_, idx) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Go to screenshot ' + (idx + 1));
+        b.setAttribute('aria-current', String(idx === 0));
+        b.addEventListener('click', () => scrollToIndex(idx));
+        dotsWrap.appendChild(b);
+      });
+
+      prevBtn.addEventListener('click', () => scrollToIndex(activeIndex - 1));
+      nextBtn.addEventListener('click', () => scrollToIndex(activeIndex + 1));
+
+      // update activeIndex on scroll (closest center)
+      let raf = null;
+      track.addEventListener('scroll', () => {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const rect = track.getBoundingClientRect();
+          const center = rect.left + rect.width / 2;
+          let bestIdx = 0;
+          let bestDist = Infinity;
+
+          shots.forEach((s, idx) => {
+            const r = s.getBoundingClientRect();
+            const c = r.left + r.width / 2;
+            const d = Math.abs(c - center);
+            if (d < bestDist){ bestDist = d; bestIdx = idx; }
+          });
+
+          activeIndex = bestIdx;
+          updateDots();
+        });
+      });
+    })();
+
+    // ==========================
+    // Form handler (reused)
+    // ==========================
+    function wireEarlyAccessForm(formId, msgId){
+      const form = document.getElementById(formId);
+      const msg  = document.getElementById(msgId);
       const btn  = form.querySelector('button[type="submit"]');
       const input = form.querySelector('input[type="email"]');
 
@@ -692,7 +835,6 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // basic email validity
         if (!input.value || !input.checkValidity()){
           setMsg('error', 'Please enter a valid email address.');
           input.focus();
@@ -713,31 +855,32 @@ src="https://www.facebook.com/tr?id=963784012989378&ev=PageView&noscript=1"
           });
 
           if (res.ok) {
-  form.reset();
+            form.reset();
 
-  // Fire Meta Pixel events safely
-  if (window.fbq) {
-    fbq('track', 'Lead');
-    fbq('trackCustom', 'EarlyAccessSignup');
-  }
+            // Fire Meta Pixel events safely
+            if (window.fbq) {
+              fbq('track', 'Lead');
+              fbq('trackCustom', 'EarlyAccessSignup');
+            }
 
-  setMsg(
-    'success',
-    "You're on the list — thank you. I’ll personally send early access details soon. Keep an eye on your inbox (and spam just in case)."
-  );
-
-} else {
-  setMsg('error', "That didn’t send. Please try again.");
-}
-
-} catch(err) {
-  setMsg('error', "Network issue — please try again.");
-} finally {
-  btn.disabled = false;
-  btn.classList.remove('loading');
-}
+            setMsg(
+              'success',
+              "You're on the list — thank you. I’ll send early access details soon. Keep an eye on your inbox (and spam just in case)."
+            );
+          } else {
+            setMsg('error', "That didn’t send. Please try again.");
+          }
+        } catch(err){
+          setMsg('error', "Network issue — please try again.");
+        } finally {
+          btn.disabled = false;
+          btn.classList.remove('loading');
+        }
       });
-    })();
+    }
+
+    wireEarlyAccessForm('earlyAccessFormTop', 'earlyMsgTop');
+    wireEarlyAccessForm('earlyAccessFormBottom', 'earlyMsgBottom');
   </script>
 </body>
 </html>
