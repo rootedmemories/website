@@ -239,6 +239,7 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       color:#fff;
       font-size:16px;
       outline:none;
+      transition: box-shadow .25s ease, border-color .25s ease;
     }
     .early-input::placeholder{ color: rgba(255,255,255,.6); }
 
@@ -316,6 +317,32 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
     }
     .early-btn.loading .btn-text{ opacity:.65; }
     .early-btn.loading .btn-dots{ display:flex; }
+
+    /* ✅ EARLY ACCESS GLOW / PULSE */
+    .early-input.glow-on{
+      border-color: rgba(176,107,80,.95);
+      box-shadow:
+        0 0 0 4px rgba(176,107,80,.18),
+        0 18px 45px rgba(0,0,0,.22);
+      animation: earlyPulse 1.6s ease-in-out 2;
+    }
+    @keyframes earlyPulse{
+      0%{
+        box-shadow:
+          0 0 0 0px rgba(176,107,80,.00),
+          0 12px 30px rgba(0,0,0,.18);
+      }
+      50%{
+        box-shadow:
+          0 0 0 7px rgba(176,107,80,.22),
+          0 18px 45px rgba(0,0,0,.25);
+      }
+      100%{
+        box-shadow:
+          0 0 0 4px rgba(176,107,80,.18),
+          0 18px 45px rgba(0,0,0,.22);
+      }
+    }
 
     /* RIGHT SIDE: CAROUSEL CARD */
     .hero-right{
@@ -550,10 +577,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       flex:0 0 auto;
     }
 
-    /* Extra spacing between bottom paragraph and CTA button */
-
-    /* ✅ adds space above orange button */
-
     footer{
       margin-top:34px;
       color: rgba(255,255,255,.55);
@@ -579,16 +602,17 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
         <img class="logo" src="logo.png" alt="Rooted Memories" />
         <span>Rooted Memories</span>
       </a>
+
+      <!-- ✅ NAV: remove Privacy, replace Download -> Join Early Access -->
       <div class="nav">
         <a class="pill" href="#how">How it works</a>
-        <a class="pill" href="#privacy">Privacy</a>
-        <a class="pill" href="#download">Download</a>
+        <a class="pill" href="#early" data-join-early>Join Early Access</a>
       </div>
     </div>
 
     <div class="hero">
       <!-- LEFT: COPY + ABOVE-FOLD SIGNUP -->
-      <div class="hero-left">
+      <div class="hero-left" id="early">
         <div class="glow"></div>
 
         <div class="kicker"><span class="dot"></span> Early access is free. Premium for life.<br>
@@ -613,11 +637,10 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
           Built for parents who want to keep the family together. And for families that don't want their stories forgotten.
         </div>
 
-        <!-- Above-fold early access -->
         <div class="divider"></div>
 
         <form id="earlyAccessFormTop" class="early-form" action="https://formspree.io/f/mqedopdn" method="POST" novalidate>
-          <input class="early-input" type="email" name="email" placeholder="Enter your email for early access" required />
+          <input id="earlyEmail" class="early-input" type="email" name="email" placeholder="Enter your email for early access" required />
           <button class="early-btn" type="submit">
             <span class="btn-text">Get Early Access</span>
             <span class="btn-dots" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -663,7 +686,7 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
           <p>
             Build your family tree, drop in photos, captions, and stories.
             All connected to the right person so it stays organised as the years go by.
-            Keep all your childrens photos structured cleanly, and eventually hand over 
+            Keep all your childrens photos structured cleanly, and eventually hand over
             their profile to take over.
           </p>
         </div>
@@ -678,7 +701,7 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       </div>
       <div class="card">
         <h3>2) Add memories to people</h3>
-        <p>Photos + stories actually make sense when they’re attached to the right person (with dates and context). View photos by 
+        <p>Photos + stories actually make sense when they’re attached to the the right person (with dates and context). View photos by
           person, or in the full family feed.</p>
       </div>
       <div class="card">
@@ -687,18 +710,9 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <!-- PRIVACY -->
-    <div id="privacy" class="section" style="grid-template-columns:1fr;">
-      <div class="card">
-        <h3>Privacy-first by design</h3>
-        <p>
-          Your family history isn’t social media. Rooted Memories is <strong>private</strong> and <strong>invite-only</strong>.
-          You control who can view, add, and edit. Nothing is public.
-        </p>
-      </div>
-    </div>
+    <!-- ✅ PRIVACY SECTION REMOVED -->
 
-    <!-- DOWNLOAD PLACEHOLDER -->
+    <!-- DOWNLOAD PLACEHOLDER (kept as a section, just not in nav/footer) -->
     <div class="app-section" id="download">
       <h3>Download the app</h3>
       <p>
@@ -737,10 +751,9 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       <div class="card">
         <h3>Get early access (free)</h3>
         <p class="cta-text">
-          If this resonates, join the founding list. You’ll be first in line when we open early access. (limited places) 
+          If this resonates, join the founding list. You’ll be first in line when we open early access. (limited places)
         </p>
 
-        <!-- Button triggers a centered scroll to the top email box -->
         <button class="store-btn" type="button" id="jumpToEarly" style="justify-content:center;">
           Get Early Access
         </button>
@@ -751,10 +764,11 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
 
     <footer>
       <div>© <span id="y"></span> Rooted Memories™</div>
+
+      <!-- ✅ FOOTER: remove Privacy and Download, keep 2 clean links -->
       <div>
-        <a href="#privacy">Privacy</a> ·
         <a href="#how">How it works</a> ·
-        <a href="#download">Download</a>
+        <a href="#early" data-join-early>Join Early Access</a>
       </div>
     </footer>
   </div>
@@ -887,27 +901,54 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
     wireEarlyAccessForm('earlyAccessFormTop', 'earlyMsgTop');
 
     // ==========================
-    // Bottom CTA -> center the top email box
+    // ✅ Focus + glow helper
+    // ==========================
+    function focusAndGlowEarlyAccess(){
+      const form = document.getElementById('earlyAccessFormTop');
+      if (!form) return;
+
+      const rect = form.getBoundingClientRect();
+      const absoluteTop = rect.top + window.pageYOffset;
+      const offset = (window.innerHeight / 2) - (rect.height / 2);
+
+      window.scrollTo({ top: absoluteTop - offset, behavior: 'smooth' });
+
+      setTimeout(() => {
+        const input = document.getElementById('earlyEmail');
+        if (!input) return;
+
+        // Glow on
+        input.classList.add('glow-on');
+
+        // Focus input
+        input.focus({ preventScroll: true });
+
+        // Remove glow after a bit OR when they start typing
+        const stopGlow = () => input.classList.remove('glow-on');
+        setTimeout(stopGlow, 2200);
+        input.addEventListener('input', stopGlow, { once:true });
+      }, 450);
+    }
+
+    // ==========================
+    // Bottom CTA -> focus + glow
     // ==========================
     (function(){
       const btn = document.getElementById('jumpToEarly');
-      const target = document.getElementById('earlyAccessFormTop');
-      if (!btn || !target) return;
+      if (!btn) return;
+      btn.addEventListener('click', focusAndGlowEarlyAccess);
+    })();
 
-      btn.addEventListener('click', () => {
-        const rect = target.getBoundingClientRect();
-        const absoluteTop = rect.top + window.pageYOffset;
-
-        // Center the form in the viewport
-        const offset = (window.innerHeight / 2) - (rect.height / 2);
-
-        window.scrollTo({ top: absoluteTop - offset, behavior: 'smooth' });
-
-        // Focus the email input after scroll (great on mobile)
-        setTimeout(() => {
-          const input = target.querySelector('input[type="email"]');
-          if (input) input.focus({ preventScroll: true });
-        }, 450);
+    // ==========================
+    // Nav/Footer "Join Early Access" -> focus + glow
+    // ==========================
+    (function(){
+      const links = document.querySelectorAll('[data-join-early]');
+      links.forEach(a => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          focusAndGlowEarlyAccess();
+        });
       });
     })();
   </script>
