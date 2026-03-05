@@ -3,22 +3,22 @@
 <head>
   <meta name="facebook-domain-verification" content="dwjtp5c0bdc1xm2o80g1uas5mmvkbj" />
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1927964177837230');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1927964177837230');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,7 +61,7 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
     }
 
     *{box-sizing:border-box}
-    html{ scroll-behavior:smooth; } /* smooth anchor jumps */
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -93,17 +93,27 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       gap:10px;
       text-decoration:none;
       color:#fff;
+      min-width: 0;
     }
+
+    /* ✅ Logo positioning: keep it visually centred on mobile while freeing room for buttons */
     .logo{
       height:290px;
       width:auto;
       display:block;
       margin-top:-60px;
+      margin-left:-10px; /* subtle nudge left so nav fits better on small screens */
       filter: drop-shadow(0 10px 18px rgba(0,0,0,.22));
+      max-width: 52vw;
     }
     @media (min-width:900px){
-      .logo{ height:350px; }
+      .logo{
+        height:350px;
+        margin-left:0;
+        max-width: none;
+      }
     }
+
     .brand span{
       position:absolute;
       width:1px;height:1px;
@@ -121,6 +131,22 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       margin-top:12px;
       justify-content:flex-end;
     }
+
+    /* ✅ Mobile portrait: force buttons side-by-side (like your screenshot) */
+    @media (max-width: 520px){
+      .nav{
+        flex-wrap:nowrap;
+        gap:10px;
+        align-items:center;
+        justify-content:flex-end;
+      }
+      .pill{
+        padding:10px 12px;
+        font-size:13px;
+        white-space:nowrap;
+      }
+    }
+
     .pill{
       border:1px solid rgba(255,255,255,.16);
       color:rgba(255,255,255,.9);
@@ -142,7 +168,7 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
     }
     @media (max-width: 900px){
       .hero{ grid-template-columns: 1fr; }
-      .nav{ justify-content:flex-start; }
+      .nav{ justify-content:flex-end; }
     }
 
     .hero-left{
@@ -220,6 +246,11 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       margin-top:10px;
       font-size: 13px;
       color: rgba(255,255,255,.62);
+    }
+
+    .divider{
+      margin-top:20px;
+      border-top:1px solid rgba(255,255,255,.10);
     }
 
     /* EARLY ACCESS FORM */
@@ -318,7 +349,13 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
     .early-btn.loading .btn-text{ opacity:.65; }
     .early-btn.loading .btn-dots{ display:flex; }
 
-    /* ✅ EARLY ACCESS GLOW / PULSE */
+    /* ✅ Glow behaviour: only on focus + when jumped-to */
+    .early-input:focus{
+      border-color: rgba(176,107,80,.95);
+      box-shadow:
+        0 0 0 4px rgba(176,107,80,.16),
+        0 18px 45px rgba(0,0,0,.22);
+    }
     .early-input.glow-on{
       border-color: rgba(176,107,80,.95);
       box-shadow:
@@ -326,14 +363,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
         0 18px 45px rgba(0,0,0,.22);
       animation: earlyPulse 1.6s ease-in-out 2;
     }
-    /* Subtle glow when user taps into the email input (focus) */
-.early-input:focus{
-  border-color: rgba(176,107,80,.95);
-  box-shadow:
-    0 0 0 4px rgba(176,107,80,.16),
-    0 18px 45px rgba(0,0,0,.22);
-}
-
     @keyframes earlyPulse{
       0%{
         box-shadow:
@@ -496,11 +525,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       font-size:14px;
     }
 
-    .divider{
-      margin-top:20px;
-      border-top:1px solid rgba(255,255,255,.10);
-    }
-
     /* APP STORE PLACEHOLDERS */
     .app-section{
       margin-top:22px;
@@ -598,8 +622,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
     }
     footer a{ color: rgba(255,255,255,.7); text-decoration:none; }
     footer a:hover{ text-decoration:underline; }
-
-    .svg{ width:22px; height:22px; display:block; }
   </style>
 </head>
 
@@ -611,7 +633,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
         <span>Rooted Memories</span>
       </a>
 
-      <!-- ✅ NAV: remove Privacy, replace Download -> Join Early Access -->
       <div class="nav">
         <a class="pill" href="#how">How it works</a>
         <a class="pill" href="#early" data-join-early>Join Early Access</a>
@@ -619,7 +640,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
     </div>
 
     <div class="hero">
-      <!-- LEFT: COPY + ABOVE-FOLD SIGNUP -->
       <div class="hero-left" id="early">
         <div class="glow"></div>
 
@@ -662,7 +682,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
         </div>
       </div>
 
-      <!-- RIGHT: CAROUSEL -->
       <div class="hero-right">
         <div class="carousel-head">
           <div>
@@ -682,9 +701,7 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
 
           <div class="car-controls">
             <button class="car-btn" type="button" id="prevBtn" aria-label="Previous screenshot">‹ Prev</button>
-
             <div class="car-dots" id="carDots" aria-label="Carousel position"></div>
-
             <button class="car-btn" type="button" id="nextBtn" aria-label="Next screenshot">Next ›</button>
           </div>
         </div>
@@ -701,7 +718,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <!-- HOW IT WORKS -->
     <div id="how" class="section">
       <div class="card">
         <h3>1) Build the tree</h3>
@@ -718,9 +734,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <!-- ✅ PRIVACY SECTION REMOVED -->
-
-    <!-- DOWNLOAD PLACEHOLDER (kept as a section, just not in nav/footer) -->
     <div class="app-section" id="download">
       <h3>Download the app</h3>
       <p>
@@ -754,7 +767,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <!-- BOTTOM CTA (BUTTON ONLY) -->
     <div class="section" style="grid-template-columns:1fr; margin-top:18px;">
       <div class="card">
         <h3>Get early access (free)</h3>
@@ -772,8 +784,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
 
     <footer>
       <div>© <span id="y"></span> Rooted Memories™</div>
-
-      <!-- ✅ FOOTER: remove Privacy and Download, keep 2 clean links -->
       <div>
         <a href="#how">How it works</a> ·
         <a href="#early" data-join-early>Join Early Access</a>
@@ -808,7 +818,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
         dots.forEach((d, idx) => d.setAttribute('aria-current', String(idx === activeIndex)));
       }
 
-      // build dots
       shots.forEach((_, idx) => {
         const b = document.createElement('button');
         b.type = 'button';
@@ -821,7 +830,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
       prevBtn.addEventListener('click', () => scrollToIndex(activeIndex - 1));
       nextBtn.addEventListener('click', () => scrollToIndex(activeIndex + 1));
 
-      // update activeIndex on scroll (closest center)
       let raf = null;
       track.addEventListener('scroll', () => {
         if (raf) cancelAnimationFrame(raf);
@@ -847,9 +855,14 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
     // ==========================
     // Form handler
     // ==========================
-    function wireEarlyAccessForm(formId, msgId){
+    (function wireEarlyAccessForm(){
+      const formId = 'earlyAccessFormTop';
+      const msgId  = 'earlyMsgTop';
+
       const form = document.getElementById(formId);
       const msg  = document.getElementById(msgId);
+      if (!form || !msg) return;
+
       const btn  = form.querySelector('button[type="submit"]');
       const input = form.querySelector('input[type="email"]');
 
@@ -884,7 +897,6 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
           if (res.ok) {
             form.reset();
 
-            // Fire Meta Pixel events safely
             if (window.fbq) {
               fbq('track', 'Lead');
               fbq('trackCustom', 'EarlyAccessSignup');
@@ -904,12 +916,10 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
           btn.classList.remove('loading');
         }
       });
-    }
-
-    wireEarlyAccessForm('earlyAccessFormTop', 'earlyMsgTop');
+    })();
 
     // ==========================
-    // ✅ Focus + glow helper
+    // Focus + glow helper
     // ==========================
     function focusAndGlowEarlyAccess(){
       const form = document.getElementById('earlyAccessFormTop');
@@ -925,31 +935,23 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
         const input = document.getElementById('earlyEmail');
         if (!input) return;
 
-        // Glow on
         input.classList.add('glow-on');
-
-        // Focus input
         input.focus({ preventScroll: true });
 
-        // Remove glow after a bit OR when they start typing
         const stopGlow = () => input.classList.remove('glow-on');
         setTimeout(stopGlow, 2200);
         input.addEventListener('input', stopGlow, { once:true });
       }, 450);
     }
 
-    // ==========================
     // Bottom CTA -> focus + glow
-    // ==========================
     (function(){
       const btn = document.getElementById('jumpToEarly');
       if (!btn) return;
       btn.addEventListener('click', focusAndGlowEarlyAccess);
     })();
 
-    // ==========================
     // Nav/Footer "Join Early Access" -> focus + glow
-    // ==========================
     (function(){
       const links = document.querySelectorAll('[data-join-early]');
       links.forEach(a => {
