@@ -326,6 +326,14 @@ src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
         0 18px 45px rgba(0,0,0,.22);
       animation: earlyPulse 1.6s ease-in-out 2;
     }
+    /* Subtle glow when user taps into the email input (focus) */
+.early-input:focus{
+  border-color: rgba(176,107,80,.95);
+  box-shadow:
+    0 0 0 4px rgba(176,107,80,.16),
+    0 18px 45px rgba(0,0,0,.22);
+}
+
     @keyframes earlyPulse{
       0%{
         box-shadow:
