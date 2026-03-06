@@ -157,7 +157,6 @@
     }
     .pill:hover{ background: rgba(255,255,255,.1); }
 
-    /* Top-right Join Early Access button now matches the other CTA buttons */
     .join-pill{
       border:1px solid rgba(176,107,80,.80) !important;
       background: linear-gradient(145deg, rgba(176,107,80,.55), rgba(176,107,80,.28)) !important;
@@ -903,6 +902,48 @@
     })();
 
     // ==========================
+    // Meta lead tracking helper
+    // ==========================
+    function trackEarlyAccessSuccess(){
+      if (!window.fbq) return;
+
+      const baseEventId = 'ea_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+
+      fbq(
+        'track',
+        'Lead',
+        {
+          content_name: 'Early Access Signup',
+          content_category: 'Waitlist',
+          status: 'success'
+        },
+        { eventID: baseEventId + '_lead' }
+      );
+
+      fbq(
+        'track',
+        'Subscribe',
+        {
+          content_name: 'Early Access Signup',
+          content_category: 'Waitlist',
+          status: 'success'
+        },
+        { eventID: baseEventId + '_subscribe' }
+      );
+
+      fbq(
+        'trackCustom',
+        'EarlyAccessSignup',
+        {
+          content_name: 'Early Access Signup',
+          content_category: 'Waitlist',
+          status: 'success'
+        },
+        { eventID: baseEventId + '_custom' }
+      );
+    }
+
+    // ==========================
     // Form handler
     // ==========================
     (function wireEarlyAccessForm(){
@@ -945,12 +986,12 @@
           });
 
           if (res.ok) {
-            form.reset();
+            trackEarlyAccessSuccess();
 
-            if (window.fbq) {
-              fbq('track', 'Lead');
-              fbq('trackCustom', 'EarlyAccessSignup');
-            }
+            // tiny delay so Meta has time to register the event cleanly
+            await new Promise(resolve => setTimeout(resolve, 180));
+
+            form.reset();
 
             setMsg(
               'success',
