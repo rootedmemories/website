@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +32,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Rooted Memories" />
   <meta property="og:title" content="Rooted Memories | Your private family archive" />
-  <meta property="og:description" content="One private place for your family’s photos + stories, organised by person — not lost in group chats." />
+  <meta property="og:description" content="One private place for your family’s photos + stories, organised by person." />
   <meta property="og:url" content="https://rootedmemories.co.uk/" />
   <meta property="og:image" content="https://rootedmemories.co.uk/og-image.1.png" />
   <meta property="og:image:width" content="1200" />
@@ -39,44 +40,68 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rooted Memories | Your private family archive" />
-  <meta name="twitter:description" content="One private place for your family’s photos + stories, organised by person — not lost in group chats." />
+  <meta name="twitter:description" content="One private place for your family’s photos + stories, organised by person." />
   <meta name="twitter:image" content="https://rootedmemories.co.uk/og-image.1.png" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="favicon2.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon2.png" />
-  <meta name="theme-color" content="#0f3a2f" />
+  <meta name="theme-color" content="#0d0908" />
 
   <style>
     :root{
-      --forest:#0f3a2f;
-      --forest-2:#0b2f26;
-      --cream:#f3ece4;
-      --cream-2:#e9dfd2;
-      --accent:#b06b50;
-      --text:#0f1a15;
-      --muted:rgba(255,255,255,.75);
-      --shadow: 0 18px 45px rgba(0,0,0,.25);
-      --shadow-soft: 0 12px 30px rgba(0,0,0,.18);
-      --radius: 22px;
+      --bg:#0d0908;
+      --bg-2:#120d0c;
+      --bg-3:#17110f;
+      --panel:rgba(255,255,255,.032);
+      --panel-2:rgba(255,255,255,.045);
+      --border:rgba(198,151,97,.18);
+      --border-soft:rgba(255,255,255,.08);
+      --text:#f4ede4;
+      --text-soft:rgba(244,237,228,.76);
+      --text-faint:rgba(244,237,228,.56);
+      --amber:#c69761;
+      --amber-2:#9f6c3f;
+      --amber-soft:rgba(198,151,97,.18);
+      --shadow:0 28px 80px rgba(0,0,0,.42);
+      --shadow-soft:0 18px 45px rgba(0,0,0,.28);
+      --radius:28px;
     }
 
     *{box-sizing:border-box}
-    html{ scroll-behavior:smooth; }
+    html{scroll-behavior:smooth}
+
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:#fff;
+      color:var(--text);
+      font-family: Georgia, "Times New Roman", serif;
       background:
-        radial-gradient(1200px 600px at 20% 20%, rgba(176,107,80,.35), transparent 60%),
-        radial-gradient(1000px 650px at 80% 10%, rgba(243,236,228,.12), transparent 55%),
-        linear-gradient(180deg, #081f18 0%, #071a14 60%, #061612 100%);
+        radial-gradient(900px 520px at 18% 12%, rgba(159,108,63,.16), transparent 62%),
+        radial-gradient(700px 420px at 82% 24%, rgba(198,151,97,.08), transparent 60%),
+        radial-gradient(1000px 600px at 50% 110%, rgba(95,55,28,.14), transparent 68%),
+        linear-gradient(180deg, #0b0807 0%, #0d0908 35%, #110c0b 100%);
       min-height:100vh;
+      letter-spacing:.01em;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.06;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 120px 120px;
+      mix-blend-mode:soft-light;
     }
 
     .wrap{
-      max-width:1100px;
+      max-width:1120px;
       margin:0 auto;
-      padding:20px 18px 70px;
+      padding:22px 18px 72px;
+      position:relative;
+      z-index:1;
     }
 
     .top{
@@ -84,7 +109,7 @@
       align-items:flex-start;
       justify-content:space-between;
       gap:16px;
-      margin-bottom:0px;
+      margin-bottom:6px;
     }
 
     .brand{
@@ -93,24 +118,24 @@
       gap:10px;
       text-decoration:none;
       color:#fff;
-      min-width: 0;
+      min-width:0;
     }
 
-    /* ✅ Logo positioning: keep it visually centred on mobile while freeing room for buttons */
     .logo{
       height:290px;
       width:auto;
       display:block;
       margin-top:-60px;
-      margin-left:-10px; /* subtle nudge left so nav fits better on small screens */
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.22));
-      max-width: 52vw;
+      margin-left:-10px;
+      filter: drop-shadow(0 14px 24px rgba(0,0,0,.34));
+      max-width:52vw;
     }
+
     @media (min-width:900px){
       .logo{
         height:350px;
         margin-left:0;
-        max-width: none;
+        max-width:none;
       }
     }
 
@@ -132,7 +157,6 @@
       justify-content:flex-end;
     }
 
-    /* ✅ Mobile portrait: force buttons side-by-side (like your screenshot) */
     @media (max-width: 520px){
       .nav{
         flex-wrap:nowrap;
@@ -148,46 +172,87 @@
     }
 
     .pill{
-      border:1px solid rgba(255,255,255,.16);
-      color:rgba(255,255,255,.9);
-      background: rgba(255,255,255,.06);
+      border:1px solid rgba(198,151,97,.20);
+      color:rgba(244,237,228,.92);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
       padding:10px 14px;
       border-radius:999px;
       font-size:14px;
       text-decoration:none;
       backdrop-filter: blur(10px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+      transition:background .2s ease, transform .15s ease, border-color .2s ease;
     }
-    .pill:hover{ background: rgba(255,255,255,.1); }
 
-    /* HERO */
+    .pill:hover{
+      background:linear-gradient(180deg, rgba(198,151,97,.12), rgba(255,255,255,.03));
+      border-color:rgba(198,151,97,.35);
+      transform:translateY(-1px);
+    }
+
     .hero{
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1.12fr .88fr;
       gap:22px;
       align-items:stretch;
     }
+
     @media (max-width: 900px){
       .hero{ grid-template-columns: 1fr; }
       .nav{ justify-content:flex-end; }
     }
 
-    .hero-left{
-      padding:26px 22px;
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow);
-      overflow:hidden;
+    .hero-left,
+    .hero-right,
+    .card,
+    .app-section,
+    .big-cta{
       position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+      border:1px solid var(--border-soft);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(8px);
     }
+
+    .hero-left{
+      padding:28px 24px 24px;
+    }
+
+    .hero-left::before,
+    .hero-right::before,
+    .card::before,
+    .app-section::before,
+    .big-cta::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(360px 220px at 82% 16%, rgba(198,151,97,.14), transparent 70%);
+      pointer-events:none;
+    }
+
+    .hero-right{
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      box-shadow:var(--shadow-soft);
+    }
+
     .glow{
       position:absolute;
-      inset:-120px -180px auto auto;
-      width:420px; height:420px;
+      top:-120px;
+      right:-120px;
+      width:420px;
+      height:420px;
       border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, rgba(176,107,80,.55), transparent 60%);
-      filter: blur(2px);
-      opacity:.9;
+      background: radial-gradient(circle at 30% 30%, rgba(159,108,63,.35), transparent 60%);
+      filter:blur(8px);
+      opacity:.95;
       pointer-events:none;
     }
 
@@ -195,135 +260,186 @@
       display:inline-flex;
       gap:8px;
       align-items:center;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
+      border:1px solid rgba(198,151,97,.20);
+      background: rgba(255,255,255,.03);
       padding:8px 12px;
       border-radius:999px;
       font-size:13px;
-      color: rgba(255,255,255,.9);
-      margin-bottom:12px;
+      color: rgba(244,237,228,.88);
+      margin-bottom:14px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
     }
+
     .dot{
-      width:8px;height:8px;border-radius:50%;
-      background: rgba(94, 214, 137, .9);
-      box-shadow: 0 0 0 4px rgba(94, 214, 137, .12);
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#5ed689;
+      box-shadow: 0 0 0 4px rgba(94,214,137,.12);
+      flex:0 0 auto;
+    }
+
+    h1,h2,h3{
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight:500;
+      letter-spacing:-.015em;
     }
 
     h1{
-      margin:0 0 10px;
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      font-size: clamp(34px, 4.2vw, 54px);
-      line-height: 1.05;
-      letter-spacing: .2px;
+      margin:0 0 12px;
+      font-size:clamp(38px, 4.5vw, 60px);
+      line-height:1.02;
+      max-width:11.5ch;
     }
 
     .subline{
-      margin:0 0 14px;
-      font-size: 18px;
-      line-height:1.55;
-      color: var(--muted);
-      max-width: 62ch;
+      margin:0 0 16px;
+      font-size:20px;
+      line-height:1.65;
+      color:var(--text-soft);
+      max-width:36ch;
+    }
+
+    .subline strong{
+      color:var(--text);
+      font-weight:600;
     }
 
     .bullets{
-      margin:14px 0 0;
-      padding:14px 14px;
-      border-radius:16px;
-      background: rgba(176,107,80,.12);
-      border:1px solid rgba(176,107,80,.35);
-      color: rgba(255,255,255,.92);
+      margin:16px 0 0;
+      padding:16px 16px;
+      border-radius:20px;
+      background:
+        linear-gradient(180deg, rgba(198,151,97,.08), rgba(255,255,255,.02));
+      border:1px solid rgba(198,151,97,.20);
+      color:rgba(244,237,228,.92);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
     }
+
     .bullets ul{
       margin:0;
       padding-left:18px;
     }
+
     .bullets li{
-      margin:8px 0;
-      line-height:1.45;
+      margin:10px 0;
+      line-height:1.5;
       font-size:15px;
+      color:var(--text-soft);
     }
+
+    .bullets strong{
+      color:var(--text);
+      font-weight:600;
+    }
+
     .micro{
-      margin-top:10px;
-      font-size: 13px;
-      color: rgba(255,255,255,.62);
+      margin-top:12px;
+      font-size:14px;
+      line-height:1.55;
+      color:var(--text-faint);
+      max-width:52ch;
     }
 
     .divider{
-      margin-top:20px;
-      border-top:1px solid rgba(255,255,255,.10);
+      margin-top:22px;
+      border-top:1px solid rgba(198,151,97,.12);
     }
 
-    /* EARLY ACCESS FORM */
     .early-form{
-      margin-top:14px;
+      margin-top:16px;
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       align-items:stretch;
     }
+
     .early-input{
       flex:1 1 260px;
-      padding:14px 14px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.20);
-      background: rgba(255,255,255,.08);
-      color:#fff;
+      padding:15px 16px;
+      border-radius:16px;
+      border:1px solid rgba(198,151,97,.18);
+      background: rgba(255,255,255,.035);
+      color:var(--text);
       font-size:16px;
       outline:none;
-      transition: box-shadow .25s ease, border-color .25s ease;
+      transition: box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      font-family: Georgia, "Times New Roman", serif;
     }
-    .early-input::placeholder{ color: rgba(255,255,255,.6); }
 
-    .early-btn{
+    .early-input::placeholder{
+      color:rgba(244,237,228,.48);
+    }
+
+    .early-btn,
+    .jump-btn{
       flex:0 0 auto;
-      padding:14px 16px;
-      border-radius:14px;
-      border:1px solid rgba(176,107,80,.80);
-      background: linear-gradient(145deg, rgba(176,107,80,.55), rgba(176,107,80,.28));
-      color:#fff;
-      font-weight:900;
+      padding:15px 18px;
+      border-radius:16px;
+      border:1px solid rgba(198,151,97,.68);
+      background:
+        linear-gradient(180deg, rgba(201,144,84,.92), rgba(152,99,54,.94));
+      color:#fff7ef;
+      font-weight:700;
       font-size:16px;
       cursor:pointer;
-      box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18);
-      transition: transform .15s ease, opacity .2s ease;
+      box-shadow:
+        0 10px 24px rgba(0,0,0,.24),
+        inset 0 1px 0 rgba(255,255,255,.22);
+      transition: transform .15s ease, filter .2s ease, opacity .2s ease;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       white-space:nowrap;
+      font-family: Georgia, "Times New Roman", serif;
+      text-decoration:none;
     }
-    .early-btn:hover{ transform: translateY(-2px); opacity:.95; }
-    .early-btn:active{ transform: translateY(-1px); }
+
+    .early-btn:hover,
+    .jump-btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.04);
+    }
+
+    .early-btn:active,
+    .jump-btn:active{
+      transform:translateY(-1px);
+    }
 
     .fineprint{
-      margin-top:10px;
+      margin-top:11px;
       font-size:13px;
-      opacity:.65;
+      line-height:1.5;
+      color:var(--text-faint);
     }
 
     .form-msg{
       margin-top:12px;
       padding:12px 12px;
       border-radius:14px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
       display:none;
-      line-height:1.4;
+      line-height:1.45;
       font-size:14px;
     }
+
     .form-msg.success{
-      border-color: rgba(94, 214, 137, .55);
-      background: rgba(94, 214, 137, .10);
-      color: rgba(255,255,255,.95);
+      border-color: rgba(198,151,97,.38);
+      background: rgba(198,151,97,.10);
+      color: rgba(255,247,239,.96);
     }
+
     .form-msg.error{
-      border-color: rgba(255, 120, 120, .55);
-      background: rgba(255, 120, 120, .10);
-      color: rgba(255,255,255,.95);
+      border-color: rgba(255, 120, 120, .45);
+      background: rgba(255, 120, 120, .09);
+      color: rgba(255,247,239,.96);
     }
+
     .form-msg.loading{
-      border-color: rgba(176,107,80,.55);
-      background: rgba(176,107,80,.10);
-      color: rgba(255,255,255,.92);
+      border-color: rgba(198,151,97,.45);
+      background: rgba(198,151,97,.08);
+      color: rgba(255,247,239,.92);
     }
 
     .btn-dots{
@@ -332,6 +448,7 @@
       gap:4px;
       margin-left:8px;
     }
+
     .btn-dots span{
       width:6px;
       height:6px;
@@ -340,58 +457,50 @@
       opacity:.2;
       animation: dotPulse 1.2s infinite ease-in-out;
     }
+
     .btn-dots span:nth-child(2){ animation-delay:.2s; }
     .btn-dots span:nth-child(3){ animation-delay:.4s; }
+
     @keyframes dotPulse{
       0%, 80%, 100% { opacity:.2; transform: scale(1); }
       40% { opacity:1; transform: scale(1.2); }
     }
+
     .early-btn.loading .btn-text{ opacity:.65; }
     .early-btn.loading .btn-dots{ display:flex; }
 
-    /* ✅ Glow behaviour: only on focus + when jumped-to */
     .early-input:focus{
-      border-color: rgba(176,107,80,.95);
+      border-color: rgba(198,151,97,.85);
+      background: rgba(255,255,255,.05);
       box-shadow:
-        0 0 0 4px rgba(176,107,80,.16),
-        0 18px 45px rgba(0,0,0,.22);
+        0 0 0 4px rgba(198,151,97,.12),
+        0 16px 36px rgba(0,0,0,.22);
     }
+
     .early-input.glow-on{
-      border-color: rgba(176,107,80,.95);
+      border-color: rgba(198,151,97,.90);
       box-shadow:
-        0 0 0 4px rgba(176,107,80,.18),
+        0 0 0 4px rgba(198,151,97,.14),
         0 18px 45px rgba(0,0,0,.22);
       animation: earlyPulse 1.6s ease-in-out 2;
     }
+
     @keyframes earlyPulse{
       0%{
         box-shadow:
-          0 0 0 0px rgba(176,107,80,.00),
+          0 0 0 0 rgba(198,151,97,0),
           0 12px 30px rgba(0,0,0,.18);
       }
       50%{
         box-shadow:
-          0 0 0 7px rgba(176,107,80,.22),
+          0 0 0 7px rgba(198,151,97,.18),
           0 18px 45px rgba(0,0,0,.25);
       }
       100%{
         box-shadow:
-          0 0 0 4px rgba(176,107,80,.18),
+          0 0 0 4px rgba(198,151,97,.14),
           0 18px 45px rgba(0,0,0,.22);
       }
-    }
-
-    /* RIGHT SIDE: CAROUSEL CARD */
-    .hero-right{
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow-soft);
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      overflow:hidden;
     }
 
     .carousel-head{
@@ -400,25 +509,27 @@
       justify-content:space-between;
       gap:10px;
     }
+
     .carousel-head h2{
       margin:0;
-      font-size:16px;
-      font-weight:900;
-      letter-spacing:.2px;
+      font-size:17px;
+      font-weight:600;
     }
+
     .carousel-head p{
       margin:4px 0 0;
       font-size:13px;
-      color: rgba(255,255,255,.70);
+      color:var(--text-faint);
       line-height:1.45;
-      max-width: 44ch;
+      max-width:42ch;
     }
 
     .carousel{
       position:relative;
-      border-radius:18px;
-      background: rgba(0,0,0,.18);
-      border:1px solid rgba(255,255,255,.10);
+      border-radius:22px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.18), rgba(255,255,255,.02));
+      border:1px solid rgba(198,151,97,.12);
       padding:14px;
       overflow:hidden;
     }
@@ -431,26 +542,30 @@
       -webkit-overflow-scrolling: touch;
       padding-bottom:6px;
     }
+
     .track::-webkit-scrollbar{ height:8px; }
+
     .track::-webkit-scrollbar-thumb{
-      background: rgba(255,255,255,.16);
+      background: rgba(198,151,97,.16);
       border-radius:999px;
     }
 
     .shot{
       flex:0 0 auto;
       scroll-snap-align:center;
-      width: 210px;
-      max-width: 60vw;
-      border-radius:16px;
+      width:210px;
+      max-width:60vw;
+      border-radius:18px;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: 0 12px 25px rgba(0,0,0,.25);
-      background: rgba(255,255,255,.04);
+      border:1px solid rgba(198,151,97,.14);
+      box-shadow: 0 14px 28px rgba(0,0,0,.30);
+      background: rgba(255,255,255,.03);
     }
+
     @media (min-width: 900px){
-      .shot{ width: 240px; }
+      .shot{ width:240px; }
     }
+
     .shot img{
       width:100%;
       height:auto;
@@ -464,19 +579,27 @@
       gap:10px;
       margin-top:10px;
     }
+
     .car-btn{
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      color:#fff;
+      border:1px solid rgba(198,151,97,.18);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
       padding:10px 12px;
-      border-radius:12px;
+      border-radius:14px;
       cursor:pointer;
-      font-weight:800;
+      font-weight:600;
       font-size:14px;
-      transition: transform .12s ease, background .2s ease;
+      font-family: Georgia, "Times New Roman", serif;
+      transition: transform .12s ease, background .2s ease, border-color .2s ease;
     }
-    .car-btn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
-    .car-btn:active{ transform: translateY(0px); }
+
+    .car-btn:hover{
+      background: rgba(198,151,97,.10);
+      border-color: rgba(198,151,97,.28);
+      transform: translateY(-1px);
+    }
+
+    .car-btn:active{ transform: translateY(0); }
 
     .car-dots{
       display:flex;
@@ -485,122 +608,147 @@
       justify-content:center;
       flex:1 1 auto;
     }
+
     .car-dots button{
-      width:8px;height:8px;border-radius:50%;
+      width:8px;
+      height:8px;
+      border-radius:50%;
       border:0;
-      background: rgba(255,255,255,.22);
+      background: rgba(255,255,255,.18);
       cursor:pointer;
       padding:0;
     }
+
     .car-dots button[aria-current="true"]{
-      background: rgba(176,107,80,.95);
-      box-shadow: 0 0 0 4px rgba(176,107,80,.18);
+      background: var(--amber);
+      box-shadow: 0 0 0 4px rgba(198,151,97,.14);
     }
 
-    /* SECTIONS */
     .section{
       margin-top:22px;
       display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns:1fr 1fr 1fr;
       gap:14px;
     }
+
     @media (max-width: 900px){
-      .section{ grid-template-columns: 1fr; }
-    }
-    .card{
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 18px;
-      padding:16px;
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-size:16px;
-      font-weight:900;
-    }
-    .card p{
-      margin:0;
-      color: rgba(255,255,255,.75);
-      line-height:1.55;
-      font-size:14px;
+      .section{ grid-template-columns:1fr; }
     }
 
-    /* APP STORE PLACEHOLDERS */
+    .card{
+      padding:20px 18px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .step-no{
+      display:block;
+      margin-bottom:10px;
+      font-size:28px;
+      line-height:1;
+      color:rgba(198,151,97,.72);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:500;
+      color:var(--text);
+    }
+
+    .card p{
+      margin:0;
+      color:var(--text-soft);
+      line-height:1.7;
+      font-size:15px;
+    }
+
     .app-section{
       margin-top:22px;
-      border-radius: 18px;
-      padding:18px 16px;
-      background: rgba(176,107,80,.12);
-      border: 1px solid rgba(176,107,80,.35);
-      box-shadow: var(--shadow-soft);
+      padding:24px 18px;
+      background:
+        linear-gradient(180deg, rgba(198,151,97,.09), rgba(255,255,255,.02));
+      border:1px solid rgba(198,151,97,.20);
+      box-shadow:var(--shadow-soft);
     }
+
     .app-section h3{
-      margin:0 0 6px;
-      font-size:16px;
-      font-weight:900;
-      color: rgba(255,255,255,.96);
+      margin:0 0 10px;
+      font-size:20px;
+      font-weight:500;
+      color:var(--text);
     }
+
     .app-section p{
-      margin:0 0 14px;
-      color: rgba(255,255,255,.80);
-      line-height:1.55;
-      font-size:14px;
-      max-width: 70ch;
+      margin:0 0 16px;
+      color:var(--text-soft);
+      line-height:1.75;
+      font-size:15px;
+      max-width:42ch;
     }
 
     .store-row{
       display:grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:1fr 1fr;
       gap:14px;
-      margin-top:6px;
+      margin-top:8px;
     }
+
     @media (max-width:420px){
-      .store-row{ grid-template-columns: 1fr; }
+      .store-row{ grid-template-columns:1fr; }
     }
+
     .store-btn{
       display:flex;
       align-items:center;
       gap:12px;
-      padding:14px 16px;
-      border-radius:16px;
+      padding:16px 18px;
+      border-radius:18px;
       text-decoration:none;
-      font-weight:900;
-      letter-spacing:.2px;
-      border:1px solid rgba(176,107,80,.80);
-      background: linear-gradient(145deg, rgba(176,107,80,.45), rgba(176,107,80,.22));
-      color:#fff;
-      box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18);
-      transition: transform .15s ease, background .2s ease, border .2s ease;
+      font-weight:700;
+      border:1px solid rgba(198,151,97,.20);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
       width:100%;
       justify-content:flex-start;
     }
+
     .store-btn:hover{
-      background: linear-gradient(145deg, rgba(176,107,80,.58), rgba(176,107,80,.28));
-      border-color: rgba(176,107,80,.95);
+      background: rgba(198,151,97,.08);
+      border-color: rgba(198,151,97,.30);
       transform: translateY(-2px);
     }
+
     .store-btn:active{ transform: translateY(-1px); }
+
     .store-btn.disabled{
-      opacity:.75;
+      opacity:.94;
       pointer-events:none;
       transform:none !important;
     }
+
     .store-btn .label{
       display:flex;
       flex-direction:column;
-      line-height:1.1;
+      line-height:1.12;
     }
+
     .store-btn .small{
       font-size:11px;
-      opacity:.9;
-      font-weight:900;
-      letter-spacing:.6px;
+      opacity:.72;
+      font-weight:700;
+      letter-spacing:.8px;
       text-transform:uppercase;
+      color:var(--text-faint);
     }
+
     .store-btn .big{
       font-size:16px;
-      font-weight:900;
+      font-weight:500;
+      color:var(--text);
     }
+
     .store-ic{
       width:22px;
       height:22px;
@@ -609,19 +757,69 @@
       flex:0 0 auto;
     }
 
+    .big-cta{
+      margin-top:18px;
+      padding:28px 18px 26px;
+      text-align:center;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .big-cta h2{
+      margin:0 0 10px;
+      font-size:clamp(34px, 5vw, 52px);
+      line-height:1.08;
+      max-width:14ch;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .big-cta h2 em{
+      display:block;
+      font-style:italic;
+      color:rgba(244,237,228,.92);
+      font-weight:400;
+    }
+
+    .big-cta p{
+      margin:0 auto 18px;
+      max-width:26ch;
+      color:var(--text-soft);
+      font-size:17px;
+      line-height:1.7;
+    }
+
+    .cta-note{
+      margin-top:12px;
+      color:var(--text-faint);
+      font-size:14px;
+      line-height:1.6;
+      max-width:26ch;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
     footer{
       margin-top:34px;
-      color: rgba(255,255,255,.55);
+      color:var(--text-faint);
       font-size:13px;
       display:flex;
       justify-content:space-between;
       gap:10px;
       flex-wrap:wrap;
       align-items:center;
-      padding-top:12px;
+      padding-top:18px;
+      border-top:1px solid rgba(198,151,97,.14);
     }
-    footer a{ color: rgba(255,255,255,.7); text-decoration:none; }
-    footer a:hover{ text-decoration:underline; }
+
+    footer a{
+      color:rgba(244,237,228,.72);
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      color:var(--text);
+      text-decoration:none;
+    }
   </style>
 </head>
 
@@ -643,34 +841,35 @@
       <div class="hero-left" id="early">
         <div class="glow"></div>
 
-        <div class="kicker"><span class="dot"></span> Early access is free. Premium for life.<br>
-        Join over 75 families and start archiving your family's life.</div>
+        <div class="kicker">
+          <span class="dot"></span> Early access is free. Founding members keep premium for life.
+        </div>
 
         <h1>One day, your family will look back and know the story behind every photo.</h1>
 
         <p class="subline">
-          Most family memories quietly disappear over time. <br>
-          Rooted Memories organises everything <strong>by person</strong>, keeping your family history clear, private, and easy to grow.
+          Photos, stories, dates, and names all in one private family archive.
+          Organised <strong>by person</strong>, so the meaning never gets lost.
         </p>
 
         <div class="bullets">
           <ul>
-            <li><strong>Stop the chaos:</strong> one home for photos, stories, dates, and names.</li>
-            <li><strong>Organised properly:</strong> every memory attached to the right person.</li>
-            <li><strong>Invite-only:</strong> your family sees it. Not the public internet.</li>
+            <li><strong>One home for everything:</strong> memories stay together instead of disappearing across phones and chats.</li>
+            <li><strong>Built around people:</strong> every photo and story lives with the right person, date, and context.</li>
+            <li><strong>Private by design:</strong> invite-only access for your family. Not the public internet.</li>
           </ul>
         </div>
 
         <div class="micro">
-          Built for parents who want to keep the family together. And for families that don't want their stories forgotten.
+          Built for families who want to keep names, faces, and stories alive for the next generation.
         </div>
 
         <div class="divider"></div>
 
         <form id="earlyAccessFormTop" class="early-form" action="https://formspree.io/f/mqedopdn" method="POST" novalidate>
-          <input id="earlyEmail" class="early-input" type="email" name="email" placeholder="Enter your email for early access" required />
+          <input id="earlyEmail" class="early-input" type="email" name="email" placeholder="Your email address" required />
           <button class="early-btn" type="submit">
-            <span class="btn-text">Get Early Access</span>
+            <span class="btn-text">Join the list</span>
             <span class="btn-dots" aria-hidden="true"><span></span><span></span><span></span></span>
           </button>
         </form>
@@ -678,7 +877,7 @@
         <div id="earlyMsgTop" class="form-msg" role="status" aria-live="polite"></div>
 
         <div class="fineprint">
-          Free early access • Limited founding members • Private updates only (no spam) • <strong>First Wave Launching Summer 2026</strong>
+          Private updates only. No spam. Limited founding places. <strong>First wave launching Summer 2026.</strong>
         </div>
       </div>
 
@@ -686,7 +885,7 @@
         <div class="carousel-head">
           <div>
             <h2>Preview the app</h2>
-            <p>These are real screens from the current build. Swipe to view.</p>
+            <p>Real screens from the current build. Swipe through the experience.</p>
           </div>
         </div>
 
@@ -707,12 +906,9 @@
         </div>
 
         <div class="card" style="margin-top:0;">
-          <h3>What you’ll be able to do</h3>
+          <h3>What it does</h3>
           <p>
-            Build your family tree, drop in photos, captions, and stories.
-            All connected to the right person so it stays organised as the years go by.
-            Keep all your children's photos structured cleanly, and eventually hand over
-            their profile to take over.
+            Build your family tree, add photos, captions, and life stories, and keep everything attached to the right person so it stays meaningful over time.
           </p>
         </div>
       </div>
@@ -720,24 +916,29 @@
 
     <div id="how" class="section">
       <div class="card">
-        <h3>1) Build the tree</h3>
-        <p>Add relatives once. Invite family so they can contribute safely, without the mess of endless group chats.</p>
+        <span class="step-no">01</span>
+        <h3>Build the tree</h3>
+        <p>Add relatives once, then invite family members to contribute safely without the chaos of endless photo threads and lost context.</p>
       </div>
+
       <div class="card">
-        <h3>2) Add memories to people</h3>
-        <p>Photos + stories actually make sense when they’re attached to the the right person (with dates and context). View photos by
-          person, or in the full family feed.</p>
+        <span class="step-no">02</span>
+        <h3>Add memories to people</h3>
+        <p>Photos and stories make sense when they’re attached to the right person - with names, dates, and the story behind the moment.</p>
       </div>
+
       <div class="card">
-        <h3>3) Keep it for life</h3>
-        <p>A living archive your kids can open in 10–20 years and still feel like they know everyone.</p>
+        <span class="step-no">03</span>
+        <h3>Keep it for life</h3>
+        <p>A living archive your children can open in 10 or 20 years and still feel like they know everyone who came before them.</p>
       </div>
     </div>
 
     <div class="app-section" id="download">
-      <h3>Download the app</h3>
+      <h3>The app is coming</h3>
       <p>
-        Rooted Memories is launching soon. Early access members will get first access when iOS + Android are ready.
+        Rooted Memories launches Summer 2026 on iOS and Android.
+        Early access members are first through the door, you will be our founding families, and keep premium for life.
       </p>
 
       <div class="store-row">
@@ -767,18 +968,16 @@
       </div>
     </div>
 
-    <div class="section" style="grid-template-columns:1fr; margin-top:18px;">
-      <div class="card">
-        <h3>Get early access (free)</h3>
-        <p class="cta-text">
-          If this resonates, join the founding list. You’ll be first in line when we open early access. (limited places)
-        </p>
+    <div class="big-cta">
+      <h2>Archive your family's history today. Dont let your memories get lost to time.</em></h2>
+      <p>
+        Join the founding list. Free early access, limited places, and if this resonates, you’ll want to be first.
+      </p>
 
-        <button class="store-btn" type="button" id="jumpToEarly" style="justify-content:center;">
-          Get Early Access
-        </button>
+      <button class="jump-btn" type="button" id="jumpToEarly">Join the list</button>
 
-        <div class="fineprint">Private updates only. No spam.</div>
+      <div class="cta-note">
+        Private updates only. No spam. Unsubscribe any time.
       </div>
     </div>
 
@@ -856,11 +1055,8 @@
     // Form handler
     // ==========================
     (function wireEarlyAccessForm(){
-      const formId = 'earlyAccessFormTop';
-      const msgId  = 'earlyMsgTop';
-
-      const form = document.getElementById(formId);
-      const msg  = document.getElementById(msgId);
+      const form = document.getElementById('earlyAccessFormTop');
+      const msg  = document.getElementById('earlyMsgTop');
       if (!form || !msg) return;
 
       const btn  = form.querySelector('button[type="submit"]');
@@ -904,13 +1100,13 @@
 
             setMsg(
               'success',
-              "You're on the list - thank you. We’ll email within 24 hours with confirmation and next steps. Keep an eye on your inbox (and spam just in case)."
+              "You're on the list. Thank you. We’ll email you with confirmation and next steps. Keep an eye on your inbox and spam folder just in case."
             );
           } else {
             setMsg('error', "That didn’t send. Please try again.");
           }
         } catch(err){
-          setMsg('error', "Network issue — please try again.");
+          setMsg('error', "Network issue. Please try again.");
         } finally {
           btn.disabled = false;
           btn.classList.remove('loading');
