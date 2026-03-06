@@ -96,13 +96,12 @@
       min-width: 0;
     }
 
-    /* ✅ Logo positioning: keep it visually centred on mobile while freeing room for buttons */
     .logo{
       height:290px;
       width:auto;
       display:block;
       margin-top:-60px;
-      margin-left:-10px; /* subtle nudge left so nav fits better on small screens */
+      margin-left:-10px;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,.22));
       max-width: 52vw;
     }
@@ -132,7 +131,6 @@
       justify-content:flex-end;
     }
 
-    /* ✅ Mobile portrait: force buttons side-by-side (like your screenshot) */
     @media (max-width: 520px){
       .nav{
         flex-wrap:nowrap;
@@ -159,7 +157,6 @@
     }
     .pill:hover{ background: rgba(255,255,255,.1); }
 
-    /* HERO */
     .hero{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -253,7 +250,6 @@
       border-top:1px solid rgba(255,255,255,.10);
     }
 
-    /* EARLY ACCESS FORM */
     .early-form{
       margin-top:14px;
       display:flex;
@@ -349,7 +345,6 @@
     .early-btn.loading .btn-text{ opacity:.65; }
     .early-btn.loading .btn-dots{ display:flex; }
 
-    /* ✅ Glow behaviour: only on focus + when jumped-to */
     .early-input:focus{
       border-color: rgba(176,107,80,.95);
       box-shadow:
@@ -381,7 +376,6 @@
       }
     }
 
-    /* RIGHT SIDE: CAROUSEL CARD */
     .hero-right{
       border-radius: var(--radius);
       background: rgba(255,255,255,.05);
@@ -497,7 +491,6 @@
       box-shadow: 0 0 0 4px rgba(176,107,80,.18);
     }
 
-    /* SECTIONS */
     .section{
       margin-top:22px;
       display:grid;
@@ -525,7 +518,6 @@
       font-size:14px;
     }
 
-    /* APP STORE PLACEHOLDERS */
     .app-section{
       margin-top:22px;
       border-radius: 18px;
@@ -607,6 +599,51 @@
       display:block;
       opacity:.95;
       flex:0 0 auto;
+    }
+
+    /* Larger bottom CTA in same green site colour scheme */
+    .big-cta{
+      margin-top:18px;
+      padding:40px 22px 34px;
+      text-align:center;
+      background:
+        radial-gradient(900px 300px at 50% 0%, rgba(176,107,80,.18), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .big-cta h2{
+      margin:0 0 12px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height:1.08;
+      max-width: 13ch;
+      margin-left:auto;
+      margin-right:auto;
+      color:#fff;
+    }
+
+    .big-cta p{
+      margin:0 auto 20px;
+      max-width: 34ch;
+      color: rgba(255,255,255,.80);
+      font-size:17px;
+      line-height:1.65;
+    }
+
+    .big-cta .store-btn{
+      justify-content:center;
+      max-width:260px;
+      margin:0 auto;
+    }
+
+    .cta-note{
+      margin-top:12px;
+      color: rgba(255,255,255,.62);
+      font-size:14px;
+      line-height:1.6;
     }
 
     footer{
@@ -767,19 +804,17 @@
       </div>
     </div>
 
-    <div class="section" style="grid-template-columns:1fr; margin-top:18px;">
-      <div class="card">
-        <h3>Get early access (free)</h3>
-        <p class="cta-text">
-          If this resonates, join the founding list. You’ll be first in line when we open early access. (limited places)
-        </p>
+    <div class="big-cta">
+      <h2>Get early access (free)</h2>
+      <p>
+        If this resonates, join the founding list. You’ll be first in line when we open early access. (limited places)
+      </p>
 
-        <button class="store-btn" type="button" id="jumpToEarly" style="justify-content:center;">
-          Get Early Access
-        </button>
+      <button class="store-btn" type="button" id="jumpToEarly">
+        Get Early Access
+      </button>
 
-        <div class="fineprint">Private updates only. No spam.</div>
-      </div>
+      <div class="cta-note">Private updates only. No spam.</div>
     </div>
 
     <footer>
