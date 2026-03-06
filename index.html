@@ -157,6 +157,21 @@
     }
     .pill:hover{ background: rgba(255,255,255,.1); }
 
+    /* Top-right Join Early Access button now matches the other CTA buttons */
+    .join-pill{
+      border:1px solid rgba(176,107,80,.80) !important;
+      background: linear-gradient(145deg, rgba(176,107,80,.55), rgba(176,107,80,.28)) !important;
+      color:#fff !important;
+      font-weight:900;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18) !important;
+    }
+    .join-pill:hover{
+      background: linear-gradient(145deg, rgba(176,107,80,.58), rgba(176,107,80,.28)) !important;
+      border-color: rgba(176,107,80,.95) !important;
+      transform: translateY(-2px);
+      opacity:.95;
+    }
+
     .hero{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -601,7 +616,6 @@
       flex:0 0 auto;
     }
 
-    /* Larger bottom CTA in same green site colour scheme */
     .big-cta{
       margin-top:18px;
       padding:40px 22px 34px;
@@ -672,7 +686,7 @@
 
       <div class="nav">
         <a class="pill" href="#how">How it works</a>
-        <a class="pill" href="#early" data-join-early>Join Early Access</a>
+        <a class="pill join-pill" href="#early" data-join-early>Join Early Access</a>
       </div>
     </div>
 
@@ -805,7 +819,7 @@
     </div>
 
     <div class="big-cta">
-      <h2>Your family's story deserves more than a group chat.</h2>
+      <h2>Get early access (free)</h2>
       <p>
         If this resonates, join the founding list. You’ll be first in line when we open early access. (limited places)
       </p>
