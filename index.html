@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta name="facebook-domain-verification" content="dwjtp5c0bdc1xm2o80g1uas5mmvkbj" />
-  <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -15,738 +14,877 @@
   fbq('init', '1927964177837230');
   fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"/></noscript>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Rooted Memories | Your private family archive</title>
   <link rel="canonical" href="https://rootedmemories.co.uk/" />
-
   <meta name="description" content="Rooted Memories is your private family archive: organise photos and stories by person, build a family tree, and preserve your family history for generations." />
-
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Rooted Memories" />
   <meta property="og:title" content="Rooted Memories | Your private family archive" />
-  <meta property="og:description" content="One private place for your family’s photos + stories, organised by person — not lost in group chats." />
+  <meta property="og:description" content="One private place for your family's photos + stories, organised by person — not lost in group chats." />
   <meta property="og:url" content="https://rootedmemories.co.uk/" />
   <meta property="og:image" content="https://rootedmemories.co.uk/og-image.1.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rooted Memories | Your private family archive" />
-  <meta name="twitter:description" content="One private place for your family’s photos + stories, organised by person — not lost in group chats." />
+  <meta name="twitter:description" content="One private place for your family's photos + stories, organised by person — not lost in group chats." />
   <meta name="twitter:image" content="https://rootedmemories.co.uk/og-image.1.png" />
-
   <link rel="icon" type="image/png" sizes="32x32" href="favicon2.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon2.png" />
-  <meta name="theme-color" content="#0f3a2f" />
+  <meta name="theme-color" content="#1a0f08" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --forest:#0f3a2f;
-      --forest-2:#0b2f26;
-      --cream:#f3ece4;
-      --cream-2:#e9dfd2;
-      --accent:#b06b50;
-      --text:#0f1a15;
-      --muted:rgba(255,255,255,.75);
-      --shadow: 0 18px 45px rgba(0,0,0,.25);
-      --shadow-soft: 0 12px 30px rgba(0,0,0,.18);
-      --radius: 22px;
+    :root {
+      --ink:        #0e0905;
+      --ink-2:      #1c1108;
+      --ink-3:      #251a0d;
+      --amber:      #c17a3a;
+      --amber-soft: #d4945c;
+      --amber-pale: rgba(193,122,58,.14);
+      --cream:      #f5ede0;
+      --cream-2:    #ede0cc;
+      --cream-3:    #e2d0b5;
+      --text-warm:  rgba(245,237,224,.92);
+      --text-muted: rgba(245,237,224,.58);
+      --text-dim:   rgba(245,237,224,.38);
+      --border:     rgba(245,237,224,.10);
+      --border-warm:rgba(193,122,58,.28);
+      --radius:     20px;
     }
 
-    *{box-sizing:border-box}
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:#fff;
-      background:
-        radial-gradient(1200px 600px at 20% 20%, rgba(176,107,80,.35), transparent 60%),
-        radial-gradient(1000px 650px at 80% 10%, rgba(243,236,228,.12), transparent 55%),
-        linear-gradient(180deg, #081f18 0%, #071a14 60%, #061612 100%);
-      min-height:100vh;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Lora', Georgia, 'Times New Roman', serif;
+      color: var(--text-warm);
+      background: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:20px 18px 70px;
+    /* Grain texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.028;
+      pointer-events: none;
+      z-index: 999;
     }
 
-    /* ✅ Header cleanup */
-    .top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:8px;
+    /* Warm ambient light from above */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at 50% 30%, rgba(193,122,58,.18) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      text-decoration:none;
-      color:#fff;
-      min-width:0;
+    /* ─── Layout ─────────────────────── */
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 22px 80px;
+      position: relative;
+      z-index: 1;
     }
 
-    .logo{
-      height:290px;
-      width:auto;
-      display:block;
-      margin-top:-52px;
-      margin-left:-10px;
-      max-width:none;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.22));
-    }
-    @media (min-width:900px){
-      .logo{
-        height:380px;
-        margin-top:-60px;
-        margin-left:0;
-        max-width:none;
-      }
+    /* ─── Nav ────────────────────────── */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0 0;
+      gap: 16px;
     }
 
-    .brand span{
-      position:absolute;
-      width:1px;height:1px;
-      padding:0;margin:-1px;
-      overflow:hidden;
-      clip:rect(0,0,0,0);
-      white-space:nowrap;
-      border:0;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-warm);
     }
 
-    .nav{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:12px;
-      justify-content:flex-end;
+    .logo {
+      height: 68px;
+      width: auto;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,.35));
     }
 
-    .pill{
-      border:1px solid rgba(255,255,255,.16);
-      color:rgba(255,255,255,.9);
-      background: rgba(255,255,255,.06);
-      padding:10px 14px;
-      border-radius:999px;
-      font-size:14px;
-      text-decoration:none;
-      backdrop-filter: blur(10px);
-      white-space:nowrap;
-    }
-    .pill:hover{ background: rgba(255,255,255,.1); }
-    
-      .nav{
-        flex-wrap:nowrap;
-        gap:8px;
-        margin-top:10px;
-        align-items:center;
-        justify-content:flex-end;
-      }
-      .pill{
-        padding:9px 11px;
-        font-size:13px;
-      }
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
     }
 
-    /* HERO */
-    .hero{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:22px;
-      align-items:stretch;
+    .pill {
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      background: rgba(245,237,224,.04);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-family: 'Lora', serif;
+      text-decoration: none;
+      letter-spacing: .3px;
+      transition: all .2s ease;
     }
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-      .nav{ justify-content:flex-end; }
+    .pill:hover {
+      border-color: var(--border-warm);
+      color: var(--text-warm);
+      background: rgba(193,122,58,.08);
+    }
+    .pill.accent {
+      border-color: var(--border-warm);
+      background: rgba(193,122,58,.12);
+      color: var(--amber-soft);
+    }
+    .pill.accent:hover {
+      background: rgba(193,122,58,.22);
     }
 
-    .hero-left{
-      padding:26px 22px;
+    /* ─── Hero ───────────────────────── */
+    .hero {
+      margin-top: 52px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; margin-top: 40px; }
+    }
+
+    /* Left: copy */
+    .hero-copy {
+      padding-right: 10px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Lora', serif;
+      font-size: 12.5px;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      color: var(--amber-soft);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp .7s ease .1s forwards;
+    }
+
+    .kicker-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #5ad68a;
+      box-shadow: 0 0 0 4px rgba(90,214,138,.14);
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 500;
+      line-height: 1.06;
+      letter-spacing: -.5px;
+      color: var(--cream);
+      margin-bottom: 22px;
+      opacity: 0;
+      animation: fadeUp .8s ease .2s forwards;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--cream-2);
+      font-weight: 300;
+    }
+
+    .subline {
+      font-size: 17px;
+      line-height: 1.72;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      max-width: 52ch;
+      opacity: 0;
+      animation: fadeUp .8s ease .3s forwards;
+    }
+
+    .subline strong {
+      color: var(--text-warm);
+      font-weight: 500;
+    }
+
+    /* Truths list */
+    .truths {
+      list-style: none;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      opacity: 0;
+      animation: fadeUp .8s ease .4s forwards;
+    }
+
+    .truths li {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .truth-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid var(--border-warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+      color: var(--amber-soft);
+      font-size: 11px;
+    }
+
+    .truths li strong {
+      color: var(--cream-2);
+      font-weight: 500;
+    }
+
+    /* Form */
+    .form-wrap {
+      opacity: 0;
+      animation: fadeUp .8s ease .5s forwards;
+    }
+
+    .form-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--border-warm);
+      margin-bottom: 18px;
+      opacity: .6;
+    }
+
+    .early-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .early-input {
+      flex: 1 1 240px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(245,237,224,.05);
+      color: var(--cream);
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color .25s, box-shadow .25s;
+    }
+    .early-input::placeholder { color: var(--text-dim); }
+    .early-input:focus {
+      border-color: rgba(193,122,58,.7);
+      box-shadow: 0 0 0 4px rgba(193,122,58,.12);
+    }
+    .early-input.glow-on {
+      border-color: rgba(193,122,58,.9);
+      box-shadow: 0 0 0 5px rgba(193,122,58,.16);
+      animation: inputPulse 1.6s ease 2;
+    }
+    @keyframes inputPulse {
+      0% { box-shadow: 0 0 0 0 rgba(193,122,58,.0); }
+      50% { box-shadow: 0 0 0 7px rgba(193,122,58,.22); }
+      100% { box-shadow: 0 0 0 5px rgba(193,122,58,.16); }
+    }
+
+    .early-btn {
+      flex-shrink: 0;
+      padding: 14px 22px;
+      border-radius: 14px;
+      border: 1px solid rgba(193,122,58,.7);
+      background: linear-gradient(155deg, rgba(193,122,58,.65) 0%, rgba(193,122,58,.35) 100%);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: .3px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.14);
+      transition: transform .15s, opacity .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .early-btn:hover { transform: translateY(-2px); opacity: .92; }
+    .early-btn:active { transform: translateY(-1px); }
+    .early-btn.loading .btn-text { opacity: .6; }
+    .early-btn.loading .btn-dots { display: flex; }
+
+    .btn-dots {
+      display: none;
+      align-items: center;
+      gap: 3px;
+    }
+    .btn-dots span {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--cream);
+      opacity: .3;
+      animation: dotPulse 1.2s infinite ease-in-out;
+    }
+    .btn-dots span:nth-child(2) { animation-delay: .2s; }
+    .btn-dots span:nth-child(3) { animation-delay: .4s; }
+    @keyframes dotPulse {
+      0%,80%,100% { opacity:.3; transform: scale(1); }
+      40% { opacity:1; transform: scale(1.3); }
+    }
+
+    .fineprint {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: var(--text-dim);
+      letter-spacing: .2px;
+      line-height: 1.5;
+    }
+    .fineprint strong { color: var(--text-muted); font-weight: 500; }
+
+    .form-msg {
+      display: none;
+      margin-top: 12px;
+      padding: 13px 16px;
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.5;
+      border: 1px solid transparent;
+    }
+    .form-msg.success { display:block; background:rgba(90,214,138,.08); border-color: rgba(90,214,138,.3); color: var(--text-warm); }
+    .form-msg.error   { display:block; background:rgba(255,100,100,.08); border-color: rgba(255,100,100,.3); color: var(--text-warm); }
+    .form-msg.loading { display:block; background: var(--amber-pale); border-color: var(--border-warm); color: var(--text-warm); }
+
+    /* Right: app preview */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      opacity: 0;
+      animation: fadeIn .9s ease .4s forwards;
+    }
+
+    .preview-label {
+      font-family: 'Lora', serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      color: var(--amber-soft);
+      opacity: .75;
+      margin-bottom: 14px;
+    }
+
+    .carousel-frame {
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: rgba(245,237,224,.03);
+      padding: 14px 14px 10px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.45);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Warm vignette on carousel */
+    .carousel-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(193,122,58,.04) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .track {
+      display: flex;
+      gap: 10px;
+      overflow: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 4px;
+    }
+    .track::-webkit-scrollbar { height: 0; }
+
+    .shot {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      width: 200px;
+      max-width: 55vw;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(245,237,224,.10);
+      box-shadow: 0 10px 28px rgba(0,0,0,.35);
+    }
+    .shot img { width: 100%; height: auto; display: block; }
+
+    @media (min-width: 860px) { .shot { width: 220px; } }
+
+    .car-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      padding: 0 2px;
+    }
+
+    .car-btn {
+      border: 1px solid var(--border);
+      background: rgba(245,237,224,.04);
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Lora', serif;
+      font-size: 13px;
+      letter-spacing: .3px;
+      transition: all .2s;
+    }
+    .car-btn:hover { background: rgba(245,237,224,.08); color: var(--text-warm); }
+
+    .car-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .car-dots button {
+      width: 7px; height: 7px; border-radius: 50%;
+      border: 0;
+      background: rgba(245,237,224,.18);
+      cursor: pointer;
+      padding: 0;
+      transition: all .2s;
+    }
+    .car-dots button[aria-current="true"] {
+      background: var(--amber);
+      box-shadow: 0 0 0 3px rgba(193,122,58,.2);
+    }
+
+    /* ─── Divider ornament ───────────── */
+    .ornament {
+      text-align: center;
+      margin: 64px 0 52px;
+      color: var(--border-warm);
+      font-size: 18px;
+      letter-spacing: 14px;
+      opacity: .5;
+      position: relative;
+    }
+    .ornament::before, .ornament::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: calc(50% - 60px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-warm));
+    }
+    .ornament::before { left: 0; background: linear-gradient(90deg, transparent, var(--border-warm)); }
+    .ornament::after  { right: 0; background: linear-gradient(270deg, transparent, var(--border-warm)); }
+
+    /* ─── How it works ───────────────── */
+    .section-label {
+      font-family: 'Lora', serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--amber-soft);
+      opacity: .7;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .section-title em { font-style: italic; font-weight: 300; }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 60ch;
+      margin-bottom: 44px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 720px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+
+    .step {
+      position: relative;
+      padding: 28px 24px;
       border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
+      border: 1px solid var(--border);
+      background: rgba(245,237,224,.028);
+      transition: border-color .3s, background .3s;
     }
-    .glow{
-      position:absolute;
-      inset:-120px -180px auto auto;
-      width:420px; height:420px;
-      border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, rgba(176,107,80,.55), transparent 60%);
-      filter: blur(2px);
-      opacity:.9;
-      pointer-events:none;
+    .step:hover {
+      border-color: var(--border-warm);
+      background: rgba(193,122,58,.04);
     }
 
-    .kicker{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:13px;
-      color: rgba(255,255,255,.9);
-      margin-bottom:12px;
-    }
-    .dot{
-      width:8px;height:8px;border-radius:50%;
-      background: rgba(94, 214, 137, .9);
-      box-shadow: 0 0 0 4px rgba(94, 214, 137, .12);
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--amber);
+      opacity: .35;
+      line-height: 1;
+      margin-bottom: 12px;
     }
 
-    h1{
-      margin:0 0 10px;
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      font-size: clamp(34px, 4.2vw, 54px);
-      line-height: 1.05;
+    .step h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 10px;
       letter-spacing: .2px;
     }
 
-    /* ✅ Less dense */
-    .subline{
-      margin:0 0 14px;
-      font-size:17px;
-      line-height:1.6;
-      color: var(--muted);
-      max-width: 62ch;
+    .step p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
     }
 
-    .bullets{
-      margin:14px 0 0;
-      padding:12px 14px;
-      border-radius:16px;
-      background: rgba(176,107,80,.12);
-      border:1px solid rgba(176,107,80,.35);
-      color: rgba(255,255,255,.92);
-    }
-    .bullets ul{
-      margin:0;
-      padding-left:18px;
-    }
-    .bullets li{
-      margin:7px 0;
-      line-height:1.5;
-      font-size:15px;
-    }
-    .micro{
-      margin-top:10px;
-      font-size: 13px;
-      color: rgba(255,255,255,.62);
+    /* Connecting line between steps */
+    .steps-track {
+      position: relative;
     }
 
-    .divider{
-      margin-top:20px;
-      border-top:1px solid rgba(255,255,255,.10);
+    /* ─── App download ───────────────── */
+    .download-section {
+      margin-top: 60px;
+      padding: 42px 40px;
+      border-radius: 24px;
+      border: 1px solid var(--border-warm);
+      background: linear-gradient(135deg, rgba(193,122,58,.09) 0%, rgba(193,122,58,.03) 100%);
+      position: relative;
+      overflow: hidden;
     }
 
-    /* EARLY ACCESS FORM */
-    .early-form{
-      margin-top:14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:stretch;
-    }
-    .early-input{
-      flex:1 1 260px;
-      padding:14px 14px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.20);
-      background: rgba(255,255,255,.08);
-      color:#fff;
-      font-size:16px;
-      outline:none;
-      transition: box-shadow .25s ease, border-color .25s ease;
-    }
-    .early-input::placeholder{ color: rgba(255,255,255,.6); }
-
-    .early-btn{
-      flex:0 0 auto;
-      padding:14px 16px;
-      border-radius:14px;
-      border:1px solid rgba(176,107,80,.80);
-      background: linear-gradient(145deg, rgba(176,107,80,.55), rgba(176,107,80,.28));
-      color:#fff;
-      font-weight:900;
-      font-size:16px;
-      cursor:pointer;
-      box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18);
-      transition: transform .15s ease, opacity .2s ease;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      white-space:nowrap;
-    }
-    .early-btn:hover{ transform: translateY(-2px); opacity:.95; }
-    .early-btn:active{ transform: translateY(-1px); }
-
-    .fineprint{
-      margin-top:10px;
-      font-size:13px;
-      opacity:.65;
+    .download-section::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193,122,58,.15) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .form-msg{
-      margin-top:12px;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      display:none;
-      line-height:1.4;
-      font-size:14px;
-    }
-    .form-msg.success{
-      border-color: rgba(94, 214, 137, .55);
-      background: rgba(94, 214, 137, .10);
-      color: rgba(255,255,255,.95);
-    }
-    .form-msg.error{
-      border-color: rgba(255, 120, 120, .55);
-      background: rgba(255, 120, 120, .10);
-      color: rgba(255,255,255,.95);
-    }
-    .form-msg.loading{
-      border-color: rgba(176,107,80,.55);
-      background: rgba(176,107,80,.10);
-      color: rgba(255,255,255,.92);
+    @media (max-width: 600px) {
+      .download-section { padding: 28px 22px; }
     }
 
-    .btn-dots{
-      display:none;
-      align-items:center;
-      gap:4px;
-      margin-left:8px;
+    .download-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
     }
-    .btn-dots span{
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:#fff;
-      opacity:.2;
-      animation: dotPulse 1.2s infinite ease-in-out;
-    }
-    .btn-dots span:nth-child(2){ animation-delay:.2s; }
-    .btn-dots span:nth-child(3){ animation-delay:.4s; }
-    @keyframes dotPulse{
-      0%, 80%, 100% { opacity:.2; transform: scale(1); }
-      40% { opacity:1; transform: scale(1.2); }
-    }
-    .early-btn.loading .btn-text{ opacity:.65; }
-    .early-btn.loading .btn-dots{ display:flex; }
-
-    .early-input:focus{
-      border-color: rgba(176,107,80,.95);
-      box-shadow:
-        0 0 0 4px rgba(176,107,80,.16),
-        0 18px 45px rgba(0,0,0,.22);
-    }
-    .early-input.glow-on{
-      border-color: rgba(176,107,80,.95);
-      box-shadow:
-        0 0 0 4px rgba(176,107,80,.18),
-        0 18px 45px rgba(0,0,0,.22);
-      animation: earlyPulse 1.6s ease-in-out 2;
-    }
-    @keyframes earlyPulse{
-      0%{
-        box-shadow:
-          0 0 0 0px rgba(176,107,80,.00),
-          0 12px 30px rgba(0,0,0,.18);
-      }
-      50%{
-        box-shadow:
-          0 0 0 7px rgba(176,107,80,.22),
-          0 18px 45px rgba(0,0,0,.25);
-      }
-      100%{
-        box-shadow:
-          0 0 0 4px rgba(176,107,80,.18),
-          0 18px 45px rgba(0,0,0,.22);
-      }
+    @media (max-width: 700px) {
+      .download-grid { grid-template-columns: 1fr; }
     }
 
-    /* RIGHT SIDE: CAROUSEL CARD */
-    .hero-right{
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow-soft);
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      gap:14px; /* ✅ more breathing room */
-      overflow:hidden;
+    .download-section h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+    .download-section p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 48ch;
     }
 
-    .carousel-head{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .carousel-head h2{
-      margin:0;
-      font-size:16px;
-      font-weight:900;
-      letter-spacing:.2px;
-    }
-    .carousel-head p{
-      margin:4px 0 0;
-      font-size:13px;
-      color: rgba(255,255,255,.70);
-      line-height:1.45;
-      max-width: 44ch;
+    .store-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .carousel{
-      position:relative;
-      border-radius:18px;
-      background: rgba(0,0,0,.18);
-      border:1px solid rgba(255,255,255,.10);
-      padding:14px;
-      overflow:hidden;
+    .store-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      border: 1px solid var(--border-warm);
+      background: rgba(193,122,58,.14);
+      color: var(--cream);
+      box-shadow: 0 6px 18px rgba(0,0,0,.25);
+      transition: all .2s;
+      white-space: nowrap;
     }
-
-    .track{
-      display:flex;
-      gap:12px;
-      overflow:auto;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom:6px;
-    }
-    .track::-webkit-scrollbar{ height:8px; }
-    .track::-webkit-scrollbar-thumb{
-      background: rgba(255,255,255,.16);
-      border-radius:999px;
-    }
-
-    .shot{
-      flex:0 0 auto;
-      scroll-snap-align:center;
-      width: 210px;
-      max-width: 60vw;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: 0 12px 25px rgba(0,0,0,.25);
-      background: rgba(255,255,255,.04);
-    }
-    @media (min-width: 900px){
-      .shot{ width: 240px; }
-    }
-    @media (max-width: 520px){
-      .shot{ width: 220px; } /* ✅ nicer on small screens */
-    }
-    .shot img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
-    .car-controls{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      margin-top:12px; /* ✅ more breathing room */
-    }
-    .car-btn{
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      color:#fff;
-      padding:10px 12px;
-      border-radius:12px;
-      cursor:pointer;
-      font-weight:800;
-      font-size:14px;
-      transition: transform .12s ease, background .2s ease;
-    }
-    .car-btn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
-    .car-btn:active{ transform: translateY(0px); }
-
-    .car-dots{
-      display:flex;
-      gap:6px;
-      align-items:center;
-      justify-content:center;
-      flex:1 1 auto;
-    }
-    .car-dots button{
-      width:8px;height:8px;border-radius:50%;
-      border:0;
-      background: rgba(255,255,255,.22);
-      cursor:pointer;
-      padding:0;
-    }
-    .car-dots button[aria-current="true"]{
-      background: rgba(176,107,80,.95);
-      box-shadow: 0 0 0 4px rgba(176,107,80,.18);
-    }
-
-    /* SECTIONS */
-    .section{
-      margin-top:22px;
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width: 900px){
-      .section{ grid-template-columns: 1fr; }
-    }
-    .card{
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 18px;
-      padding:16px;
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-size:16px;
-      font-weight:900;
-    }
-    .card p{
-      margin:0;
-      color: rgba(255,255,255,.75);
-      line-height:1.55;
-      font-size:14px;
-    }
-
-    /* APP STORE PLACEHOLDERS */
-    .app-section{
-      margin-top:22px;
-      border-radius: 18px;
-      padding:18px 16px;
-      background: rgba(176,107,80,.12);
-      border: 1px solid rgba(176,107,80,.35);
-      box-shadow: var(--shadow-soft);
-    }
-    .app-section h3{
-      margin:0 0 6px;
-      font-size:16px;
-      font-weight:900;
-      color: rgba(255,255,255,.96);
-    }
-    .app-section p{
-      margin:0 0 14px;
-      color: rgba(255,255,255,.80);
-      line-height:1.55;
-      font-size:14px;
-      max-width: 70ch;
-    }
-
-    .store-row{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      margin-top:6px;
-    }
-    @media (max-width:420px){
-      .store-row{ grid-template-columns: 1fr; }
-    }
-    .store-btn{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:14px 16px;
-      border-radius:16px;
-      text-decoration:none;
-      font-weight:900;
-      letter-spacing:.2px;
-      border:1px solid rgba(176,107,80,.80);
-      background: linear-gradient(145deg, rgba(176,107,80,.45), rgba(176,107,80,.22));
-      color:#fff;
-      box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18);
-      transition: transform .15s ease, background .2s ease, border .2s ease;
-      width:100%;
-      justify-content:flex-start;
-    }
-    .store-btn:hover{
-      background: linear-gradient(145deg, rgba(176,107,80,.58), rgba(176,107,80,.28));
-      border-color: rgba(176,107,80,.95);
+    .store-btn:hover:not(.disabled) {
+      background: rgba(193,122,58,.24);
       transform: translateY(-2px);
     }
-    .store-btn:active{ transform: translateY(-1px); }
-    .store-btn.disabled{
-      opacity:.75;
-      pointer-events:none;
-      transform:none !important;
+    .store-btn.disabled { opacity: .65; pointer-events: none; }
+
+    .store-btn .label { display: flex; flex-direction: column; line-height: 1.1; }
+    .store-btn .small { font-size: 10px; letter-spacing: .7px; text-transform: uppercase; opacity: .8; }
+    .store-btn .big   { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 500; }
+
+    .store-ic { width: 20px; height: 20px; flex-shrink: 0; opacity: .9; }
+
+    /* ─── Bottom CTA ─────────────────── */
+    .cta-section {
+      margin-top: 60px;
+      text-align: center;
+      padding: 56px 32px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: rgba(245,237,224,.02);
+      position: relative;
+      overflow: hidden;
     }
-    .store-btn .label{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
-    .store-btn .small{
-      font-size:11px;
-      opacity:.9;
-      font-weight:900;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-    }
-    .store-btn .big{
-      font-size:16px;
-      font-weight:900;
-    }
-    .store-ic{
-      width:22px;
-      height:22px;
-      display:block;
-      opacity:.95;
-      flex:0 0 auto;
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(193,122,58,.10) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    footer{
-      margin-top:34px;
-      color: rgba(255,255,255,.55);
-      font-size:13px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      padding-top:12px;
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.12;
+      margin-bottom: 14px;
     }
-    footer a{ color: rgba(255,255,255,.7); text-decoration:none; }
-    footer a:hover{ text-decoration:underline; }
+    .cta-section h2 em { font-style: italic; font-weight: 300; }
+
+    .cta-section p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 46ch;
+      margin: 0 auto 30px;
+    }
+
+    .cta-form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ─── Footer ─────────────────────── */
+    footer {
+      margin-top: 52px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    footer a { color: var(--text-muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--amber-soft); }
+
+    /* ─── Animations ─────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="top">
-      <a class="brand" href="#">
-        <img class="logo" src="logo.png" alt="Rooted Memories" />
-        <span>Rooted Memories</span>
-      </a>
+<div class="wrap">
 
-      <div class="nav">
-        <a class="pill" href="#how">How it works</a>
-        <a class="pill" href="#early" data-join-early>Join Early Access</a>
-      </div>
+  <!-- ── Nav ── -->
+  <nav class="nav">
+    <a class="brand" href="#">
+      <img class="logo" src="logo.png" alt="Rooted Memories" />
+    </a>
+    <div class="nav-links">
+      <a class="pill" href="#how">How it works</a>
+      <a class="pill accent" href="#early" data-join-early>Join Early Access</a>
     </div>
+  </nav>
 
-    <div class="hero">
-      <div class="hero-left" id="early">
-        <div class="glow"></div>
+  <!-- ── Hero ── -->
+  <div class="hero" style="margin-top:60px;">
 
-        <div class="kicker"><span class="dot"></span> Early access is free. Premium for life.<br>
-        Join over 75 families and start archiving your family's life.</div>
+    <div class="hero-copy">
+      <div class="kicker">
+        <span class="kicker-dot"></span>
+        Early access · Free forever · 75+ families
+      </div>
 
-        <h1>One day, your family will look back and know the story behind every photo.</h1>
+      <h1>One day, your family will look back and <em>know the story</em> behind every photo.</h1>
 
-        <p class="subline">
-          Most family memories quietly disappear over time. <br>
-          Rooted Memories organises everything <strong>by person</strong>, keeping your family history clear, private, and easy to grow.
-        </p>
+      <p class="subline">
+        Most family memories quietly disappear over time.
+        Rooted Memories organises everything <strong>by person</strong> — keeping your family history clear, private, and easy to grow.
+      </p>
 
-        <div class="bullets">
-          <ul>
-            <li><strong>Stop the chaos:</strong> one home for photos, stories, dates, and names.</li>
-            <li><strong>Organised properly:</strong> every memory attached to the right person.</li>
-            <li><strong>Invite-only:</strong> your family sees it. Not the public internet.</li>
-          </ul>
-        </div>
+      <ul class="truths">
+        <li>
+          <span class="truth-icon">✦</span>
+          <span><strong>One home</strong> for photos, stories, dates, and names. Not scattered across group chats.</span>
+        </li>
+        <li>
+          <span class="truth-icon">✦</span>
+          <span><strong>Organised properly:</strong> every memory attached to the right person — with context.</span>
+        </li>
+        <li>
+          <span class="truth-icon">✦</span>
+          <span><strong>Invite-only.</strong> Your family sees it. Not the public internet.</span>
+        </li>
+      </ul>
 
-        <div class="micro">
-          Built for parents who want to keep the family together. And for families that don't want their stories forgotten.
-        </div>
-
-        <div class="divider"></div>
-
+      <div class="form-wrap" id="early">
+        <div class="form-rule"></div>
         <form id="earlyAccessFormTop" class="early-form" action="https://formspree.io/f/mqedopdn" method="POST" novalidate>
-          <input id="earlyEmail" class="early-input" type="email" name="email" placeholder="Enter your email for early access" required />
+          <input id="earlyEmail" class="early-input" type="email" name="email" placeholder="Your email address" required />
           <button class="early-btn" type="submit">
             <span class="btn-text">Get Early Access</span>
             <span class="btn-dots" aria-hidden="true"><span></span><span></span><span></span></span>
           </button>
         </form>
-
         <div id="earlyMsgTop" class="form-msg" role="status" aria-live="polite"></div>
-
-        <div class="fineprint">
-          Free early access • Limited founding members • Private updates only (no spam) • <strong>First Wave Launching Summer 2026</strong>
-        </div>
+        <p class="fineprint">
+          Free early access · Limited founding members · Private updates only<br>
+          <strong>First Wave Launching Summer 2026</strong>
+        </p>
       </div>
+    </div>
 
-      <div class="hero-right">
-        <div class="carousel-head">
-          <div>
-            <h2>Preview the app</h2>
-            <p>These are real screens from the current build. Swipe to view.</p>
-          </div>
+    <!-- App preview -->
+    <div class="hero-right">
+      <p class="preview-label">Real screens from the current build</p>
+
+      <div class="carousel-frame" aria-label="App screenshots">
+        <div class="track" id="shotTrack">
+          <div class="shot"><img src="app-1.1.webp?v=1" alt="Rooted Memories app – family tree view" loading="eager"></div>
+          <div class="shot"><img src="app-2.1.webp?v=1" alt="Rooted Memories app – person profile" loading="lazy"></div>
+          <div class="shot"><img src="app-3.1.webp?v=1" alt="Rooted Memories app – memory feed" loading="lazy"></div>
+          <div class="shot"><img src="app-4.webp?v=1"   alt="Rooted Memories app – photo detail" loading="lazy"></div>
+          <div class="shot"><img src="app-5.webp?v=1"   alt="Rooted Memories app – add memory" loading="lazy"></div>
         </div>
 
-        <div class="carousel" aria-label="App screenshots carousel">
-          <div class="track" id="shotTrack">
-            <div class="shot"><img src="app-1.1.webp?v=1" alt="Rooted Memories app screenshot 1" loading="lazy"></div>
-            <div class="shot"><img src="app-2.1.webp?v=1" alt="Rooted Memories app screenshot 2" loading="lazy"></div>
-            <div class="shot"><img src="app-3.1.webp?v=1" alt="Rooted Memories app screenshot 3" loading="lazy"></div>
-            <div class="shot"><img src="app-4.webp?v=1" alt="Rooted Memories app screenshot 4" loading="lazy"></div>
-            <div class="shot"><img src="app-5.webp?v=1" alt="Rooted Memories app screenshot 5" loading="lazy"></div>
-          </div>
-
-          <div class="car-controls">
-            <button class="car-btn" type="button" id="prevBtn" aria-label="Previous screenshot">‹ Prev</button>
-            <div class="car-dots" id="carDots" aria-label="Carousel position"></div>
-            <button class="car-btn" type="button" id="nextBtn" aria-label="Next screenshot">Next ›</button>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:0;">
-          <h3>What you’ll be able to do</h3>
-          <p>
-            Build your family tree, drop in photos, captions, and stories.
-            All connected to the right person so it stays organised as time goes by.
-            Keep all your children's photos structured cleanly, and eventually hand over
-            their profile to take over.
-          </p>
+        <div class="car-controls">
+          <button class="car-btn" id="prevBtn" type="button" aria-label="Previous">← Prev</button>
+          <div class="car-dots" id="carDots"></div>
+          <button class="car-btn" id="nextBtn" type="button" aria-label="Next">Next →</button>
         </div>
       </div>
     </div>
 
-    <div id="how" class="section">
-      <div class="card">
-        <h3>1) Build the tree</h3>
-        <p>Add relatives once. Invite family so they can contribute safely, without the mess of endless group chats.</p>
+  </div>
+
+  <!-- ── Ornament divider ── -->
+  <div class="ornament">· · ·</div>
+
+  <!-- ── How it works ── -->
+  <section id="how" class="reveal">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">Built to hold a family together — <em>for generations</em></h2>
+    <p class="section-sub">Not a photo dump. Not a group chat. A living archive organised around people.</p>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Build the tree</h3>
+        <p>Add relatives once. Invite family so they can contribute safely, without the mess of endless group chats or shared albums that go nowhere.</p>
       </div>
-      <div class="card">
-        <h3>2) Add memories to people</h3>
-        <p>Photos + stories actually make sense when they’re attached to the the right person (with dates and context). View photos by
-          person, or in the full family feed.</p>
+      <div class="step reveal" style="transition-delay:.1s">
+        <div class="step-num">02</div>
+        <h3>Add memories to people</h3>
+        <p>Photos and stories make sense when they're attached to the right person — with dates and context. View by person, or in the full family feed.</p>
       </div>
-      <div class="card">
-        <h3>3) Keep it for life</h3>
-        <p>A living archive your kids can open in 10–20 years and still feel like they know everyone.</p>
+      <div class="step reveal" style="transition-delay:.2s">
+        <div class="step-num">03</div>
+        <h3>Keep it for life</h3>
+        <p>A living archive your children can open in 10–20 years and still feel like they know everyone. Profiles pass down, not away.</p>
       </div>
     </div>
+  </section>
 
-    <div class="app-section" id="download">
-      <h3>Download the app</h3>
-      <p>
-        Rooted Memories is launching soon. Early access members will get first access when iOS + Android are ready.
-      </p>
-
+  <!-- ── Download ── -->
+  <div class="download-section reveal" id="download">
+    <div class="download-grid">
+      <div>
+        <h3>The app is coming</h3>
+        <p>Rooted Memories launches Summer 2026 on iOS and Android. Early access members are first through the door — and founding members keep free premium, for life.</p>
+      </div>
       <div class="store-row">
         <a class="store-btn disabled" href="#" aria-disabled="true">
           <svg class="store-ic" viewBox="0 0 24 24" fill="none">
-            <path d="M16.7 13.3c0 2.9 2.6 3.9 2.6 3.9s-2.0 5.1-4.7 5.1c-1.0 0-1.8-.6-2.9-.6s-1.9.6-3 .6C6.2 22.3 4 17.6 4 14.1c0-2.9 1.9-4.4 3.7-4.4 1 0 1.9.7 2.8.7s1.9-.7 3.2-.7c.5 0 2.2.0 3.3 1.7-3 .8-3.3 2.8-3.3 3.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.7 13.3c0 2.9 2.6 3.9 2.6 3.9s-2 5.1-4.7 5.1c-1 0-1.8-.6-2.9-.6s-1.9.6-3 .6C6.2 22.3 4 17.6 4 14.1c0-2.9 1.9-4.4 3.7-4.4 1 0 1.9.7 2.8.7s1.9-.7 3.2-.7c.5 0 2.2 0 3.3 1.7-3 .8-3.3 2.8-3.3 3.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M14.7 3.9c-.7.9-1.8 1.6-2.9 1.5-.1-1.1.4-2.2 1.1-3 .7-.8 1.9-1.4 2.9-1.4.1 1.1-.3 2.1-1.1 2.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <span class="label">
@@ -754,7 +892,6 @@
             <span class="big">App Store</span>
           </span>
         </a>
-
         <a class="store-btn disabled" href="#" aria-disabled="true">
           <svg class="store-ic" viewBox="0 0 24 24" fill="none">
             <path d="M5.2 3.8 15.7 14.3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
@@ -769,192 +906,179 @@
         </a>
       </div>
     </div>
-
-    <div class="section" style="grid-template-columns:1fr; margin-top:18px;">
-      <div class="card">
-        <h3>Get early access (free)</h3>
-        <p class="cta-text">
-          If this resonates, join the founding list. You’ll be first in line when we open early access. (limited places)
-        </p>
-
-        <button class="store-btn" type="button" id="jumpToEarly" style="justify-content:center;">
-          Get Early Access
-        </button>
-
-        <div class="fineprint">Private updates only. No spam.</div>
-      </div>
-    </div>
-
-    <footer>
-      <div>© <span id="y"></span> Rooted Memories™</div>
-      <div>
-        <a href="#how">How it works</a> ·
-        <a href="#early" data-join-early>Join Early Access</a>
-      </div>
-    </footer>
   </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+  <!-- ── Bottom CTA ── -->
+  <div class="cta-section reveal">
+    <h2>Your family's story deserves <em>more than a group chat</em></h2>
+    <p>Join the founding list. Free early access, limited places — and if this resonates, you'll want to be first.</p>
 
-    // Screenshot carousel logic
-    (function(){
-      const track = document.getElementById('shotTrack');
-      const shots = Array.from(track.querySelectorAll('.shot'));
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dotsWrap = document.getElementById('carDots');
+    <div class="cta-form">
+      <input class="early-input" type="email" id="ctaEmail" placeholder="Your email address" style="flex:1 1 220px;" />
+      <button class="early-btn" type="button" id="ctaBtn">
+        <span class="btn-text">Join the list</span>
+        <span class="btn-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <div id="ctaMsg" class="form-msg" style="max-width:480px;margin:12px auto 0;text-align:left;"></div>
+    <p class="fineprint" style="margin-top:14px;">Private updates only. No spam. Unsubscribe any time.</p>
+  </div>
 
-      let activeIndex = 0;
+  <!-- ── Footer ── -->
+  <footer>
+    <div>© <span id="y"></span> Rooted Memories™</div>
+    <div style="display:flex;gap:16px;">
+      <a href="#how">How it works</a>
+      <a href="#early" data-join-early>Join Early Access</a>
+    </div>
+  </footer>
 
-      function scrollToIndex(i){
-        activeIndex = Math.max(0, Math.min(i, shots.length - 1));
-        const el = shots[activeIndex];
-        el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        updateDots();
-      }
+</div>
 
-      function updateDots(){
-        const dots = Array.from(dotsWrap.querySelectorAll('button'));
-        dots.forEach((d, idx) => d.setAttribute('aria-current', String(idx === activeIndex)));
-      }
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-      shots.forEach((_, idx) => {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.setAttribute('aria-label', 'Go to screenshot ' + (idx + 1));
-        b.setAttribute('aria-current', String(idx === 0));
-        b.addEventListener('click', () => scrollToIndex(idx));
-        dotsWrap.appendChild(b);
-      });
+  // ── Carousel ──────────────────────────────────────────────────────────
+  (function(){
+    const track   = document.getElementById('shotTrack');
+    const shots   = Array.from(track.querySelectorAll('.shot'));
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsWrap = document.getElementById('carDots');
+    let activeIndex = 0;
 
-      prevBtn.addEventListener('click', () => scrollToIndex(activeIndex - 1));
-      nextBtn.addEventListener('click', () => scrollToIndex(activeIndex + 1));
+    shots.forEach((_,idx) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label','Screenshot '+(idx+1));
+      b.setAttribute('aria-current', String(idx === 0));
+      b.addEventListener('click', () => scrollTo(idx));
+      dotsWrap.appendChild(b);
+    });
 
-      let raf = null;
-      track.addEventListener('scroll', () => {
-        if (raf) cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(() => {
-          const rect = track.getBoundingClientRect();
-          const center = rect.left + rect.width / 2;
-          let bestIdx = 0;
-          let bestDist = Infinity;
-
-          shots.forEach((s, idx) => {
-            const r = s.getBoundingClientRect();
-            const c = r.left + r.width / 2;
-            const d = Math.abs(c - center);
-            if (d < bestDist){ bestDist = d; bestIdx = idx; }
-          });
-
-          activeIndex = bestIdx;
-          updateDots();
-        });
-      });
-    })();
-
-    // Form handler
-    (function wireEarlyAccessForm(){
-      const form = document.getElementById('earlyAccessFormTop');
-      const msg  = document.getElementById('earlyMsgTop');
-      if (!form || !msg) return;
-
-      const btn  = form.querySelector('button[type="submit"]');
-      const input = form.querySelector('input[type="email"]');
-
-      function setMsg(type, text){
-        msg.className = 'form-msg ' + type;
-        msg.style.display = 'block';
-        msg.textContent = text;
-      }
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        if (!input.value || !input.checkValidity()){
-          setMsg('error', 'Please enter a valid email address.');
-          input.focus();
-          return;
-        }
-
-        btn.disabled = true;
-        btn.classList.add('loading');
-        setMsg('loading', 'Sending…');
-
-        try{
-          const formData = new FormData(form);
-
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (res.ok) {
-            form.reset();
-
-            if (window.fbq) {
-              fbq('track', 'Lead');
-              fbq('trackCustom', 'EarlyAccessSignup');
-            }
-
-            setMsg(
-              'success',
-              "You're on the list - thank you. We’ll email within 24 hours with confirmation and next steps. Keep an eye on your inbox (and spam just in case)."
-            );
-          } else {
-            setMsg('error', "That didn’t send. Please try again.");
-          }
-        } catch(err){
-          setMsg('error', "Network issue — please try again.");
-        } finally {
-          btn.disabled = false;
-          btn.classList.remove('loading');
-        }
-      });
-    })();
-
-    // Focus + glow helper
-    function focusAndGlowEarlyAccess(){
-      const form = document.getElementById('earlyAccessFormTop');
-      if (!form) return;
-
-      const rect = form.getBoundingClientRect();
-      const absoluteTop = rect.top + window.pageYOffset;
-      const offset = (window.innerHeight / 2) - (rect.height / 2);
-
-      window.scrollTo({ top: absoluteTop - offset, behavior: 'smooth' });
-
-      setTimeout(() => {
-        const input = document.getElementById('earlyEmail');
-        if (!input) return;
-
-        input.classList.add('glow-on');
-        input.focus({ preventScroll: true });
-
-        const stopGlow = () => input.classList.remove('glow-on');
-        setTimeout(stopGlow, 2200);
-        input.addEventListener('input', stopGlow, { once:true });
-      }, 450);
+    function scrollTo(i){
+      activeIndex = Math.max(0, Math.min(i, shots.length - 1));
+      shots[activeIndex].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+      updateDots();
+    }
+    function updateDots(){
+      dotsWrap.querySelectorAll('button').forEach((d,i) =>
+        d.setAttribute('aria-current', String(i === activeIndex)));
     }
 
-    // Bottom CTA -> focus + glow
-    (function(){
-      const btn = document.getElementById('jumpToEarly');
-      if (!btn) return;
-      btn.addEventListener('click', focusAndGlowEarlyAccess);
-    })();
+    prevBtn.addEventListener('click', () => scrollTo(activeIndex - 1));
+    nextBtn.addEventListener('click', () => scrollTo(activeIndex + 1));
 
-    // Nav/Footer "Join Early Access" -> focus + glow
-    (function(){
-      const links = document.querySelectorAll('[data-join-early]');
-      links.forEach(a => {
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          focusAndGlowEarlyAccess();
+    let raf;
+    track.addEventListener('scroll', () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const cx = track.getBoundingClientRect().left + track.getBoundingClientRect().width / 2;
+        let best = 0, bestD = Infinity;
+        shots.forEach((s,i) => {
+          const r = s.getBoundingClientRect();
+          const d = Math.abs(r.left + r.width/2 - cx);
+          if (d < bestD){ bestD = d; best = i; }
         });
+        activeIndex = best;
+        updateDots();
       });
-    })();
-  </script>
+    });
+  })();
+
+  // ── Form helper ───────────────────────────────────────────────────────
+  function wireForm(emailEl, btnEl, msgEl){
+    function setMsg(type, text){
+      msgEl.className = 'form-msg ' + type;
+      msgEl.textContent = text;
+    }
+
+    btnEl.addEventListener('click', async () => {
+      const email = emailEl.value.trim();
+      if (!email || !/\S+@\S+\.\S+/.test(email)){
+        setMsg('error','Please enter a valid email address.');
+        emailEl.focus();
+        return;
+      }
+
+      btnEl.disabled = true;
+      btnEl.classList.add('loading');
+      setMsg('loading','Sending…');
+
+      const fd = new FormData();
+      fd.append('email', email);
+
+      try {
+        const res = await fetch('https://formspree.io/f/mqedopdn', {
+          method: 'POST',
+          body: fd,
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok){
+          emailEl.value = '';
+          if (window.fbq){ fbq('track','Lead'); fbq('trackCustom','EarlyAccessSignup'); }
+          setMsg('success',"You're on the list — thank you. We'll be in touch within 24 hours.");
+        } else {
+          setMsg('error',"That didn't send. Please try again.");
+        }
+      } catch {
+        setMsg('error','Network issue — please try again.');
+      } finally {
+        btnEl.disabled = false;
+        btnEl.classList.remove('loading');
+      }
+    });
+  }
+
+  // Top form (uses native submit → override)
+  (function(){
+    const form  = document.getElementById('earlyAccessFormTop');
+    const input = document.getElementById('earlyEmail');
+    const msg   = document.getElementById('earlyMsgTop');
+    const btn   = form.querySelector('button[type="submit"]');
+
+    btn.type = 'button';
+    wireForm(input, btn, msg);
+  })();
+
+  // Bottom CTA form
+  wireForm(
+    document.getElementById('ctaEmail'),
+    document.getElementById('ctaBtn'),
+    document.getElementById('ctaMsg')
+  );
+
+  // ── Focus + glow ─────────────────────────────────────────────────────
+  function focusEarly(){
+    const form = document.getElementById('early');
+    const input = document.getElementById('earlyEmail');
+    if (!form || !input) return;
+
+    const top = form.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: top - (window.innerHeight/2 - form.offsetHeight/2), behavior:'smooth' });
+
+    setTimeout(() => {
+      input.classList.add('glow-on');
+      input.focus({ preventScroll: true });
+      setTimeout(() => input.classList.remove('glow-on'), 2200);
+      input.addEventListener('input', () => input.classList.remove('glow-on'), { once: true });
+    }, 460);
+  }
+
+  document.querySelectorAll('[data-join-early]').forEach(el =>
+    el.addEventListener('click', e => { e.preventDefault(); focusEarly(); })
+  );
+  const jumpBtn = document.getElementById('jumpToEarly');
+  if (jumpBtn) jumpBtn.addEventListener('click', focusEarly);
+
+  // ── Scroll reveal ─────────────────────────────────────────────────────
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
