@@ -149,6 +149,20 @@
       border:0;
     }
 
+    .pill-amber{
+  border:1px solid rgba(198,151,97,.68);
+  color:#fff7ef;
+  background: linear-gradient(180deg, rgba(201,144,84,.92), rgba(152,99,54,.94));
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.22);
+}
+
+.pill-amber:hover{
+  filter:brightness(1.04);
+  border-color:rgba(198,151,97,.78);
+}
+Result
     .nav{
       display:flex;
       gap:10px;
@@ -833,7 +847,7 @@
 
       <div class="nav">
         <a class="pill" href="#how">How it works</a>
-        <a class="pill" href="#early" data-join-early>Join Early Access</a>
+       <a class="pill pill-amber" href="#early" data-join-early>Join Early Access</a>
       </div>
     </div>
 
@@ -877,7 +891,7 @@
         <div id="earlyMsgTop" class="form-msg" role="status" aria-live="polite"></div>
 
         <div class="fineprint">
-          Private updates only. No spam. Limited founding places. First wave launching Summer 2026.
+          Private updates only. No spam. Limited founding places. <strong>First wave launching Summer 2026.</strong>
         </div>
       </div>
 
