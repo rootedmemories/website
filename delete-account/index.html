@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Delete Account | Rooted Memories</title>
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://rootedmemories.co.uk/delete-account" />
+
+  <style>
+    :root{
+      --forest:#0f3a2f;
+      --forest-2:#0b2f26;
+      --cream:#f3ece4;
+      --accent:#b06b50;
+      --text:#0f1a15;
+      --muted:rgba(255,255,255,.78);
+      --shadow: 0 18px 45px rgba(0,0,0,.25);
+      --shadow-soft: 0 12px 30px rgba(0,0,0,.18);
+      --radius: 22px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:#fff;
+      background:
+        radial-gradient(1200px 600px at 20% 20%, rgba(176,107,80,.35), transparent 60%),
+        radial-gradient(1000px 650px at 80% 10%, rgba(243,236,228,.12), transparent 55%),
+        linear-gradient(180deg, #081f18 0%, #071a14 60%, #061612 100%);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px 18px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:760px;
+    }
+
+    .card{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow);
+      padding:32px 24px;
+    }
+
+    .glow{
+      position:absolute;
+      inset:-140px -180px auto auto;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(176,107,80,.55), transparent 60%);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color: rgba(255,255,255,.92);
+      margin-bottom:14px;
+      position:relative;
+      z-index:1;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background: rgba(94, 214, 137, .9);
+      box-shadow: 0 0 0 4px rgba(94, 214, 137, .12);
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height:1.06;
+      position:relative;
+      z-index:1;
+    }
+
+    .subline{
+      margin:0 0 18px;
+      font-size:17px;
+      line-height:1.6;
+      color:var(--muted);
+      max-width:58ch;
+      position:relative;
+      z-index:1;
+    }
+
+    .bubble{
+      position:relative;
+      z-index:1;
+      margin-top:8px;
+      padding:18px 18px;
+      border-radius:18px;
+      background: rgba(176,107,80,.12);
+      border:1px solid rgba(176,107,80,.35);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .bubble p{
+      margin:0 0 10px;
+      color:rgba(255,255,255,.92);
+      line-height:1.55;
+      font-size:15px;
+    }
+
+    .email-box{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:6px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(176,107,80,.80);
+      background: linear-gradient(145deg, rgba(176,107,80,.45), rgba(176,107,80,.22));
+      color:#fff;
+      text-decoration:none;
+      font-weight:900;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18);
+      transition: transform .15s ease, opacity .2s ease;
+      word-break: break-word;
+    }
+
+    .email-box:hover{
+      transform: translateY(-2px);
+      opacity:.96;
+    }
+
+    .small{
+      margin-top:14px;
+      font-size:13px;
+      color: rgba(255,255,255,.62);
+      line-height:1.55;
+      position:relative;
+      z-index:1;
+    }
+
+    .back{
+      display:inline-block;
+      margin-top:18px;
+      color: rgba(255,255,255,.78);
+      text-decoration:none;
+      font-size:14px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+
+    .back:hover{
+      color:#fff;
+      border-color: rgba(255,255,255,.45);
+    }
+
+    @media (max-width: 560px){
+      .card{
+        padding:26px 18px;
+      }
+
+      .email-box{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="glow"></div>
+
+      <div class="kicker"><span class="dot"></span>Account deletion</div>
+
+      <h1>Delete your Rooted Memories account</h1>
+
+      <p class="subline">
+        To request deletion of your account and associated data, email us using the address below.
+      </p>
+
+      <div class="bubble">
+        <p>Please include the phone number used to create your account so we can locate it.</p>
+
+        <a class="email-box" href="mailto:support@rootedmemories.co.uk?subject=Delete%20my%20account">
+          support@rootedmemories.co.uk
+        </a>
+      </div>
+
+      <p class="small">
+        We will permanently delete your account and associated profile data, photos, voice notes, and related content within 7 days of request.
+      </p>
+
+      <a class="back" href="https://rootedmemories.co.uk/">← Back to Rooted Memories</a>
+    </div>
+  </div>
+</body>
+</html>
