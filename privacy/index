@@ -92,10 +92,10 @@
       <p>Our governing law is England and Wales.</p>
 
       <h2>2. What We Collect</h2>
+
       <p><strong>Account Information:</strong></p>
       <ul>
-        <li>Email address</li>
-        <li>Password (securely hashed)</li>
+        <li>Phone number (used for login and verification)</li>
         <li>Display name</li>
       </ul>
 
@@ -109,58 +109,60 @@
       <ul>
         <li>Photos</li>
         <li>Captions</li>
-        <li>Metadata</li>
-        <li>Timestamps</li>
+        <li>Associated metadata</li>
+        <li>Upload timestamps</li>
       </ul>
 
       <p><strong>Technical Data:</strong></p>
       <ul>
         <li>IP address</li>
-        <li>Device/browser info</li>
-        <li>Activity logs</li>
+        <li>Device/browser information</li>
+        <li>Basic activity logs for security</li>
       </ul>
 
       <h2>3. How We Use Your Data</h2>
       <ul>
-        <li>Provide and maintain the platform</li>
-        <li>Enable identity linking</li>
-        <li>Store and display media</li>
-        <li>Manage subscriptions</li>
-        <li>Maintain security</li>
+        <li>Provide and maintain private family archives</li>
+        <li>Enable identity linking across trees</li>
+        <li>Allow media uploads and storage</li>
+        <li>Maintain platform security</li>
         <li>Comply with legal obligations</li>
       </ul>
-      <p>We do not sell personal data or use it for advertising.</p>
+
+      <p>Rooted Memories does not sell personal data.</p>
+      <p>We do not use personal data for advertising or profiling.</p>
 
       <h2>4. Lawful Basis</h2>
-      <p>We process data under Legitimate Interest to provide a private family archive platform.</p>
+      <p>We process personal data under Legitimate Interest to provide a private family archive platform requested by users.</p>
 
       <h2>5. Children’s Data</h2>
-      <p>Child profiles may be created by family administrators with appropriate authority.</p>
+      <p>Child identity records may be created by family administrators with appropriate authority.</p>
 
       <h2>6. Linking Across Trees</h2>
-      <p>Linking connects identity records but does not merge or expose media across trees.</p>
+      <p>Linking connects identity records across private trees but does not merge or expose media between them.</p>
 
       <h2>7. Storage and Security</h2>
-      <p>Data is encrypted, transmitted over HTTPS, and protected by access controls.</p>
+      <p>All data is encrypted, transmitted over HTTPS, and protected using access controls.</p>
 
       <h2>8. Data Retention</h2>
-      <p>Data remains until deleted by user/admin or account deletion (processed within 7 days).</p>
+      <p>Data remains until deleted by the user, identity owner, or administrator, or when an account is deleted.</p>
+      <p>Account deletion is processed within seven (7) days.</p>
 
       <h2>9. Your Rights</h2>
-      <p>You may access, correct, or delete your data.</p>
+      <p>You have the right to access, correct, or delete your data.</p>
 
       <a class="email-box" href="mailto:support@rootedmemories.co.uk?subject=Data%20Request">
         support@rootedmemories.co.uk
       </a>
 
       <h2>10. Tree Inactivity</h2>
-      <p>Read-only trees retain data but prevent uploads.</p>
+      <p>Inactive trees may become read-only but data is not deleted automatically.</p>
 
       <h2>11. Data Processors</h2>
-      <p>We use third-party providers under strict agreements.</p>
+      <p>We use secure third-party providers to host and maintain the platform.</p>
 
       <h2>12. Complaints</h2>
-      <p>You may contact us or the ICO in the UK.</p>
+      <p>You may contact us or the UK ICO if you have concerns about data handling.</p>
 
     </div>
 
