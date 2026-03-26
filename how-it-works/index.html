@@ -25,33 +25,26 @@
   <meta name="twitter:description" content="A private family archive where photos and stories are attached to the people they belong to." />
   <meta name="twitter:image" content="https://rootedmemories.co.uk/og-image.6.png" />
 
-  <link rel="icon" href="/favicon3.png" sizes="96x96">
-  <link rel="apple-touch-icon" href="/favicon3.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://rootedmemories.co.uk/favicon3.png" />
+  <link rel="icon" href="https://rootedmemories.co.uk/favicon3.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://rootedmemories.co.uk/favicon3.png" />
+  <link rel="shortcut icon" href="https://rootedmemories.co.uk/favicon3.png" />
+  <!-- ✅ FIXED FAVICON -->
+  <link rel="icon" href="/favicon.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/favicon.png">
 
   <meta name="theme-color" content="#0f3a2f" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "Rooted Memories",
-        "url": "https://rootedmemories.co.uk/",
-        "logo": "https://rootedmemories.co.uk/logomvp.png"
-      },
-      {
-        "@type": "WebSite",
-        "name": "Rooted Memories",
-        "url": "https://rootedmemories.co.uk/"
-      }
-    ]
-  }
-  </script>
+@@ -50,26 +52,22 @@
 
   <style>
     :root{
+      --forest:#0f3a2f;
+      --forest-2:#0b2f26;
+      --cream:#f3ece4;
       --accent:#b06b50;
+      --text:#0f1a15;
       --muted:rgba(255,255,255,.78);
       --shadow: 0 18px 45px rgba(0,0,0,.25);
       --shadow-soft: 0 12px 30px rgba(0,0,0,.18);
@@ -62,24 +55,23 @@
 
     body{
       margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       font-family: system-ui, -apple-system, sans-serif;
       color:#fff;
       background:
         radial-gradient(1200px 600px at 20% 20%, rgba(176,107,80,.35), transparent 60%),
+        radial-gradient(1000px 650px at 80% 10%, rgba(243,236,228,.12), transparent 55%),
+        linear-gradient(180deg, #081f18 0%, #071a14 60%, #061612 100%);
         linear-gradient(180deg, #081f18 0%, #061612 100%);
       min-height:100vh;
     }
 
-    .wrap{
-      max-width:980px;
-      margin:0 auto;
-      padding:24px 18px 72px;
-    }
-
-    .top{
+@@ -83,355 +81,172 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:16px;
+      margin-bottom:28px;
       flex-wrap:wrap;
       margin-bottom:28px;
     }
@@ -87,12 +79,22 @@
     .home-btn{
       display:inline-flex;
       align-items:center;
+      justify-content:center;
       gap:8px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color:rgba(255,255,255,.92);
       padding:12px 18px;
       border-radius:999px;
       text-decoration:none;
       font-weight:700;
       font-size:14px;
+      font-weight:800;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+      transition: transform .18s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
       background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
       border:1px solid rgba(255,255,255,.18);
       color:#fff;
@@ -102,29 +104,49 @@
     }
 
     .home-btn:hover{
+      color:#fff;
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.28);
+      box-shadow: 0 14px 28px rgba(0,0,0,.24);
+      transform: translateY(-1px);
       transform: translateY(-2px);
       box-shadow: 0 14px 30px rgba(0,0,0,.35);
       background: linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
     }
 
     .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:12px 16px;
       border-radius:14px;
+      border:1px solid rgba(176,107,80,.80);
       border:1px solid rgba(176,107,80,.8);
       background: linear-gradient(145deg, rgba(176,107,80,.55), rgba(176,107,80,.28));
       color:#fff;
       text-decoration:none;
       font-weight:800;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18);
+      transition: transform .18s ease, box-shadow .2s ease, opacity .2s ease, border-color .2s ease;
       box-shadow: 0 10px 25px rgba(0,0,0,.25);
       transition:.2s;
     }
 
     .cta:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.2);
+      border-color: rgba(176,107,80,.95);
+      opacity:.98;
       transform:translateY(-2px);
     }
 
     .hero{
+      position:relative;
+      overflow:hidden;
       border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow);
       background: rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.1);
       box-shadow:var(--shadow);
@@ -132,31 +154,82 @@
       margin-bottom:22px;
     }
 
+    .glow{
+      position:absolute;
+      inset:-140px -180px auto auto;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(176,107,80,.55), transparent 60%);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color: rgba(255,255,255,.92);
+      margin-bottom:14px;
+      position:relative;
+      z-index:1;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background: rgba(94, 214, 137, .9);
+      box-shadow: 0 0 0 4px rgba(94, 214, 137, .12);
+    }
+
     h1{
       margin:0 0 12px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height:1.06;
+      position:relative;
+      z-index:1;
       font-size:clamp(34px,5vw,54px);
       max-width:12ch;
     }
 
     .subline{
+      margin:0;
       font-size:18px;
+      line-height:1.65;
       color:var(--muted);
       max-width:60ch;
+      position:relative;
+      z-index:1;
     }
 
     .grid{
       display:grid;
+      grid-template-columns: 1fr 1fr;
       grid-template-columns:1fr 1fr;
       gap:18px;
       margin-top:22px;
     }
 
+    @media (max-width: 860px){
+      .grid{ grid-template-columns:1fr; }
     @media (max-width:860px){
       .grid{grid-template-columns:1fr;}
     }
 
     .card{
       background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding:20px 18px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
       border:1px solid rgba(255,255,255,.1);
       border-radius:18px;
       padding:20px;
@@ -165,16 +238,36 @@
     }
 
     .card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(0,0,0,.22);
+      border-color: rgba(255,255,255,.14);
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:22px;
+      font-weight:900;
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:17px;
+      font-weight:900;
       transform:translateY(-2px);
     }
 
     .card p{
+      margin:0 0 12px;
+      color: rgba(255,255,255,.78);
+      line-height:1.65;
+      font-size:15px;
       color:var(--muted);
     }
 
     .steps{
       display:grid;
       gap:14px;
+      margin-top:8px;
     }
 
     .step{
@@ -182,18 +275,72 @@
       border-radius:16px;
       background: rgba(176,107,80,.12);
       border:1px solid rgba(176,107,80,.35);
+      transition: transform .18s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .step:hover{
+      transform: translateY(-1px);
+      border-color: rgba(176,107,80,.48);
+      background: rgba(176,107,80,.15);
+    }
+
+    .step strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:16px;
+    }
+
+    .step p{
+      margin:0;
+    }
+
+    .bullets{
+      padding-left:18px;
+      margin:0;
+    }
+
+    .bullets li{
+      margin:10px 0;
+      color: rgba(255,255,255,.82);
+      line-height:1.6;
+    }
+
+    .wide{
+      margin-top:22px;
     }
 
     .footer-cta{
+      margin-top:26px;
       margin-top:30px;
       text-align:center;
+      padding:30px 18px;
       padding:30px;
       border-radius:22px;
+      background:
+        radial-gradient(900px 300px at 50% 0%, rgba(176,107,80,.18), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .footer-cta h2{
+      margin:0 0 10px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height:1.12;
+    }
+
+    .footer-cta p{
+      margin:0 auto 18px;
+      color: rgba(255,255,255,.78);
+      max-width:34ch;
+      line-height:1.65;
       background: rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.1);
     }
 
     .bottom-home{
+      margin-top:22px;
       margin-top:24px;
       text-align:center;
     }
@@ -204,29 +351,109 @@
   <div class="wrap">
 
     <div class="top">
+      <a class="home-btn" href="https://rootedmemories.co.uk/">← Return to home</a>
+      <a class="cta" href="https://rootedmemories.co.uk/#early">Join Early Access</a>
       <a class="home-btn" href="/">← Home</a>
       <a class="cta" href="/#early">Join Early Access</a>
     </div>
 
     <section class="hero">
+      <div class="glow"></div>
+      <div class="kicker"><span class="dot"></span>How it works</div>
       <h1>What Rooted Memories is</h1>
       <p class="subline">
+        Rooted Memories is a private family archive. It helps families organise photos and stories by person, keep memories in one place, and build something that can be looked back on for years to come.
         A private family archive that keeps memories organised by the people they belong to.
       </p>
     </section>
 
     <div class="grid">
+      <section class="card">
+        <h2>What Rooted Memories does</h2>
+        <p>
+          Most families already have thousands of photos. The problem is not taking them. The problem is that they end up scattered across camera rolls, cloud drives, group chats, and old phones.
+        </p>
+        <p>
+          Rooted Memories gives your family one private place to keep those memories organised properly, attached to the people they belong to.
+        </p>
+        <p>
+          Instead of a messy album, you build a living family archive.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Why it is different</h2>
+        <ul class="bullets">
+          <li>It is private and invite-only, not public social media.</li>
+          <li>Photos and stories are attached to real family members, not lost in one long feed.</li>
+          <li>Families can contribute together, instead of one person trying to hold everything.</li>
+          <li>It is designed for continuity, not just short-term storage.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="card wide">
+      <h2>How Rooted Memories works</h2>
+      <div class="steps">
+        <div class="step">
+          <strong>1. Build your family tree</strong>
+          <p>Create your tree and add the people who make up your family. Each person has their own place in the tree.</p>
+        </div>
+
+        <div class="step">
+          <strong>2. Add photos and stories</strong>
+          <p>Upload memories and attach them to the right people, so each photo and story has context instead of being buried in a camera roll.</p>
+        </div>
+
+        <div class="step">
+          <strong>3. Invite family members</strong>
+          <p>Family members can join privately and add their own memories too, helping build a fuller picture over time.</p>
+        </div>
+
+        <div class="step">
+          <strong>4. Keep everything organised</strong>
+          <p>Instead of one chaotic gallery, memories stay connected to the people they belong to and the family they are part of.</p>
+        </div>
       <div class="card">
         <h2>What it does</h2>
         <p>Turns scattered photos into a structured family archive.</p>
       </div>
+    </section>
 
+    <div class="grid">
+      <section class="card">
+        <h2>Who it is for</h2>
+        <p>
+          Rooted Memories is for parents, grandparents, and families who do not want their stories to disappear into old devices and forgotten folders.
+        </p>
+        <p>
+          It is especially useful for families who already take lots of photos and want a better way to organise and preserve them.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>What problem it solves</h2>
+        <p>
+          Having access to a relative’s old camera roll is not the same as having a clear story of their life.
+        </p>
+        <p>
+          Rooted Memories turns scattered photos into something structured, meaningful, and easy for family members to look back through.
+        </p>
+      </section>
       <div class="card">
         <h2>Why it's different</h2>
         <p>Built for families, not feeds. Private, organised, lasting.</p>
       </div>
     </div>
 
+    <section class="card wide">
+      <h2>What Rooted Memories is building towards</h2>
+      <p>
+        Rooted Memories starts by helping families organise today’s photos and stories properly. Over time, that becomes something much bigger: a family archive that can grow over years instead of being lost across devices and apps.
+      </p>
+      <p>
+        The goal is simple: help families keep the moments that matter, in one place, with the people they belong to.
+      </p>
     <section class="card">
       <h2>How it works</h2>
       <div class="steps">
@@ -239,10 +466,15 @@
 
     <section class="footer-cta">
       <h2>Your family’s story deserves more than scattered photos.</h2>
+      <p>
+        Join early access and be first to try Rooted Memories when access opens.
+      </p>
+      <a class="cta" href="https://rootedmemories.co.uk/#early">Join Early Access</a>
       <a class="cta" href="/#early">Join Early Access</a>
     </section>
 
     <div class="bottom-home">
+      <a class="home-btn" href="https://rootedmemories.co.uk/">← Return to home</a>
       <a class="home-btn" href="/">← Return to Home</a>
     </div>
 
