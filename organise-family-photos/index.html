@@ -1,1 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Organise Family Photos | Rooted Memories</title>
+  <meta name="description" content="See how Rooted Memories helps families organise family photos properly by person, keep memories in one place, and turn scattered pictures into a private family archive." />
+  <meta name="application-name" content="Rooted Memories" />
+  <meta name="apple-mobile-web-app-title" content="Rooted Memories" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://rootedmemories.co.uk/organise-family-photos/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rooted Memories" />
+  <meta property="og:title" content="Organise Family Photos | Rooted Memories" />
+  <meta property="og:description" content="A better way to organise family photos: by person, in one private family archive." />
+  <meta property="og:url" content="https://rootedmemories.co.uk/organise-family-photos/" />
+  <meta property="og:image" content="https://rootedmemories.co.uk/og-image.6.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Organise Family Photos | Rooted Memories" />
+  <meta name="twitter:description" content="A better way to organise family photos: by person, in one private family archive." />
+  <meta name="twitter:image" content="https://rootedmemories.co.uk/og-image.6.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon3.png" sizes="96x96" />
+  <link rel="apple-touch-icon" href="/favicon3.png" />
+
+  <meta name="theme-color" content="#0f3a2f" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Rooted Memories",
+        "url": "https://rootedmemories.co.uk/",
+        "logo": "https://rootedmemories.co.uk/logomvp.png"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Rooted Memories",
+        "url": "https://rootedmemories.co.uk/"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Organise Family Photos",
+        "url": "https://rootedmemories.co.uk/organise-family-photos/",
+        "description": "See how Rooted Memories helps families organise family photos properly by person, keep memories in one place, and turn scattered pictures into a private family archive."
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --forest:#0f3a2f;
+      --forest-2:#0b2f26;
+      --cream:#f3ece4;
+      --accent:#b06b50;
+      --text:#0f1a15;
+      --muted:rgba(255,255,255,.78);
+      --shadow: 0 18px 45px rgba(0,0,0,.25);
+      --shadow-soft: 0 12px 30px rgba(0,0,0,.18);
+      --radius: 22px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, sans-serif;
+      color:#fff;
+      background:
+        radial-gradient(1200px 600px at 20% 20%, rgba(176,107,80,.35), transparent 60%),
+        radial-gradient(1000px 650px at 80% 10%, rgba(243,236,228,.12), transparent 55%),
+        linear-gradient(180deg, #081f18 0%, #061612 100%);
+      min-height:100vh;
+    }
+
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:24px 18px 72px;
+    }
+
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:28px;
+    }
+
+    .home-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+      background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      transition: all .2s ease;
+    }
+
+    .home-btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0,0,0,.35);
+      background: linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+    }
+
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(176,107,80,.8);
+      background: linear-gradient(145deg, rgba(176,107,80,.55), rgba(176,107,80,.28));
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      transition: .2s;
+    }
+
+    .cta:hover{
+      transform: translateY(-2px);
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      box-shadow:var(--shadow);
+      padding:34px 24px;
+      margin-bottom:22px;
+    }
+
+    .glow{
+      position:absolute;
+      inset:-140px -180px auto auto;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(176,107,80,.55), transparent 60%);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color: rgba(255,255,255,.92);
+      margin-bottom:14px;
+      position:relative;
+      z-index:1;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background: rgba(94, 214, 137, .9);
+      box-shadow: 0 0 0 4px rgba(94, 214, 137, .12);
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height:1.06;
+      position:relative;
+      z-index:1;
+      max-width:13ch;
+    }
+
+    .subline{
+      margin:0;
+      font-size:18px;
+      line-height:1.65;
+      color:var(--muted);
+      max-width:62ch;
+      position:relative;
+      z-index:1;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:22px;
+    }
+
+    @media (max-width:860px){
+      .grid{grid-template-columns:1fr;}
+    }
+
+    .card{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:18px;
+      padding:20px 18px;
+      box-shadow:var(--shadow-soft);
+      transition:.2s;
+    }
+
+    .card:hover{
+      transform:translateY(-2px);
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:22px;
+      font-weight:900;
+    }
+
+    .card p{
+      margin:0 0 12px;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:15px;
+    }
+
+    .steps{
+      display:grid;
+      gap:14px;
+      margin-top:8px;
+    }
+
+    .step{
+      padding:16px;
+      border-radius:16px;
+      background: rgba(176,107,80,.12);
+      border:1px solid rgba(176,107,80,.35);
+      transition:.2s;
+    }
+
+    .step:hover{
+      transform: translateY(-1px);
+      border-color: rgba(176,107,80,.48);
+      background: rgba(176,107,80,.15);
+    }
+
+    .step strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:16px;
+    }
+
+    .step p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .bullets{
+      padding-left:18px;
+      margin:0;
+    }
+
+    .bullets li{
+      margin:10px 0;
+      color: rgba(255,255,255,.82);
+      line-height:1.6;
+    }
+
+    .wide{
+      margin-top:22px;
+    }
+
+    .footer-cta{
+      margin-top:30px;
+      text-align:center;
+      padding:30px 18px;
+      border-radius:22px;
+      background:
+        radial-gradient(900px 300px at 50% 0%, rgba(176,107,80,.18), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .footer-cta h2{
+      margin:0 0 10px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height:1.12;
+    }
+
+    .footer-cta p{
+      margin:0 auto 18px;
+      color: rgba(255,255,255,.78);
+      max-width:38ch;
+      line-height:1.65;
+    }
+
+    .bottom-home{
+      margin-top:24px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="top">
+      <a class="home-btn" href="/">← Home</a>
+      <a class="cta" href="/#early">Join Early Access</a>
+    </div>
+
+    <section class="hero">
+      <div class="glow"></div>
+      <div class="kicker"><span class="dot"></span>Organise family photos</div>
+      <h1>Organise family photos properly</h1>
+      <p class="subline">
+        Most families already have thousands of photos. The problem is not taking them. The problem is that they end up scattered across camera rolls, chats, folders, and old devices. Rooted Memories helps organise family photos by person, so the memories stay in one place and actually make sense later.
+      </p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Why family photos get messy</h2>
+        <p>
+          Photos build up fast. One child alone can end up with thousands spread across phones, WhatsApp groups, cloud storage, and random albums.
+        </p>
+        <p>
+          Over time, it gets harder to answer simple questions like who is in the photo, when it was taken, or where the rest of that part of the story is.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>What Rooted Memories changes</h2>
+        <ul class="bullets">
+          <li>Photos are attached to the right people, not left in one giant gallery.</li>
+          <li>Stories and captions stay with the memory, so context is not lost.</li>
+          <li>Your family can contribute together instead of one person trying to organise everything alone.</li>
+          <li>Everything stays private and invite-only.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="card wide">
+      <h2>How to organise family photos with Rooted Memories</h2>
+      <div class="steps">
+        <div class="step">
+          <strong>1. Build your family tree</strong>
+          <p>Start with the people. Each person has their own place, which gives your archive structure from the start.</p>
+        </div>
+
+        <div class="step">
+          <strong>2. Add photos and stories</strong>
+          <p>Upload memories and attach them to the people they belong to. That means each photo has context instead of just sitting in a folder with hundreds of others.</p>
+        </div>
+
+        <div class="step">
+          <strong>3. Let family add their side</strong>
+          <p>Other family members can join privately and add their own memories, which helps fill in gaps and build a fuller picture over time.</p>
+        </div>
+
+        <div class="step">
+          <strong>4. Keep everything easy to look back through</strong>
+          <p>As more gets added, the archive stays organised by person. That makes it easier to revisit childhood, milestones, and family history without digging through chaos.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>What makes this better than folders</h2>
+        <p>
+          Folders can store photos, but they do not tell a story. They also rely on one person naming things properly and keeping them in order.
+        </p>
+        <p>
+          Rooted Memories keeps photos connected to real people, which makes the archive more natural to build and far easier to use later.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>What makes this better than group chats</h2>
+        <p>
+          Group chats are quick, but they are terrible for keeping family history. Important moments get buried under replies, memes, and everyday messages.
+        </p>
+        <p>
+          Rooted Memories gives those moments a proper place, so they stay findable and worth looking back on.
+        </p>
+      </section>
+    </div>
+
+    <section class="card wide">
+      <h2>What this becomes over time</h2>
+      <p>
+        At first, it is a better way to organise family photos. Over time, it becomes something much more valuable: a private family archive where the people, photos, and stories all stay connected.
+      </p>
+      <p>
+        That is the bigger point. Organising family photos properly is not just about tidying up. It is about keeping the story behind them intact.
+      </p>
+    </section>
+
+    <section class="footer-cta">
+      <h2>Turn scattered family photos into something worth keeping.</h2>
+      <p>
+        If your family photos are everywhere, join early access and be first to try Rooted Memories when access opens.
+      </p>
+      <a class="cta" href="/#early">Join Early Access</a>
+    </section>
+
+    <div class="bottom-home">
+      <a class="home-btn" href="/">← Return to Home</a>
+    </div>
+
+  </div>
+</body>
+</html>
