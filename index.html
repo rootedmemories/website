@@ -272,6 +272,61 @@
       max-width: 62ch;
     }
 
+    .intent-links{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap:14px;
+      margin:18px 0 8px;
+      position:relative;
+      z-index:1;
+    }
+
+    @media (max-width: 900px){
+      .intent-links{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px){
+      .intent-links{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .intent-card{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      padding:16px 16px 15px;
+      border-radius:18px;
+      text-decoration:none;
+      color:#fff;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+      transition: transform .18s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .intent-card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(176,107,80,.45);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow: 0 16px 34px rgba(0,0,0,.24);
+    }
+
+    .intent-title{
+      font-size:16px;
+      font-weight:900;
+      line-height:1.25;
+      color:#fff;
+    }
+
+    .intent-copy{
+      font-size:14px;
+      line-height:1.5;
+      color: rgba(255,255,255,.74);
+    }
+
     .bullets{
       margin:14px 0 0;
       padding:14px 14px;
@@ -729,6 +784,28 @@
           <strong>Rooted Memories</strong> gives your family <strong>one place</strong> for your family's photos and stories, <strong>attached to the people they belong to</strong>. Organised properly, <strong>forever</strong>.<br>
           Invite your family to start their leaf now, or let them claim it later.
         </p>
+
+        <section class="intent-links" aria-label="Explore Rooted Memories">
+          <a class="intent-card" href="https://rootedmemories.co.uk/what-is-rooted-memories/">
+            <span class="intent-title">What is Rooted Memories</span>
+            <span class="intent-copy">A clear definition of the app and what makes it different.</span>
+          </a>
+
+          <a class="intent-card" href="https://rootedmemories.co.uk/private-family-archive/">
+            <span class="intent-title">Private Family Archive</span>
+            <span class="intent-copy">Why it is built for families, not social media or cloud folders.</span>
+          </a>
+
+          <a class="intent-card" href="https://rootedmemories.co.uk/organise-family-photos/">
+            <span class="intent-title">Organise Family Photos</span>
+            <span class="intent-copy">How Rooted Memories helps structure photos properly by person.</span>
+          </a>
+
+          <a class="intent-card" href="https://rootedmemories.co.uk/how-it-works/">
+            <span class="intent-title">How It Works</span>
+            <span class="intent-copy">See the simple step by step flow of building your family archive.</span>
+          </a>
+        </section>
 
         <div class="divider"></div>
 
