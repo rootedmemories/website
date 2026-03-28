@@ -5,13 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>What is Rooted Memories | Rooted Memories</title>
-  <meta name="description" content="Rooted Memories is a private family archive that organises photos and stories around the people they belong to." />
+  <meta name="description" content="Rooted Memories is a private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time." />
+  <meta name="application-name" content="Rooted Memories" />
+  <meta name="apple-mobile-web-app-title" content="Rooted Memories" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://rootedmemories.co.uk/what-is-rooted-memories/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="What is Rooted Memories" />
-  <meta property="og:description" content="A private family archive that organises photos and stories around the people they belong to." />
+  <meta property="og:site_name" content="Rooted Memories" />
+  <meta property="og:title" content="What is Rooted Memories | Rooted Memories" />
+  <meta property="og:description" content="A private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time." />
+  <meta property="og:url" content="https://rootedmemories.co.uk/what-is-rooted-memories/" />
   <meta property="og:image" content="https://rootedmemories.co.uk/og-image.6.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is Rooted Memories | Rooted Memories" />
+  <meta name="twitter:description" content="A private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time." />
+  <meta name="twitter:image" content="https://rootedmemories.co.uk/og-image.6.png" />
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon3.png" sizes="96x96" />
@@ -19,11 +31,41 @@
 
   <meta name="theme-color" content="#0f3a2f" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Rooted Memories",
+        "url": "https://rootedmemories.co.uk/",
+        "logo": "https://rootedmemories.co.uk/logomvp.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://rootedmemories.co.uk/#website",
+        "name": "Rooted Memories",
+        "url": "https://rootedmemories.co.uk/"
+      },
+      {
+        "@type": "WebPage",
+        "name": "What is Rooted Memories",
+        "url": "https://rootedmemories.co.uk/what-is-rooted-memories/",
+        "description": "Rooted Memories is a private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time."
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root{
       --accent:#b06b50;
       --muted:rgba(255,255,255,.85);
+      --shadow: 0 18px 45px rgba(0,0,0,.25);
+      --shadow-soft: 0 12px 30px rgba(0,0,0,.18);
     }
+
+    *{box-sizing:border-box}
 
     body{
       margin:0;
@@ -44,20 +86,39 @@
     .top{
       display:flex;
       justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
       margin-bottom:28px;
     }
 
     .home-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       padding:12px 18px;
       border-radius:999px;
       text-decoration:none;
+      font-size:14px;
       font-weight:700;
-      background: rgba(255,255,255,.08);
+      background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
       border:1px solid rgba(255,255,255,.18);
       color:#fff;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      transition: all .2s ease;
+    }
+
+    .home-btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0,0,0,.35);
+      background: linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
     }
 
     .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:12px 16px;
       border-radius:14px;
       text-decoration:none;
@@ -65,6 +126,12 @@
       background: linear-gradient(145deg, rgba(176,107,80,.55), rgba(176,107,80,.28));
       border:1px solid rgba(176,107,80,.8);
       color:#fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      transition: .2s;
+    }
+
+    .cta:hover{
+      transform: translateY(-2px);
     }
 
     .hero{
@@ -75,6 +142,7 @@
       padding:36px 24px;
       margin-bottom:22px;
       overflow:hidden;
+      box-shadow:var(--shadow);
     }
 
     .glow{
@@ -85,6 +153,7 @@
       border-radius:50%;
       background: radial-gradient(circle at 30% 30%, rgba(176,107,80,.55), transparent 60%);
       opacity:.9;
+      pointer-events:none;
     }
 
     .kicker{
@@ -97,6 +166,8 @@
       border-radius:999px;
       margin-bottom:14px;
       font-size:13px;
+      position:relative;
+      z-index:1;
     }
 
     .dot{
@@ -108,17 +179,34 @@
     }
 
     h1{
-      font-size:48px;
+      font-size: clamp(34px, 5vw, 54px);
       font-family: Georgia, serif;
+      line-height:1.06;
       margin:0 0 12px;
-      max-width:14ch;
+      max-width:12ch;
+      position:relative;
+      z-index:1;
     }
 
     .sub{
       font-size:18px;
-      line-height:1.6;
+      line-height:1.65;
       color:var(--muted);
       max-width:62ch;
+      position:relative;
+      z-index:1;
+      margin:0;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+
+    @media (max-width:860px){
+      .grid{grid-template-columns:1fr;}
     }
 
     .card{
@@ -126,7 +214,7 @@
       border:1px solid rgba(255,255,255,.1);
       border-radius:18px;
       padding:22px;
-      margin-top:18px;
+      box-shadow:var(--shadow-soft);
     }
 
     .card h2{
@@ -137,7 +225,12 @@
     .card p{
       margin:0 0 12px;
       color:var(--muted);
-      line-height:1.6;
+      line-height:1.65;
+      font-size:15px;
+    }
+
+    .wide{
+      margin-top:18px;
     }
 
     .cta-box{
@@ -147,12 +240,21 @@
       border-radius:22px;
       background: rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.1);
+      box-shadow:var(--shadow-soft);
     }
 
     .cta-box h2{
       font-size:32px;
-      margin-bottom:10px;
+      margin:0 0 10px;
       font-family: Georgia, serif;
+      line-height:1.12;
+    }
+
+    .cta-box p{
+      margin:0 auto 18px;
+      color:var(--muted);
+      max-width:38ch;
+      line-height:1.65;
     }
 
     .bottom-home{
@@ -181,26 +283,48 @@
       <h1>What is Rooted Memories?</h1>
 
       <p class="sub">
-        Rooted Memories is a private family archive that organises photos and stories around the people they belong to. Instead of keeping memories scattered across phones, chats, albums, and folders, it gives your family one clear place to keep them together.
+        Rooted Memories is a private family archive built around people. It gives your family one place to keep photos and stories connected to the people they belong to, so memories stay clearer, easier to return to, and more meaningful over time.
       </p>
     </section>
 
-    <section class="card">
-      <h2>How it works</h2>
-      <p>Each person in your family has their own place in the tree. Photos and stories are added to the people they belong to, so the structure of your family becomes the structure of the archive.</p>
-      <p>That makes memories easier to understand, easier to return to, and less likely to lose their context over time.</p>
+    <div class="grid">
+      <section class="card">
+        <h2>What it is</h2>
+        <p>
+          It is not a social platform, a group chat, or a folder system. It is a family archive designed to hold memories in a structure your family can understand.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>What it is built around</h2>
+        <p>
+          The archive is organised around your family tree. Each person has their own place, and memories are kept with the people they relate to.
+        </p>
+      </section>
+    </div>
+
+    <section class="card wide">
+      <h2>What that changes</h2>
+      <p>
+        When photos and stories stay connected to people, the archive becomes easier to follow. Memories keep more of their context, and your family spends less time guessing where things belong or what they mean.
+      </p>
     </section>
 
-    <section class="card">
-      <h2>What problem it solves</h2>
-      <p>Family memories often end up spread across phones, chats, albums, old boxes, and forgotten folders. Even when the photos still exist, the story around them is often unclear or gradually lost.</p>
-      <p>Rooted Memories brings old and new memories together in one private place, so they stay organised around the people who matter most.</p>
-    </section>
+    <div class="grid">
+      <section class="card">
+        <h2>Who it is for</h2>
+        <p>
+          It is for families who want a clearer and more lasting way to keep photos, stories, and family history together.
+        </p>
+      </section>
 
-    <section class="card">
-      <h2>Why it matters</h2>
-      <p>When memories are kept properly, they remain easier for your family to understand and return to over time. Instead of a collection of disconnected images, they become part of a clearer family story.</p>
-    </section>
+      <section class="card">
+        <h2>What it becomes</h2>
+        <p>
+          At first, it gives your family a clearer place to keep memories. Over time, it becomes a private record of family life built gradually in one place.
+        </p>
+      </section>
+    </div>
 
     <section class="cta-box">
       <h2>Your family already has the memories</h2>
