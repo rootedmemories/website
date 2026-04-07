@@ -33,6 +33,7 @@ Rooted Memories exists to turn scattered photos into a structured family archive
 - Build a digital family tree archive with real memories attached
 - Store and organise family photos in a meaningful way
 - Create a long term family archive that grows over time
+- Built in successor system for continuity 
 
 ## Key Terms
 
