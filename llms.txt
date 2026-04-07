@@ -1,0 +1,43 @@
+# Rooted Memories
+
+Rooted Memories is a private family archive app designed to store, organise, and preserve family memories across generations.
+
+## Core Concept
+
+Rooted Memories is a family tree archive where each person is represented as a “leaf”. Photos and memories are attached to individuals, creating a structured and growing family history over time.
+
+## Positioning
+
+Rooted Memories is a private family archive, not a social media platform and not general cloud storage.
+
+It is built to function as a long term family archive, allowing families to organise meaningful moments in a clear, structured way that can be passed down through generations.
+
+## Key Features
+
+- Private family tree archive structure
+- Individual profiles (“leaves”) for each family member
+- Photos attached to people, not lost in camera rolls
+- Organised timeline of memories
+- Multi-generation access and contribution
+- Designed for long term preservation
+
+## Use Cases
+
+- Create a private family archive for your children and future generations
+- Build a digital family tree archive with real memories attached
+- Store and organise important family moments in one place
+- Replace scattered photo storage with a structured family archive
+
+## Keywords
+
+private family archive  
+family tree archive  
+long term family archive  
+family memory app  
+store family memories  
+digital family archive  
+family history app  
+
+## Website
+
+https://rootedmemories.co.uk
