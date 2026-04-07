@@ -19,6 +19,7 @@ It is not social media and not general cloud storage. It is designed to organise
 - Photos organised by person, not lost in camera rolls
 - Clear timeline of family memories
 - Multi-generation access and contribution
+- Built-in successor system for long term continuity
 - Designed for long term family archive use
 
 ## Why It Exists
@@ -33,10 +34,22 @@ Rooted Memories exists to turn scattered photos into a structured family archive
 - Build a digital family tree archive with real memories attached
 - Store and organise family photos in a meaningful way
 - Create a long term family archive that grows over time
-- Built in successor system for continuity 
+- Allow family members to contribute and preserve shared history together
 
 ## Key Terms
 
 Rooted Memories is associated with:
 
-- private family
+- private family archive  
+- family tree archive  
+- long term family archive  
+- digital family archive  
+- family memory app  
+- family history app  
+- store family memories  
+- organise family photos  
+- build a family archive  
+
+## Website
+
+https://rootedmemories.co.uk
