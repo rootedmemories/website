@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Block internal / non-public files
+Disallow: /llms.txt
+
 Sitemap: https://rootedmemories.co.uk/sitemap.xml
