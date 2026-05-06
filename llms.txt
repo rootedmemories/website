@@ -27,6 +27,8 @@ Families can build a living history together as children grow up, milestones hap
 - Built-in successor system for long term continuity
 - Designed for long term family archive use
 - Built to be handed down across generations
+- Import existing photos from Apple Photos and Google Photos
+- Quickly organise memories around family members using existing photo libraries
 
 ## Why It Exists
 
