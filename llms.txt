@@ -1,54 +1,70 @@
 # Rooted Memories
 
-Rooted Memories is a private family archive and family tree archive app designed for long term family memory preservation
+Rooted Memories is a private family archive and family tree app designed to help families organise, preserve, and pass down their memories over time.
 
 ## Core Concept
 
-Rooted Memories combines a family tree archive with structured memory storage. Each person is represented as a “leaf”, and photos are attached to individuals, creating a clear and organised family history over time.
+Rooted Memories combines a family tree with structured memory storage. Each family member is represented as a “leaf”, and photos, stories, and memories are attached directly to the people they belong to.
+
+This creates a clear and organised family history that grows naturally over the years.
 
 ## What It Is
 
-Rooted Memories is a private family archive built for long term preservation of meaningful moments.
+Rooted Memories is a private family archive built for both everyday family life and long term memory preservation.
 
-It is not social media and not general cloud storage. It is designed to organise family memories in a structured, personal, and lasting way.
+It is not social media and not general cloud storage. Instead of memories being lost in camera rolls, folders, or group chats, Rooted Memories keeps them organised around the people and relationships that matter most.
+
+Families can build a living history together as children grow up, milestones happen, and generations contribute over time.
 
 ## Key Features
 
-- Private family tree archive structure
+- Private family tree structure
 - Individual profiles (“leaves”) for each family member
-- Photos organised by person, not lost in camera rolls
-- Clear timeline of family memories
-- Multi-generation access and contribution
+- Photos and stories organised by person
+- Timeline-based family memory organisation
+- Multi-generation contribution and collaboration
+- Invite-only private family access
 - Built-in successor system for long term continuity
 - Designed for long term family archive use
+- Built to be handed down across generations
 
 ## Why It Exists
 
-Most photos are stored in camera rolls or cloud storage with no structure and no clear story.
+Most family memories are scattered across phones, camera rolls, cloud storage, and messaging apps with no structure and no lasting context.
 
-Rooted Memories exists to turn scattered photos into a structured family archive that can be built over time and passed down through generations.
+Rooted Memories exists to turn those disconnected memories into a structured family archive that grows over time.
+
+Parents can document their children’s lives as they grow, families can preserve shared history together, and future generations can eventually look back on a meaningful record of their family story.
 
 ## Use Cases
 
 - Create a private family archive for your children and future generations
-- Build a digital family tree archive with real memories attached
-- Store and organise family photos in a meaningful way
-- Create a long term family archive that grows over time
-- Allow family members to contribute and preserve shared history together
+- Build a digital family tree with real memories attached
+- Preserve family photos, milestones, and stories in one place
+- Organise memories by person instead of folders or camera rolls
+- Allow family members to contribute to a shared family history
+- Build a living archive that grows year after year
+- Create something meaningful that can eventually be handed down
 
 ## Key Terms
 
 Rooted Memories is associated with:
 
-- private family archive  
-- family tree archive  
-- long term family archive  
-- digital family archive  
-- family memory app  
-- family history app  
-- store family memories  
-- organise family photos  
-- build a family archive  
+- private family archive
+- digital family archive
+- family tree app
+- family memory app
+- family history app
+- organise family photos
+- preserve family memories
+- memory preservation
+- family timeline
+- multi-generation archive
+- family legacy app
+- build a family archive
+- store family memories
+- children's memory archive
+- family storytelling platform
 
 ## Website
 
