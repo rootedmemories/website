@@ -4,9 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>How to Install Rooted Memories</title>
-  <meta name="description" content="Step-by-step guide for invited family members installing Rooted Memories during early access." />
+  <title>Install Rooted Memories</title>
+  <meta name="description" content="Install guide for invited Rooted Memories early access users." />
+  <meta name="application-name" content="Rooted Memories" />
+  <meta name="apple-mobile-web-app-title" content="Rooted Memories" />
+  <meta name="robots" content="noindex,follow" />
   <link rel="canonical" href="https://rootedmemories.co.uk/install-guide/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rooted Memories" />
+  <meta property="og:title" content="Install Rooted Memories" />
+  <meta property="og:description" content="Install guide for invited Rooted Memories early access users." />
+  <meta property="og:url" content="https://rootedmemories.co.uk/install-guide/" />
+  <meta property="og:image" content="https://rootedmemories.co.uk/og-image.6.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Install Rooted Memories" />
+  <meta name="twitter:description" content="Install guide for invited Rooted Memories early access users." />
+  <meta name="twitter:image" content="https://rootedmemories.co.uk/og-image.6.png" />
 
   <link rel="icon" href="/favicon3.png" sizes="96x96" />
   <link rel="apple-touch-icon" href="/favicon3.png" />
@@ -15,22 +30,27 @@
   <style>
     :root{
       --forest:#0f3a2f;
-      --forest-2:#0b2f26;
+      --forest-dark:#061612;
       --cream:#f3ece4;
       --accent:#b06b50;
       --gold:#d6c49c;
+      --white:#ffffff;
       --muted:rgba(255,255,255,.78);
+      --soft:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
       --shadow:0 18px 45px rgba(0,0,0,.25);
       --shadow-soft:0 12px 30px rgba(0,0,0,.18);
       --radius:22px;
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
 
     body{
       margin:0;
-      font-family:system-ui,-apple-system,sans-serif;
-      color:#fff;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--white);
       background:
         radial-gradient(1200px 600px at 20% 20%, rgba(176,107,80,.35), transparent 60%),
         radial-gradient(1000px 650px at 80% 10%, rgba(243,236,228,.12), transparent 55%),
@@ -38,7 +58,12 @@
       min-height:100vh;
     }
 
+    a{
+      color:inherit;
+    }
+
     .wrap{
+      width:100%;
       max-width:980px;
       margin:0 auto;
       padding:24px 18px 72px;
@@ -46,14 +71,15 @@
 
     .top{
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      gap:16px;
+      justify-content:space-between;
+      gap:14px;
       flex-wrap:wrap;
       margin-bottom:28px;
     }
 
-    .home-btn,.cta{
+    .home-btn,
+    .cta{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -75,15 +101,18 @@
     }
 
     .cta{
-      padding:12px 16px;
+      padding:13px 17px;
       border-radius:14px;
-      border:1px solid rgba(176,107,80,.8);
-      background:linear-gradient(145deg,rgba(176,107,80,.55),rgba(176,107,80,.28));
+      border:1px solid rgba(176,107,80,.85);
+      background:linear-gradient(145deg,rgba(176,107,80,.62),rgba(176,107,80,.32));
       color:#fff;
       box-shadow:0 10px 25px rgba(0,0,0,.25);
     }
 
-    .home-btn:hover,.cta:hover{transform:translateY(-2px)}
+    .home-btn:hover,
+    .cta:hover{
+      transform:translateY(-2px);
+    }
 
     .hero{
       position:relative;
@@ -108,6 +137,8 @@
     }
 
     .kicker{
+      position:relative;
+      z-index:1;
       display:inline-flex;
       gap:8px;
       align-items:center;
@@ -118,8 +149,6 @@
       font-size:13px;
       color:rgba(255,255,255,.92);
       margin-bottom:14px;
-      position:relative;
-      z-index:1;
     }
 
     .dot{
@@ -130,38 +159,28 @@
       box-shadow:0 0 0 4px rgba(94,214,137,.12);
     }
 
-    h1,h2{
+    h1,
+    h2{
       font-family:ui-serif,Georgia,"Times New Roman",Times,serif;
     }
 
     h1{
+      position:relative;
+      z-index:1;
       margin:0 0 12px;
       font-size:clamp(34px,5vw,54px);
       line-height:1.06;
-      position:relative;
-      z-index:1;
       max-width:13ch;
     }
 
     .subline{
+      position:relative;
+      z-index:1;
       margin:0;
       font-size:18px;
       line-height:1.65;
       color:var(--muted);
       max-width:62ch;
-      position:relative;
-      z-index:1;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      margin-top:22px;
-    }
-
-    @media(max-width:860px){
-      .grid{grid-template-columns:1fr}
     }
 
     .card{
@@ -170,11 +189,13 @@
       border-radius:18px;
       padding:22px 18px;
       box-shadow:var(--shadow-soft);
+      margin-top:18px;
     }
 
     .card h2{
       margin:0 0 12px;
       font-size:24px;
+      line-height:1.2;
     }
 
     .card p{
@@ -182,6 +203,74 @@
       color:var(--muted);
       line-height:1.65;
       font-size:15px;
+    }
+
+    .important{
+      border-color:rgba(214,196,156,.45);
+      background:
+        linear-gradient(180deg,rgba(214,196,156,.12),rgba(255,255,255,.04));
+    }
+
+    .download-card{
+      border-color:rgba(176,107,80,.35);
+      background:
+        radial-gradient(700px 260px at 10% 0%,rgba(176,107,80,.18),transparent 60%),
+        rgba(255,255,255,.05);
+    }
+
+    .download-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    @media(max-width:760px){
+      .download-actions{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .download-btn{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:4px;
+      min-height:76px;
+      padding:16px;
+      border-radius:16px;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+      box-shadow:0 10px 25px rgba(0,0,0,.18);
+      transition:.2s ease;
+    }
+
+    .download-btn:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,196,156,.45);
+    }
+
+    .download-btn strong{
+      font-size:17px;
+    }
+
+    .download-btn span{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+
+    @media(max-width:860px){
+      .grid{
+        grid-template-columns:1fr;
+      }
     }
 
     .steps{
@@ -195,10 +284,20 @@
       line-height:1.6;
     }
 
-    .important{
-      margin-top:22px;
-      border-color:rgba(214,196,156,.45);
-      background:linear-gradient(180deg,rgba(214,196,156,.12),rgba(255,255,255,.04));
+    .bullets{
+      margin:0;
+      padding-left:20px;
+    }
+
+    .bullets li{
+      margin:10px 0;
+      color:rgba(255,255,255,.84);
+      line-height:1.6;
+    }
+
+    .note{
+      color:#fff;
+      font-weight:800;
     }
 
     .screenshot-box{
@@ -218,13 +317,23 @@
     }
 
     .screenshot-box span{
+      display:block;
       color:var(--muted);
       line-height:1.5;
+      max-width:44ch;
+      margin:0 auto;
     }
 
-    .note{
-      color:#fff;
-      font-weight:800;
+    .number-example{
+      margin-top:12px;
+      padding:16px;
+      border-radius:16px;
+      background:rgba(0,0,0,.14);
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .number-example p{
+      margin:6px 0;
     }
 
     .footer-cta{
@@ -260,66 +369,88 @@
 </head>
 
 <body>
-  <div class="wrap">
+  <main class="wrap">
 
-    <div class="top">
+    <nav class="top" aria-label="Page navigation">
       <a class="home-btn" href="/">← Home</a>
-      <a class="cta" href="/#early">Get Early Access</a>
-    </div>
+      <a class="cta" href="#download">Download App</a>
+    </nav>
 
     <section class="hero">
       <div class="glow"></div>
       <div class="kicker"><span class="dot"></span>Early access install guide</div>
-      <h1>How to install Rooted Memories</h1>
+      <h1>Install Rooted Memories</h1>
       <p class="subline">
-        You’ve been invited to join a private family tree. Follow the steps below to install the app and access the tree you were invited to.
+        You’ve been invited to join a private family tree. Download the app below, then log in using the phone number that received your invitation.
       </p>
     </section>
 
     <section class="card important">
-      <h2>Important: tap Log In, not Get Started</h2>
+      <h2>Important: tap Log In</h2>
       <p>
-        If you have been invited to an existing family tree, you need to tap <span class="note">Log In</span> on the welcome screen.
+        If you have been invited to an existing family tree, tap <span class="note">Log In</span> when you open the app.
       </p>
       <p>
-        Do not tap <span class="note">Get Started</span>, as that is for creating a new tree.
+        Do <span class="note">not</span> tap <span class="note">Get Started</span>. That option creates a brand new family tree instead of opening the tree you were invited to.
       </p>
 
       <div class="screenshot-box">
-        <strong>Upload screenshot here</strong>
-        <span>Add a screenshot of the welcome screen showing users where to tap “Log In”.</span>
+        <strong>Screenshot placeholder</strong>
+        <span>
+          Add your screenshot here showing the welcome screen and highlighting “Log In”.
+        </span>
+      </div>
+    </section>
+
+    <section id="download" class="card download-card">
+      <h2>Download the app</h2>
+      <p>
+        Choose the version that matches your device.
+      </p>
+
+      <div class="download-actions">
+        <a class="download-btn" href="https://testflight.apple.com/join/NB8KxU5h" target="_blank" rel="noopener">
+          <strong>Install on iPhone</strong>
+          <span>Uses Apple TestFlight during early access</span>
+        </a>
+
+        <a class="download-btn" href="https://drive.google.com/file/d/1mtM1p_RIQh36KwMMXoKfyaZJeiPZNntt/view?usp=sharing" target="_blank" rel="noopener">
+          <strong>Download Android APK</strong>
+          <span>Install manually during early access</span>
+        </a>
       </div>
     </section>
 
     <div class="grid">
       <section class="card">
-        <h2>For iPhone</h2>
+        <h2>iPhone steps</h2>
         <ol class="steps">
-          <li>Tap the invite link you were sent.</li>
+          <li>Tap <span class="note">Install on iPhone</span> above.</li>
           <li>Install TestFlight if prompted.</li>
           <li>Open the Rooted Memories TestFlight page.</li>
-          <li>Tap Install.</li>
+          <li>Tap <span class="note">Install</span>.</li>
           <li>Open Rooted Memories.</li>
-          <li>Tap Log In.</li>
-          <li>Enter the same phone number the invite was sent to.</li>
+          <li>Tap <span class="note">Log In</span>.</li>
+          <li>Enter the phone number that received the invitation.</li>
           <li>Enter the verification code.</li>
-          <li>You should then be taken into the family tree.</li>
+          <li>Your invited family tree should open.</li>
         </ol>
       </section>
 
       <section class="card">
-        <h2>For Android</h2>
+        <h2>Android steps</h2>
         <ol class="steps">
-          <li>Tap the download link you were sent.</li>
+          <li>Tap <span class="note">Download Android APK</span> above.</li>
           <li>Download the APK file.</li>
-          <li>Your phone may ask you to allow installs from this source.</li>
-          <li>Tap Allow or Settings, then enable installation.</li>
-          <li>Return to the file and tap Install.</li>
+          <li>Open the downloaded file.</li>
+          <li>If Android blocks the install, tap <span class="note">Settings</span>.</li>
+          <li>Allow installation from this source.</li>
+          <li>Return to the APK and tap <span class="note">Install</span>.</li>
           <li>Open Rooted Memories.</li>
-          <li>Tap Log In.</li>
-          <li>Enter the same phone number the invite was sent to.</li>
+          <li>Tap <span class="note">Log In</span>.</li>
+          <li>Enter the phone number that received the invitation.</li>
           <li>Enter the verification code.</li>
-          <li>You should then be taken into the family tree.</li>
+          <li>Your invited family tree should open.</li>
         </ol>
       </section>
     </div>
@@ -327,28 +458,50 @@
     <section class="card important">
       <h2>Use the invited phone number</h2>
       <p>
-        Only use the phone number that received the invitation. If you use a different number, the app may not connect you to the correct family tree.
+        You must log in with the same phone number that received the invitation. If you use a different number, the app may not connect you to the correct family tree.
       </p>
-      <p>
-        For UK numbers, if <span class="note">+44</span> is already selected, enter the number without the first 0.
-      </p>
-      <p>
-        Example: use <span class="note">7911000001</span>, not <span class="note">07911000001</span> or <span class="note">+447911000001</span>.
+
+      <div class="number-example">
+        <p>
+          If <span class="note">+44</span> is already selected, enter your UK number without the first <span class="note">0</span>.
+        </p>
+        <p>
+          Use: <span class="note">7911000001</span>
+        </p>
+        <p>
+          Not: <span class="note">07911000001</span>
+        </p>
+        <p>
+          Not: <span class="note">+447911000001</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Having trouble?</h2>
+      <ul class="bullets">
+        <li>Make sure you tapped <span class="note">Log In</span>, not <span class="note">Get Started</span>.</li>
+        <li>Make sure you are using the phone number that received the invite.</li>
+        <li>Check that the phone number has been entered correctly.</li>
+        <li>If you are on Android, make sure the APK has fully installed before opening the app.</li>
+      </ul>
+      <p style="margin-top:16px;">
+        If you still cannot access the tree, contact the person who invited you.
       </p>
     </section>
 
     <section class="footer-cta">
-      <h2>Need help getting in?</h2>
+      <h2>Ready to join your family tree?</h2>
       <p>
-        If your invite does not work, check that you are using the correct phone number and that you tapped Log In rather than Get Started.
+        Download the app, tap Log In, and use the phone number that received your invitation.
       </p>
-      <a class="cta" href="/">Return to Rooted Memories</a>
+      <a class="cta" href="#download">Download App</a>
     </section>
 
     <div class="bottom-home">
       <a class="home-btn" href="/">← Return to Home</a>
     </div>
 
-  </div>
+  </main>
 </body>
 </html>
