@@ -1,1 +1,354 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>How to Install Rooted Memories</title>
+  <meta name="description" content="Step-by-step guide for invited family members installing Rooted Memories during early access." />
+  <link rel="canonical" href="https://rootedmemories.co.uk/install-guide/" />
+
+  <link rel="icon" href="/favicon3.png" sizes="96x96" />
+  <link rel="apple-touch-icon" href="/favicon3.png" />
+  <meta name="theme-color" content="#0f3a2f" />
+
+  <style>
+    :root{
+      --forest:#0f3a2f;
+      --forest-2:#0b2f26;
+      --cream:#f3ece4;
+      --accent:#b06b50;
+      --gold:#d6c49c;
+      --muted:rgba(255,255,255,.78);
+      --shadow:0 18px 45px rgba(0,0,0,.25);
+      --shadow-soft:0 12px 30px rgba(0,0,0,.18);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,sans-serif;
+      color:#fff;
+      background:
+        radial-gradient(1200px 600px at 20% 20%, rgba(176,107,80,.35), transparent 60%),
+        radial-gradient(1000px 650px at 80% 10%, rgba(243,236,228,.12), transparent 55%),
+        linear-gradient(180deg,#081f18 0%,#061612 100%);
+      min-height:100vh;
+    }
+
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:24px 18px 72px;
+    }
+
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:28px;
+    }
+
+    .home-btn,.cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      font-weight:800;
+      transition:.2s ease;
+    }
+
+    .home-btn{
+      gap:8px;
+      padding:12px 18px;
+      border-radius:999px;
+      font-size:14px;
+      background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      backdrop-filter:blur(12px);
+      box-shadow:0 8px 20px rgba(0,0,0,.25);
+    }
+
+    .cta{
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(176,107,80,.8);
+      background:linear-gradient(145deg,rgba(176,107,80,.55),rgba(176,107,80,.28));
+      color:#fff;
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+    }
+
+    .home-btn:hover,.cta:hover{transform:translateY(-2px)}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      box-shadow:var(--shadow);
+      padding:34px 24px;
+      margin-bottom:22px;
+    }
+
+    .glow{
+      position:absolute;
+      inset:-140px -180px auto auto;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background:radial-gradient(circle at 30% 30%,rgba(176,107,80,.55),transparent 60%);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color:rgba(255,255,255,.92);
+      margin-bottom:14px;
+      position:relative;
+      z-index:1;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:rgba(94,214,137,.9);
+      box-shadow:0 0 0 4px rgba(94,214,137,.12);
+    }
+
+    h1,h2{
+      font-family:ui-serif,Georgia,"Times New Roman",Times,serif;
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(34px,5vw,54px);
+      line-height:1.06;
+      position:relative;
+      z-index:1;
+      max-width:13ch;
+    }
+
+    .subline{
+      margin:0;
+      font-size:18px;
+      line-height:1.65;
+      color:var(--muted);
+      max-width:62ch;
+      position:relative;
+      z-index:1;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:22px;
+    }
+
+    @media(max-width:860px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:18px;
+      padding:22px 18px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .card h2{
+      margin:0 0 12px;
+      font-size:24px;
+    }
+
+    .card p{
+      margin:0 0 12px;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:15px;
+    }
+
+    .steps{
+      margin:0;
+      padding-left:22px;
+    }
+
+    .steps li{
+      margin:10px 0;
+      color:rgba(255,255,255,.84);
+      line-height:1.6;
+    }
+
+    .important{
+      margin-top:22px;
+      border-color:rgba(214,196,156,.45);
+      background:linear-gradient(180deg,rgba(214,196,156,.12),rgba(255,255,255,.04));
+    }
+
+    .screenshot-box{
+      margin-top:16px;
+      border:2px dashed rgba(214,196,156,.55);
+      border-radius:18px;
+      padding:26px 18px;
+      text-align:center;
+      background:rgba(0,0,0,.12);
+    }
+
+    .screenshot-box strong{
+      display:block;
+      font-size:20px;
+      margin-bottom:8px;
+      color:#fff;
+    }
+
+    .screenshot-box span{
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .note{
+      color:#fff;
+      font-weight:800;
+    }
+
+    .footer-cta{
+      margin-top:30px;
+      text-align:center;
+      padding:30px 18px;
+      border-radius:22px;
+      background:
+        radial-gradient(900px 300px at 50% 0%,rgba(176,107,80,.18),transparent 60%),
+        linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .footer-cta h2{
+      margin:0 0 10px;
+      font-size:clamp(28px,4vw,42px);
+      line-height:1.12;
+    }
+
+    .footer-cta p{
+      margin:0 auto 18px;
+      color:rgba(255,255,255,.78);
+      max-width:42ch;
+      line-height:1.65;
+    }
+
+    .bottom-home{
+      margin-top:24px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="top">
+      <a class="home-btn" href="/">← Home</a>
+      <a class="cta" href="/#early">Get Early Access</a>
+    </div>
+
+    <section class="hero">
+      <div class="glow"></div>
+      <div class="kicker"><span class="dot"></span>Early access install guide</div>
+      <h1>How to install Rooted Memories</h1>
+      <p class="subline">
+        You’ve been invited to join a private family tree. Follow the steps below to install the app and access the tree you were invited to.
+      </p>
+    </section>
+
+    <section class="card important">
+      <h2>Important: tap Log In, not Get Started</h2>
+      <p>
+        If you have been invited to an existing family tree, you need to tap <span class="note">Log In</span> on the welcome screen.
+      </p>
+      <p>
+        Do not tap <span class="note">Get Started</span>, as that is for creating a new tree.
+      </p>
+
+      <div class="screenshot-box">
+        <strong>Upload screenshot here</strong>
+        <span>Add a screenshot of the welcome screen showing users where to tap “Log In”.</span>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>For iPhone</h2>
+        <ol class="steps">
+          <li>Tap the invite link you were sent.</li>
+          <li>Install TestFlight if prompted.</li>
+          <li>Open the Rooted Memories TestFlight page.</li>
+          <li>Tap Install.</li>
+          <li>Open Rooted Memories.</li>
+          <li>Tap Log In.</li>
+          <li>Enter the same phone number the invite was sent to.</li>
+          <li>Enter the verification code.</li>
+          <li>You should then be taken into the family tree.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>For Android</h2>
+        <ol class="steps">
+          <li>Tap the download link you were sent.</li>
+          <li>Download the APK file.</li>
+          <li>Your phone may ask you to allow installs from this source.</li>
+          <li>Tap Allow or Settings, then enable installation.</li>
+          <li>Return to the file and tap Install.</li>
+          <li>Open Rooted Memories.</li>
+          <li>Tap Log In.</li>
+          <li>Enter the same phone number the invite was sent to.</li>
+          <li>Enter the verification code.</li>
+          <li>You should then be taken into the family tree.</li>
+        </ol>
+      </section>
+    </div>
+
+    <section class="card important">
+      <h2>Use the invited phone number</h2>
+      <p>
+        Only use the phone number that received the invitation. If you use a different number, the app may not connect you to the correct family tree.
+      </p>
+      <p>
+        For UK numbers, if <span class="note">+44</span> is already selected, enter the number without the first 0.
+      </p>
+      <p>
+        Example: use <span class="note">7911000001</span>, not <span class="note">07911000001</span> or <span class="note">+447911000001</span>.
+      </p>
+    </section>
+
+    <section class="footer-cta">
+      <h2>Need help getting in?</h2>
+      <p>
+        If your invite does not work, check that you are using the correct phone number and that you tapped Log In rather than Get Started.
+      </p>
+      <a class="cta" href="/">Return to Rooted Memories</a>
+    </section>
+
+    <div class="bottom-home">
+      <a class="home-btn" href="/">← Return to Home</a>
+    </div>
+
+  </div>
+</body>
+</html>
