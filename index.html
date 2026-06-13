@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +29,7 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1927964177837230');
   fbq('track', 'PageView');
+  fbq('track', 'ViewContent', { content_name: 'Homepage' });
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
@@ -37,15 +39,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Rooted Memories | Your private family archive</title>
-  <meta name="description" content="Rooted Memories is your private family archive: organise photos and stories by person, build a family tree, and preserve your family history for generations." />
+  <title>Rooted Memories | Private Family Archive App</title>
+  <meta name="description" content="Rooted Memories is a private family archive app: organise family photos and stories by person, build your family tree, and preserve memories for future generations." />
   <meta name="application-name" content="Rooted Memories" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://rootedmemories.co.uk/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Rooted Memories" />
-  <meta property="og:title" content="Rooted Memories | Your private family archive" />
+  <meta property="og:title" content="Rooted Memories | Private Family Archive App" />
   <meta property="og:description" content="One private place for your family’s photos and stories, organised by person and not lost in camera rolls." />
   <meta property="og:url" content="https://rootedmemories.co.uk/" />
   <meta property="og:image" content="https://rootedmemories.co.uk/og-image.6.png?v=2" />
@@ -53,7 +55,7 @@
   <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rooted Memories | Your private family archive" />
+  <meta name="twitter:title" content="Rooted Memories | Private Family Archive App" />
   <meta name="twitter:description" content="One private place for your family’s photos and stories, organised by person and not lost in camera rolls." />
   <meta name="twitter:image" content="https://rootedmemories.co.uk/og-image.6.png?v=2" />
 
@@ -802,10 +804,13 @@
       line-height:1.65;
     }
 
+    .big-cta .store-row{
+      max-width:620px;
+      margin:0 auto;
+    }
+
     .big-cta .store-btn{
       justify-content:center;
-      max-width:260px;
-      margin:0 auto;
     }
 
     .cta-note{
@@ -854,39 +859,61 @@ a:hover {
       </a>
 
       <div class="nav">
-        <a class="pill join-pill" href="#early" data-join-early>Join Early Access</a>
+        <a class="pill join-pill" href="#download">Download App</a>
       </div>
     </div>
 
     <div class="hero">
-      <div class="hero-left" id="early">
+      <div class="hero-left" id="download">
         <div class="glow"></div>
 
-        <div class="kicker"><span class="dot"></span><strong>Early Access Closing Soon.</strong> Join 75+ families</div>
+        <div class="kicker"><span class="dot"></span><strong>Free for life.</strong> Available for early families</div>
 
-        <h1>A private family archive that organises your memories by people, not lost in your camera roll.</h1>
+        <h1>Your family's private archive. Organised by people, not lost in camera rolls.</h1>
 
         <p class="subline">
           <br>Right now, your family’s memories are buried across multiple phones. They keep stacking up, and every year you wait, more of your history is gone for good.<br>
-<br><strong>Rooted Memories</strong> organises everything into a permanent <a href="/what-is-a-private-family-archive/">private family archive</a>, 
-          where <strong>each person has their own place.</strong><br>
-         <br> Your whole family can contribute, and your memories build into a lasting family history your children can return to for years.
+          <br><strong>Rooted Memories</strong> organises everything into a permanent <a href="/what-is-a-private-family-archive/">private family archive</a>, where <strong>each person has their own place.</strong><br>
+          <br>Your whole family can contribute, and your memories build into a lasting family history your children can return to for years.
         </p>
 
         <div class="divider"></div>
 
-        <form id="earlyAccessFormTop" class="early-form" action="https://formspree.io/f/mqedopdn" method="POST" novalidate>
-          <input id="earlyEmail" class="early-input" type="email" name="email" placeholder="Enter your email to start building" required />
-          <button class="early-btn" type="submit">
-            <span class="btn-text">Get Early Access</span>
-            <span class="btn-dots" aria-hidden="true"><span></span><span></span><span></span></span>
-          </button>
-        </form>
+        <div class="app-section" style="margin-top:16px;">
+          <h3>Download Rooted Memories</h3>
+          <p>
+            Start building your private family archive today. Free for life for early families.
+          </p>
 
-        <div id="earlyMsgTop" class="form-msg" role="status" aria-live="polite"></div>
+          <div class="store-row">
+            <a class="store-btn" href="https://apps.apple.com/app/rooted-memories/id6762365641" data-store-link="app-store" aria-label="Download Rooted Memories on the App Store">
+              <svg class="store-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M16.7 13.3c0 2.9 2.6 3.9 2.6 3.9s-2.0 5.1-4.7 5.1c-1.0 0-1.8-.6-2.9-.6s-1.9.6-3 .6C6.2 22.3 4 17.6 4 14.1c0-2.9 1.9-4.4 3.7-4.4 1 0 1.9.7 2.8.7s1.9-.7 3.2-.7c.5 0 2.2.0 3.3 1.7-3 .8-3.3 2.8-3.3 3.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14.7 3.9c-.7.9-1.8 1.6-2.9 1.5-.1-1.1.4-2.2 1.1-3 .7-.8 1.9-1.4 2.9-1.4.1 1.1-.3 2.1-1.1 2.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="label">
+                <span class="small">Download on the</span>
+                <span class="big">App Store</span>
+              </span>
+            </a>
 
-        <div class="fineprint">
-          Free early access • Limited founding members • Private updates only (no spam) • <strong>First Wave Open Now</strong>
+            <a class="store-btn" href="GOOGLE_PLAY_LINK_HERE" data-store-link="google-play" aria-label="Get Rooted Memories on Google Play">
+              <svg class="store-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5.2 3.8 15.7 14.3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M5.2 20.2 15.7 9.7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M15.7 9.7 19.6 12c.5.3.5 1 0 1.3l-3.9 2.3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.2 3.8c-.7.7-.7 15.7 0 16.4" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <span class="label">
+                <span class="small">Get it on</span>
+                <span class="big">Google Play</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="fineprint">
+            Private family archive • Invite-only trees • Free for life for early users
+          </div>
         </div>
 
         <div class="bullets">
@@ -926,12 +953,9 @@ a:hover {
         </div>
 
         <div class="card" style="margin-top:0;">
-          <h3>What you’ll be able to do</h3>
+          <h3>What you can do</h3>
           <p>
-            Build your family tree, drop in photos, captions, and stories.
-            All connected to the right person so it stays organised as time goes by.
-            Keep all your children's photos structured cleanly, and eventually hand over
-            their profile to take over. Their childhood will become the start of their profile.
+            Build your family tree, add photos, captions, and stories. Everything stays connected to the right person, so your family history stays organised over time.
           </p>
         </div>
       </div>
@@ -959,50 +983,72 @@ a:hover {
       </a>
     </section>
 
-    <div class="app-section" id="download">
-      <h3>Download the app (Coming Soon)</h3>
+    <div class="app-section">
+      <h3>Available for early families</h3>
       <p>
-        Rooted Memories is launching soon. Early access members will get first access when iOS and Android are ready.
+        Download Rooted Memories and start organising your family photos by person, story and generation.
       </p>
 
       <div class="store-row">
-        <a class="store-btn disabled" href="#" aria-disabled="true">
-          <svg class="store-ic" viewBox="0 0 24 24" fill="none">
-            <path d="M16.7 13.3c0 2.9 2.6 3.9 2.6 3.9s-2.0 5.1-4.7 5.1c-1.0 0-1.8-.6-2.9-.6s-1.9.6-3 .6C6.2 22.3 4 17.6 4 14.1c0-2.9 1.9-4.4 3.7-4.4 1 0 1.9.7 2.8.7s1.9-.7 3.2-.7c.5 0 2.2.0 3.3 1.7-3 .8-3.3 2.8-3.3 3.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M14.7 3.9c-.7.9-1.8 1.6-2.9 1.5-.1-1.1.4-2.2 1.1-3 .7-.8 1.9-1.4 2.9-1.4.1 1.1-.3 2.1-1.1 2.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="label">
-            <span class="small">Coming soon on</span>
-            <span class="big">App Store</span>
-          </span>
-        </a>
+            <a class="store-btn" href="https://apps.apple.com/app/rooted-memories/id6762365641" data-store-link="app-store" aria-label="Download Rooted Memories on the App Store">
+              <svg class="store-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M16.7 13.3c0 2.9 2.6 3.9 2.6 3.9s-2.0 5.1-4.7 5.1c-1.0 0-1.8-.6-2.9-.6s-1.9.6-3 .6C6.2 22.3 4 17.6 4 14.1c0-2.9 1.9-4.4 3.7-4.4 1 0 1.9.7 2.8.7s1.9-.7 3.2-.7c.5 0 2.2.0 3.3 1.7-3 .8-3.3 2.8-3.3 3.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14.7 3.9c-.7.9-1.8 1.6-2.9 1.5-.1-1.1.4-2.2 1.1-3 .7-.8 1.9-1.4 2.9-1.4.1 1.1-.3 2.1-1.1 2.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="label">
+                <span class="small">Download on the</span>
+                <span class="big">App Store</span>
+              </span>
+            </a>
 
-        <a class="store-btn disabled" href="#" aria-disabled="true">
-          <svg class="store-ic" viewBox="0 0 24 24" fill="none">
-            <path d="M5.2 3.8 15.7 14.3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M5.2 20.2 15.7 9.7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M15.7 9.7 19.6 12c.5.3.5 1 0 1.3l-3.9 2.3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5.2 3.8c-.7.7-.7 15.7 0 16.4" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-          <span class="label">
-            <span class="small">Coming soon on</span>
-            <span class="big">Google Play</span>
-          </span>
-        </a>
-      </div>
+            <a class="store-btn" href="GOOGLE_PLAY_LINK_HERE" data-store-link="google-play" aria-label="Get Rooted Memories on Google Play">
+              <svg class="store-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5.2 3.8 15.7 14.3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M5.2 20.2 15.7 9.7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M15.7 9.7 19.6 12c.5.3.5 1 0 1.3l-3.9 2.3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.2 3.8c-.7.7-.7 15.7 0 16.4" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <span class="label">
+                <span class="small">Get it on</span>
+                <span class="big">Google Play</span>
+              </span>
+            </a>
+          </div>
     </div>
 
     <div class="big-cta">
       <h2>Your family's story deserves more than a group chat or messy album.</h2>
       <p>
-        If this resonates, join the founding list. You’ll be first in line when we open early access. (limited places)
+        Start building your private family archive today. Keep memories connected to the people they belong to.
       </p>
 
-      <button class="store-btn" type="button" id="jumpToEarly">
-        Get Early Access
-      </button>
+      <div class="store-row">
+            <a class="store-btn" href="https://apps.apple.com/app/rooted-memories/id6762365641" data-store-link="app-store" aria-label="Download Rooted Memories on the App Store">
+              <svg class="store-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M16.7 13.3c0 2.9 2.6 3.9 2.6 3.9s-2.0 5.1-4.7 5.1c-1.0 0-1.8-.6-2.9-.6s-1.9.6-3 .6C6.2 22.3 4 17.6 4 14.1c0-2.9 1.9-4.4 3.7-4.4 1 0 1.9.7 2.8.7s1.9-.7 3.2-.7c.5 0 2.2.0 3.3 1.7-3 .8-3.3 2.8-3.3 3.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14.7 3.9c-.7.9-1.8 1.6-2.9 1.5-.1-1.1.4-2.2 1.1-3 .7-.8 1.9-1.4 2.9-1.4.1 1.1-.3 2.1-1.1 2.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="label">
+                <span class="small">Download on the</span>
+                <span class="big">App Store</span>
+              </span>
+            </a>
 
-      <div class="cta-note">Private updates only. No spam.</div>
+            <a class="store-btn" href="GOOGLE_PLAY_LINK_HERE" data-store-link="google-play" aria-label="Get Rooted Memories on Google Play">
+              <svg class="store-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5.2 3.8 15.7 14.3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M5.2 20.2 15.7 9.7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M15.7 9.7 19.6 12c.5.3.5 1 0 1.3l-3.9 2.3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.2 3.8c-.7.7-.7 15.7 0 16.4" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <span class="label">
+                <span class="small">Get it on</span>
+                <span class="big">Google Play</span>
+              </span>
+            </a>
+          </div>
+
+      <div class="cta-note">Free for life for early families.</div>
     </div>
 
     <footer>
@@ -1019,6 +1065,19 @@ a:hover {
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    (function(){
+      const storeLinks = document.querySelectorAll('[data-store-link]');
+      storeLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (!window.fbq) return;
+          fbq('trackCustom', 'StoreButtonClick', {
+            store: link.getAttribute('data-store-link'),
+            content_name: 'Rooted Memories App Download'
+          });
+        });
+      });
+    })();
 
     (function(){
       const track = document.getElementById('shotTrack');
@@ -1071,146 +1130,6 @@ a:hover {
 
           activeIndex = bestIdx;
           updateDots();
-        });
-      });
-    })();
-
-    function trackEarlyAccessSuccess(){
-      if (!window.fbq) return;
-
-      const baseEventId = 'ea_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
-
-      fbq(
-        'track',
-        'Lead',
-        {
-          content_name: 'Early Access Signup',
-          content_category: 'Waitlist',
-          status: 'success'
-        },
-        { eventID: baseEventId + '_lead' }
-      );
-
-      fbq(
-        'track',
-        'Subscribe',
-        {
-          content_name: 'Early Access Signup',
-          content_category: 'Waitlist',
-          status: 'success'
-        },
-        { eventID: baseEventId + '_subscribe' }
-      );
-
-      fbq(
-        'trackCustom',
-        'EarlyAccessSignup',
-        {
-          content_name: 'Early Access Signup',
-          content_category: 'Waitlist',
-          status: 'success'
-        },
-        { eventID: baseEventId + '_custom' }
-      );
-    }
-
-    (function wireEarlyAccessForm(){
-      const formId = 'earlyAccessFormTop';
-      const msgId  = 'earlyMsgTop';
-
-      const form = document.getElementById(formId);
-      const msg  = document.getElementById(msgId);
-      if (!form || !msg) return;
-
-      const btn  = form.querySelector('button[type="submit"]');
-      const input = form.querySelector('input[type="email"]');
-
-      function setMsg(type, text){
-        msg.className = 'form-msg ' + type;
-        msg.style.display = 'block';
-        msg.textContent = text;
-      }
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        if (!input.value || !input.checkValidity()){
-          setMsg('error', 'Please enter a valid email address.');
-          input.focus();
-          return;
-        }
-
-        btn.disabled = true;
-        btn.classList.add('loading');
-        setMsg('loading', 'Sending…');
-
-        try{
-          const formData = new FormData(form);
-
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (res.ok) {
-            trackEarlyAccessSuccess();
-
-            await new Promise(resolve => setTimeout(resolve, 180));
-
-            form.reset();
-
-            setMsg(
-              'success',
-              "You're on the list - thank you. We’ll email within 24 hours with confirmation and next steps. Keep an eye on your inbox (and spam just in case)."
-            );
-          } else {
-            setMsg('error', "That didn’t send. Please try again.");
-          }
-        } catch(err){
-          setMsg('error', "Network issue — please try again.");
-        } finally {
-          btn.disabled = false;
-          btn.classList.remove('loading');
-        }
-      });
-    })();
-
-    function focusAndGlowEarlyAccess(){
-      const form = document.getElementById('earlyAccessFormTop');
-      if (!form) return;
-
-      const rect = form.getBoundingClientRect();
-      const absoluteTop = rect.top + window.pageYOffset;
-      const offset = (window.innerHeight / 2) - (rect.height / 2);
-
-      window.scrollTo({ top: absoluteTop - offset, behavior: 'smooth' });
-
-      setTimeout(() => {
-        const input = document.getElementById('earlyEmail');
-        if (!input) return;
-
-        input.classList.add('glow-on');
-        input.focus({ preventScroll: true });
-
-        const stopGlow = () => input.classList.remove('glow-on');
-        setTimeout(stopGlow, 2200);
-        input.addEventListener('input', stopGlow, { once:true });
-      }, 450);
-    }
-
-    (function(){
-      const btn = document.getElementById('jumpToEarly');
-      if (!btn) return;
-      btn.addEventListener('click', focusAndGlowEarlyAccess);
-    })();
-
-    (function(){
-      const links = document.querySelectorAll('[data-join-early]');
-      links.forEach(a => {
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          focusAndGlowEarlyAccess();
         });
       });
     })();
