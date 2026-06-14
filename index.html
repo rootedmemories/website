@@ -1039,11 +1039,14 @@ a:hover {
         e.preventDefault();
 
         const url = this.href;
-        const store = this.getAttribute('data-store-link');
+
+        const store =
+          this.getAttribute('data-store-link') === 'app-store'
+            ? 'Apple App Store'
+            : 'Google Play';
 
         if (window.fbq) {
           fbq('track', 'Lead', {
-            content_name: 'Rooted Memories App Download',
             store: store
           });
         }
@@ -1101,7 +1104,10 @@ a:hover {
           const r = s.getBoundingClientRect();
           const c = r.left + r.width / 2;
           const d = Math.abs(c - center);
-          if (d < bestDist){ bestDist = d; bestIdx = idx; }
+          if (d < bestDist){
+            bestDist = d;
+            bestIdx = idx;
+          }
         });
 
         activeIndex = bestIdx;
