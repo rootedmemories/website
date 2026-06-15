@@ -886,7 +886,7 @@ a:hover {
           </p>
 
           <div class="store-row">
-            <a class="store-btn" href="https://apps.apple.com/app/rooted-memories/id6762365641" data-store-link="app-store" aria-label="Download Rooted Memories on the App Store">
+            <a class="store-btn" href="https://apps.apple.com/app/rooted-memories/id6762365641" data-store-link="app-store" onclick="fbq('track','Lead',{store:'apple'});" aria-label="Download Rooted Memories on the App Store">
               <svg class="store-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M16.7 13.3c0 2.9 2.6 3.9 2.6 3.9s-2.0 5.1-4.7 5.1c-1.0 0-1.8-.6-2.9-.6s-1.9.6-3 .6C6.2 22.3 4 17.6 4 14.1c0-2.9 1.9-4.4 3.7-4.4 1 0 1.9.7 2.8.7s1.9-.7 3.2-.7c.5 0 2.2.0 3.3 1.7-3 .8-3.3 2.8-3.3 3.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M14.7 3.9c-.7.9-1.8 1.6-2.9 1.5-.1-1.1.4-2.2 1.1-3 .7-.8 1.9-1.4 2.9-1.4.1 1.1-.3 2.1-1.1 2.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -897,7 +897,7 @@ a:hover {
               </span>
             </a>
 
-            <a class="store-btn" href="GOOGLE_PLAY_LINK_HERE" data-store-link="google-play" aria-label="Get Rooted Memories on Google Play">
+            <a class="store-btn" href="GOOGLE_PLAY_LINK_HERE" data-store-link="google-play" onclick="fbq('track','Lead',{store:'google'});" aria-label="Get Rooted Memories on Google Play">
               <svg class="store-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M5.2 3.8 15.7 14.3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
                 <path d="M5.2 20.2 15.7 9.7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
@@ -990,7 +990,7 @@ a:hover {
       </p>
 
       <div class="store-row">
-            <a class="store-btn" href="https://apps.apple.com/app/rooted-memories/id6762365641" data-store-link="app-store" aria-label="Download Rooted Memories on the App Store">
+            <a class="store-btn" href="https://apps.apple.com/app/rooted-memories/id6762365641" data-store-link="app-store" onclick="fbq('track','Lead',{store:'apple'});" aria-label="Download Rooted Memories on the App Store">
               <svg class="store-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M16.7 13.3c0 2.9 2.6 3.9 2.6 3.9s-2.0 5.1-4.7 5.1c-1.0 0-1.8-.6-2.9-.6s-1.9.6-3 .6C6.2 22.3 4 17.6 4 14.1c0-2.9 1.9-4.4 3.7-4.4 1 0 1.9.7 2.8.7s1.9-.7 3.2-.7c.5 0 2.2.0 3.3 1.7-3 .8-3.3 2.8-3.3 3.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M14.7 3.9c-.7.9-1.8 1.6-2.9 1.5-.1-1.1.4-2.2 1.1-3 .7-.8 1.9-1.4 2.9-1.4.1 1.1-.3 2.1-1.1 2.9Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1001,7 +1001,7 @@ a:hover {
               </span>
             </a>
 
-            <a class="store-btn" href="GOOGLE_PLAY_LINK_HERE" data-store-link="google-play" aria-label="Get Rooted Memories on Google Play">
+            <a class="store-btn" href="GOOGLE_PLAY_LINK_HERE" data-store-link="google-play" onclick="fbq('track','Lead',{store:'google'});" aria-label="Get Rooted Memories on Google Play">
               <svg class="store-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M5.2 3.8 15.7 14.3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
                 <path d="M5.2 20.2 15.7 9.7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
@@ -1031,90 +1031,75 @@ a:hover {
   </div>
 
   <script>
-  document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-  (function(){
-    document.querySelectorAll('[data-store-link]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        const url = this.href;
-
-        const store =
-          this.getAttribute('data-store-link') === 'app-store'
-            ? 'Apple App Store'
-            : 'Google Play';
-
-        if (window.fbq) {
-          fbq('track', 'Lead', {
-            store: store
+    (function(){
+      const storeLinks = document.querySelectorAll('[data-store-link]');
+      storeLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (!window.fbq) return;
+          fbq('trackCustom', 'StoreButtonClick', {
+            store: link.getAttribute('data-store-link'),
+            content_name: 'Rooted Memories App Download'
           });
-        }
-
-        setTimeout(() => {
-          window.location.href = url;
-        }, 350);
-      });
-    });
-  })();
-
-  (function(){
-    const track = document.getElementById('shotTrack');
-    const shots = Array.from(track.querySelectorAll('.shot'));
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dotsWrap = document.getElementById('carDots');
-
-    let activeIndex = 0;
-
-    function scrollToIndex(i){
-      activeIndex = Math.max(0, Math.min(i, shots.length - 1));
-      const el = shots[activeIndex];
-      el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-      updateDots();
-    }
-
-    function updateDots(){
-      const dots = Array.from(dotsWrap.querySelectorAll('button'));
-      dots.forEach((d, idx) => d.setAttribute('aria-current', String(idx === activeIndex)));
-    }
-
-    shots.forEach((_, idx) => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('aria-label', 'Go to screenshot ' + (idx + 1));
-      b.setAttribute('aria-current', String(idx === 0));
-      b.addEventListener('click', () => scrollToIndex(idx));
-      dotsWrap.appendChild(b);
-    });
-
-    prevBtn.addEventListener('click', () => scrollToIndex(activeIndex - 1));
-    nextBtn.addEventListener('click', () => scrollToIndex(activeIndex + 1));
-
-    let raf = null;
-    track.addEventListener('scroll', () => {
-      if (raf) cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const rect = track.getBoundingClientRect();
-        const center = rect.left + rect.width / 2;
-        let bestIdx = 0;
-        let bestDist = Infinity;
-
-        shots.forEach((s, idx) => {
-          const r = s.getBoundingClientRect();
-          const c = r.left + r.width / 2;
-          const d = Math.abs(c - center);
-          if (d < bestDist){
-            bestDist = d;
-            bestIdx = idx;
-          }
         });
-
-        activeIndex = bestIdx;
-        updateDots();
       });
-    });
-  })();
-</script>
+    })();
+
+    (function(){
+      const track = document.getElementById('shotTrack');
+      const shots = Array.from(track.querySelectorAll('.shot'));
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsWrap = document.getElementById('carDots');
+
+      let activeIndex = 0;
+
+      function scrollToIndex(i){
+        activeIndex = Math.max(0, Math.min(i, shots.length - 1));
+        const el = shots[activeIndex];
+        el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        updateDots();
+      }
+
+      function updateDots(){
+        const dots = Array.from(dotsWrap.querySelectorAll('button'));
+        dots.forEach((d, idx) => d.setAttribute('aria-current', String(idx === activeIndex)));
+      }
+
+      shots.forEach((_, idx) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Go to screenshot ' + (idx + 1));
+        b.setAttribute('aria-current', String(idx === 0));
+        b.addEventListener('click', () => scrollToIndex(idx));
+        dotsWrap.appendChild(b);
+      });
+
+      prevBtn.addEventListener('click', () => scrollToIndex(activeIndex - 1));
+      nextBtn.addEventListener('click', () => scrollToIndex(activeIndex + 1));
+
+      let raf = null;
+      track.addEventListener('scroll', () => {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const rect = track.getBoundingClientRect();
+          const center = rect.left + rect.width / 2;
+          let bestIdx = 0;
+          let bestDist = Infinity;
+
+          shots.forEach((s, idx) => {
+            const r = s.getBoundingClientRect();
+            const c = r.left + r.width / 2;
+            const d = Math.abs(c - center);
+            if (d < bestDist){ bestDist = d; bestIdx = idx; }
+          });
+
+          activeIndex = bestIdx;
+          updateDots();
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
