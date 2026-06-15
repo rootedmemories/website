@@ -1031,75 +1031,65 @@ a:hover {
   </div>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-    (function(){
-      const storeLinks = document.querySelectorAll('[data-store-link]');
-      storeLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          if (!window.fbq) return;
-          fbq('trackCustom', 'StoreButtonClick', {
-            store: link.getAttribute('data-store-link'),
-            content_name: 'Rooted Memories App Download'
-          });
+  (function(){
+    const track = document.getElementById('shotTrack');
+    const shots = Array.from(track.querySelectorAll('.shot'));
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsWrap = document.getElementById('carDots');
+
+    let activeIndex = 0;
+
+    function scrollToIndex(i){
+      activeIndex = Math.max(0, Math.min(i, shots.length - 1));
+      const el = shots[activeIndex];
+      el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      updateDots();
+    }
+
+    function updateDots(){
+      const dots = Array.from(dotsWrap.querySelectorAll('button'));
+      dots.forEach((d, idx) => d.setAttribute('aria-current', String(idx === activeIndex)));
+    }
+
+    shots.forEach((_, idx) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Go to screenshot ' + (idx + 1));
+      b.setAttribute('aria-current', String(idx === 0));
+      b.addEventListener('click', () => scrollToIndex(idx));
+      dotsWrap.appendChild(b);
+    });
+
+    prevBtn.addEventListener('click', () => scrollToIndex(activeIndex - 1));
+    nextBtn.addEventListener('click', () => scrollToIndex(activeIndex + 1));
+
+    let raf = null;
+    track.addEventListener('scroll', () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const rect = track.getBoundingClientRect();
+        const center = rect.left + rect.width / 2;
+        let bestIdx = 0;
+        let bestDist = Infinity;
+
+        shots.forEach((s, idx) => {
+          const r = s.getBoundingClientRect();
+          const c = r.left + r.width / 2;
+          const d = Math.abs(c - center);
+          if (d < bestDist){
+            bestDist = d;
+            bestIdx = idx;
+          }
         });
-      });
-    })();
 
-    (function(){
-      const track = document.getElementById('shotTrack');
-      const shots = Array.from(track.querySelectorAll('.shot'));
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dotsWrap = document.getElementById('carDots');
-
-      let activeIndex = 0;
-
-      function scrollToIndex(i){
-        activeIndex = Math.max(0, Math.min(i, shots.length - 1));
-        const el = shots[activeIndex];
-        el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        activeIndex = bestIdx;
         updateDots();
-      }
-
-      function updateDots(){
-        const dots = Array.from(dotsWrap.querySelectorAll('button'));
-        dots.forEach((d, idx) => d.setAttribute('aria-current', String(idx === activeIndex)));
-      }
-
-      shots.forEach((_, idx) => {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.setAttribute('aria-label', 'Go to screenshot ' + (idx + 1));
-        b.setAttribute('aria-current', String(idx === 0));
-        b.addEventListener('click', () => scrollToIndex(idx));
-        dotsWrap.appendChild(b);
       });
-
-      prevBtn.addEventListener('click', () => scrollToIndex(activeIndex - 1));
-      nextBtn.addEventListener('click', () => scrollToIndex(activeIndex + 1));
-
-      let raf = null;
-      track.addEventListener('scroll', () => {
-        if (raf) cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(() => {
-          const rect = track.getBoundingClientRect();
-          const center = rect.left + rect.width / 2;
-          let bestIdx = 0;
-          let bestDist = Infinity;
-
-          shots.forEach((s, idx) => {
-            const r = s.getBoundingClientRect();
-            const c = r.left + r.width / 2;
-            const d = Math.abs(c - center);
-            if (d < bestDist){ bestDist = d; bestIdx = idx; }
-          });
-
-          activeIndex = bestIdx;
-          updateDots();
-        });
-      });
-    })();
-  </script>
+    });
+  })();
+</script>
 </body>
 </html>
