@@ -1,42 +1,146 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>What is Rooted Memories?</title>
-  <meta name="description" content="Rooted Memories is a private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time." />
+
+  <meta
+    name="description"
+    content="Rooted Memories is a private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time."
+  />
+
   <meta name="application-name" content="Rooted Memories" />
   <meta name="apple-mobile-web-app-title" content="Rooted Memories" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <link rel="canonical" href="https://rootedmemories.co.uk/what-is-rooted-memories/" />
 
-  <!-- Open Graph -->
+  <link
+    rel="canonical"
+    href="https://rootedmemories.co.uk/what-is-rooted-memories/"
+  />
+
+
+  <!-- OPEN GRAPH -->
+
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Rooted Memories" />
   <meta property="og:title" content="What is Rooted Memories?" />
-  <meta property="og:description" content="A private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time." />
-  <meta property="og:url" content="https://rootedmemories.co.uk/what-is-rooted-memories/" />
-  <meta property="og:image" content="https://rootedmemories.co.uk/og-image.8.jpg" />
 
-  <!-- Twitter -->
+  <meta
+    property="og:description"
+    content="A private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time."
+  />
+
+  <meta
+    property="og:url"
+    content="https://rootedmemories.co.uk/what-is-rooted-memories/"
+  />
+
+  <meta
+    property="og:image"
+    content="https://rootedmemories.co.uk/og-image.8.jpg"
+  />
+
+
+  <!-- TWITTER -->
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="What is Rooted Memories?" />
-  <meta name="twitter:description" content="A private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time." />
-  <meta name="twitter:image" content="https://rootedmemories.co.uk/og-image.8.jpg" />
 
-  <!-- Favicon -->
+  <meta
+    name="twitter:description"
+    content="A private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://rootedmemories.co.uk/og-image.8.jpg"
+  />
+
+
+  <!-- FAVICON -->
+
   <link rel="icon" href="/favicon3.png" sizes="96x96" />
   <link rel="apple-touch-icon" href="/favicon3.png" />
 
-  <meta name="theme-color" content="#0f3a2f" />
+  <meta name="theme-color" content="#071813" />
+
+
+  <!-- META PIXEL -->
+
+  <script>
+
+    !function(f,b,e,v,n,t,s)
+    {
+      if(f.fbq)return;
+
+      n=f.fbq=function(){
+        n.callMethod ?
+        n.callMethod.apply(n,arguments) :
+        n.queue.push(arguments)
+      };
+
+      if(!f._fbq)f._fbq=n;
+
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+
+      t=b.createElement(e);
+      t.async=!0;
+      t.src=v;
+
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+
+    }(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
+
+    fbq('init', '1927964177837230');
+
+    fbq('track', 'PageView');
+
+    fbq('track', 'ViewContent', {
+      content_name: 'What Is Rooted Memories'
+    });
+
+  </script>
+
+
+  <noscript>
+
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1927964177837230&ev=PageView&noscript=1"
+      alt=""
+    />
+
+  </noscript>
+
+  <!-- END META PIXEL -->
+
+
+  <!-- STRUCTURED DATA -->
 
   <script type="application/ld+json">
+
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
+        "@id": "https://rootedmemories.co.uk/#organization",
         "name": "Rooted Memories",
         "url": "https://rootedmemories.co.uk/",
         "logo": "https://rootedmemories.co.uk/logomvp.png"
@@ -45,292 +149,2104 @@
         "@type": "WebSite",
         "@id": "https://rootedmemories.co.uk/#website",
         "name": "Rooted Memories",
-        "url": "https://rootedmemories.co.uk/"
+        "url": "https://rootedmemories.co.uk/",
+        "publisher": {
+          "@id": "https://rootedmemories.co.uk/#organization"
+        }
       },
       {
         "@type": "WebPage",
-        "name": "What is Rooted Memories",
+        "@id": "https://rootedmemories.co.uk/what-is-rooted-memories/#webpage",
+        "name": "What is Rooted Memories?",
         "url": "https://rootedmemories.co.uk/what-is-rooted-memories/",
-        "description": "Rooted Memories is a private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time."
+        "description": "Rooted Memories is a private family archive that keeps photos and stories around the people they belong to, in one clear place your family can build over time.",
+        "isPartOf": {
+          "@id": "https://rootedmemories.co.uk/#website"
+        }
       }
     ]
   }
+
   </script>
 
+
   <style>
+
     :root{
-      --accent:#b06b50;
-      --muted:rgba(255,255,255,.85);
-      --shadow: 0 18px 45px rgba(0,0,0,.25);
-      --shadow-soft: 0 12px 30px rgba(0,0,0,.18);
+
+      --forest-1000:#04100d;
+      --forest-950:#061611;
+      --forest-900:#081d17;
+      --forest-850:#0b261e;
+      --forest-800:#0f3026;
+
+      --cream:#f3ece4;
+      --cream-soft:#ddd5cb;
+      --cream-muted:#bcb5ac;
+
+      --bronze:#b06b50;
+      --bronze-light:#d29278;
+      --bronze-dark:#8d503a;
+
+      --white:#ffffff;
+
+      --text-soft:rgba(243,236,228,.78);
+      --text-muted:rgba(243,236,228,.58);
+
+      --line:rgba(243,236,228,.13);
+      --line-strong:rgba(243,236,228,.22);
+
+      --page:1180px;
+      --reading:780px;
+
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
     }
 
-    *{box-sizing:border-box}
+
+    *{
+      box-sizing:border-box;
+    }
+
+
+    html{
+      width:100%;
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
 
     body{
+
       margin:0;
-      font-family: system-ui, -apple-system, sans-serif;
-      color:#fff;
+
+      width:100%;
+
+      overflow-x:hidden;
+
+      color:var(--cream);
+
+      font-family:var(--sans);
+
       background:
-        radial-gradient(1200px 600px at 20% 20%, rgba(176,107,80,.35), transparent 60%),
-        radial-gradient(1000px 650px at 80% 10%, rgba(243,236,228,.12), transparent 55%),
-        linear-gradient(180deg, #081f18 0%, #061612 100%);
+
+        radial-gradient(
+          1000px 720px at 90% -5%,
+          rgba(176,107,80,.14),
+          transparent 65%
+        ),
+
+        linear-gradient(
+          180deg,
+          var(--forest-900) 0%,
+          var(--forest-950) 48%,
+          var(--forest-1000) 100%
+        );
+
+      -webkit-font-smoothing:antialiased;
+
     }
 
-    .wrap{
-      max-width:980px;
+
+    img,
+    svg{
+      max-width:100%;
+    }
+
+
+    button,
+    input,
+    a{
+      font:inherit;
+    }
+
+
+    a{
+      color:inherit;
+    }
+
+
+    .shell{
+
+      width:min(
+        calc(100% - 40px),
+        var(--page)
+      );
+
       margin:0 auto;
-      padding:24px 18px 72px;
+
     }
 
-    .top{
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+
+    .site-header{
+
+      position:relative;
+
+      z-index:10;
+
+      border-bottom:1px solid var(--line);
+
+    }
+
+
+    .header-inner{
+
+      min-height:106px;
+
       display:flex;
+
+      align-items:center;
+
       justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
-      margin-bottom:28px;
+
+      gap:30px;
+
     }
 
-    .home-btn{
+
+    .brand{
+
       display:inline-flex;
+
       align-items:center;
-      gap:8px;
-      padding:12px 18px;
-      border-radius:999px;
+
+      color:#fff;
+
       text-decoration:none;
+
+    }
+
+
+    .brand img{
+
+      display:block;
+
+      height:82px;
+
+      width:auto;
+
+      filter:
+        drop-shadow(
+          0 8px 15px rgba(0,0,0,.17)
+        );
+
+    }
+
+
+    .brand-name{
+
+      position:absolute;
+
+      width:1px;
+      height:1px;
+
+      overflow:hidden;
+
+      clip:rect(0,0,0,0);
+
+    }
+
+
+    .header-actions{
+
+      display:flex;
+
+      align-items:center;
+
+      gap:28px;
+
+    }
+
+
+    .header-link{
+
+      color:var(--text-soft);
+
+      text-decoration:none;
+
       font-size:14px;
-      font-weight:700;
-      background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.18);
+
+      font-weight:650;
+
+      transition:
+        color .16s ease;
+
+    }
+
+
+    .header-link:hover{
       color:#fff;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 8px 20px rgba(0,0,0,.25);
-      transition: all .2s ease;
     }
 
-    .home-btn:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(0,0,0,.35);
-      background: linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
-    }
 
-    .cta{
+    .header-download{
+
+      min-height:46px;
+
       display:inline-flex;
+
       align-items:center;
+
       justify-content:center;
-      padding:12px 16px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:800;
-      background: linear-gradient(145deg, rgba(176,107,80,.55), rgba(176,107,80,.28));
-      border:1px solid rgba(176,107,80,.8);
+
+      padding:0 22px;
+
+      border:1px solid var(--bronze);
+
+      border-radius:4px;
+
+      background:var(--bronze);
+
       color:#fff;
-      box-shadow: 0 10px 25px rgba(0,0,0,.25);
-      transition: .2s;
+
+      text-decoration:none;
+
+      font-size:14px;
+
+      font-weight:800;
+
+      transition:
+        transform .16s ease,
+        background .16s ease,
+        border-color .16s ease;
+
     }
 
-    .cta:hover{
-      transform: translateY(-2px);
+
+    .header-download:hover{
+
+      transform:translateY(-1px);
+
+      background:var(--bronze-light);
+
+      border-color:var(--bronze-light);
+
     }
+
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
 
     .hero{
-      position:relative;
-      border-radius:22px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.1);
-      padding:36px 24px;
-      margin-bottom:22px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
+
+      padding:
+        118px 0
+        126px;
+
     }
 
-    .glow{
-      position:absolute;
-      inset:-140px -180px auto auto;
-      width:420px;
-      height:420px;
-      border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, rgba(176,107,80,.55), transparent 60%);
-      opacity:.9;
-      pointer-events:none;
+
+    .hero-inner{
+
+      max-width:1020px;
+
     }
 
-    .kicker{
-      display:inline-flex;
+
+    .eyebrow{
+
+      display:flex;
+
       align-items:center;
-      gap:8px;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.14);
-      padding:8px 12px;
-      border-radius:999px;
-      margin-bottom:14px;
-      font-size:13px;
-      position:relative;
-      z-index:1;
+
+      gap:14px;
+
+      margin-bottom:27px;
+
+      color:var(--bronze-light);
+
+      font-size:12px;
+
+      font-weight:800;
+
+      text-transform:uppercase;
+
+      letter-spacing:.17em;
+
     }
 
-    .dot{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:#5ed689;
-      box-shadow:0 0 0 4px rgba(94,214,137,.12);
+
+    .eyebrow::before{
+
+      content:"";
+
+      width:40px;
+
+      height:1px;
+
+      background:var(--bronze);
+
     }
 
-    h1{
-      font-size: clamp(34px, 5vw, 54px);
-      font-family: Georgia, serif;
-      line-height:1.06;
-      margin:0 0 12px;
-      max-width:12ch;
-      position:relative;
-      z-index:1;
-    }
 
-    .sub{
-      font-size:18px;
-      line-height:1.65;
-      color:var(--muted);
-      max-width:62ch;
-      position:relative;
-      z-index:1;
+    .hero h1{
+
+      max-width:900px;
+
       margin:0;
+
+      font-family:var(--serif);
+
+      font-size:
+        clamp(
+          54px,
+          7.5vw,
+          96px
+        );
+
+      font-weight:400;
+
+      line-height:.96;
+
+      letter-spacing:-.044em;
+
+      text-wrap:balance;
+
     }
 
-    .grid{
+
+    .hero-intro{
+
+      max-width:760px;
+
+      margin:
+        43px 0 0;
+
+      color:var(--text-soft);
+
+      font-size:20px;
+
+      line-height:1.75;
+
+    }
+
+
+
+    /* =========================================================
+       DEFINING STATEMENT
+    ========================================================= */
+
+
+    .definition{
+
+      padding:
+        105px 0;
+
+      border-top:
+        1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
+
+    }
+
+
+    .definition p{
+
+      max-width:1030px;
+
+      margin:0;
+
+      font-family:var(--serif);
+
+      font-size:
+        clamp(
+          35px,
+          4.8vw,
+          61px
+        );
+
+      font-weight:400;
+
+      line-height:1.14;
+
+      letter-spacing:-.029em;
+
+    }
+
+
+    .definition span{
+      color:var(--bronze-light);
+    }
+
+
+
+    /* =========================================================
+       EDITORIAL SECTIONS
+    ========================================================= */
+
+
+    .editorial{
+
+      padding-top:18px;
+
+    }
+
+
+    .editorial-row{
+
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      margin-top:18px;
+
+      grid-template-columns:
+        220px
+        minmax(0,1fr);
+
+      gap:90px;
+
+      padding:
+        92px 0;
+
+      border-bottom:
+        1px solid var(--line);
+
     }
 
-    @media (max-width:860px){
-      .grid{grid-template-columns:1fr;}
+
+    .editorial-meta{
+
+      color:var(--cream-muted);
+
+      font-size:12px;
+
+      font-weight:750;
+
+      letter-spacing:.14em;
+
+      text-transform:uppercase;
+
     }
 
-    .card{
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:18px;
-      padding:22px;
-      box-shadow:var(--shadow-soft);
+
+    .editorial-index{
+
+      display:block;
+
+      margin-bottom:12px;
+
+      color:var(--bronze-light);
+
     }
 
-    .card h2{
-      margin:0 0 10px;
-      font-size:22px;
+
+    .editorial-copy{
+
+      max-width:var(--reading);
+
     }
 
-    .card p{
-      margin:0 0 12px;
-      color:var(--muted);
-      line-height:1.65;
+
+    .editorial-copy h2{
+
+      margin:
+        0 0
+        26px;
+
+      font-family:var(--serif);
+
+      font-size:
+        clamp(
+          31px,
+          4vw,
+          49px
+        );
+
+      font-weight:400;
+
+      line-height:1.09;
+
+      letter-spacing:-.026em;
+
+    }
+
+
+    .editorial-copy p{
+
+      margin:0;
+
+      color:var(--text-soft);
+
+      font-size:17px;
+
+      line-height:1.82;
+
+    }
+
+
+    .editorial-copy p + p{
+
+      margin-top:22px;
+
+    }
+
+
+
+    /* =========================================================
+       PEOPLE STRUCTURE
+    ========================================================= */
+
+
+    .people-section{
+
+      padding:
+        120px 0;
+
+    }
+
+
+    .people-grid{
+
+      display:grid;
+
+      grid-template-columns:
+        minmax(0,1.1fr)
+        minmax(260px,.6fr);
+
+      gap:100px;
+
+      align-items:end;
+
+    }
+
+
+    .people-section h2{
+
+      max-width:800px;
+
+      margin:0;
+
+      font-family:var(--serif);
+
+      font-size:
+        clamp(
+          42px,
+          5.7vw,
+          72px
+        );
+
+      font-weight:400;
+
+      line-height:1.03;
+
+      letter-spacing:-.035em;
+
+    }
+
+
+    .people-section p{
+
+      margin:0;
+
+      color:var(--text-soft);
+
+      font-size:17px;
+
+      line-height:1.8;
+
+    }
+
+
+
+    /* =========================================================
+       WHAT IT BECOMES
+    ========================================================= */
+
+
+    .becomes{
+
+      position:relative;
+
+      overflow:hidden;
+
+      padding:
+        118px 0;
+
+      background:var(--cream);
+
+      color:var(--forest-1000);
+
+    }
+
+
+    .becomes::after{
+
+      content:"";
+
+      position:absolute;
+
+      top:-260px;
+
+      right:-190px;
+
+      width:620px;
+
+      height:620px;
+
+      border:
+        1px solid
+        rgba(176,107,80,.18);
+
+      border-radius:50%;
+
+      pointer-events:none;
+
+    }
+
+
+    .becomes-grid{
+
+      position:relative;
+
+      z-index:2;
+
+      display:grid;
+
+      grid-template-columns:
+        minmax(0,1.15fr)
+        minmax(280px,.55fr);
+
+      gap:95px;
+
+      align-items:end;
+
+    }
+
+
+    .becomes-label{
+
+      display:block;
+
+      margin-bottom:20px;
+
+      color:var(--bronze-dark);
+
+      font-size:12px;
+
+      font-weight:850;
+
+      letter-spacing:.17em;
+
+      text-transform:uppercase;
+
+    }
+
+
+    .becomes h2{
+
+      max-width:820px;
+
+      margin:0;
+
+      font-family:var(--serif);
+
+      font-size:
+        clamp(
+          43px,
+          5.9vw,
+          73px
+        );
+
+      font-weight:400;
+
+      line-height:1.02;
+
+      letter-spacing:-.036em;
+
+    }
+
+
+    .becomes-copy{
+
+      color:rgba(4,16,13,.67);
+
+      font-size:17px;
+
+      line-height:1.8;
+
+    }
+
+
+    .becomes-copy p{
+
+      margin:0;
+
+    }
+
+
+    .becomes-copy p + p{
+
+      margin-top:22px;
+
+    }
+
+
+
+    /* =========================================================
+       WHO IT IS FOR
+    ========================================================= */
+
+
+    .audience{
+
+      padding:
+        120px 0;
+
+    }
+
+
+    .audience-header{
+
+      max-width:800px;
+
+      margin-bottom:65px;
+
+    }
+
+
+    .section-label{
+
+      display:block;
+
+      margin-bottom:17px;
+
+      color:var(--bronze-light);
+
+      font-size:12px;
+
+      font-weight:800;
+
+      text-transform:uppercase;
+
+      letter-spacing:.17em;
+
+    }
+
+
+    .audience-header h2{
+
+      margin:0;
+
+      font-family:var(--serif);
+
+      font-size:
+        clamp(
+          39px,
+          5vw,
+          63px
+        );
+
+      font-weight:400;
+
+      line-height:1.04;
+
+      letter-spacing:-.033em;
+
+    }
+
+
+    .audience-list{
+
+      border-top:
+        1px solid var(--line);
+
+    }
+
+
+    .audience-item{
+
+      display:grid;
+
+      grid-template-columns:
+        58px
+        minmax(0,1fr);
+
+      gap:24px;
+
+      padding:
+        30px 0;
+
+      border-bottom:
+        1px solid var(--line);
+
+    }
+
+
+    .audience-number{
+
+      padding-top:3px;
+
+      color:var(--bronze-light);
+
+      font-family:var(--serif);
+
+      font-size:17px;
+
+    }
+
+
+    .audience-item h3{
+
+      margin:
+        0 0
+        8px;
+
+      font-size:18px;
+
+      font-weight:750;
+
+    }
+
+
+    .audience-item p{
+
+      max-width:680px;
+
+      margin:0;
+
+      color:var(--text-soft);
+
       font-size:15px;
+
+      line-height:1.75;
+
     }
 
-    .wide{
-      margin-top:18px;
+
+
+    /* =========================================================
+       PRINCIPLE
+    ========================================================= */
+
+
+    .principle{
+
+      padding:
+        112px 0;
+
+      border-top:
+        1px solid var(--line);
+
     }
 
-    .cta-box{
-      margin-top:28px;
-      text-align:center;
-      padding:32px 20px;
-      border-radius:22px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.1);
-      box-shadow:var(--shadow-soft);
+
+    .principle-grid{
+
+      display:grid;
+
+      grid-template-columns:
+        minmax(0,1.15fr)
+        minmax(280px,.55fr);
+
+      gap:100px;
+
+      align-items:end;
+
     }
 
-    .cta-box h2{
-      font-size:32px;
-      margin:0 0 10px;
-      font-family: Georgia, serif;
-      line-height:1.12;
+
+    .principle h2{
+
+      max-width:780px;
+
+      margin:0;
+
+      font-family:var(--serif);
+
+      font-size:
+        clamp(
+          40px,
+          5.4vw,
+          68px
+        );
+
+      font-weight:400;
+
+      line-height:1.03;
+
+      letter-spacing:-.034em;
+
     }
 
-    .cta-box p{
-      margin:0 auto 18px;
-      color:var(--muted);
-      max-width:38ch;
-      line-height:1.65;
+
+    .principle p{
+
+      margin:0;
+
+      color:var(--text-soft);
+
+      font-size:17px;
+
+      line-height:1.8;
+
     }
 
-    .bottom-home{
-      margin-top:24px;
-      text-align:center;
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+
+    .final-cta{
+
+      position:relative;
+
+      overflow:hidden;
+
+      padding:
+        116px 0
+        122px;
+
+      background:var(--cream);
+
+      color:var(--forest-1000);
+
     }
+
+
+    .final-cta::before{
+
+      content:"";
+
+      position:absolute;
+
+      bottom:-320px;
+
+      left:-220px;
+
+      width:600px;
+
+      height:600px;
+
+      border:
+        1px solid
+        rgba(176,107,80,.16);
+
+      border-radius:50%;
+
+    }
+
+
+    .final-inner{
+
+      position:relative;
+
+      z-index:2;
+
+      max-width:880px;
+
+    }
+
+
+    .final-label{
+
+      display:block;
+
+      margin-bottom:20px;
+
+      color:var(--bronze-dark);
+
+      font-size:12px;
+
+      font-weight:850;
+
+      letter-spacing:.17em;
+
+      text-transform:uppercase;
+
+    }
+
+
+    .final-cta h2{
+
+      max-width:820px;
+
+      margin:0;
+
+      font-family:var(--serif);
+
+      font-size:
+        clamp(
+          44px,
+          6.4vw,
+          80px
+        );
+
+      font-weight:400;
+
+      line-height:.99;
+
+      letter-spacing:-.04em;
+
+    }
+
+
+    .final-copy{
+
+      max-width:590px;
+
+      margin:
+        30px 0 0;
+
+      color:rgba(4,16,13,.67);
+
+      font-size:18px;
+
+      line-height:1.72;
+
+    }
+
+
+    .final-actions{
+
+      display:flex;
+
+      flex-wrap:wrap;
+
+      gap:16px;
+
+      margin-top:39px;
+
+    }
+
+
+    .primary-btn,
+    .secondary-btn{
+
+      min-height:54px;
+
+      display:inline-flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      padding:0 27px;
+
+      border-radius:4px;
+
+      text-decoration:none;
+
+      font-size:15px;
+
+      font-weight:800;
+
+      transition:
+        transform .16s ease,
+        background .16s ease,
+        border-color .16s ease;
+
+    }
+
+
+    .primary-btn{
+
+      border:
+        1px solid
+        var(--forest-900);
+
+      background:
+        var(--forest-900);
+
+      color:#fff;
+
+    }
+
+
+    .primary-btn:hover{
+
+      transform:
+        translateY(-1px);
+
+      background:
+        var(--forest-800);
+
+    }
+
+
+    .secondary-btn{
+
+      border:
+        1px solid
+        rgba(4,16,13,.25);
+
+      color:
+        var(--forest-900);
+
+    }
+
+
+    .secondary-btn:hover{
+
+      transform:
+        translateY(-1px);
+
+      border-color:
+        rgba(4,16,13,.5);
+
+    }
+
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+
+    footer{
+
+      padding:
+        40px 0
+        48px;
+
+      background:
+        var(--cream);
+
+      color:
+        var(--forest-1000);
+
+      border-top:
+        1px solid
+        rgba(4,16,13,.14);
+
+    }
+
+
+    .footer-inner{
+
+      display:flex;
+
+      justify-content:space-between;
+
+      align-items:center;
+
+      gap:28px;
+
+    }
+
+
+    .footer-brand{
+
+      font-family:
+        var(--serif);
+
+      font-size:17px;
+
+    }
+
+
+    .footer-links{
+
+      display:flex;
+
+      flex-wrap:wrap;
+
+      gap:22px;
+
+    }
+
+
+    .footer-links a{
+
+      color:
+        rgba(4,16,13,.62);
+
+      text-decoration:none;
+
+      font-size:13px;
+
+      font-weight:650;
+
+    }
+
+
+    .footer-links a:hover{
+
+      color:
+        var(--forest-1000);
+
+    }
+
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+
+    @media(max-width:900px){
+
+      .people-grid,
+      .becomes-grid,
+      .principle-grid{
+
+        grid-template-columns:1fr;
+
+        gap:34px;
+
+      }
+
+    }
+
+
+    @media(max-width:720px){
+
+      .shell{
+
+        width:min(
+          calc(100% - 32px),
+          var(--page)
+        );
+
+      }
+
+
+      .header-inner{
+
+        min-height:88px;
+
+      }
+
+
+      .brand img{
+
+        height:61px;
+
+      }
+
+
+      .header-link{
+
+        display:none;
+
+      }
+
+
+      .header-download{
+
+        min-height:42px;
+
+        padding:0 17px;
+
+      }
+
+
+      .hero{
+
+        padding:
+          80px 0
+          86px;
+
+      }
+
+
+      .hero h1{
+
+        font-size:
+          clamp(
+            47px,
+            14vw,
+            70px
+          );
+
+      }
+
+
+      .hero-intro{
+
+        margin-top:32px;
+
+        font-size:18px;
+
+      }
+
+
+      .definition{
+
+        padding:
+          76px 0;
+
+      }
+
+
+      .editorial-row{
+
+        grid-template-columns:1fr;
+
+        gap:26px;
+
+        padding:
+          67px 0;
+
+      }
+
+
+      .editorial-meta{
+
+        display:flex;
+
+        align-items:center;
+
+        gap:12px;
+
+      }
+
+
+      .editorial-index{
+
+        margin:0;
+
+      }
+
+
+      .people-section,
+      .audience,
+      .principle{
+
+        padding:
+          84px 0;
+
+      }
+
+
+      .becomes{
+
+        padding:
+          86px 0;
+
+      }
+
+
+      .audience-header{
+
+        margin-bottom:42px;
+
+      }
+
+
+      .final-cta{
+
+        padding:
+          86px 0
+          92px;
+
+      }
+
+
+      .final-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+      }
+
+
+      .primary-btn,
+      .secondary-btn{
+
+        width:100%;
+
+      }
+
+
+      .footer-inner{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+      }
+
+    }
+
+
+    @media(max-width:420px){
+
+      .header-actions{
+        gap:10px;
+      }
+
+
+      .header-download{
+
+        padding:0 13px;
+
+        font-size:12px;
+
+      }
+
+    }
+
+
   </style>
+
 </head>
 
-<body>
-  <div class="wrap">
 
-    <div class="top">
-      <a class="home-btn" href="/">← Home</a>
-       <a class="cta" href="/#download">Download App</a>
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+
+  <header class="site-header">
+
+    <div class="shell header-inner">
+
+
+      <a
+        class="brand"
+        href="/"
+        aria-label="Rooted Memories home"
+      >
+
+        <img
+          src="/logomvp.png?v=2"
+          alt="Rooted Memories"
+        />
+
+        <span class="brand-name">
+          Rooted Memories
+        </span>
+
+      </a>
+
+
+      <div class="header-actions">
+
+        <a
+          class="header-link"
+          href="/"
+        >
+          Home
+        </a>
+
+        <a
+          class="header-download"
+          href="/#download"
+        >
+          Download App
+        </a>
+
+      </div>
+
+
     </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
 
     <section class="hero">
-      <div class="glow"></div>
 
-      <h1>What is Rooted Memories?</h1>
+      <div class="shell">
 
-      <p class="sub">
-        Rooted Memories is a private family archive built around people. It gives your family one place to keep photos and stories connected to the people they belong to, so memories stay clearer, easier to return to, and more meaningful over time.
-      </p>
+
+        <div class="hero-inner">
+
+
+          <div class="eyebrow">
+            Rooted Memories
+          </div>
+
+
+          <h1>
+            What is Rooted Memories?
+          </h1>
+
+
+          <p class="hero-intro">
+
+            Rooted Memories is a private family archive built around people.
+
+            It gives your family one place to keep photographs and stories
+            connected to the people they belong to, so memories remain clearer,
+            easier to return to and more meaningful over time.
+
+          </p>
+
+
+        </div>
+
+
+      </div>
+
     </section>
 
-    <div class="grid">
-      <section class="card">
-        <h2>What it is</h2>
-        <p>
-          It is not a social platform, a group chat, or a folder system. It is a family archive designed to hold memories in a structure your family can understand.
-        </p>
-      </section>
 
-      <section class="card">
-        <h2>What it is built around</h2>
-        <p>
-          The archive is organised around your family tree. Each person has their own place, and memories are kept with the people they relate to.
-        </p>
-      </section>
-    </div>
 
-    <section class="card wide">
-      <h2>What that changes</h2>
-      <p>
-        When photos and stories stay connected to people, the archive becomes easier to follow. Memories keep more of their context, and your family spends less time guessing where things belong or what they mean.
-      </p>
+    <!-- =====================================================
+         DEFINITION
+    ====================================================== -->
+
+
+    <section class="definition">
+
+      <div class="shell">
+
+
+        <p>
+
+          It is not another social platform, group chat or folder system.
+
+          It is a place designed to keep
+
+          <span>
+            people, memories and family history connected.
+          </span>
+
+        </p>
+
+
+      </div>
+
     </section>
 
-    <div class="grid">
-      <section class="card">
-        <h2>Who it is for</h2>
-        <p>
-          It is for families who want a clearer and more lasting way to keep photos, stories, and family history together.
-        </p>
-      </section>
 
-      <section class="card">
-        <h2>What it becomes</h2>
-        <p>
-          At first, it gives your family a clearer place to keep memories. Over time, it becomes a private record of family life built gradually in one place.
-        </p>
-      </section>
-    </div>
 
-    <section class="cta-box">
-      <h2>Your family has the photos.</h2>
-      <p>Here is a place to collect them, and put them on display safely. </p>
-      <a class="cta" href="/#download">Download App</a>
+    <!-- =====================================================
+         WHAT IT IS
+    ====================================================== -->
+
+
+    <section class="editorial">
+
+      <div class="shell">
+
+
+        <article class="editorial-row">
+
+
+          <div class="editorial-meta">
+
+            <span class="editorial-index">
+              01
+            </span>
+
+            What it is
+
+          </div>
+
+
+          <div class="editorial-copy">
+
+            <h2>
+              A private archive for your family.
+            </h2>
+
+
+            <p>
+
+              Rooted Memories is designed to hold family photographs,
+              captions and stories in a structure your family can understand.
+
+            </p>
+
+
+            <p>
+
+              Instead of adding another stream of posts or another collection
+              of folders, it gives those memories a permanent place within
+              your family itself.
+
+            </p>
+
+          </div>
+
+
+        </article>
+
+
+
+        <article class="editorial-row">
+
+
+          <div class="editorial-meta">
+
+            <span class="editorial-index">
+              02
+            </span>
+
+            What it is built around
+
+          </div>
+
+
+          <div class="editorial-copy">
+
+            <h2>
+              Your family tree gives the archive its structure.
+            </h2>
+
+
+            <p>
+
+              Every person has their own place.
+
+              Photographs, captions and stories are kept with the family
+              members they relate to, rather than disappearing into a camera
+              roll containing thousands of unrelated images.
+
+            </p>
+
+
+            <p>
+
+              That changes the basic question from
+
+              "Where should this file go?"
+
+              to
+
+              "Who does this memory belong to?"
+
+            </p>
+
+          </div>
+
+
+        </article>
+
+
+
+        <article class="editorial-row">
+
+
+          <div class="editorial-meta">
+
+            <span class="editorial-index">
+              03
+            </span>
+
+            What that changes
+
+          </div>
+
+
+          <div class="editorial-copy">
+
+            <h2>
+              Memories keep more of their meaning.
+            </h2>
+
+
+            <p>
+
+              A photograph can survive long after the context around it has
+              disappeared.
+
+              Names are forgotten. Dates become uncertain. Stories that were
+              once obvious to one generation mean very little to the next.
+
+            </p>
+
+
+            <p>
+
+              By keeping memories connected to people, Rooted Memories makes
+              the archive easier to understand and gives future generations a
+              better chance of knowing what they are looking at and why it mattered.
+
+            </p>
+
+          </div>
+
+
+        </article>
+
+
+      </div>
+
     </section>
 
-    <div class="bottom-home">
-      <a class="home-btn" href="/">← Return to Home</a>
+
+
+    <!-- =====================================================
+         PEOPLE
+    ====================================================== -->
+
+
+    <section class="people-section">
+
+      <div class="shell people-grid">
+
+
+        <h2>
+          Family history makes more sense when people remain at the centre of it.
+        </h2>
+
+
+        <p>
+
+          Rooted Memories does not treat your family as a collection of files.
+
+          The people come first.
+
+          The photographs, stories and memories build around them.
+
+        </p>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHAT IT BECOMES
+    ====================================================== -->
+
+
+    <section class="becomes">
+
+      <div class="shell becomes-grid">
+
+
+        <div>
+
+          <span class="becomes-label">
+            What it becomes
+          </span>
+
+
+          <h2>
+            More than somewhere to put photographs.
+          </h2>
+
+        </div>
+
+
+        <div class="becomes-copy">
+
+
+          <p>
+
+            At first, Rooted Memories gives your family a clearer place
+            to keep memories.
+
+          </p>
+
+
+          <p>
+
+            Over time, as photographs, captions and stories accumulate,
+            each person's profile begins to form a lasting record of their life.
+
+          </p>
+
+
+          <p>
+
+            Together, those individual records become a private history of
+            your family built gradually across generations.
+
+          </p>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHO IT IS FOR
+    ====================================================== -->
+
+
+    <section class="audience">
+
+      <div class="shell">
+
+
+        <div class="audience-header">
+
+          <span class="section-label">
+            Who it is for
+          </span>
+
+
+          <h2>
+            For families who want their memories to remain understandable.
+          </h2>
+
+        </div>
+
+
+
+        <div class="audience-list">
+
+
+          <div class="audience-item">
+
+            <div class="audience-number">
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Families with photographs spread across multiple phones
+              </h3>
+
+              <p>
+                Bring separate collections together without turning them into another unstructured pile of files.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="audience-item">
+
+            <div class="audience-number">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Families living apart
+              </h3>
+
+              <p>
+                Give relatives one private place where everyone can contribute to the same family history.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="audience-item">
+
+            <div class="audience-number">
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                Parents preserving childhood
+              </h3>
+
+              <p>
+                Keep photographs and stories somewhere children can return to when they are older.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="audience-item">
+
+            <div class="audience-number">
+              04
+            </div>
+
+            <div>
+
+              <h3>
+                Families protecting older memories
+              </h3>
+
+              <p>
+                Preserve photographs, names and stories before the people who remember their context are no longer here to explain them.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRINCIPLE
+    ====================================================== -->
+
+
+    <section class="principle">
+
+      <div class="shell principle-grid">
+
+
+        <h2>
+          Built to grow without becoming complicated.
+        </h2>
+
+
+        <p>
+
+          A family archive should become richer with time, not harder to use.
+
+          Rooted Memories keeps the experience straightforward while the
+          history underneath it becomes deeper.
+
+        </p>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+
+    <section class="final-cta">
+
+      <div class="shell">
+
+
+        <div class="final-inner">
+
+
+          <span class="final-label">
+            Rooted Memories
+          </span>
+
+
+          <h2>
+            Your family already has the memories.
+          </h2>
+
+
+          <p class="final-copy">
+
+            Give them somewhere they can remain connected, understood and
+            safely kept together.
+
+          </p>
+
+
+          <div class="final-actions">
+
+
+            <a
+              class="primary-btn"
+              href="/#download"
+            >
+              Download Rooted Memories
+            </a>
+
+
+            <a
+              class="secondary-btn"
+              href="/"
+            >
+              Return to Home
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+
+  <footer>
+
+    <div class="shell footer-inner">
+
+
+      <div class="footer-brand">
+
+        © <span id="year"></span> Rooted Memories®
+
+      </div>
+
+
+      <div class="footer-links">
+
+
+        <a href="/terms-of-service/">
+          Terms of Service
+        </a>
+
+
+        <a href="/privacy/">
+          Privacy Policy
+        </a>
+
+
+        <a href="/safety/">
+          Safety
+        </a>
+
+
+      </div>
+
+
     </div>
 
-  </div>
+  </footer>
+
+
+
+  <script>
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+  </script>
+
+
 </body>
+
 </html>
+```
