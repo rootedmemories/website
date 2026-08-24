@@ -73,7 +73,7 @@
         "name": "Rooted Memories",
         "url": "https://rootedmemories.co.uk/",
         "logo": "https://rootedmemories.co.uk/logomvp.png?v=2"
-      },
+      }
       {
         "@type": "WebSite",
         "name": "Rooted Memories",
@@ -83,7 +83,7 @@
   }
   </script>
 
-  <style>
+<style>
     :root{
       --forest:#0f3a2f;
       --forest-2:#0b2f26;
@@ -99,6 +99,7 @@
 
     *{box-sizing:border-box}
     html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -153,8 +154,10 @@
 
     .brand span{
       position:absolute;
-      width:1px;height:1px;
-      padding:0;margin:-1px;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
       overflow:hidden;
       clip:rect(0,0,0,0);
       white-space:nowrap;
@@ -176,6 +179,7 @@
         align-items:center;
         justify-content:flex-end;
       }
+
       .pill{
         padding:10px 12px;
         font-size:13px;
@@ -194,6 +198,7 @@
       backdrop-filter: blur(10px);
       transition: background .2s ease, transform .2s ease, border-color .2s ease;
     }
+
     .pill:hover{
       background:rgba(255,255,255,.1);
       transform:translateY(-1px);
@@ -206,6 +211,7 @@
       font-weight:900;
       box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18) !important;
     }
+
     .join-pill:hover{
       background: linear-gradient(145deg, rgba(176,107,80,.58), rgba(176,107,80,.28)) !important;
       border-color: rgba(176,107,80,.95) !important;
@@ -219,9 +225,15 @@
       gap:22px;
       align-items:stretch;
     }
+
     @media (max-width:900px){
-      .hero{ grid-template-columns:1fr; }
-      .nav{ justify-content:flex-end; }
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .nav{
+        justify-content:flex-end;
+      }
     }
 
     .hero-left{
@@ -237,7 +249,8 @@
     .glow{
       position:absolute;
       inset:-120px -180px auto auto;
-      width:420px; height:420px;
+      width:420px;
+      height:420px;
       border-radius:50%;
       background: radial-gradient(circle at 30% 30%, rgba(176,107,80,.55), transparent 60%);
       filter: blur(2px);
@@ -261,9 +274,11 @@
     }
 
     .dot{
-      width:8px;height:8px;border-radius:50%;
-      background: rgba(94, 214, 137, .9);
-      box-shadow: 0 0 0 4px rgba(94, 214, 137, .12);
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background: rgba(94,214,137,.9);
+      box-shadow: 0 0 0 4px rgba(94,214,137,.12);
     }
 
     h1{
@@ -384,9 +399,13 @@
       padding-right:24px;
     }
 
+    /* =========================================================
+       STANDARD BULLET BOX
+       ========================================================= */
+
     .bullets{
       margin:14px 0 0;
-      padding:14px 14px;
+      padding:14px;
       border-radius:16px;
       background: rgba(176,107,80,.12);
       border:1px solid rgba(176,107,80,.35);
@@ -394,14 +413,192 @@
       position:relative;
       z-index:1;
     }
+
     .bullets ul{
       margin:0;
       padding-left:18px;
     }
+
     .bullets li{
       margin:8px 0;
       line-height:1.45;
       font-size:15px;
+    }
+
+    /* =========================================================
+       ROOTED MEMORIES V1 UPDATE BOX
+       ========================================================= */
+
+    .v1-update{
+      margin-top:18px;
+      padding:0;
+      overflow:hidden;
+      border-radius:20px;
+      position:relative;
+      z-index:1;
+      background:
+        radial-gradient(
+          500px 220px at 100% 0%,
+          rgba(176,107,80,.22),
+          transparent 65%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(176,107,80,.16),
+          rgba(176,107,80,.07)
+        );
+      border:1px solid rgba(176,107,80,.48);
+      box-shadow:
+        0 16px 35px rgba(0,0,0,.20),
+        inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .v1-update::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:3px;
+      background:linear-gradient(
+        90deg,
+        rgba(176,107,80,.25),
+        rgba(176,107,80,.95),
+        rgba(176,107,80,.25)
+      );
+    }
+
+    .v1-header{
+      padding:22px 22px 18px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      position:relative;
+    }
+
+    .v1-eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(176,107,80,.16);
+      border:1px solid rgba(176,107,80,.35);
+      color:rgba(255,255,255,.88);
+      font-size:11px;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:1.1px;
+      text-transform:uppercase;
+    }
+
+    .v1-eyebrow::before{
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:rgba(94,214,137,.95);
+      box-shadow:0 0 0 4px rgba(94,214,137,.10);
+    }
+
+    .v1-title{
+      margin:0 0 8px;
+      font-family:ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size:clamp(24px, 3.5vw, 32px);
+      line-height:1.15;
+      font-weight:700;
+      letter-spacing:.1px;
+      color:#fff;
+    }
+
+    .v1-intro{
+      margin:0;
+      max-width:62ch;
+      color:rgba(255,255,255,.74);
+      font-size:15px;
+      line-height:1.65;
+    }
+
+    .v1-features{
+      list-style:none;
+      margin:0 !important;
+      padding:18px 22px 22px !important;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0 24px;
+    }
+
+    .v1-features li{
+      position:relative;
+      margin:0 !important;
+      padding:12px 0 12px 30px;
+      border-bottom:1px solid rgba(255,255,255,.065);
+      color:rgba(255,255,255,.88);
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .v1-features li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:11px;
+      width:20px;
+      height:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:rgba(176,107,80,.18);
+      border:1px solid rgba(176,107,80,.40);
+      color:#e2a88f;
+      font-size:11px;
+      font-weight:900;
+    }
+
+    .v1-features li:nth-last-child(-n+2){
+      border-bottom:0;
+    }
+
+    .v1-features strong{
+      color:#fff;
+      font-weight:800;
+    }
+
+    .v1-more{
+      color:rgba(255,255,255,.66) !important;
+      font-style:italic;
+    }
+
+    @media (max-width:620px){
+      .v1-header{
+        padding:20px 18px 16px;
+      }
+
+      .v1-title{
+        font-size:26px;
+      }
+
+      .v1-intro{
+        font-size:14px;
+      }
+
+      .v1-features{
+        grid-template-columns:1fr;
+        padding:12px 18px 18px !important;
+      }
+
+      .v1-features li{
+        padding-top:11px;
+        padding-bottom:11px;
+      }
+
+      .v1-features li:nth-last-child(2){
+        border-bottom:1px solid rgba(255,255,255,.065);
+      }
+
+      .v1-features li:last-child{
+        border-bottom:0;
+      }
     }
 
     .micro{
@@ -440,7 +637,10 @@
       outline:none;
       transition: box-shadow .25s ease, border-color .25s ease;
     }
-    .early-input::placeholder{ color: rgba(255,255,255,.6); }
+
+    .early-input::placeholder{
+      color: rgba(255,255,255,.6);
+    }
 
     .early-btn{
       flex:0 0 auto;
@@ -459,8 +659,15 @@
       justify-content:center;
       white-space:nowrap;
     }
-    .early-btn:hover{ transform: translateY(-2px); opacity:.95; }
-    .early-btn:active{ transform: translateY(-1px); }
+
+    .early-btn:hover{
+      transform: translateY(-2px);
+      opacity:.95;
+    }
+
+    .early-btn:active{
+      transform: translateY(-1px);
+    }
 
     .fineprint{
       margin-top:10px;
@@ -482,16 +689,19 @@
       position:relative;
       z-index:1;
     }
+
     .form-msg.success{
-      border-color: rgba(94, 214, 137, .55);
-      background: rgba(94, 214, 137, .10);
+      border-color: rgba(94,214,137,.55);
+      background: rgba(94,214,137,.10);
       color: rgba(255,255,255,.95);
     }
+
     .form-msg.error{
-      border-color: rgba(255, 120, 120, .55);
-      background: rgba(255, 120, 120, .10);
+      border-color: rgba(255,120,120,.55);
+      background: rgba(255,120,120,.10);
       color: rgba(255,255,255,.95);
     }
+
     .form-msg.loading{
       border-color: rgba(176,107,80,.55);
       background: rgba(176,107,80,.10);
@@ -504,6 +714,7 @@
       gap:4px;
       margin-left:8px;
     }
+
     .btn-dots span{
       width:6px;
       height:6px;
@@ -512,16 +723,34 @@
       opacity:.2;
       animation: dotPulse 1.2s infinite ease-in-out;
     }
-    .btn-dots span:nth-child(2){ animation-delay:.2s; }
-    .btn-dots span:nth-child(3){ animation-delay:.4s; }
 
-    @keyframes dotPulse{
-      0%, 80%, 100% { opacity:.2; transform: scale(1); }
-      40% { opacity:1; transform: scale(1.2); }
+    .btn-dots span:nth-child(2){
+      animation-delay:.2s;
     }
 
-    .early-btn.loading .btn-text{ opacity:.65; }
-    .early-btn.loading .btn-dots{ display:flex; }
+    .btn-dots span:nth-child(3){
+      animation-delay:.4s;
+    }
+
+    @keyframes dotPulse{
+      0%, 80%, 100%{
+        opacity:.2;
+        transform: scale(1);
+      }
+
+      40%{
+        opacity:1;
+        transform: scale(1.2);
+      }
+    }
+
+    .early-btn.loading .btn-text{
+      opacity:.65;
+    }
+
+    .early-btn.loading .btn-dots{
+      display:flex;
+    }
 
     .early-input:focus{
       border-color: rgba(176,107,80,.95);
@@ -544,11 +773,13 @@
           0 0 0 0px rgba(176,107,80,.00),
           0 12px 30px rgba(0,0,0,.18);
       }
+
       50%{
         box-shadow:
           0 0 0 7px rgba(176,107,80,.22),
           0 18px 45px rgba(0,0,0,.25);
       }
+
       100%{
         box-shadow:
           0 0 0 4px rgba(176,107,80,.18),
@@ -574,12 +805,14 @@
       justify-content:space-between;
       gap:10px;
     }
+
     .carousel-head h2{
       margin:0;
       font-size:16px;
       font-weight:900;
       letter-spacing:.2px;
     }
+
     .carousel-head p{
       margin:4px 0 0;
       font-size:13px;
@@ -605,7 +838,11 @@
       -webkit-overflow-scrolling: touch;
       padding-bottom:6px;
     }
-    .track::-webkit-scrollbar{ height:8px; }
+
+    .track::-webkit-scrollbar{
+      height:8px;
+    }
+
     .track::-webkit-scrollbar-thumb{
       background: rgba(255,255,255,.16);
       border-radius:999px;
@@ -622,9 +859,13 @@
       box-shadow: 0 12px 25px rgba(0,0,0,.25);
       background: rgba(255,255,255,.04);
     }
+
     @media (min-width:900px){
-      .shot{ width:240px; }
+      .shot{
+        width:240px;
+      }
     }
+
     .shot img{
       width:100%;
       height:auto;
@@ -638,6 +879,7 @@
       gap:10px;
       margin-top:10px;
     }
+
     .car-btn{
       border:1px solid rgba(255,255,255,.16);
       background: rgba(255,255,255,.06);
@@ -649,8 +891,15 @@
       font-size:14px;
       transition: transform .12s ease, background .2s ease;
     }
-    .car-btn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
-    .car-btn:active{ transform: translateY(0px); }
+
+    .car-btn:hover{
+      background: rgba(255,255,255,.10);
+      transform: translateY(-1px);
+    }
+
+    .car-btn:active{
+      transform: translateY(0px);
+    }
 
     .car-dots{
       display:flex;
@@ -659,13 +908,17 @@
       justify-content:center;
       flex:1 1 auto;
     }
+
     .car-dots button{
-      width:8px;height:8px;border-radius:50%;
+      width:8px;
+      height:8px;
+      border-radius:50%;
       border:0;
       background: rgba(255,255,255,.22);
       cursor:pointer;
       padding:0;
     }
+
     .car-dots button[aria-current="true"]{
       background: rgba(176,107,80,.95);
       box-shadow: 0 0 0 4px rgba(176,107,80,.18);
@@ -677,11 +930,13 @@
       border-radius:18px;
       padding:16px;
     }
+
     .card h3{
       margin:0 0 8px;
       font-size:16px;
       font-weight:900;
     }
+
     .card p{
       margin:0;
       color: rgba(255,255,255,.75);
@@ -697,12 +952,14 @@
       border:1px solid rgba(176,107,80,.35);
       box-shadow: var(--shadow-soft);
     }
+
     .app-section h3{
       margin:0 0 6px;
       font-size:16px;
       font-weight:900;
       color: rgba(255,255,255,.96);
     }
+
     .app-section p{
       margin:0 0 14px;
       color: rgba(255,255,255,.80);
@@ -717,8 +974,11 @@
       gap:14px;
       margin-top:6px;
     }
+
     @media (max-width:420px){
-      .store-row{ grid-template-columns:1fr; }
+      .store-row{
+        grid-template-columns:1fr;
+      }
     }
 
     .store-btn{
@@ -738,22 +998,29 @@
       width:100%;
       justify-content:flex-start;
     }
+
     .store-btn:hover{
       background: linear-gradient(145deg, rgba(176,107,80,.58), rgba(176,107,80,.28));
       border-color: rgba(176,107,80,.95);
       transform: translateY(-2px);
     }
-    .store-btn:active{ transform: translateY(-1px); }
+
+    .store-btn:active{
+      transform: translateY(-1px);
+    }
+
     .store-btn.disabled{
       opacity:.75;
       pointer-events:none;
       transform:none !important;
     }
+
     .store-btn .label{
       display:flex;
       flex-direction:column;
       line-height:1.1;
     }
+
     .store-btn .small{
       font-size:11px;
       opacity:.9;
@@ -761,10 +1028,12 @@
       letter-spacing:.6px;
       text-transform:uppercase;
     }
+
     .store-btn .big{
       font-size:16px;
       font-weight:900;
     }
+
     .store-ic{
       width:22px;
       height:22px;
@@ -831,23 +1100,26 @@
       align-items:center;
       padding-top:12px;
     }
+
     footer a{
       color: rgba(255,255,255,.7);
       text-decoration:none;
     }
+
     footer a:hover{
       text-decoration:underline;
     }
-a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: rgba(255,255,255,0.25);
-}
 
-a:hover {
-  text-decoration-color: rgba(255,255,255,0.6);
-}
-  </style>
+    a{
+      color:inherit;
+      text-decoration:underline;
+      text-decoration-color:rgba(255,255,255,.25);
+    }
+
+    a:hover{
+      text-decoration-color:rgba(255,255,255,.6);
+    }
+</style>
 </head>
 
 <body>
@@ -916,35 +1188,59 @@ a:hover {
           </div>
         </div>
 
-        <div class="bullets">
-          <ul>
-            <strong>Rooted Memories is growing</strong><br>
-            <br>We're currently building the next version of 
-Rooted Memories, with new ways for families 
-to organise, connect and preserve their memories together.<br><br>
-            <li><strong>Coming in V1:</strong><br>
-• Tag family members in memories<br>
-• Attach one memory to multiple people<br>
-• Improved chronological galleries<br>
-• Birthday and family activity notifications<br>
-• Improved family tree management<br>
-• Faster photo browsing and viewing<br>
-• Plus more improvements across the app
-          </ul>
-        </div>
+       <div class="bullets v1-update">
 
-        <div class="micro">
-          Every family has thousands of photos. But in the end, where will they go? Rooted Memories is a digital mantelpiece, built to be handed down.
-        </div>
-      </div>
+  <div class="v1-header">
 
-      <div class="hero-right">
-        <div class="carousel-head">
-          <div>
-            <h2>Preview the app</h2>
-            <p>These are screens from the current build. Swipe to view.</p>
-          </div>
-        </div>
+    <div class="v1-eyebrow">
+      IN DEVELOPMENT
+    </div>
+
+    <h2 class="v1-title">
+      Rooted Memories is growing
+    </h2>
+
+    <p class="v1-intro">
+      We're currently building the next version of Rooted Memories,
+      with new ways for families to organise, connect and preserve
+      their memories together.
+    </p>
+
+  </div>
+
+  <ul class="v1-features">
+
+    <li>
+      <strong>Tag family members</strong> in memories
+    </li>
+
+    <li>
+      Attach one memory to <strong>multiple people</strong>
+    </li>
+
+    <li>
+      <strong>Improved chronological galleries</strong>
+    </li>
+
+    <li>
+      Birthday and <strong>family activity notifications</strong>
+    </li>
+
+    <li>
+      <strong>Improved family tree management</strong>
+    </li>
+
+    <li>
+      <strong>Faster photo browsing</strong> and viewing
+    </li>
+
+    <li class="v1-more">
+      Plus more improvements across the app
+    </li>
+
+  </ul>
+
+</div>
 
         <div class="carousel" aria-label="App screenshots carousel">
           <div class="track" id="shotTrack">
