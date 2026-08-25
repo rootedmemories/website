@@ -351,13 +351,7 @@
 
 
     .hero-grid{
-      display:grid;
-
-      grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);
-
-      gap:80px;
-
-      align-items:center;
+      display:block;
     }
 
 
@@ -524,76 +518,6 @@
       background:#5ed689;
 
       box-shadow:0 0 0 4px rgba(94,214,137,.10);
-    }
-
-
-
-    /* =========================================================
-       HERO PRODUCT PREVIEW
-    ========================================================= */
-
-
-    .hero-product{
-      position:relative;
-
-      min-width:0;
-
-      padding-left:26px;
-    }
-
-
-    .hero-product::before{
-      content:"";
-
-      position:absolute;
-
-      top:-42px;
-      right:-100px;
-
-      width:420px;
-      height:420px;
-
-      border:1px solid rgba(176,107,80,.14);
-      border-radius:50%;
-
-      pointer-events:none;
-    }
-
-
-    .product-frame{
-      position:relative;
-      z-index:2;
-
-      border:1px solid var(--line-strong);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.07),
-          rgba(255,255,255,.025)
-        );
-
-      padding:18px;
-
-      box-shadow:0 35px 70px rgba(0,0,0,.27);
-    }
-
-
-    .product-frame img{
-      display:block;
-
-      width:100%;
-      height:auto;
-    }
-
-
-    .product-caption{
-      margin-top:18px;
-
-      color:var(--text-muted);
-
-      font-size:13px;
-      line-height:1.55;
     }
 
 
@@ -1539,19 +1463,6 @@
 
     @media(max-width:960px){
 
-      .hero-grid{
-        grid-template-columns:1fr;
-
-        gap:64px;
-      }
-
-
-      .hero-product{
-        width:min(560px,100%);
-
-        padding-left:0;
-      }
-
 
       .section-header,
       .v1-top,
@@ -1607,11 +1518,6 @@
 
       .hero{
         padding:77px 0 84px;
-      }
-
-
-      .hero-grid{
-        gap:54px;
       }
 
 
@@ -1896,9 +1802,12 @@
 
 
 
-        <div class="hero-product">
+      </div>
 
-         <!-- =====================================================
+    </section>
+
+
+    <!-- =====================================================
          PRODUCT CAROUSEL
     ====================================================== -->
 
@@ -2036,14 +1945,6 @@
 
     </section>
 
-        </div>
-
-
-      </div>
-
-    </section>
-
-
 
     <!-- =====================================================
          STATEMENT
@@ -2127,7 +2028,7 @@
           <div class="editorial-copy">
 
             <h2>
-              Not every family memory needs an audiance.
+              Not every family memory needs an audience.
             </h2>
 
             <p>
@@ -2136,11 +2037,11 @@
 
             <p>
              Rooted Memories gives your family a private place for the photographs, stories and everyday moments
-              you want to keep close, especially the childhoods unfolding infront of you.
+              you want to keep close, especially the childhoods unfolding in front of you.
             </p>
             
             <p>
-        Build their story away from the noise as they grow, until one day you can hand them somthing: a record of their life, 
+        Build their story away from the noise as they grow, until one day you can hand them something: a record of their life, 
               created by your family.
             </p>
 
@@ -2590,8 +2491,8 @@
 
 
         <p>
-          Rooted Memories keeps the experiance simple, even as the archive grows. Photos and stories remain organised
-          around the people they belong to, so the archive can grown naturally over time.
+          Rooted Memories keeps the experience simple, even as the archive grows. Photos and stories remain organised
+          around the people they belong to, so the archive can grow naturally over time.
         </p>
 
 
@@ -2913,13 +2814,6 @@
         <a href="/contact-us/">
           Contact Us
         </a>
-
-      </div>
-
-
-    </div>
-
-  </footer>
 
       </div>
 
