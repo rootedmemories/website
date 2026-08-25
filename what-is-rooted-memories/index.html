@@ -388,7 +388,7 @@
 
     .header-download{
 
-      min-height:46px;
+      min-height:42px;
 
       display:inline-flex;
 
@@ -396,26 +396,37 @@
 
       justify-content:center;
 
-      padding:0 22px;
+      padding:0 20px;
 
-      border:1px solid var(--bronze);
+      border:1px solid rgba(210,146,120,.62);
 
-      border-radius:4px;
+      border-radius:7px;
 
-      background:var(--bronze);
+      background:linear-gradient(
+        180deg,
+        rgba(190,119,91,.98) 0%,
+        rgba(166,94,68,.98) 100%
+      );
 
-      color:#fff;
+      color:var(--cream);
 
       text-decoration:none;
 
-      font-size:14px;
+      font-size:13px;
 
-      font-weight:800;
+      font-weight:700;
+
+      letter-spacing:.01em;
+
+      box-shadow:
+        0 8px 22px rgba(0,0,0,.12),
+        inset 0 1px 0 rgba(255,255,255,.10);
 
       transition:
-        transform .16s ease,
-        background .16s ease,
-        border-color .16s ease;
+        transform .18s ease,
+        background .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease;
 
     }
 
@@ -424,9 +435,17 @@
 
       transform:translateY(-1px);
 
-      background:var(--bronze-light);
+      border-color:rgba(210,146,120,.88);
 
-      border-color:var(--bronze-light);
+      background:linear-gradient(
+        180deg,
+        var(--bronze-light) 0%,
+        var(--bronze) 100%
+      );
+
+      box-shadow:
+        0 11px 28px rgba(0,0,0,.16),
+        inset 0 1px 0 rgba(255,255,255,.12);
 
     }
 
@@ -1222,7 +1241,7 @@
     .primary-btn,
     .secondary-btn{
 
-      min-height:54px;
+      min-height:52px;
 
       display:inline-flex;
 
@@ -1230,20 +1249,24 @@
 
       justify-content:center;
 
-      padding:0 27px;
+      padding:0 24px;
 
-      border-radius:4px;
+      border-radius:7px;
 
       text-decoration:none;
 
-      font-size:15px;
+      font-size:14px;
 
-      font-weight:800;
+      font-weight:700;
+
+      letter-spacing:.006em;
 
       transition:
-        transform .16s ease,
-        background .16s ease,
-        border-color .16s ease;
+        transform .18s ease,
+        background .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        color .18s ease;
 
     }
 
@@ -1252,12 +1275,16 @@
 
       border:
         1px solid
-        var(--forest-900);
+        rgba(8,29,23,.92);
 
       background:
         var(--forest-900);
 
-      color:#fff;
+      color:var(--cream);
+
+      box-shadow:
+        0 10px 24px rgba(4,16,13,.12),
+        inset 0 1px 0 rgba(255,255,255,.045);
 
     }
 
@@ -1270,6 +1297,13 @@
       background:
         var(--forest-800);
 
+      border-color:
+        var(--forest-800);
+
+      box-shadow:
+        0 13px 30px rgba(4,16,13,.16),
+        inset 0 1px 0 rgba(255,255,255,.055);
+
     }
 
 
@@ -1277,10 +1311,16 @@
 
       border:
         1px solid
-        rgba(4,16,13,.25);
+        rgba(4,16,13,.22);
+
+      background:
+        rgba(4,16,13,.018);
 
       color:
         var(--forest-900);
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.28);
 
     }
 
@@ -1291,7 +1331,13 @@
         translateY(-1px);
 
       border-color:
-        rgba(4,16,13,.5);
+        rgba(141,80,58,.50);
+
+      background:
+        rgba(176,107,80,.055);
+
+      box-shadow:
+        0 9px 24px rgba(4,16,13,.07);
 
     }
 
@@ -1433,7 +1479,7 @@
 
       .header-download{
 
-        min-height:42px;
+        min-height:40px;
 
         padding:0 17px;
 
@@ -1579,7 +1625,9 @@
 
       .header-download{
 
-        padding:0 13px;
+        min-height:39px;
+
+        padding:0 15px;
 
         font-size:12px;
 
@@ -2228,6 +2276,10 @@
           Safety
         </a>
 
+        <a href="/contact-us/">
+          Contact Us
+        </a>
+
 
       </div>
 
@@ -2249,4 +2301,3 @@
 </body>
 
 </html>
-```
