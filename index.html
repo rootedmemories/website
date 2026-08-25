@@ -1,3 +1,36 @@
+Is that too much dead space between both sections?
+Do you think I could put a review carousel on that right hand side when I have them?
+I love how about shows on desktop and mobile in landscape but is hidden in portrait 
+Pasted text(20260825-004853).txt
+Document
+can you make my download button at the top look professional. i feel it looks a lttle bit blocky and out of place. i want premium
+
+Yep. I'll resend the entire HTML page, unchanged apart from upgrading the top Download App button to the more premium version.
+
+go on 
+Pasted text(20260825-005125).txt
+Document
+resend the whole page please with the updated download button
+
+Absolutely. I have the complete page you just supplied. I’ll keep everything else exactly as-is and only replace the header Download App styling with the slimmer premium version we discussed.
+
+Because the full page is very large, the cleanest way is for me to return it as a complete .html file rather than risk the chat truncating the code.
+
+yes go
+Pasted text(20260825-005309).txt
+Document
+here is my website can you clean up both my download app and download rooted memories orange buttons. as long with making the what is rooted memories button next to it look in place with its new neighbour. please send the full page back ready to paste straight in in a html file.
+
+Done. I kept the rest of your page intact and cleaned up the three buttons from the page you supplied.
+
+The changes are deliberately restrained: the two orange download CTAs are now slimmer, softer and more premium, with less aggressive font weight, refined corners, subtle depth and a more controlled bronze treatment. The What is Rooted Memories? button has also been adjusted so it visually belongs beside the new primary CTA rather than looking like an unrelated outline button.
+
+Download the complete ready-to-paste HTML file 
+
+rooted-memories-homepage-premium-buttons.html
+HTML
+
+rooted-memories-homepage-premium-buttons.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -304,38 +337,57 @@
 
 
     .header-download{
-      min-height:46px;
+      min-height:42px;
 
       display:inline-flex;
       align-items:center;
       justify-content:center;
 
-      padding:0 22px;
+      padding:0 20px;
 
-      border:1px solid var(--bronze);
-      border-radius:4px;
+      border:1px solid rgba(210,146,120,.62);
+      border-radius:7px;
 
-      background:var(--bronze);
+      background:linear-gradient(
+        180deg,
+        rgba(190,119,91,.98) 0%,
+        rgba(166,94,68,.98) 100%
+      );
 
-      color:#fff;
+      color:var(--cream);
 
       text-decoration:none;
 
-      font-size:14px;
-      font-weight:800;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.01em;
+
+      box-shadow:
+        0 8px 22px rgba(0,0,0,.12),
+        inset 0 1px 0 rgba(255,255,255,.10);
 
       transition:
-        transform .16s ease,
-        background .16s ease,
-        border-color .16s ease;
+        transform .18s ease,
+        background .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease;
     }
 
 
     .header-download:hover{
       transform:translateY(-1px);
 
-      background:var(--bronze-light);
-      border-color:var(--bronze-light);
+      border-color:rgba(210,146,120,.88);
+
+      background:linear-gradient(
+        180deg,
+        var(--bronze-light) 0%,
+        var(--bronze) 100%
+      );
+
+      box-shadow:
+        0 11px 28px rgba(0,0,0,.16),
+        inset 0 1px 0 rgba(255,255,255,.12);
     }
 
 
@@ -435,60 +487,86 @@
 
     .primary-btn,
     .secondary-btn{
-      min-height:54px;
+      min-height:52px;
 
       display:inline-flex;
       align-items:center;
       justify-content:center;
 
-      padding:0 26px;
+      padding:0 24px;
 
-      border-radius:4px;
+      border-radius:7px;
 
       text-decoration:none;
 
-      font-size:15px;
-      font-weight:800;
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:.006em;
 
       transition:
-        transform .16s ease,
-        background .16s ease,
-        border-color .16s ease;
+        transform .18s ease,
+        background .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        color .18s ease;
     }
 
 
     .primary-btn{
-      border:1px solid var(--bronze);
+      border:1px solid rgba(210,146,120,.62);
 
-      background:var(--bronze);
+      background:linear-gradient(
+        180deg,
+        rgba(190,119,91,.98) 0%,
+        rgba(166,94,68,.98) 100%
+      );
 
-      color:#fff;
+      color:var(--cream);
+
+      box-shadow:
+        0 10px 26px rgba(0,0,0,.13),
+        inset 0 1px 0 rgba(255,255,255,.10);
     }
 
 
     .primary-btn:hover{
       transform:translateY(-1px);
 
-      background:var(--bronze-light);
-      border-color:var(--bronze-light);
+      border-color:rgba(210,146,120,.88);
+
+      background:linear-gradient(
+        180deg,
+        var(--bronze-light) 0%,
+        var(--bronze) 100%
+      );
+
+      box-shadow:
+        0 13px 32px rgba(0,0,0,.17),
+        inset 0 1px 0 rgba(255,255,255,.12);
     }
 
 
     .secondary-btn{
-      border:1px solid var(--line-strong);
+      border:1px solid rgba(243,236,228,.24);
 
-      background:transparent;
+      background:rgba(243,236,228,.025);
 
-      color:var(--cream);
+      color:rgba(243,236,228,.92);
+
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
     }
 
 
     .secondary-btn:hover{
       transform:translateY(-1px);
 
-      border-color:rgba(243,236,228,.42);
+      border-color:rgba(210,146,120,.55);
 
-      background:rgba(255,255,255,.035);
+      background:rgba(176,107,80,.07);
+
+      color:#fff;
+
+      box-shadow:0 9px 24px rgba(0,0,0,.08);
     }
 
 
@@ -1510,7 +1588,7 @@
 
 
       .header-download{
-        min-height:42px;
+        min-height:40px;
 
         padding:0 17px;
       }
@@ -1654,7 +1732,9 @@
 
 
       .header-download{
-        padding:0 13px;
+        min-height:39px;
+
+        padding:0 15px;
 
         font-size:12px;
       }
