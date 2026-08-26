@@ -338,7 +338,24 @@
       font-size:14px;
       font-weight:650;
 
-      transition:color .16s ease;
+      max-width:100px;
+      opacity:1;
+      overflow:hidden;
+      white-space:nowrap;
+
+      transition:
+        color .16s ease,
+        opacity .22s ease,
+        max-width .22s ease,
+        margin .22s ease;
+    }
+
+
+    .site-header.is-scrolled .header-link{
+      opacity:0;
+      max-width:0;
+      margin:0;
+      pointer-events:none;
     }
 
 
