@@ -231,15 +231,39 @@
 
 
     .site-header{
-      position:sticky;
-      top:0;
-      z-index:1000;
+      position:fixed !important;
+      top:0 !important;
+      left:0 !important;
+      right:0 !important;
+      width:100% !important;
+      z-index:2147483000 !important;
 
-      background:rgba(8,29,23,.96);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-
+      background:var(--forest-900);
       border-bottom:1px solid var(--line);
+
+      transform:translateZ(0);
+      -webkit-transform:translateZ(0);
+      backface-visibility:hidden;
+      -webkit-backface-visibility:hidden;
+
+      transition:
+        background .22s ease,
+        box-shadow .22s ease;
+    }
+
+
+    .site-header.is-scrolled{
+      background:rgba(6,22,17,.985);
+
+      box-shadow:0 8px 24px rgba(0,0,0,.20);
+    }
+
+
+    /* The fixed header is removed from normal document flow.
+       This spacer recreates the exact original header height,
+       so the page initially looks the same as before. */
+    body{
+      padding-top:106px;
     }
 
 
@@ -251,6 +275,13 @@
       justify-content:space-between;
 
       gap:30px;
+
+      transition:min-height .22s ease;
+    }
+
+
+    .site-header.is-scrolled .header-inner{
+      min-height:72px;
     }
 
 
@@ -269,6 +300,13 @@
       width:auto;
 
       filter:drop-shadow(0 8px 15px rgba(0,0,0,.17));
+
+      transition:height .22s ease;
+    }
+
+
+    .site-header.is-scrolled .brand img{
+      height:54px;
     }
 
 
@@ -1546,12 +1584,27 @@
 
 
       .header-inner{
-        min-height:72px;
+        min-height:88px;
+      }
+
+
+      body{
+        padding-top:88px;
       }
 
 
       .brand img{
-        height:54px;
+        height:61px;
+      }
+
+
+      .site-header.is-scrolled .header-inner{
+        min-height:64px;
+      }
+
+
+      .site-header.is-scrolled .brand img{
+        height:46px;
       }
 
 
@@ -2900,6 +2953,60 @@
 
     document.getElementById('y').textContent =
       new Date().getFullYear();
+
+
+    /* Fixed header behaviour:
+       - full original size at the very top
+       - compact only after the user actually scrolls
+       - returns to original size when they return to the top */
+    (function(){
+
+      const header = document.querySelector('.site-header');
+
+      if(!header){
+        return;
+      }
+
+      let ticking = false;
+
+      function syncHeader(){
+
+        const y =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop ||
+          0;
+
+        header.classList.toggle(
+          'is-scrolled',
+          y > 60
+        );
+
+        ticking = false;
+      }
+
+      function onScroll(){
+
+        if(!ticking){
+          window.requestAnimationFrame(syncHeader);
+          ticking = true;
+        }
+      }
+
+      syncHeader();
+
+      window.addEventListener(
+        'scroll',
+        onScroll,
+        { passive:true }
+      );
+
+      window.addEventListener(
+        'pageshow',
+        syncHeader
+      );
+
+    })();
 
 
     (function(){
