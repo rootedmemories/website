@@ -599,12 +599,19 @@
 
 
     .founding-note{
-      display:flex;
-      align-items:center;
+      width:fit-content;
+      max-width:100%;
 
-      gap:11px;
+      display:flex;
+      align-items:baseline;
+      flex-wrap:wrap;
+
+      gap:8px 12px;
 
       margin-top:28px;
+      padding-top:13px;
+
+      border-top:1px solid rgba(210,146,120,.30);
 
       color:var(--text-muted);
 
@@ -613,17 +620,21 @@
     }
 
 
-    .founding-dot{
-      width:7px;
-      height:7px;
+    .founding-label{
+      color:var(--bronze-light);
 
-      flex:0 0 auto;
+      font-size:10px;
+      font-weight:800;
 
-      border-radius:50%;
+      text-transform:uppercase;
+      letter-spacing:.16em;
 
-      background:#5ed689;
+      white-space:nowrap;
+    }
 
-      box-shadow:0 0 0 4px rgba(94,214,137,.10);
+
+    .founding-copy{
+      color:var(--text-muted);
     }
 
 
@@ -1784,7 +1795,7 @@
 
 
       .founding-note{
-        align-items:flex-start;
+        align-items:baseline;
       }
 
     }
@@ -1893,9 +1904,11 @@
 
 <div class="founding-note">
 
-            <span class="founding-dot"></span>
+            <span class="founding-label">
+              Founding offer
+            </span>
 
-            <span>
+            <span class="founding-copy">
               Free for life for the first 100 families.
             </span>
 
