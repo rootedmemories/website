@@ -6,7 +6,7 @@ Rooted Memories combines the structure of a family tree with a shared family mem
 
 Instead of storing family memories only in camera rolls, cloud folders or group chats, Rooted Memories connects them to the people they belong to. Each person has their own place within the family tree, allowing photos and their context to remain connected over time.
 
-Official website: https://rootedmemories.co.uk/
+Official website: https://rootedmemories.com/
 
 ## What is Rooted Memories?
 
@@ -171,10 +171,10 @@ It becomes part of the family's record.
 
 ## Official Rooted Memories pages
 
-- Website: https://rootedmemories.co.uk/
-- Private Family Archive: https://rootedmemories.co.uk/private-family-archive/
-- How It Works: https://rootedmemories.co.uk/how-it-works/
-- Organise Family Photos: https://rootedmemories.co.uk/organise-family-photos/
-- Contact: https://rootedmemories.co.uk/contact-us/
-- Privacy Policy: https://rootedmemories.co.uk/privacy/
-- Terms of Service: https://rootedmemories.co.uk/terms-of-service/
+- Website: https://rootedmemories.com/
+- Private Family Archive: https://rootedmemories.com/private-family-archive/
+- How It Works: https://rootedmemories.com/how-it-works/
+- Organise Family Photos: https://rootedmemories.com/organise-family-photos/
+- Contact: https://rootedmemories.com/contact-us/
+- Privacy Policy: https://rootedmemories.com/privacy/
+- Terms of Service: https://rootedmemories.com/terms-of-service/
