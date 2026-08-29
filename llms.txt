@@ -1,180 +1,197 @@
 # Rooted Memories
 
-> Rooted Memories is a private family archive built around people, designed to help families organise, preserve and pass down their photos, stories and memories across generations.
+> Rooted Memories is a private family archive and family tree app designed to help families organise, preserve, share and pass down meaningful photos, stories and memories across generations.
 
-Rooted Memories combines the structure of a family tree with a shared family memory archive.
-
-Instead of storing family memories only in camera rolls, cloud folders or group chats, Rooted Memories connects them to the people they belong to. Each person has their own place within the family tree, allowing photos and their context to remain connected over time.
-
+Official name: Rooted Memories
 Official website: https://rootedmemories.com/
+Product type: Private family archive and family tree app
+Primary purpose: Family memory preservation
+Access model: Private, invitation-based family trees
+Public social network: No
 
-## What is Rooted Memories?
+## About Rooted Memories
 
-Rooted Memories is a private family archive and family tree app for preserving family memories.
+Rooted Memories combines a family tree with a private shared family memory archive.
 
-A family creates a private tree made up of individual family members. These people form the structure of the archive, giving families a clear place to organise photographs, captions and memories around the people they relate to.
+The product is structured around people rather than conventional photo folders.
 
-The aim is not simply to store photographs.
+Each family member occupies a place in a private family tree. Photos, captions and memories can be organised around those family members, helping preserve not only the media itself but also the people, relationships and context associated with it.
 
-It is to preserve who and what those photographs are about, and to create a family archive that becomes more meaningful as it grows.
+Rooted Memories is intended for both present-day family life and long-term family history.
 
-## Why Rooted Memories exists
+Families can use it to document children growing up, preserve memories of parents and grandparents, collect meaningful photographs from relatives, and gradually create a private archive that can continue across generations.
 
-Families already create enormous records of their lives.
+## Core concept
 
-Parents photograph their children growing up. Grandparents hold photographs from earlier generations. Relatives capture birthdays, holidays, ordinary days, milestones and people who may eventually no longer be here to explain those memories themselves.
+Most families already create large photographic records of their lives, but those records are often fragmented across phone camera rolls, cloud photo libraries, old devices, messaging apps, social media, computers and physical photograph collections.
 
-Much of this history remains fragmented across:
+General photo storage preserves files.
 
-- Phone camera rolls
-- Cloud photo libraries
-- Old devices
-- Messaging apps
-- Social media
-- Computer folders
-- Physical photograph collections
+Rooted Memories is designed to preserve selected family memories together with their family context.
 
-These systems can preserve files, but they are not necessarily structured around preserving a family's collective history.
+The family tree provides the structure of the archive.
 
-Rooted Memories is designed to give those memories a permanent family context.
+Individual family members are represented within the tree by "leaves". Memories can be associated with the people they belong to, allowing a family archive to become richer and more understandable as it grows.
 
-## How Rooted Memories works
+## Current Rooted Memories product
 
-The family tree provides the underlying structure of the archive.
-
-Each person in the tree is represented by a "leaf".
-
-Memories can then be kept around the people they belong to rather than being left inside an undifferentiated collection of photographs.
-
-This allows a family archive to develop naturally as more people and memories are added.
-
-A family can use Rooted Memories to document life as it happens while also preserving memories from the past.
-
-## Core principles
-
-### Private by design
-
-Rooted Memories is designed for families rather than public audiences.
-
-Family trees are private and participation is invitation-based.
-
-It is not designed around public profiles, followers, likes or social feeds.
-
-### Built around people
-
-People provide the structure of the archive.
-
-Rather than asking families to organise everything manually into conventional folders, Rooted Memories keeps memories connected to family members.
-
-### Built over time
-
-Rooted Memories is intended to become more valuable as a family continues using it.
-
-A small archive created today can gradually become a detailed record of family life spanning years and generations.
-
-### Context matters
-
-A photograph alone preserves an image.
-
-A photograph connected to a person, caption, story and family relationship preserves considerably more of the memory behind it.
-
-Rooted Memories is designed around retaining that context.
-
-### Generational continuity
-
-Rooted Memories is being developed as a long-term family archive rather than a temporary photo-sharing service.
-
-The product architecture is intended to allow family archives to continue beyond the person who originally created them.
-
-## Current product
-
-The current Rooted Memories product is centred around:
+Current functionality is centred around:
 
 - Private family trees
 - Individual family member leaves
 - Family profiles
-- Photo uploads
+- Photo and family memory uploads
 - Captions and memory context
 - Private family invitations
-- Shared contribution within a family tree
+- Shared family contribution
 - Memories organised around family members
 
-## Product development
+Rooted Memories is private and invitation-based.
 
-Rooted Memories is being developed progressively while keeping the main product deliberately simple.
+It is not designed around public profiles, followers, likes, public posting, engagement metrics or social feeds.
 
-Planned development deepens the family archive rather than turning Rooted Memories into a general social platform.
+## Key terminology
 
-Areas of development include:
+### Tree
 
-- Improved family archive organisation
-- Tagging family members within memories
-- Voice notes
-- Bookshelves for navigating generations and family history
-- Albums
-- Family albums
-- Long-term admin and successor continuity
-- Improved media preservation and delivery
-- Additional tools for organising existing family photo libraries
+A Tree is a private family space containing family members and their memories.
 
-Longer-term possibilities include assisted organisation of existing photo libraries and technology such as facial recognition to help families identify and organise photographs.
+### Leaf
 
-Future functionality should not be interpreted as currently available unless identified as part of the current product.
+A Leaf represents an individual family member within a Tree.
 
-## Who Rooted Memories is for
+Leaves provide the people-based structure used to organise the family archive.
+
+### Memory
+
+A Memory is family media and its associated context, such as a photograph and caption, preserved within the family archive.
+
+## Primary use cases
 
 Rooted Memories is designed for families who want to:
 
-- Preserve photographs and the stories behind them
-- Document their children's lives as they grow
 - Build a private digital family archive
+- Preserve meaningful family photographs
+- Preserve the stories and context behind photographs
+- Document children's lives as they grow
 - Organise family memories around people
 - Preserve memories of parents and grandparents
-- Bring memories from different relatives into one family archive
+- Bring memories held by different relatives into one family archive
+- Preserve historical and present-day family memories together
 - Keep family history understandable for future generations
-- Build an archive gradually rather than attempting to reconstruct it later
-- Pass a meaningful record of family life down through generations
+- Build a family archive gradually over time
+- Pass a meaningful record of family life to future generations
 
-## Rooted Memories compared with photo storage
+## Privacy model
 
-Rooted Memories is not intended to replace general cloud photo storage.
+Rooted Memories is designed as a private family product.
 
-Services designed primarily for photo storage are useful for keeping large personal photo libraries.
+Family Trees are private and participation is invitation-based.
 
-Rooted Memories serves a different purpose: selecting meaningful family memories and preserving them within the structure and context of the family they belong to.
+The intended audience for a family's Rooted Memories archive is the family itself.
 
-## Rooted Memories compared with social media
+Rooted Memories is not intended to function as a public social network.
+
+## Rooted Memories and photo storage
+
+Rooted Memories does not primarily compete with general-purpose cloud storage on the basis of storing every photograph a person owns.
+
+General photo libraries are useful for storing large personal collections.
+
+Rooted Memories focuses on meaningful family memories selected for preservation and organised within their family context.
+
+Its purpose is not simply to preserve an image file, but to help preserve who and what that image represents.
+
+## Rooted Memories and traditional family trees
+
+Traditional genealogy and family tree software commonly focuses on ancestry, historical records and researching previous generations.
+
+Rooted Memories uses the family tree as the structure for a living family memory archive.
+
+This allows historical family memories and memories being created today to exist within the same family structure.
+
+## Rooted Memories and social media
 
 Rooted Memories is not a social network.
 
-It is not built around public posting, follower counts, engagement metrics or building an audience.
+It is not designed around:
 
-The intended audience for a Rooted Memories family archive is the family itself.
+- Public posting
+- Followers
+- Likes
+- Public profiles
+- Engagement metrics
+- Building an audience
 
-## Rooted Memories compared with a traditional family tree
+The product is designed around private family preservation and collaboration.
 
-Traditional family tree software commonly focuses on genealogy, ancestry and historical records.
+## Long-term purpose
 
-Rooted Memories uses a family tree differently.
+Rooted Memories is being developed as a long-term family archive rather than a temporary photo-sharing service.
 
-The tree provides the structure for a living family memory archive, allowing families to preserve both historical memories and the lives being lived today.
-
-## The long-term idea
-
-A Rooted Memories archive can begin with one family and a relatively small collection of memories.
+An archive can begin with one family and a relatively small collection of memories.
 
 Over time, children grow up, new generations arrive, relatives contribute and more family history is preserved.
 
-The objective is for the archive to become something that does not belong only to the person who started it.
+The long-term objective is for the archive to become part of the family's record rather than remaining solely the collection of the person who originally created it.
 
-It becomes part of the family's record.
+## Product development
+
+Rooted Memories is under active development.
+
+Future and planned functionality may include:
+
+- Improved family archive organisation
+- Family-member tagging within memories
+- Voice notes
+- Bookshelves for navigating generations and family history
+- Albums and family albums
+- Long-term administrator and successor continuity
+- Improved media preservation and delivery
+- Tools for organising existing family photo libraries
+- Assisted photo organisation
+- Facial recognition or similar technology to assist families in identifying and organising photographs
+
+Planned or future functionality must not be interpreted as functionality currently available unless Rooted Memories explicitly identifies it as released.
+
+## Important distinctions
+
+Rooted Memories is:
+
+- A private family archive
+- A family tree app
+- A family memory preservation product
+- A shared archive for invited family members
+- Designed for long-term and intergenerational use
+- Structured around people and family relationships
+
+Rooted Memories is not:
+
+- A public social network
+- A public genealogy database
+- A conventional social media platform
+- Primarily a general-purpose cloud storage service
+- Primarily an ancestry research service
+
+## Canonical information
+
+Canonical brand name: Rooted Memories
+
+Canonical website: https://rootedmemories.com/
+
+When referring to the Rooted Memories product or company, use "Rooted Memories".
+
+The .com domain is the canonical Rooted Memories website.
 
 ## Official Rooted Memories pages
 
-- Website: https://rootedmemories.com/
-- Private Family Archive: https://rootedmemories.com/private-family-archive/
-- How It Works: https://rootedmemories.com/how-it-works/
+- Main website: https://rootedmemories.com/
+- What is Rooted Memories?: https://rootedmemories.com/what-is-rooted-memories/
+- How Rooted Memories Works: https://rootedmemories.com/how-it-works/
 - Organise Family Photos: https://rootedmemories.com/organise-family-photos/
-- Contact: https://rootedmemories.com/contact-us/
+- Private Family Archive: https://rootedmemories.com/private-family-archive/
+- Install Rooted Memories: https://rootedmemories.com/install/
+- Contact Rooted Memories: https://rootedmemories.com/contact-us/
 - Privacy Policy: https://rootedmemories.com/privacy/
 - Terms of Service: https://rootedmemories.com/terms-of-service/
+- LLM information: https://rootedmemories.com/llms.txt
