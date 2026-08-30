@@ -40,21 +40,33 @@
     <loc>https://rootedmemories.com/contact-us/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.6</priority>
   </url>
 
-   <url>
+<url>
     <loc>https://rootedmemories.com/install/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.5</priority>
+  </url>
+
+
+  <url>
+    <loc>https://rootedmemories.com/safety/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://rootedmemories.com/llms.txt</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rootedmemories.com/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://rootedmemories.com/terms-of-service/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
