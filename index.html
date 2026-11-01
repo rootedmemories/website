@@ -1045,13 +1045,43 @@
           transition: none !important;
         }
       }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        flex-shrink: 0;
+        text-decoration: none;
+      }
+      .brand-name {
+        color: #d7c092;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: 0;
+        white-space: nowrap;
+      }
+      @media (max-width: 700px) {
+        .nav-inner { gap: 12px; }
+        .brand { gap: 10px; }
+        .brand-name { font-size: 20px; }
+        .nav-right { gap: 0; flex-shrink: 0; }
+      }
+      @media (max-width: 390px) {
+        .nav-inner { gap: 8px; }
+        .brand { gap: 8px; }
+        .brand .logo { height: 42px; }
+        .brand-name { font-size: 16px; }
+        .nav .btn { padding-inline: 10px; gap: 6px; }
+      }
     </style>
   </head>
   <body>
     <header class="nav">
       <div class="container nav-inner">
-        <a href="/" aria-label="Rooted Memories home">
-          <img class="logo" src="/logomvp.png?v=2" alt="Rooted Memories" />
+        <a class="brand" href="/" aria-label="Rooted Memories home">
+          <img class="logo" src="/logomvp.png?v=2" alt="" />
+          <span class="brand-name">Rooted Memories</span>
         </a>
         <nav class="nav-right" aria-label="Main navigation">
           <a class="nav-link" href="#why">Our purpose</a>
