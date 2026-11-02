@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="A simple way to organise family photos around the people in them, keep useful dates and stories, and build a private collection your family can add to over time."
+    content="Sort a manageable batch of family photographs, record names and dates, and write captions that make the collection easier to identify."
   />
 
   <meta name="application-name" content="Rooted Memories" />
@@ -35,7 +35,7 @@
 
   <meta
     property="og:description"
-    content="Organise family photos around the people in them and keep the dates, captions and stories that help them make sense years later."
+    content="Sort a manageable batch of family photographs, record names and dates, and write captions that make the collection easier to identify."
   />
 
   <meta
@@ -45,7 +45,7 @@
 
   <meta
     property="og:image"
-    content="https://rootedmemories.com/og-image.8.jpg"
+    content="https://rootedmemories.com/og-image.9.webp?v=2"
   />
 
 
@@ -60,12 +60,12 @@
 
   <meta
     name="twitter:description"
-    content="Organise family photos around the people in them and keep the dates, captions and stories that help them make sense years later."
+    content="Sort a manageable batch of family photographs, record names and dates, and write captions that make the collection easier to identify."
   />
 
   <meta
     name="twitter:image"
-    content="https://rootedmemories.com/og-image.8.jpg"
+    content="https://rootedmemories.com/og-image.9.webp?v=2"
   />
 
 
@@ -142,6 +142,649 @@
   </script>
 
 
+  <!-- STRUCTURED DATA -->
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rootedmemories.com/#organization",
+      "name": "Rooted Memories",
+      "url": "https://rootedmemories.com/",
+      "logo": "https://rootedmemories.com/logomvp.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://rootedmemories.com/#website",
+      "name": "Rooted Memories",
+      "url": "https://rootedmemories.com/",
+      "publisher": {
+        "@id": "https://rootedmemories.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://rootedmemories.com/organise-family-photos/#webpage",
+      "name": "How to Organise Family Photos",
+      "url": "https://rootedmemories.com/organise-family-photos/",
+      "description": "Sort a manageable batch of family photographs, record names and dates, and write captions that make the collection easier to identify.",
+      "isPartOf": {
+        "@id": "https://rootedmemories.com/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What if I cannot identify someone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Write down what is known and ask relatives separately. Keep a suggested name marked as unconfirmed until you have stronger evidence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I organise by date, person or occasion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use dates for sequence, names for identification and occasions for context. A caption can hold all three, so you do not have to rely on a single folder name."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to delete duplicates first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Set obvious duplicates aside from your working batch. Compare resolution, cropping and any handwritten information before deciding which copies to retain. Keep your source files until you are satisfied with the result."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+    --dark:#071b16;
+    --deep:#04110e;
+    --gold:#c88d70;
+    --accent:#e7ac8c;
+    --paper:#f5eee4;
+    --ink:#172821;
+    --muted:#bfc9be;
+    --line:#ffffff22;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif
+    }
+    * {
+    box-sizing:border-box
+    }
+    html {
+    scroll-behavior:smooth;
+    scroll-padding-top:108px
+    }
+    body {
+    margin:0;
+    background:var(--dark);
+    color:var(--paper);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased
+    }
+    a {
+    color:inherit
+    }
+    img {
+    max-width:100%;
+    display:block
+    }
+    p {
+    line-height:1.75
+    }
+    a:focus-visible,summary:focus-visible {
+    outline:2px solid var(--accent);
+    outline-offset:5px
+    }
+    .container {
+    width:min(1220px,calc(100% - 64px));
+    margin-inline:auto
+    }
+    .skip {
+    position:fixed;
+    top:-100px;
+    left:16px;
+    background:var(--paper);
+    color:var(--ink);
+    padding:12px;
+    z-index:100
+    }
+    .skip:focus {
+    top:12px
+    }
+    .nav {
+    position:sticky;
+    top:0;
+    z-index:40;
+    background:#051611f2;
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line)
+    }
+    .nav-inner {
+    height:84px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px
+    }
+    .brand {
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+    flex-shrink:0
+    }
+    .brand img {
+    height:66px;
+    width:66px;
+    object-fit:contain
+    }
+    .brand-name {
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:26px;
+    font-weight:500;
+    letter-spacing:.2px;
+    color:#d7c092;
+    white-space:nowrap
+    }
+    .nav-links {
+    display:flex;
+    align-items:center;
+    gap:28px
+    }
+    .nav-link {
+    font-size:12px;
+    font-weight:650;
+    text-decoration:none;
+    color:#d7ddd4
+    }
+    .nav-link:hover {
+    color:var(--accent)
+    }
+    .btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    min-height:48px;
+    padding:0 22px;
+    border:1px solid var(--gold);
+    border-radius:7px;
+    background:var(--gold);
+    color:var(--ink);
+    font-size:13px;
+    font-weight:750;
+    text-decoration:none
+    }
+    .btn:hover {
+    background:var(--accent)
+    }
+    .nav .btn {
+    min-height:43px;
+    padding-inline:18px
+    }
+    .eyebrow {
+    display:flex;
+    align-items:center;
+    gap:13px;
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    color:var(--accent)
+    }
+    .eyebrow:before {
+    content:"";
+    width:29px;
+    height:1px;
+    background:currentColor;
+    flex-shrink:0
+    }
+    h1,h2,h3 {
+    font-family:var(--serif);
+    font-weight:400
+    }
+    h1 {
+    font-size:clamp(48px,6vw,78px);
+    line-height:1.05;
+    letter-spacing:-.045em;
+    margin:27px 0
+    }
+    h2 {
+    font-size:clamp(34px,4vw,52px);
+    line-height:1.12;
+    letter-spacing:-.035em;
+    margin:20px 0
+    }
+    h3 {
+    font-size:29px;
+    letter-spacing:-.025em;
+    margin:0 0 14px
+    }
+    em {
+    color:var(--accent)
+    }
+    .hero {
+    padding:76px 0 80px;
+    background:radial-gradient(ellipse at 90% 40%,#344735 0,transparent 60%),linear-gradient(145deg,#0a211a,#061712)
+    }
+    .hero-grid {
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:80px;
+    align-items:center
+    }
+    .hero p {
+    max-width:580px;
+    font-size:17px;
+    color:#cbd7cd;
+    margin-bottom:28px
+    }
+    .breadcrumb {
+    font-size:12px;
+    color:var(--muted);
+    margin-bottom:35px
+    }
+    .breadcrumb a {
+    text-underline-offset:4px
+    }
+    .hero-visual {
+    position:relative;
+    max-width:300px;
+    justify-self:center;
+    background:#142d24;
+    border:1px solid #c88d7066;
+    border-radius:28px;
+    padding:10px;
+    box-shadow:0 25px 70px #0005;
+    margin:0
+    }
+    .hero-visual img {
+    width:100%;
+    border-radius:19px
+    }
+    .hero-visual figcaption {
+    padding:15px 10px 7px;
+    color:#c8d2c4;
+    font-size:12px;
+    line-height:1.5
+    }
+    .guide {
+    padding:88px 0;
+    background:var(--paper);
+    color:var(--ink)
+    }
+    .guide .eyebrow {
+    color:#986149
+    }
+    .guide-grid {
+    display:grid;
+    grid-template-columns:.75fr 1.25fr;
+    gap:80px
+    }
+    .guide-intro p {
+    color:#586b60;
+    font-size:16px;
+    max-width:330px
+    }
+    .step-nav {
+    display:grid;
+    gap:14px;
+    margin-top:28px
+    }
+    .step-nav a {
+    font-size:13px;
+    color:#586b60;
+    text-underline-offset:5px
+    }
+    .steps {
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-top:1px solid #cbd1c5
+    }
+    .step {
+    display:grid;
+    grid-template-columns:42px 1fr;
+    gap:20px;
+    padding:30px 0;
+    border-bottom:1px solid #cbd1c5;
+    scroll-margin-top:105px
+    }
+    .number {
+    font-family:var(--serif);
+    color:#986149;
+    font-size:23px
+    }
+    .step p {
+    margin:0;
+    color:#586b60;
+    font-size:15px
+    }
+    .step .tip {
+    margin-top:12px;
+    font-size:13px;
+    color:#805137
+    }
+    .example {
+    padding:80px 0
+    }
+    .example-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center
+    }
+    .example p {
+    color:var(--muted);
+    max-width:510px
+    }
+    .example-panel {
+    border:1px solid #ffffff26;
+    background:#ffffff05;
+    padding:30px;
+    border-radius:12px
+    }
+    .photo-label {
+    border:1px solid #c88d7070;
+    padding:24px;
+    background:#19372a;
+    text-align:center;
+    font-family:var(--serif);
+    font-size:27px
+    }
+    .photo-label small {
+    display:block;
+    font-family:var(--sans);
+    font-size:12px;
+    color:var(--muted);
+    margin-top:9px
+    }
+    .branches {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    padding-top:27px;
+    position:relative
+    }
+    .branches:before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    height:27px;
+    border-left:1px solid #c88d7070
+    }
+    .person {
+    text-align:center;
+    border:1px solid #c88d7070;
+    border-radius:7px;
+    padding:16px 6px;
+    color:var(--paper);
+    font-size:14px
+    }
+    .example-panel .caption {
+    margin:18px 0 0;
+    font-size:12px;
+    color:var(--muted);
+    text-align:center
+    }
+    .example-note {
+    font-size:14px
+    }
+    .questions {
+    padding:70px 0 80px;
+    border-top:1px solid var(--line)
+    }
+    .questions-grid {
+    display:grid;
+    grid-template-columns:.75fr 1.25fr;
+    gap:80px
+    }
+    details {
+    border-bottom:1px solid var(--line);
+    padding:20px 0
+    }
+    details:first-child {
+    border-top:1px solid var(--line)
+    }
+    summary {
+    cursor:pointer;
+    font-size:16px;
+    line-height:1.5;
+    font-weight:600
+    }
+    details p {
+    font-size:14px;
+    color:var(--muted);
+    margin-bottom:0
+    }
+    .next {
+    background:var(--paper);
+    color:var(--ink);
+    padding:48px 0
+    }
+    .next-inner {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px
+    }
+    .next h2 {
+    font-size:34px;
+    margin:0 0 10px
+    }
+    .next p {
+    color:#586b60;
+    margin:0
+    }
+    .footer {
+    padding:30px 0;
+    background:var(--deep);
+    font-size:12px;
+    color:var(--muted)
+    }
+    .footer-inner {
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap
+    }
+    .footer-links {
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap
+    }
+    .footer a {
+    text-decoration:none
+    }
+    .footer a:hover {
+    text-decoration:underline
+    }
+    @media(max-width:900px) {
+    .hero-grid {
+    gap:40px
+    }
+    .guide-grid,.questions-grid {
+    grid-template-columns:1fr;
+    gap:30px
+    }
+    .guide-intro p {
+    max-width:600px
+    }
+    .step-nav {
+    grid-template-columns:1fr 1fr
+    }
+    .example-grid {
+    gap:35px
+    }
+    .nav-links {
+    gap:16px
+    }
+    }
+    @media(max-width:700px) {
+    .container {
+    width:calc(100% - 36px)
+    }
+    .nav-inner {
+    height:70px;
+    gap:12px
+    }
+    .brand {
+    gap:10px
+    }
+    .brand img {
+    height:54px;
+    width:54px
+    }
+    .brand-name {
+    font-size:20px
+    }
+    .nav-link {
+    display:none
+    }
+    .nav .btn {
+    min-height:39px;
+    font-size:11px;
+    padding-inline:13px
+    }
+    .hero {
+    padding:38px 0 48px
+    }
+    .hero-grid,.example-grid {
+    grid-template-columns:1fr;
+    gap:35px
+    }
+    .hero-visual {
+    max-width:245px
+    }
+    .hero p {
+    font-size:16px
+    }
+    .guide,.example,.questions {
+    padding:54px 0
+    }
+    .step {
+    gap:12px;
+    grid-template-columns:32px 1fr
+    }
+    .step h3 {
+    font-size:25px
+    }
+    .example-panel {
+    padding:20px
+    }
+    .next-inner {
+    align-items:flex-start;
+    flex-direction:column
+    }
+    .next .btn {
+    width:100%
+    }
+    .breadcrumb {
+    margin-bottom:25px
+    }
+    }
+    @media(max-width:390px) {
+    .brand img {
+    width:42px;
+    height:42px
+    }
+    .brand-name {
+    font-size:16px
+    }
+    .brand {
+    gap:8px
+    }
+    .nav .btn {
+    padding-inline:10px
+    }
+    .step-nav {
+    grid-template-columns:1fr
+    }
+    }
+    @media(prefers-reduced-motion:reduce) {
+    html {
+    scroll-behavior:auto
+    }
+    }
+    
+    .sorting-card {
+      background: #f5eee4;
+      color: #172821;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #c88d7070;
+      box-shadow: 0 24px 60px #0004;
+    }
+    .sorting-card h2 {
+      font-size: 29px;
+      margin: 0 0 18px;
+    }
+    .sorting-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sorting-card li {
+      padding: 15px 0;
+      border-top: 1px solid #cbd1c5;
+      line-height: 1.6;
+      color: #586b60;
+      font-size: 14px;
+    }
+    .sorting-card strong {
+      display: block;
+      color: #172821;
+    }
+    .caption-example {
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1.5;
+      margin: 0 0 20px;
+    }
+    .caption-fields {
+      margin: 0;
+    }
+    .caption-fields div {
+      padding: 12px 0;
+      border-top: 1px solid #ffffff22;
+    }
+    .caption-fields dt {
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .caption-fields dd {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+  </style>
+</head>
+<body>
+
+
   <noscript>
 
     <img
@@ -153,3194 +796,217 @@
     />
 
   </noscript>
-
-
-  <!-- STRUCTURED DATA -->
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "@id":"https://rootedmemories.com/#organization",
-        "name":"Rooted Memories",
-        "url":"https://rootedmemories.com/",
-        "logo":"https://rootedmemories.com/logomvp.png"
-      },
-      {
-        "@type":"WebSite",
-        "@id":"https://rootedmemories.com/#website",
-        "name":"Rooted Memories",
-        "url":"https://rootedmemories.com/",
-        "publisher":{
-          "@id":"https://rootedmemories.com/#organization"
-        }
-      },
-      {
-        "@type":"WebPage",
-        "@id":"https://rootedmemories.com/organise-family-photos/#webpage",
-        "name":"How to Organise Family Photos",
-        "url":"https://rootedmemories.com/organise-family-photos/",
-        "description":"A simple way to organise family photos around the people in them, keep useful dates and stories, and build a private collection your family can add to over time.",
-        "isPartOf":{
-          "@id":"https://rootedmemories.com/#website"
-        }
-      },
-      {
-        "@type":"FAQPage",
-        "mainEntity":[
-          {
-            "@type":"Question",
-            "name":"What is the best way to organise family photos?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"There is no single best method, but a useful family collection should remain understandable to other people as well as the person who created it. Connecting photographs to the people in them while keeping useful dates and captions gives the collection a clear structure."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Should family photos be organised by date or person?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Both can be useful. Dates provide chronology, while organising photographs around people makes it easier to follow an individual's life and their place within the wider family."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"How should old family photos be organised?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Start by identifying the people in each photograph while relatives who recognise them are still able to help. Record approximate dates, locations and short captions where they are known, then connect the photograph to the family members it relates to."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Do I need to organise every photograph I own?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"No. It is usually easier to begin with photographs that matter to you and gradually add more over time. Screenshots, duplicates and photographs you do not care about do not need to become part of the collection."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Why are captions useful on family photos?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Captions preserve information that may not be obvious from the photograph itself, such as where it was taken, what was happening or why the moment mattered to the family."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-
-
-  <style>
-
-    :root{
-
-      --forest-1000:#04100d;
-      --forest-950:#061611;
-      --forest-900:#081d17;
-      --forest-850:#0b261e;
-      --forest-800:#0f3026;
-
-      --cream:#f3ece4;
-      --cream-soft:#ddd5cb;
-      --cream-muted:#bcb5ac;
-
-      --bronze:#b06b50;
-      --bronze-light:#d29278;
-      --bronze-dark:#8d503a;
-
-      --white:#ffffff;
-
-      --text-soft:rgba(243,236,228,.78);
-      --text-muted:rgba(243,236,228,.58);
-
-      --line:rgba(243,236,228,.13);
-      --line-strong:rgba(243,236,228,.22);
-
-      --page:1180px;
-      --reading:780px;
-
-      --serif:Georgia,"Times New Roman",serif;
-      --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-
-    }
-
-
-    *{
-      box-sizing:border-box;
-    }
-
-
-    html{
-
-      width:100%;
-
-      overflow-x:hidden;
-
-      scroll-behavior:smooth;
-
-    }
-
-
-    body{
-
-      margin:0;
-
-      width:100%;
-
-      overflow-x:hidden;
-
-      color:var(--cream);
-
-      font-family:var(--sans);
-
-      background:
-
-        radial-gradient(
-          1000px 720px at 90% -5%,
-          rgba(176,107,80,.14),
-          transparent 65%
-        ),
-
-        linear-gradient(
-          180deg,
-          var(--forest-900) 0%,
-          var(--forest-950) 48%,
-          var(--forest-1000) 100%
-        );
-
-      -webkit-font-smoothing:antialiased;
-
-    }
-
-
-    a{
-      color:inherit;
-    }
-
-
-    img,
-    svg{
-      max-width:100%;
-    }
-
-
-    button,
-    input,
-    a{
-      font:inherit;
-    }
-
-
-    .shell{
-
-      width:min(
-        calc(100% - 40px),
-        var(--page)
-      );
-
-      margin:0 auto;
-
-    }
-
-
-
-    /* =========================================================
-       HEADER
-    ========================================================= */
-
-
-    .site-header{
-      position:fixed !important;
-      top:0 !important;
-      left:0 !important;
-      right:0 !important;
-      width:100% !important;
-      z-index:2147483000 !important;
-
-      background:var(--forest-900);
-
-      border-bottom:
-        1px solid
-        var(--line);
-
-      transform:translateZ(0);
-      -webkit-transform:translateZ(0);
-
-      transition:
-        background .22s ease,
-        box-shadow .22s ease;
-    }
-
-    .site-header.is-scrolled{
-      background:rgba(6,22,17,.96);
-      box-shadow:0 8px 24px rgba(0,0,0,.20);
-    }
-
-    body{
-      padding-top:106px;
-    }
-
-
-    .header-inner{
-
-      min-height:106px;
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:space-between;
-
-      gap:30px;
-
-      transition:min-height .22s ease;
-    }
-
-    .site-header.is-scrolled .header-inner{
-      min-height:72px;
-    }
-
-
-    .brand{
-
-      display:inline-flex;
-
-      align-items:center;
-
-      color:#fff;
-
-      text-decoration:none;
-
-    }
-
-
-    .brand img{
-
-      display:block;
-
-      height:82px;
-
-      width:auto;
-
-      filter:
-        drop-shadow(
-          0 8px 15px rgba(0,0,0,.17)
-        );
-
-      transition:height .22s ease;
-    }
-
-    .site-header.is-scrolled .brand img{
-      height:54px;
-    }
-
-
-    .brand-name{
-
-      position:absolute;
-
-      width:1px;
-      height:1px;
-
-      overflow:hidden;
-
-      clip:rect(0,0,0,0);
-
-    }
-
-
-    .header-actions{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:28px;
-
-    }
-
-
-    .header-link{
-
-      color:var(--text-soft);
-
-      text-decoration:none;
-
-      font-size:14px;
-
-      font-weight:650;
-
-      max-width:100px;
-      opacity:1;
-      overflow:hidden;
-      white-space:nowrap;
-
-      transition:
-        color .16s ease,
-        opacity .22s ease,
-        max-width .22s ease,
-        margin .22s ease;
-
-    }
-
-    .site-header.is-scrolled .header-link{
-      opacity:0;
-      max-width:0;
-      margin:0;
-      pointer-events:none;
-    }
-
-
-    .header-link:hover{
-      color:#fff;
-    }
-
-
-    .header-download{
-
-      min-height:42px;
-
-      display:inline-flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      padding:0 20px;
-
-      border:
-        1px solid
-        rgba(210,146,120,.62);
-
-      border-radius:7px;
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(190,119,91,.98) 0%,
-          rgba(166,94,68,.98) 100%
-        );
-
-      color:var(--cream);
-
-      text-decoration:none;
-
-      font-size:13px;
-
-      font-weight:700;
-
-      letter-spacing:.01em;
-
-      box-shadow:
-        0 8px 22px rgba(0,0,0,.12),
-        inset 0 1px 0 rgba(255,255,255,.10);
-
-      transition:
-        transform .18s ease,
-        background .18s ease,
-        border-color .18s ease,
-        box-shadow .18s ease;
-
-    }
-
-
-    .header-download:hover{
-
-      transform:
-        translateY(-1px);
-
-      border-color:
-        rgba(210,146,120,.88);
-
-      background:
-        linear-gradient(
-          180deg,
-          var(--bronze-light) 0%,
-          var(--bronze) 100%
-        );
-
-      box-shadow:
-        0 11px 28px rgba(0,0,0,.16),
-        inset 0 1px 0 rgba(255,255,255,.12);
-
-    }
-
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-
-    .hero{
-
-      padding:
-        118px 0
-        126px;
-
-    }
-
-
-    .hero-inner{
-
-      max-width:1080px;
-
-    }
-
-
-    .eyebrow{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:14px;
-
-      margin-bottom:27px;
-
-      color:
-        var(--bronze-light);
-
-      font-size:12px;
-
-      font-weight:800;
-
-      text-transform:uppercase;
-
-      letter-spacing:.17em;
-
-    }
-
-
-    .eyebrow::before{
-
-      content:"";
-
-      width:40px;
-
-      height:1px;
-
-      background:
-        var(--bronze);
-
-    }
-
-
-    .hero h1{
-
-      max-width:1030px;
-
-      margin:0;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          55px,
-          7.6vw,
-          97px
-        );
-
-      font-weight:400;
-
-      line-height:.96;
-
-      letter-spacing:-.044em;
-
-      text-wrap:balance;
-
-    }
-
-
-    .hero-intro{
-
-      max-width:800px;
-
-      margin:
-        43px 0 0;
-
-      color:
-        var(--text-soft);
-
-      font-size:20px;
-
-      line-height:1.75;
-
-    }
-
-
-
-    /* =========================================================
-       DEFINITION
-    ========================================================= */
-
-
-    .definition{
-
-      padding:
-        106px 0;
-
-      border-top:
-        1px solid
-        var(--line);
-
-      border-bottom:
-        1px solid
-        var(--line);
-
-    }
-
-
-    .definition p{
-
-      max-width:1050px;
-
-      margin:0;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          36px,
-          4.9vw,
-          62px
-        );
-
-      font-weight:400;
-
-      line-height:1.14;
-
-      letter-spacing:-.03em;
-
-    }
-
-
-    .definition span{
-
-      color:
-        var(--bronze-light);
-
-    }
-
-
-
-    /* =========================================================
-       EDITORIAL
-    ========================================================= */
-
-
-    .editorial{
-
-      padding-top:18px;
-
-    }
-
-
-    .editorial-row{
-
-      display:grid;
-
-      grid-template-columns:
-        220px
-        minmax(0,1fr);
-
-      gap:90px;
-
-      padding:
-        92px 0;
-
-      border-bottom:
-        1px solid
-        var(--line);
-
-    }
-
-
-    .editorial-meta{
-
-      color:
-        var(--cream-muted);
-
-      font-size:12px;
-
-      font-weight:750;
-
-      letter-spacing:.14em;
-
-      text-transform:uppercase;
-
-    }
-
-
-    .editorial-index{
-
-      display:block;
-
-      margin-bottom:12px;
-
-      color:
-        var(--bronze-light);
-
-    }
-
-
-    .editorial-copy{
-
-      max-width:
-        var(--reading);
-
-    }
-
-
-    .editorial-copy h2{
-
-      margin:
-        0 0
-        26px;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          31px,
-          4vw,
-          49px
-        );
-
-      font-weight:400;
-
-      line-height:1.09;
-
-      letter-spacing:-.026em;
-
-    }
-
-
-    .editorial-copy p{
-
-      margin:0;
-
-      color:
-        var(--text-soft);
-
-      font-size:17px;
-
-      line-height:1.82;
-
-    }
-
-
-    .editorial-copy p + p{
-
-      margin-top:22px;
-
-    }
-
-
-
-    /* =========================================================
-       PRACTICAL STEPS
-    ========================================================= */
-
-
-    .steps{
-
-      padding:
-        120px 0;
-
-    }
-
-
-    .steps-grid{
-
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,.8fr)
-        minmax(0,1.2fr);
-
-      gap:100px;
-
-    }
-
-
-    .section-label{
-
-      display:block;
-
-      margin-bottom:18px;
-
-      color:
-        var(--bronze-light);
-
-      font-size:12px;
-
-      font-weight:800;
-
-      text-transform:uppercase;
-
-      letter-spacing:.17em;
-
-    }
-
-
-    .steps-heading h2{
-
-      margin:0;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          40px,
-          5vw,
-          64px
-        );
-
-      font-weight:400;
-
-      line-height:1.04;
-
-      letter-spacing:-.033em;
-
-    }
-
-
-    .steps-list{
-
-      border-top:
-        1px solid
-        var(--line);
-
-    }
-
-
-    .step{
-
-      display:grid;
-
-      grid-template-columns:
-        54px
-        minmax(0,1fr);
-
-      gap:22px;
-
-      padding:
-        31px 0;
-
-      border-bottom:
-        1px solid
-        var(--line);
-
-    }
-
-
-    .step-number{
-
-      padding-top:3px;
-
-      color:
-        var(--bronze-light);
-
-      font-family:
-        var(--serif);
-
-      font-size:17px;
-
-    }
-
-
-    .step h3{
-
-      margin:
-        0 0
-        9px;
-
-      font-size:18px;
-
-      font-weight:750;
-
-    }
-
-
-    .step p{
-
-      max-width:650px;
-
-      margin:0;
-
-      color:
-        var(--text-soft);
-
-      font-size:15px;
-
-      line-height:1.75;
-
-    }
-
-
-
-    /* =========================================================
-       PERSON VS FOLDER
-    ========================================================= */
-
-
-    .people{
-
-      position:relative;
-
-      overflow:hidden;
-
-      padding:
-        120px 0;
-
-      background:
-        var(--cream);
-
-      color:
-        var(--forest-1000);
-
-    }
-
-
-    .people::after{
-
-      content:"";
-
-      position:absolute;
-
-      top:-280px;
-
-      right:-200px;
-
-      width:650px;
-
-      height:650px;
-
-      border:
-        1px solid
-        rgba(176,107,80,.18);
-
-      border-radius:50%;
-
-      pointer-events:none;
-
-    }
-
-
-    .people-grid{
-
-      position:relative;
-
-      z-index:2;
-
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,1.1fr)
-        minmax(280px,.6fr);
-
-      gap:100px;
-
-      align-items:end;
-
-    }
-
-
-    .people-label{
-
-      display:block;
-
-      margin-bottom:19px;
-
-      color:
-        var(--bronze-dark);
-
-      font-size:12px;
-
-      font-weight:850;
-
-      letter-spacing:.17em;
-
-      text-transform:uppercase;
-
-    }
-
-
-    .people h2{
-
-      max-width:820px;
-
-      margin:0;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          42px,
-          5.7vw,
-          72px
-        );
-
-      font-weight:400;
-
-      line-height:1.02;
-
-      letter-spacing:-.035em;
-
-    }
-
-
-    .people-copy{
-
-      color:
-        rgba(4,16,13,.67);
-
-      font-size:17px;
-
-      line-height:1.8;
-
-    }
-
-
-    .people-copy p{
-
-      margin:0;
-
-    }
-
-
-    .people-copy p + p{
-
-      margin-top:22px;
-
-    }
-
-
-
-    /* =========================================================
-       OLD PHOTOS
-    ========================================================= */
-
-
-    .old-photos{
-
-      padding:
-        120px 0;
-
-    }
-
-
-    .old-grid{
-
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,1.15fr)
-        minmax(280px,.55fr);
-
-      gap:100px;
-
-      align-items:end;
-
-    }
-
-
-    .old-photos h2{
-
-      max-width:810px;
-
-      margin:0;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          40px,
-          5.4vw,
-          68px
-        );
-
-      font-weight:400;
-
-      line-height:1.03;
-
-      letter-spacing:-.034em;
-
-    }
-
-
-    .old-copy{
-
-      color:
-        var(--text-soft);
-
-      font-size:17px;
-
-      line-height:1.8;
-
-    }
-
-
-    .old-copy p{
-
-      margin:0;
-
-    }
-
-
-    .old-copy p + p{
-
-      margin-top:22px;
-
-    }
-
-
-
-    /* =========================================================
-       CAPTIONS AND CONTEXT
-    ========================================================= */
-
-
-    .context{
-
-      padding:
-        114px 0;
-
-      border-top:
-        1px solid
-        var(--line);
-
-    }
-
-
-    .context-grid{
-
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,.7fr)
-        minmax(0,1.3fr);
-
-      gap:100px;
-
-    }
-
-
-    .context-label{
-
-      color:
-        var(--bronze-light);
-
-      font-size:12px;
-
-      font-weight:800;
-
-      text-transform:uppercase;
-
-      letter-spacing:.17em;
-
-    }
-
-
-    .context-copy{
-
-      max-width:800px;
-
-    }
-
-
-    .context-copy h2{
-
-      margin:
-        0 0
-        28px;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          37px,
-          4.8vw,
-          60px
-        );
-
-      font-weight:400;
-
-      line-height:1.06;
-
-      letter-spacing:-.032em;
-
-    }
-
-
-    .context-copy p{
-
-      margin:0;
-
-      color:
-        var(--text-soft);
-
-      font-size:17px;
-
-      line-height:1.82;
-
-    }
-
-
-    .context-copy p + p{
-
-      margin-top:22px;
-
-    }
-
-
-
-    /* =========================================================
-       FAMILY CONTRIBUTION
-    ========================================================= */
-
-
-    .contribution{
-
-      padding:
-        115px 0;
-
-      border-top:
-        1px solid
-        var(--line);
-
-    }
-
-
-    .contribution-grid{
-
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,1.15fr)
-        minmax(280px,.55fr);
-
-      gap:100px;
-
-      align-items:end;
-
-    }
-
-
-    .contribution h2{
-
-      max-width:820px;
-
-      margin:0;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          40px,
-          5.4vw,
-          68px
-        );
-
-      font-weight:400;
-
-      line-height:1.03;
-
-      letter-spacing:-.034em;
-
-    }
-
-
-    .contribution-copy{
-
-      color:
-        var(--text-soft);
-
-      font-size:17px;
-
-      line-height:1.8;
-
-    }
-
-
-    .contribution-copy p{
-
-      margin:0;
-
-    }
-
-
-
-    /* =========================================================
-       IDEAS
-    ========================================================= */
-
-
-    .mistakes{
-
-      position:relative;
-
-      overflow:hidden;
-
-      padding:
-        120px 0;
-
-      background:
-        var(--cream);
-
-      color:
-        var(--forest-1000);
-
-    }
-
-
-    .mistakes::before{
-
-      content:"";
-
-      position:absolute;
-
-      bottom:-330px;
-
-      left:-230px;
-
-      width:620px;
-
-      height:620px;
-
-      border:
-        1px solid
-        rgba(176,107,80,.17);
-
-      border-radius:50%;
-
-      pointer-events:none;
-
-    }
-
-
-    .mistakes-header{
-
-      position:relative;
-
-      z-index:2;
-
-      max-width:840px;
-
-      margin-bottom:60px;
-
-    }
-
-
-    .mistakes-label{
-
-      display:block;
-
-      margin-bottom:18px;
-
-      color:
-        var(--bronze-dark);
-
-      font-size:12px;
-
-      font-weight:850;
-
-      letter-spacing:.17em;
-
-      text-transform:uppercase;
-
-    }
-
-
-    .mistakes h2{
-
-      margin:0;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          41px,
-          5.5vw,
-          69px
-        );
-
-      font-weight:400;
-
-      line-height:1.03;
-
-      letter-spacing:-.035em;
-
-    }
-
-
-    .mistakes-list{
-
-      position:relative;
-
-      z-index:2;
-
-      display:grid;
-
-      grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
-      border-top:
-        1px solid
-        rgba(4,16,13,.18);
-
-    }
-
-
-    .mistake{
-
-      padding:
-        28px 40px
-        30px 0;
-
-      border-bottom:
-        1px solid
-        rgba(4,16,13,.18);
-
-    }
-
-
-    .mistake:nth-child(even){
-
-      padding-left:40px;
-
-      border-left:
-        1px solid
-        rgba(4,16,13,.18);
-
-    }
-
-
-    .mistake h3{
-
-      margin:
-        0 0
-        10px;
-
-      font-size:16px;
-
-      font-weight:800;
-
-    }
-
-
-    .mistake p{
-
-      margin:0;
-
-      color:
-        rgba(4,16,13,.63);
-
-      font-size:14px;
-
-      line-height:1.7;
-
-    }
-
-
-
-    /* =========================================================
-       ROOTED MEMORIES
-    ========================================================= */
-
-
-    .rooted{
-
-      padding:
-        120px 0;
-
-    }
-
-
-    .rooted-grid{
-
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,.7fr)
-        minmax(0,1.3fr);
-
-      gap:100px;
-
-    }
-
-
-    .rooted-label{
-
-      color:
-        var(--bronze-light);
-
-      font-size:12px;
-
-      font-weight:800;
-
-      text-transform:uppercase;
-
-      letter-spacing:.17em;
-
-    }
-
-
-    .rooted-copy{
-
-      max-width:820px;
-
-    }
-
-
-    .rooted-copy h2{
-
-      margin:
-        0 0
-        29px;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          39px,
-          5vw,
-          63px
-        );
-
-      font-weight:400;
-
-      line-height:1.05;
-
-      letter-spacing:-.033em;
-
-    }
-
-
-    .rooted-copy p{
-
-      margin:0;
-
-      color:
-        var(--text-soft);
-
-      font-size:17px;
-
-      line-height:1.82;
-
-    }
-
-
-    .rooted-copy p + p{
-
-      margin-top:22px;
-
-    }
-
-
-    .rooted-copy a{
-
-      color:
-        var(--bronze-light);
-
-      text-decoration-color:
-        rgba(210,146,120,.45);
-
-      text-underline-offset:4px;
-
-    }
-
-
-
-    /* =========================================================
-       FAQ
-    ========================================================= */
-
-
-    .faq{
-
-      padding:
-        115px 0;
-
-      border-top:
-        1px solid
-        var(--line);
-
-    }
-
-
-    .faq-header{
-
-      max-width:760px;
-
-      margin-bottom:50px;
-
-    }
-
-
-    .faq-header h2{
-
-      margin:0;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          40px,
-          5vw,
-          64px
-        );
-
-      font-weight:400;
-
-      line-height:1.04;
-
-      letter-spacing:-.033em;
-
-    }
-
-
-    .faq-list{
-
-      border-top:
-        1px solid
-        var(--line);
-
-    }
-
-
-    .faq-item{
-
-      display:grid;
-
-      grid-template-columns:
-        minmax(260px,.8fr)
-        minmax(0,1.2fr);
-
-      gap:60px;
-
-      padding:
-        32px 0;
-
-      border-bottom:
-        1px solid
-        var(--line);
-
-    }
-
-
-    .faq-item h3{
-
-      margin:0;
-
-      font-size:16px;
-
-      line-height:1.55;
-
-    }
-
-
-    .faq-item p{
-
-      margin:0;
-
-      color:
-        var(--text-soft);
-
-      font-size:15px;
-
-      line-height:1.75;
-
-    }
-
-
-
-    /* =========================================================
-       FINAL CTA
-    ========================================================= */
-
-
-    .final-cta{
-
-      position:relative;
-
-      overflow:hidden;
-
-      padding:
-        120px 0;
-
-      background:
-        var(--cream);
-
-      color:
-        var(--forest-1000);
-
-    }
-
-
-    .final-cta::after{
-
-      content:"";
-
-      position:absolute;
-
-      top:-280px;
-
-      right:-200px;
-
-      width:650px;
-
-      height:650px;
-
-      border:
-        1px solid
-        rgba(176,107,80,.18);
-
-      border-radius:50%;
-
-      pointer-events:none;
-
-    }
-
-
-    .final-grid{
-
-      position:relative;
-
-      z-index:2;
-
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,1.15fr)
-        minmax(280px,.55fr);
-
-      gap:100px;
-
-      align-items:end;
-
-    }
-
-
-    .final-cta h2{
-
-      max-width:820px;
-
-      margin:0;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          43px,
-          5.8vw,
-          73px
-        );
-
-      font-weight:400;
-
-      line-height:1.02;
-
-      letter-spacing:-.036em;
-
-    }
-
-
-    .final-side p{
-
-      margin:
-        0 0
-        28px;
-
-      color:
-        rgba(4,16,13,.67);
-
-      font-size:17px;
-
-      line-height:1.75;
-
-    }
-
-
-    .cta{
-
-      min-height:52px;
-
-      display:inline-flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      padding:
-        0 24px;
-
-      border:
-        1px solid
-        rgba(8,29,23,.92);
-
-      border-radius:7px;
-
-      background:
-        var(--forest-900);
-
-      color:var(--cream);
-
-      text-decoration:none;
-
-      font-size:14px;
-
-      font-weight:700;
-
-      letter-spacing:.006em;
-
-      box-shadow:
-        0 10px 24px rgba(4,16,13,.12),
-        inset 0 1px 0 rgba(255,255,255,.045);
-
-      transition:
-        transform .18s ease,
-        background .18s ease,
-        border-color .18s ease,
-        box-shadow .18s ease;
-
-    }
-
-
-    .cta:hover{
-
-      transform:
-        translateY(-1px);
-
-      background:
-        var(--forest-800);
-
-      border-color:
-        var(--forest-800);
-
-      box-shadow:
-        0 13px 30px rgba(4,16,13,.16),
-        inset 0 1px 0 rgba(255,255,255,.055);
-
-    }
-
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-
-    footer{
-
-      padding:
-        40px 0
-        48px;
-
-      background:
-        var(--cream);
-
-      color:
-        var(--forest-1000);
-
-      border-top:
-        1px solid
-        rgba(4,16,13,.14);
-
-    }
-
-
-    .footer-inner{
-
-      display:flex;
-
-      justify-content:space-between;
-
-      align-items:center;
-
-      gap:28px;
-
-    }
-
-
-    .footer-brand{
-
-      font-family:
-        var(--serif);
-
-      font-size:17px;
-
-    }
-
-
-    .footer-links{
-
-      display:flex;
-
-      flex-wrap:wrap;
-
-      gap:22px;
-
-    }
-
-
-    .footer-links a{
-
-      color:
-        rgba(4,16,13,.62);
-
-      text-decoration:none;
-
-      font-size:13px;
-
-      font-weight:650;
-
-    }
-
-
-    .footer-links a:hover{
-
-      color:
-        var(--forest-1000);
-
-    }
-
-
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-
-    @media(max-width:900px){
-
-      .steps-grid,
-      .people-grid,
-      .old-grid,
-      .context-grid,
-      .contribution-grid,
-      .rooted-grid,
-      .final-grid{
-
-        grid-template-columns:1fr;
-
-        gap:40px;
-
-      }
-
-    }
-
-
-    @media(max-width:720px){
-
-      .shell{
-
-        width:min(
-          calc(100% - 32px),
-          var(--page)
-        );
-
-      }
-
-
-      .header-inner{
-
-        min-height:88px;
-
-      }
-
-      body{
-        padding-top:88px;
-      }
-
-
-      .brand img{
-
-        height:61px;
-
-      }
-
-      .site-header.is-scrolled .header-inner{
-        min-height:64px;
-      }
-
-      .site-header.is-scrolled .brand img{
-        height:46px;
-      }
-
-
-      .header-link{
-
-        display:none;
-
-      }
-
-
-      .header-download{
-
-        min-height:40px;
-
-        padding:
-          0 17px;
-
-      }
-
-
-      .hero{
-
-        padding:
-          80px 0
-          86px;
-
-      }
-
-
-      .hero h1{
-
-        font-size:
-          clamp(
-            47px,
-            13.5vw,
-            70px
-          );
-
-      }
-
-
-      .hero-intro{
-
-        margin-top:32px;
-
-        font-size:18px;
-
-      }
-
-
-      .definition{
-
-        padding:
-          76px 0;
-
-      }
-
-
-      .editorial-row{
-
-        grid-template-columns:1fr;
-
-        gap:26px;
-
-        padding:
-          67px 0;
-
-      }
-
-
-      .editorial-meta{
-
-        display:flex;
-
-        align-items:center;
-
-        gap:12px;
-
-      }
-
-
-      .editorial-index{
-
-        margin:0;
-
-      }
-
-
-      .steps,
-      .old-photos,
-      .context,
-      .contribution,
-      .rooted,
-      .faq{
-
-        padding:
-          84px 0;
-
-      }
-
-
-      .people,
-      .mistakes,
-      .final-cta{
-
-        padding:
-          86px 0;
-
-      }
-
-
-      .mistakes-list{
-
-        grid-template-columns:1fr;
-
-      }
-
-
-      .mistake,
-      .mistake:nth-child(even){
-
-        padding:
-          24px 0;
-
-        border-left:0;
-
-      }
-
-
-      .faq-item{
-
-        grid-template-columns:1fr;
-
-        gap:14px;
-
-      }
-
-
-      .cta{
-
-        width:100%;
-
-      }
-
-
-      .footer-inner{
-
-        align-items:flex-start;
-
-        flex-direction:column;
-
-      }
-
-    }
-
-
-    @media(max-width:420px){
-
-      .header-actions{
-        gap:10px;
-      }
-
-
-      .header-download{
-
-        min-height:39px;
-
-        padding:
-          0 15px;
-
-        font-size:12px;
-
-      }
-
-    }
-
-  </style>
-
-</head>
-
-
-
-<body>
-
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
-
-  <header class="site-header">
-
-    <div class="shell header-inner">
-
-
-      <a
-        class="brand"
-        href="/"
-        aria-label="Rooted Memories home"
-      >
-
-        <img
-          src="/logomvp.png?v=2"
-          alt="Rooted Memories"
-        />
-
-        <span class="brand-name">
-          Rooted Memories
-        </span>
-
-      </a>
-
-
-      <div class="header-actions">
-
-
-        <a
-          class="header-link"
-          href="/"
-        >
-          Home
+    
+    
+    
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="/" aria-label="Rooted Memories home">
+          <img src="/logomvp.png?v=2" alt="" width="66" height="66">
+          <span class="brand-name">Rooted Memories</span>
         </a>
-
-
-        <a
-          class="header-download"
-          href="/#download"
-        >
-          Download App
-        </a>
-
-
+        <nav class="nav-links" aria-label="Main navigation">
+  <a class="nav-link" href="/">Home</a>
+  <a class="nav-link" href="#method">Sorting method</a>
+  <a class="nav-link" href="#captions">Caption example</a>
+  <a class="btn" href="/#download">Get the app <span aria-hidden="true">↗</span>
+</a>
+</nav>
       </div>
-
-
-    </div>
-
-  </header>
-
-
-
-  <main>
-
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-
-    <section class="hero">
-
-      <div class="shell">
-
-
-        <div class="hero-inner">
-
-
-          <div class="eyebrow">
-            Organising family photos
-          </div>
-
-
-          <h1>
-            A simple way to organise the family photos you want to keep.
-          </h1>
-
-
-          <p class="hero-intro">
-
-            Most families already have thousands of photographs spread across phones, old albums and different relatives. You do not need to organise every one of them.
-
-            Start with the photographs that matter to you, connect them to the people in your family and add the details you would like to remember.
-
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         DEFINITION
-    ====================================================== -->
-
-
-    <section class="definition">
-
-      <div class="shell">
-
-
-        <p>
-
-          There is no need to sort your entire camera roll before you begin.
-
-          <span>
-            Start with a few photographs you already care about and allow the collection to grow over time.
-          </span>
-
+    </header>
+    <main id="main">
+  <section class="hero">
+    <div class="container">
+      <div class="breadcrumb">
+<a href="/">Home</a> / Organise family photos</div>
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Organise family photos</div>
+          <h1>Make a collection<br>you can <em>make sense of.</em>
+</h1>
+          <p>
+          Turn an unsorted batch into photographs you can identify. Begin with
+          selection, then add the names, dates and notes that make each picture easier
+          to find and understand.
         </p>
-
-
+          <a class="btn" href="#method">Work through a batch <span aria-hidden="true">↓</span>
+</a>
+        </div>
+        <aside class="sorting-card" aria-label="A simple sorting checklist">
+          <h2>Three groups to work with.</h2>
+          <ul>
+            <li>
+<strong>Ready to organise</strong>Clear photographs with people or occasions you recognise.</li>
+            <li>
+<strong>Needs a second look</strong>Unknown faces, uncertain dates or several similar copies.</li>
+            <li>
+<strong>Outside this collection</strong>Receipts, screenshots and unrelated files.</li>
+          </ul>
+        </aside>
       </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         GETTING STARTED
-    ====================================================== -->
-
-
-    <section class="editorial">
-
-      <div class="shell">
-
-
-        <article class="editorial-row">
-
-
-          <div class="editorial-meta">
-
-            <span class="editorial-index">
-              01
-            </span>
-
-            Getting started
-
-          </div>
-
-
-          <div class="editorial-copy">
-
-
-            <h2>
-              Begin with a small part of the family rather than trying to organise everything at once.
-            </h2>
-
-
-            <p>
-
-              Choose someone you naturally want to begin with and add a few photographs you already enjoy looking at. It might be your children, your parents, your grandparents or simply the person whose photographs you already have to hand.
-
-            </p>
-
-
-            <p>
-
-              There is no need to complete the whole family tree first. You can add more people and more photographs whenever you want to.
-
-            </p>
-
-
-          </div>
-
-
-        </article>
-
-
-
-        <article class="editorial-row">
-
-
-          <div class="editorial-meta">
-
-            <span class="editorial-index">
-              02
-            </span>
-
-            Keeping context
-
-          </div>
-
-
-          <div class="editorial-copy">
-
-
-            <h2>
-              Keep the details that help a photograph make sense later.
-            </h2>
-
-
-            <p>
-
-              A photograph may show who was there, but it will not always explain where it was taken, what was happening or why the moment mattered.
-
-            </p>
-
-
-            <p>
-
-              When there is something worth remembering, add a short caption, check the date and connect the photograph to the people in it. A few useful details are often enough.
-
-            </p>
-
-
-          </div>
-
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PRACTICAL METHOD
-    ====================================================== -->
-
-
-    <section class="steps">
-
-      <div class="shell steps-grid">
-
-
-        <div class="steps-heading">
-
-
-          <span class="section-label">
-            A practical approach
-          </span>
-
-
-          <h2>
-            Build the collection gradually as you find photographs worth keeping.
-          </h2>
-
-
-        </div>
-
-
-
-        <div class="steps-list">
-
-
-          <div class="step">
-
-
-            <div class="step-number">
-              01
-            </div>
-
-
-            <div>
-
-
-              <h3>
-                Choose a few family members to begin with
-              </h3>
-
-
-              <p>
-
-                Start with the people you already have photographs of. There is no need to build every branch of the family tree before adding memories.
-
-              </p>
-
-
-            </div>
-
-
-          </div>
-
-
-
-          <div class="step">
-
-
-            <div class="step-number">
-              02
-            </div>
-
-
-            <div>
-
-
-              <h3>
-                Connect photographs to the people in them
-              </h3>
-
-
-              <p>
-
-                When you add a photograph, attach it to the family members who appear in it. If several people are in the same photograph, it can appear naturally within each of their galleries.
-
-              </p>
-
-
-            </div>
-
-
-          </div>
-
-
-
-          <div class="step">
-
-
-            <div class="step-number">
-              03
-            </div>
-
-
-            <div>
-
-
-              <h3>
-                Add useful captions when you know the story
-              </h3>
-
-
-              <p>
-
-                You do not need to write much. A sentence about where you were, who was there or what was happening may be more useful years later than a long description.
-
-              </p>
-
-
-            </div>
-
-
-          </div>
-
-
-
-          <div class="step">
-
-
-            <div class="step-number">
-              04
-            </div>
-
-
-            <div>
-
-
-              <h3>
-                Invite relatives to contribute their own photographs
-              </h3>
-
-
-              <p>
-
-                Different relatives will have different parts of the family's collection. Inviting them to contribute means those photographs and stories do not all have to pass through one person.
-
-              </p>
-
-
-            </div>
-
-
-          </div>
-
-
-
-          <div class="step">
-
-
-            <div class="step-number">
-              05
-            </div>
-
-
-            <div>
-
-
-              <h3>
-                Keep adding new memories as life moves on
-              </h3>
-
-
-              <p>
-
-                Once the collection has been started, new photographs can simply be added as they are taken. Birthdays, holidays, school days and ordinary family moments gradually become part of the same history.
-
-              </p>
-
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PEOPLE VS FOLDERS
-    ====================================================== -->
-
-
-    <section class="people">
-
-      <div class="shell people-grid">
-
-
-        <div>
-
-
-          <span class="people-label">
-            Organising by person
-          </span>
-
-
-          <h2>
-            Organising photographs around people makes the collection easier to understand.
-          </h2>
-
-
-        </div>
-
-
-
-        <div class="people-copy">
-
-
-          <p>
-
-            Folders organised by year or event can be useful, but they only provide one way of looking through a collection.
-
-          </p>
-
-
-          <p>
-
-            When photographs are connected to the people in them, each family member gradually develops a gallery of their own life. Their childhood, holidays, birthdays, parents, grandparents and ordinary everyday photographs can all be viewed together.
-
-          </p>
-
-
-          <p>
-
-            The same photograph can still belong with several people, so there is no need to decide which single folder it should live in.
-
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         OLD PHOTOS
-    ====================================================== -->
-
-
-    <section class="old-photos">
-
-      <div class="shell old-grid">
-
-
-        <div>
-
-
-          <span class="section-label">
-            Older photographs
-          </span>
-
-
-          <h2>
-            Older family photographs can sit alongside the ones you take today.
-          </h2>
-
-
-        </div>
-
-
-
-        <div class="old-copy">
-
-
-          <p>
-
-            If your parents or grandparents have boxes of old photographs, you can scan the ones you want to keep and add them to the same family collection.
-
-          </p>
-
-
-          <p>
-
-            Where possible, go through them with relatives who recognise the people and places. They may be able to provide names, approximate dates, locations or stories that would otherwise be difficult to recover later.
-
-          </p>
-
-
-          <p>
-
-            If the exact date is unknown, that is not a problem. Record what you know and leave the rest as it is.
-
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CAPTIONS
-    ====================================================== -->
-
-
-    <section class="context">
-
-      <div class="shell context-grid">
-
-
-        <div class="context-label">
-          Captions and stories
-        </div>
-
-
-
-        <div class="context-copy">
-
-
-          <h2>
-            Captions are most useful when they sound like the person who remembers the moment.
-          </h2>
-
-
-          <p>
-
-            “Dad fell in the pool five minutes after this.” “She wore that dress everywhere.” “First night in the new house.”
-
-          </p>
-
-
-          <p>
-
-            A caption does not need to sound formal or historically important. Its value is simply in preserving something about the photograph that somebody in the family knew at the time.
-
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FAMILY CONTRIBUTION
-    ====================================================== -->
-
-
-    <section class="contribution">
-
-      <div class="shell contribution-grid">
-
-
-        <h2>
-          A family collection is usually spread across more than one person.
-        </h2>
-
-
-
-        <div class="contribution-copy">
-
-
-          <p>
-
-            Your parents may have one set of photographs, your brothers or sisters another, and grandparents may have older photographs that nobody else has.
-
-            Bringing those collections together gives the family a much fuller record than one person could create alone.
-
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         WAYS TO USE IT
-    ====================================================== -->
-
-
-    <section class="mistakes">
-
-      <div class="shell">
-
-
-        <div class="mistakes-header">
-
-
-          <span class="mistakes-label">
-            Different ways to use it
-          </span>
-
-
-          <h2>
-            There is no single way a family archive has to be built.
-          </h2>
-
-
-        </div>
-
-
-
-        <div class="mistakes-list">
-
-
-          <div class="mistake">
-
-
-            <h3>
-              Keep a record of your children as they grow
-            </h3>
-
-
-            <p>
-
-              Adding a small number of photographs every so often creates a record of childhood gradually, without having to organise years of photographs later.
-
-            </p>
-
-
-          </div>
-
-
-
-          <div class="mistake">
-
-
-            <h3>
-              Keep the ordinary family photographs as well as the important occasions
-            </h3>
-
-
-            <p>
-
-              Weddings and birthdays matter, but familiar places, family traditions, holidays and ordinary days often become just as enjoyable to look back on.
-
-            </p>
-
-
-          </div>
-
-
-
-          <div class="mistake">
-
-
-            <h3>
-              Continue adding to the archive as new memories are made
-            </h3>
-
-
-            <p>
-
-              Family history is not limited to old photographs. The photographs being taken now can become part of the same collection and remain connected to the people in them.
-
-            </p>
-
-
-          </div>
-
-
-
-          <div class="mistake">
-
-
-            <h3>
-              Let older relatives contribute what matters to them
-            </h3>
-
-
-            <p>
-
-              Parents and grandparents may want to add different photographs and stories from the ones you would choose yourself. Giving them their own place to contribute helps preserve their view of the family as well.
-
-            </p>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         ROOTED MEMORIES
-    ====================================================== -->
-
-
-    <section class="rooted">
-
-      <div class="shell rooted-grid">
-
-
-        <div class="rooted-label">
-          Rooted Memories
-        </div>
-
-
-
-        <div class="rooted-copy">
-
-
-          <h2>
-            Rooted Memories gives families a private place to keep photographs around the people they belong to.
-          </h2>
-
-
-          <p>
-
-            Rooted Memories is a private family archive built around a family tree rather than a collection of folders.
-
-          </p>
-
-
-          <p>
-
-            Each person has their own place within the tree. Photographs can be connected to everyone they relate to, while dates and captions help preserve the context around them.
-
-          </p>
-
-
-          <p>
-
-            Other members of the family can contribute their own photographs and memories to the same archive, so it does not depend on one person having everything.
-
-          </p>
-
-
-          <p>
-
-            Some families may mainly use it for their children. Others may spend more time adding older photographs and relatives. The archive can remain simple or become more detailed over time depending on what the family wants to keep.
-
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FAQ
-    ====================================================== -->
-
-
-    <section class="faq">
-
-      <div class="shell">
-
-
-        <div class="faq-header">
-
-
-          <span class="section-label">
-            Frequently asked questions
-          </span>
-
-
-          <h2>
-            Organising family photographs
-          </h2>
-
-
-        </div>
-
-
-
-        <div class="faq-list">
-
-
-          <div class="faq-item">
-
-
-            <h3>
-              What is the best way to organise family photos?
-            </h3>
-
-
-            <p>
-
-              There is no single best method, but the collection should remain understandable to somebody other than the person who organised it.
-
-              Connecting photographs to the people in them, while keeping useful dates and captions, gives the collection a structure that can continue making sense over time.
-
-            </p>
-
-
-          </div>
-
-
-
-          <div class="faq-item">
-
-
-            <h3>
-              Should family photos be organised by date or person?
-            </h3>
-
-
-            <p>
-
-              Both can be useful. Dates provide chronology, while organising photographs around people makes it easier to follow an individual's life and their place within the wider family.
-
-              Rooted Memories combines the two by organising memories around people while retaining the dates associated with them.
-
-            </p>
-
-
-          </div>
-
-
-
-          <div class="faq-item">
-
-
-            <h3>
-              How should I organise old family photographs?
-            </h3>
-
-
-            <p>
-
-              Start by identifying the people in them while relatives who recognise them are still able to help.
-
-              Record approximate dates, locations and short stories where they are known, then scan the photographs you would like to preserve and connect them to the relevant family members.
-
-            </p>
-
-
-          </div>
-
-
-
-          <div class="faq-item">
-
-
-            <h3>
-              Do I need to organise every photograph I own?
-            </h3>
-
-
-            <p>
-
-              No. It is usually easier to begin with photographs that matter to you and gradually add more over time.
-
-              Screenshots, duplicates and photographs you do not care about do not need to become part of the collection.
-
-            </p>
-
-
-          </div>
-
-
-
-          <div class="faq-item">
-
-
-            <h3>
-              Why are captions useful on family photos?
-            </h3>
-
-
-            <p>
-
-              Captions preserve information that may not be obvious from the photograph itself.
-
-              Even a short explanation of where it was taken, who was there or what was happening can make the photograph easier for somebody else in the family to understand years later.
-
-            </p>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FINAL CTA
-    ====================================================== -->
-
-
-    <section class="final-cta">
-
-      <div class="shell final-grid">
-
-
-        <h2>
-          Start with a few photographs you already care about and build from there.
-        </h2>
-
-
-
-        <div class="final-side">
-
-
-          <p>
-
-            Add them to the people in your family, include any details you want to keep and invite relatives to contribute their own.
-
-          </p>
-
-
-          <a
-            class="cta"
-            href="/#download"
-          >
-            Download Rooted Memories
-          </a>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
-
-  <footer>
-
-    <div class="shell footer-inner">
-
-
-      <div class="footer-brand">
-
-        © <span id="year"></span> Rooted Memories®
-
-      </div>
-
-
-      <div class="footer-links">
-
-
-        <a href="/terms-of-service/">
-          Terms of Service
-        </a>
-
-
-        <a href="/privacy/">
-          Privacy Policy
-        </a>
-
-
-        <a href="/safety/">
-          Safety
-        </a>
-
-
-        <a href="/contact-us/">
-          Contact Us
-        </a>
-
-
-      </div>
-
-
     </div>
-
-  </footer>
-
-
-
-  <script>
-
-    document.getElementById('year').textContent =
-      new Date().getFullYear();
-
-    (function(){
-      const header=document.querySelector('.site-header');
-      if(!header) return;
-
-      let ticking=false;
-
-      function syncHeader(){
-        const y=
-          window.pageYOffset ||
-          document.documentElement.scrollTop ||
-          document.body.scrollTop ||
-          0;
-
-        header.classList.toggle('is-scrolled', y > 60);
-        ticking=false;
-      }
-
-      function onScroll(){
-        if(!ticking){
-          window.requestAnimationFrame(syncHeader);
-          ticking=true;
-        }
-      }
-
-      syncHeader();
-      window.addEventListener('scroll',onScroll,{passive:true});
-      window.addEventListener('pageshow',syncHeader);
-    })();
-
-  </script>
-
-
-</body>
-
-</html>
+  </section>
+  <section class="guide" id="method">
+    <div class="container guide-grid">
+      <div class="guide-intro">
+        <div class="eyebrow">A repeatable method</div>
+        <h2>Finish one batch.<br>Then choose the next.</h2>
+        <p>
+          Keep the task small enough to review properly. This method works for a folder
+          of digital pictures or scans from an older album.
+        </p>
+      </div>
+      <ol class="steps">
+        <li class="step" id="step-1">
+          <span class="number" aria-hidden="true">01</span>
+          <div>
+            <h3>Choose one manageable batch</h3>
+            <p>
+          Pick a single album, envelope or event. Keep that group together while you
+          work, rather than mixing it with every photograph you own.
+        </p>
+          </div>
+        </li>
+        <li class="step" id="step-2">
+          <span class="number" aria-hidden="true">02</span>
+          <div>
+            <h3>Separate the keepers from the questions</h3>
+            <p>
+          Make a first selection of clear, useful photographs. Set uncertain copies
+          aside for review, including near-duplicates, unidentified faces and pictures
+          that need a better scan.
+        </p>
+          </div>
+        </li>
+        <li class="step" id="step-3">
+          <span class="number" aria-hidden="true">03</span>
+          <div>
+            <h3>Identify the people and places</h3>
+            <p>
+          Write full names where you can. Ask relatives about unfamiliar faces and
+          record who supplied an identification, especially if accounts differ.
+        </p>
+          </div>
+        </li>
+        <li class="step" id="step-4">
+          <span class="number" aria-hidden="true">04</span>
+          <div>
+            <h3>Record dates without guessing</h3>
+            <p>
+          Distinguish the date a picture was taken from the date it was scanned or
+          copied. If only a decade or year is known, put that estimate in the caption
+          and mark it as approximate.
+        </p>
+          </div>
+        </li>
+        <li class="step" id="step-5">
+          <span class="number" aria-hidden="true">05</span>
+          <div>
+            <h3>Check the batch before moving on</h3>
+            <p>
+          Read the captions as if you had never seen the pictures. Check that names are
+          understandable and uncertainties are labelled. Keep the originals and a
+          separate copy of your digital files.
+        </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="example" id="captions">
+    <div class="container example-grid">
+      <div>
+        <div class="eyebrow">Writing a useful caption</div>
+        <h2>Be specific about<br>what you know.</h2>
+        <p>
+          “Summer holiday” is a start. Names, a location and one remembered detail give
+          the next reader much more to work with.
+        </p>
+        <p>
+          Keep estimates visible. “Probably 1986” is more useful than an exact date
+          nobody can verify.
+        </p>
+      </div>
+      <aside class="example-panel" aria-label="An example caption with identification notes">
+        <blockquote class="caption-example">“Eileen and Peter outside the caravan in Tenby, probably summer 1986. Peter had just learned to ride his bike.”</blockquote>
+        <dl class="caption-fields">
+          <div>
+<dt>People and place</dt>
+<dd>Eileen and Peter · Tenby</dd>
+</div>
+          <div>
+<dt>Date confidence</dt>
+<dd>Approximate: summer 1986</dd>
+</div>
+          <div>
+<dt>Source of the detail</dt>
+<dd>Identified by Eileen; year still to be confirmed.</dd>
+</div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+  <section class="questions" id="questions">
+    <div class="container questions-grid">
+      <div>
+        <div class="eyebrow">When the details are unclear</div>
+        <h2>Leave room<br>for uncertainty.</h2>
+      </div>
+      <div>
+        <details>
+          <summary>What if I cannot identify someone?</summary>
+          <p>
+          Write down what is known and ask relatives separately. Keep a suggested name
+          marked as unconfirmed until you have stronger evidence.
+        </p>
+        </details>
+        <details>
+          <summary>Should I organise by date, person or occasion?</summary>
+          <p>
+          Use dates for sequence, names for identification and occasions for context. A
+          caption can hold all three, so you do not have to rely on a single folder
+          name.
+        </p>
+        </details>
+        <details>
+          <summary>Do I need to delete duplicates first?</summary>
+          <p>
+          Set obvious duplicates aside from your working batch. Compare resolution,
+          cropping and any handwritten information before deciding which copies to
+          retain. Keep your source files until you are satisfied with the result.
+        </p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <section class="next">
+    <div class="container next-inner">
+      <div>
+        <h2>Ready to add your selection?</h2>
+        <p>
+          The app guide explains where photographs go and how to link them to people.
+        </p>
+      </div>
+      <a class="btn" href="/how-it-works/">Read the app guide <span aria-hidden="true">↗</span>
+</a>
+    </div>
+  </section>
+</main>
+        <footer class="footer">
+          <div class="container footer-inner">
+            <div>©
+              <span id="year">
+              </span>
+              Rooted Memories®</div>
+              <nav class="footer-links" aria-label="Footer">
+                <a href="/terms-of-service/">Terms</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/safety/">Safety</a>
+                <a href="/contact-us/">Contact</a>
+              </nav>
+            </div>
+          </footer>
+          <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+          </body>
+          </html>
