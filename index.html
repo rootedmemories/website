@@ -1119,6 +1119,71 @@
         .film-actions .btn { white-space: normal; text-align: center; }
         .film .eyebrow { font-size: 10px; letter-spacing: .14em; }
       }
+      /* Portrait frames crop the baked-in side margins, keeping app screens legible. */
+      .hero-stage {
+        min-height: 640px;
+        width: 100%;
+        max-width: 580px;
+        margin-inline: auto;
+      }
+      .polaroid {
+        top: 42%;
+        left: 50%;
+        border-width: 6px;
+        border-bottom-width: 26px;
+      }
+      .polaroid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .polaroid.one {
+        width: 42%;
+        aspect-ratio: 1 / 2;
+        transform: translate(-106%, -50%) rotate(-10deg);
+      }
+      .polaroid.two {
+        width: 42%;
+        aspect-ratio: 1 / 2;
+        transform: translate(6%, -50%) rotate(9deg);
+      }
+      .polaroid.three {
+        width: 40%;
+        aspect-ratio: 1 / 2;
+        transform: translate(-50%, -30%) rotate(-1deg);
+      }
+      .stage-quote {
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+        width: max-content;
+        max-width: 100%;
+        text-align: center;
+        font-size: 20px;
+        padding: 17px 20px;
+      }
+      @media (min-width: 1021px) and (max-width: 1200px) {
+        .hero-stage { min-height: 560px; }
+      }
+      @media (max-width: 1020px) {
+        .hero-stage { min-height: 660px; max-width: 550px; }
+      }
+      @media (max-width: 700px) {
+        .hero-stage {
+          min-height: 0;
+          height: clamp(370px, 120vw, 660px);
+          max-width: 550px;
+        }
+        .polaroid {
+          border-width: 4px;
+          border-bottom-width: 19px;
+        }
+        .stage-quote {
+          font-size: 16px;
+          padding: 13px 14px;
+        }
+      }
     </style>
   </head>
   <body>
