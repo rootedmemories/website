@@ -1119,38 +1119,45 @@
         .film-actions .btn { white-space: normal; text-align: center; }
         .film .eyebrow { font-size: 10px; letter-spacing: .14em; }
       }
-      /* Portrait frames crop the baked-in side margins, keeping app screens legible. */
+      /* Full screenshots: the image determines the frame height, with no crop. */
       .hero-stage {
-        min-height: 640px;
         width: 100%;
         max-width: 580px;
         margin-inline: auto;
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 1 / 1.55;
       }
       .polaroid {
-        top: 42%;
+        top: 40%;
         left: 50%;
+        height: auto;
+        background: #e8ded0;
         border-width: 6px;
         border-bottom-width: 26px;
       }
       .polaroid img {
+        display: block;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
         object-position: center;
       }
       .polaroid.one {
-        width: 42%;
-        aspect-ratio: 1 / 2;
+        width: 44%;
+        aspect-ratio: auto;
         transform: translate(-106%, -50%) rotate(-10deg);
       }
       .polaroid.two {
-        width: 42%;
-        aspect-ratio: 1 / 2;
+        width: 44%;
+        aspect-ratio: auto;
         transform: translate(6%, -50%) rotate(9deg);
       }
       .polaroid.three {
-        width: 40%;
-        aspect-ratio: 1 / 2;
+        width: 43%;
+        aspect-ratio: auto;
         transform: translate(-50%, -30%) rotate(-1deg);
       }
       .stage-quote {
@@ -1163,18 +1170,10 @@
         font-size: 20px;
         padding: 17px 20px;
       }
-      @media (min-width: 1021px) and (max-width: 1200px) {
-        .hero-stage { min-height: 560px; }
-      }
       @media (max-width: 1020px) {
-        .hero-stage { min-height: 660px; max-width: 550px; }
+        .hero-stage { max-width: 550px; }
       }
       @media (max-width: 700px) {
-        .hero-stage {
-          min-height: 0;
-          height: clamp(370px, 120vw, 660px);
-          max-width: 550px;
-        }
         .polaroid {
           border-width: 4px;
           border-bottom-width: 19px;
