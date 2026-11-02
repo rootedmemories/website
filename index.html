@@ -1609,7 +1609,7 @@
       document.querySelectorAll("[data-store-link]").forEach((link) =>
         link.addEventListener("click", () => {
           if (typeof window.fbq === "function")
-            window.fbq("trackCustom", "EarlyAccessSignup", {
+            window.fbq("trackCustom", "DownloadClick", {
               store: link.dataset.storeLink,
             });
         }),
