@@ -1607,10 +1607,18 @@
       }
       document.querySelectorAll("[data-store-link]").forEach((link) =>
         link.addEventListener("click", () => {
-          if (typeof window.fbq === "function")
-            window.fbq("trackCustom", "DownloadClick", {
-              store: link.dataset.storeLink,
-            });
+          if (typeof window.fbq === "function") {
+            const store = link.dataset.storeLink;
+            const storeEvent = {
+              "app-store": "AppleStoreClick",
+              "google-play": "GooglePlayClick",
+            }[store];
+            if (!storeEvent) return;
+            // Combined click event for reporting or optimising across both stores.
+            window.fbq("trackCustom", "DownloadClick", { store });
+            // Store-specific event for a separate row in Events Manager.
+            window.fbq("trackCustom", storeEvent, { store });
+          }
         }),
       );
     </script>
