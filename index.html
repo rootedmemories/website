@@ -32,11 +32,11 @@
       content="One private place for your family's photos and stories, organised by person and built to last."
     />
     <meta name="twitter:image" content="https://rootedmemories.com/og1.webp?v=2" />
-
+ 
     <!-- Favicon -->
-<link rel="icon" type="image/png" href="/favicon3.png" />
-<link rel="apple-touch-icon" href="/favicon3.png" />
-
+    <link rel="icon" type="image/png" href="/favicon3.png" />
+    <link rel="apple-touch-icon" href="/favicon3.png" />
+ 
     <meta name="theme-color" content="#071813" />
     <!-- META PIXEL -->
     <script>
@@ -105,14 +105,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet" />
     <style>
       :root {
+        /* The original palette: deep forest greens with warm cream and clay. */
         --dark: #071b16;
         --deep: #04110e;
         --mid: #102a23;
+        --forest: #0a241b;
+        --forest-2: #0d261e;
         --gold: #c88d70;
         --gold2: #e7ac8c;
+        --gold-deep: #8c5439;
         --paper: #f5eee4;
+        --paper2: #f0e7dc;
+        --sand: #e6dace;
         --ink: #172821;
         --muted: #bfc9be;
+        --muted-ink: #526458;
         --serif: Georgia, "Times New Roman", serif;
         --sans:
           Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -136,9 +143,6 @@
       a {
         color: inherit;
       }
-      button {
-        font: inherit;
-      }
       img {
         max-width: 100%;
       }
@@ -146,9 +150,32 @@
         background: #c88d70;
         color: #061813;
       }
+      :focus-visible {
+        outline: 3px solid var(--gold2);
+        outline-offset: 4px;
+      }
+      .on-cream :focus-visible {
+        outline-color: var(--gold-deep);
+      }
       .container {
         width: min(1220px, calc(100% - 64px));
         margin-inline: auto;
+      }
+      .skip-link {
+        position: absolute;
+        left: 16px;
+        top: -80px;
+        z-index: 60;
+        padding: 12px 18px;
+        background: var(--gold);
+        color: #12271f;
+        border-radius: 7px;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .skip-link:focus {
+        top: 16px;
       }
       .eyebrow {
         display: flex;
@@ -169,30 +196,35 @@
       .headline {
         font-family: var(--serif);
         font-weight: 400;
-        letter-spacing: -0.053em;
-        line-height: 1.035;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
         margin: 0;
+        text-wrap: balance;
       }
       .italic {
         font-style: italic;
         color: var(--gold2);
       }
+      .on-cream .italic {
+        color: var(--gold-deep);
+      }
       p {
         line-height: 1.75;
+        text-wrap: pretty;
       }
-      .muted {
-        color: var(--muted);
-      }
+ 
+      /* Buttons: the original gold, kept and refined. Cream sections use deep forest. */
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 12px;
         min-height: 54px;
-        padding: 0 24px;
+        padding: 0 26px;
         border-radius: 7px;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 750;
+        letter-spacing: 0.01em;
         text-decoration: none;
         transition:
           transform 0.22s ease,
@@ -201,15 +233,17 @@
         white-space: nowrap;
       }
       .btn:hover {
-        transform: translateY(-3px);
+        transform: translateY(-2px);
       }
       .btn-primary {
         background: var(--gold);
         color: #12271f;
         border: 1px solid var(--gold);
+        box-shadow: inset 0 1px 0 #ffffff33;
       }
       .btn-primary:hover {
         background: var(--gold2);
+        border-color: var(--gold2);
       }
       .btn-outline {
         border: 1px solid #718077;
@@ -219,10 +253,26 @@
         border-color: var(--gold2);
         background: #ffffff12;
       }
+      .btn-forest {
+        background: var(--forest-2);
+        color: var(--paper);
+        border: 1px solid var(--forest-2);
+      }
+      .btn-forest:hover {
+        background: #15382c;
+        border-color: #15382c;
+      }
       .arrow {
         font-size: 19px;
         font-weight: 400;
       }
+      .text-link {
+        font-size: 14px;
+        font-weight: 650;
+        text-underline-offset: 4px;
+      }
+ 
+      /* Header */
       .nav {
         height: 84px;
         position: sticky;
@@ -239,10 +289,27 @@
         justify-content: space-between;
         gap: 24px;
       }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        flex-shrink: 0;
+        text-decoration: none;
+      }
       .logo {
         height: 66px;
         width: auto;
         display: block;
+      }
+      .brand-name {
+        color: #d7c092;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 26px;
+        font-weight: 500;
+        font-synthesis: none;
+        line-height: 1.15;
+        letter-spacing: 0.2px;
+        white-space: nowrap;
       }
       .nav-right {
         display: flex;
@@ -262,19 +329,16 @@
       .nav .btn {
         min-height: 43px;
         padding: 0 18px;
+        font-size: 12px;
       }
+ 
+      /* Hero */
       .hero {
         position: relative;
         overflow: hidden;
-        min-height: 740px;
-        padding: 105px 0 120px;
+        padding: clamp(56px, 6.5vw, 92px) 0 clamp(72px, 8vw, 120px);
         background:
-          radial-gradient(
-            ellipse 780px 620px at 88% 37%,
-            #3e4d39 0%,
-            #1b3329 42%,
-            transparent 70%
-          ),
+          radial-gradient(ellipse 820px 680px at 84% 46%, #3e4d39 0%, #1b3329 44%, transparent 72%),
           linear-gradient(150deg, #0a211a, #061712 65%);
       }
       .hero:after {
@@ -289,278 +353,316 @@
         position: relative;
         z-index: 1;
         display: grid;
-        grid-template-columns: 1.13fr 0.87fr;
-        gap: 55px;
+        grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+        gap: clamp(40px, 5vw, 76px);
         align-items: center;
       }
       .hero h1 {
-        font-size: clamp(58px, 6.5vw, 94px);
-        max-width: 730px;
-        margin: 29px 0;
+        font-size: clamp(44px, 5vw, 70px);
+        max-width: 11.2em;
+        margin: 24px 0 0;
       }
       .hero-intro {
-        color: #cbd7cd;
-        max-width: 585px;
-        font-size: 17px;
-        margin-bottom: 30px;
+        color: #cfdad0;
+        max-width: 560px;
+        font-size: 18px;
+        line-height: 1.7;
+        margin: 24px 0 30px;
       }
       .hero-actions {
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
       }
+      .hero-trial {
+        margin: 18px 0 0;
+        max-width: 520px;
+        font-size: 13px;
+        line-height: 1.65;
+        color: #aebbaf;
+      }
       .hero-foot {
-        margin-top: 28px;
+        margin-top: 26px;
+        padding-top: 20px;
+        border-top: 1px solid #ffffff1a;
+        max-width: 520px;
         display: flex;
-        gap: 20px;
+        gap: 10px 26px;
         flex-wrap: wrap;
-        font-size: 12px;
-        color: #bdc9bd;
+        font-size: 13px;
+        color: #c3cec3;
       }
       .hero-foot span:before {
-        content: "✦";
+        content: "\2726";
         color: var(--gold2);
         margin-right: 9px;
       }
-      .hero-stage {
+ 
+      /* The three screens are presented as prints, in the order a family would look at them. */
+      .stage {
         position: relative;
-        min-height: 550px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 100%;
+        max-width: 600px;
+        margin-inline: auto;
+        padding: 40px 0 28px;
+      }
+      .stage-glow {
+        position: absolute;
+        left: 8%;
+        top: 12%;
+        width: 84%;
+        height: 76%;
+        background: #be81505c;
+        filter: blur(110px);
+        border-radius: 50%;
       }
       .stage-ring {
         position: absolute;
         border-radius: 50%;
         border: 1px solid #b6a58545;
         aspect-ratio: 1;
-        width: 97%;
+        width: 112%;
+        left: -6%;
+        top: -2%;
         transform: rotate(-18deg);
       }
-      .stage-ring:nth-child(2) {
-        width: 74%;
+      .stage-ring.inner {
+        width: 82%;
+        left: 9%;
+        top: 12%;
         border-color: #b6a58528;
       }
-      .stage-glow {
-        position: absolute;
-        width: 85%;
-        height: 75%;
-        background: #be81505c;
-        filter: blur(120px);
-        border-radius: 50%;
+      .prints {
+        position: relative;
+        display: grid;
+        grid-template-columns: 31% 38% 31%;
+        align-items: end;
       }
-      .polaroid {
-        position: absolute;
-        background: #e8ded0;
-        border: 8px solid #e8ded0;
-        border-bottom-width: 35px;
-        box-shadow: 0 27px 70px #0009;
-        overflow: hidden;
+      .print {
+        position: relative;
+        margin: 0;
+        padding: 7px 7px 31px;
+        background: #e8decd;
+        box-shadow:
+          0 2px 3px #0004,
+          0 30px 64px #000a;
       }
-      .polaroid img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .print img {
         display: block;
+        width: 100%;
+        height: auto;
       }
-      .polaroid.one {
-        width: 38%;
-        aspect-ratio: 3/4;
-        transform: translate(-43%, -10%) rotate(-13deg);
-      }
-      .polaroid.two {
-        width: 42%;
-        aspect-ratio: 3/4;
-        transform: translate(44%, 3%) rotate(10deg);
-      }
-      .polaroid.three {
-        width: 35%;
-        aspect-ratio: 3/4;
-        transform: translate(4%, 20%) rotate(-1deg);
-      }
-      .stage-quote {
+      .print figcaption {
         position: absolute;
-        z-index: 3;
+        left: 4px;
+        right: 4px;
         bottom: 8px;
-        right: 0;
+        text-align: center;
         font-family: var(--serif);
-        font-size: 22px;
         font-style: italic;
-        background: #092018e8;
-        border: 1px solid #ddab8555;
-        padding: 20px 25px;
-        box-shadow: 0 22px 45px #0005;
+        font-size: 12px;
+        line-height: 1;
+        color: #55463a;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
-      .trust {
-        background: #112c22;
-        border-block: 1px solid #ffffff12;
+      .print.left figcaption {
+        text-align: left;
+        padding-left: 4px;
       }
-      .trust-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 25px;
-        padding: 25px 0;
+      .print.right figcaption {
+        text-align: right;
+        padding-right: 4px;
       }
-      .trust span {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        color: #c1c8bd;
+      .print.left {
+        z-index: 1;
+        margin-right: -6%;
+        transform: translateY(-4%) rotate(-5deg);
       }
-      .trust strong {
-        font-size: 13px;
-        font-weight: 600;
+      .print.centre {
+        z-index: 3;
       }
+      .print.right {
+        z-index: 2;
+        margin-left: -6%;
+        transform: translateY(-17%) rotate(4.5deg);
+      }
+ 
+      /* Sections */
       .section {
         padding: 120px 0;
       }
-      .section-head {
-        max-width: 730px;
-        margin-bottom: 53px;
-      }
-      .section-head h2 {
-        font-size: clamp(42px, 5vw, 69px);
-        margin-top: 23px;
-      }
-      .section-head p {
-        font-size: 17px;
-        color: #c9d1c8;
-        max-width: 630px;
-      }
-      .why {
-        background: var(--paper);
+      .on-cream {
         color: var(--ink);
       }
-      .why .eyebrow,
-      .light .eyebrow {
-        color: #986149;
-      }
-      .why .italic,
-      .light .italic {
-        color: #a16b4f;
-      }
-      .why .section-head p {
-        color: #586b60;
-      }
-      .problem-grid {
+      .split {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1px;
-        background: #d7d8cd;
-        border: 1px solid #d7d8cd;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        gap: clamp(48px, 7vw, 112px);
+        align-items: start;
       }
-      .problem-card {
-        background: var(--paper);
-        padding: 34px 31px 37px;
+      .split > * {
+        min-width: 0;
       }
-      .problem-no {
-        font-family: var(--serif);
-        font-size: 38px;
-        color: #aa7860;
+      /* The left column stays in place while the right column scrolls, until the section ends. */
+      @media (min-width: 921px) and (min-height: 700px) {
+        .sticky {
+          position: sticky;
+          top: 124px;
+        }
       }
-      .problem-card h3 {
-        font-family: var(--serif);
-        font-size: 28px;
-        font-weight: 400;
-        letter-spacing: -0.025em;
-      }
-      .problem-card p {
-        font-size: 14px;
-        color: #617165;
+      .split h2,
+      .legacy h2,
+      .download h2 {
+        font-size: clamp(38px, 4.6vw, 64px);
         margin: 0;
       }
-      .reframe {
-        margin-top: 58px;
-        border-top: 1px solid #d6d8cb;
-        padding-top: 30px;
+      .split-aside p {
+        font-size: 17px;
+        margin: 26px 0 0;
+        max-width: 470px;
+      }
+ 
+      /* Why */
+      .why {
+        background: var(--paper);
+      }
+      .why .split-aside p {
+        color: #4d6054;
+      }
+      .problems {
+        border-top: 1px solid #cfc4b2;
+      }
+      .problem {
+        padding: 36px 0 38px;
+        border-bottom: 1px solid #cfc4b2;
+      }
+      .problem h3 {
         font-family: var(--serif);
-        font-size: clamp(29px, 3.2vw, 44px);
-        line-height: 1.24;
-        max-width: 920px;
+        font-size: 30px;
+        font-weight: 400;
+        letter-spacing: -0.03em;
+        margin: 0 0 10px;
+      }
+      .problem p {
+        margin: 0;
+        font-size: 16px;
+        color: #556a5c;
+        max-width: 520px;
+      }
+      .reframe {
+        margin: 56px 0 0;
+        font-family: var(--serif);
+        font-size: clamp(28px, 3vw, 42px);
+        line-height: 1.22;
+        letter-spacing: -0.03em;
+        max-width: 640px;
       }
       .reframe em {
-        color: #a36b4e;
+        color: var(--gold-deep);
       }
-      .features {
+      .more {
+        margin: 30px 0 0;
+        font-size: 14px;
+      }
+      .on-cream .more a {
+        color: var(--gold-deep);
+      }
+ 
+      /* How it works */
+      .how {
         background: linear-gradient(180deg, #071b16, #0a241b);
       }
-      .feature-grid {
+      .how .split-aside p {
+        color: #bac9be;
+      }
+      .steps {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid #ffffff1f;
+      }
+      .step {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
+        grid-template-columns: 56px minmax(0, 1fr);
+        gap: 26px;
+        padding: 38px 0 40px;
+        border-bottom: 1px solid #ffffff1f;
       }
-      .feature {
-        padding: 35px 30px 36px;
-        background: #ffffff06;
-        border: 1px solid #ffffff1c;
-        min-height: 280px;
-        transition:
-          background 0.25s,
-          transform 0.25s;
-      }
-      .feature:hover {
-        background: #ffffff0d;
-        transform: translateY(-4px);
-      }
-      .feature-symbol {
-        width: 46px;
-        height: 46px;
+      .step-symbol {
+        width: 52px;
+        height: 52px;
         border: 1px solid #be927a74;
         border-radius: 50%;
         display: grid;
         place-items: center;
         color: var(--gold2);
-        font-family: var(--serif);
-        font-size: 24px;
       }
-      .feature h3 {
+      .step h3 {
         font-family: var(--serif);
-        font-size: 27px;
+        font-size: 29px;
         font-weight: 400;
-        letter-spacing: -0.025em;
-        margin: 28px 0 12px;
+        letter-spacing: -0.03em;
+        margin: 2px 0 10px;
       }
-      .feature p {
+      .step p {
         margin: 0;
+        font-size: 16px;
         color: #bac9be;
-        font-size: 14px;
+        max-width: 500px;
       }
-      .product {
+      .on-dark .more a {
+        color: var(--gold2);
+      }
+ 
+      /* Inside the app */
+      .app {
+        background: var(--paper2);
+      }
+      .app .split-aside p {
+        color: #4d6054;
+      }
+      .video-frame {
+        position: relative;
+        aspect-ratio: 16/9;
+        margin-top: 32px;
+        border: 1px solid #0d261e;
+        padding: 8px;
         background: #0d261e;
+        border-radius: 12px;
+        box-shadow: 0 24px 54px #15362333;
       }
-      .product-top {
-        display: flex;
-        justify-content: space-between;
-        gap: 50px;
-        align-items: end;
+      .video-frame iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 6px;
       }
-      .product-top .section-head {
-        margin-bottom: 36px;
+      .app .text-link {
+        display: inline-block;
+        margin-top: 22px;
+        color: var(--gold-deep);
       }
-      .product-copy {
-        max-width: 320px;
-        color: #c2d0c3;
-        font-size: 14px;
-        margin-bottom: 42px;
+      .screens-intro {
+        margin: 0 0 26px;
+        color: #4d6054;
+        font-size: 15px;
+        max-width: 520px;
       }
       .screens {
-        display: flex;
-        gap: 20px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding: 12px 0 24px;
-        scrollbar-width: thin;
-        scrollbar-color: #be9070 transparent;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
       }
       .shot {
-        min-width: min(28%, 315px);
-        scroll-snap-align: start;
-        background: #142d24;
-        border: 1px solid #ffffff26;
+        margin: 0;
+        background: #0d261e;
+        border: 1px solid #0d261e;
         border-radius: 23px;
         padding: 10px;
-        box-shadow: 0 12px 35px #0003;
+        box-shadow: 0 18px 40px #15362333;
       }
       .shot img {
         display: block;
@@ -568,112 +670,26 @@
         height: auto;
         border-radius: 14px;
       }
-      .shot-caption {
-        font-size: 11px;
+      .shot figcaption {
+        font-size: 12px;
         color: #c8d2c4;
-        padding: 14px 9px 8px;
+        padding: 14px 9px 6px;
         letter-spacing: 0.05em;
       }
-      .carousel-nav {
-        display: flex;
-        gap: 12px;
-        margin-top: 18px;
-      }
-      .round {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background: transparent;
-        border: 1px solid #ffffff45;
-        color: #fff;
-        cursor: pointer;
-        font-size: 22px;
-      }
-      .round:hover {
-        background: #ffffff18;
-      }
-      .film {
-        background: #091d17;
-      }
-      .film-grid {
-        display: grid;
-        grid-template-columns: 0.77fr 1.23fr;
-        gap: 65px;
-        align-items: center;
-      }
-      .film h2 {
-        font-size: clamp(42px, 4.8vw, 65px);
-        margin: 22px 0;
-      }
-      .film p {
-        color: #c9d5ca;
-      }
-      .video-frame {
-        position: relative;
-        aspect-ratio: 16/9;
-        border: 1px solid #d2ad8766;
-        padding: 10px;
-        background: #173127;
-        border-radius: 12px;
-        box-shadow: 0 30px 80px #0007;
-      }
-      .video-frame iframe {
-        display: block;
-        width: 100%;
-        height: 100%;
-        border: 0;
-        border-radius: 5px;
-      }
-      .video-note {
-        font-size: 12px !important;
-        color: #a8b7aa !important;
-      }
-      .steps {
-        background: var(--paper);
-        color: var(--ink);
-      }
-      .steps .section-head p {
-        color: #657267;
-      }
-      .step-list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0;
-        border-top: 1px solid #c8cebf;
-      }
-      .step {
-        padding: 36px 25px 0 0;
-      }
-      .step:not(:first-child) {
-        border-left: 1px solid #c8cebf;
-        padding-left: 25px;
-      }
-      .step-index {
-        color: #a46e51;
-        font-size: 12px;
-        letter-spacing: 0.1em;
-      }
-      .step h3 {
-        font-family: var(--serif);
-        font-size: 26px;
-        font-weight: 400;
-        line-height: 1.12;
-      }
-      .step p {
-        font-size: 13px;
-        color: #69796d;
-      }
+ 
+      /* Privacy */
       .legacy {
-        background: linear-gradient(135deg, #0d2a20 0%, #15362a 52%, #0a1d17 100%);
-        text-align: center;
         position: relative;
         overflow: hidden;
+        padding: 112px 0;
+        text-align: center;
+        background: linear-gradient(135deg, #0d2a20 0%, #15362a 52%, #0a1d17 100%);
       }
       .legacy:before {
         content: "";
         position: absolute;
-        width: 650px;
-        height: 650px;
+        width: 640px;
+        height: 640px;
         border: 1px solid #f2eee43d;
         border-radius: 50%;
         left: 50%;
@@ -683,141 +699,156 @@
       }
       .legacy-inner {
         position: relative;
-        max-width: 880px;
+        max-width: 760px;
         margin: auto;
       }
-      .legacy .eyebrow {
-        justify-content: center;
-      }
-      .legacy h2 {
-        font-size: clamp(45px, 5.6vw, 78px);
-        margin: 30px 0;
+      .legacy-symbol {
+        width: 54px;
+        height: 54px;
+        margin: 0 auto 26px;
+        border: 1px solid #be927a74;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--gold2);
       }
       .legacy p {
-        max-width: 570px;
-        margin: 0 auto;
+        max-width: 600px;
+        margin: 26px auto 0;
+        font-size: 17px;
         color: #d0d9cd;
       }
+      .legacy .more {
+        margin-top: 22px;
+      }
+ 
+      /* Pricing */
       .pricing {
-        background: #f0e7dc;
-        color: #183026;
+        background: var(--paper);
       }
-      .pricing .section-head p {
-        color: #627168;
-      }
-      .price-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
+      .pricing .split-aside p {
+        color: #4d6054;
       }
       .price-card {
-        background: #fffaf4;
-        border: 1px solid #d5d0c2;
-        padding: 42px;
+        background: var(--forest-2);
+        color: var(--paper);
+        border: 1px solid #ffffff1a;
         border-radius: 14px;
-        box-shadow: 0 25px 65px #15362313;
+        padding: 44px;
+        box-shadow: 0 28px 60px #15362330;
+      }
+      .price-card .eyebrow {
+        margin-bottom: 8px;
       }
       .price-row {
         display: flex;
         align-items: baseline;
-        gap: 5px;
-        margin: 19px 0;
+        flex-wrap: wrap;
+        gap: 4px 8px;
+        margin: 22px 0 0;
+      }
+      .price-row + .price-row {
+        margin-top: 22px;
+        padding-top: 22px;
+        border-top: 1px solid #ffffff1f;
       }
       .price {
         font-family: var(--serif);
-        font-size: 70px;
-        letter-spacing: -0.07em;
+        font-size: clamp(48px, 5vw, 64px);
+        line-height: 1;
+        letter-spacing: -0.05em;
+        color: var(--gold2);
       }
       .price-row small {
         font-size: 14px;
-        color: #647166;
+        color: #aebbaf;
+      }
+      .price-save {
+        margin: 10px 0 0;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--gold2);
+      }
+      .price-trial {
+        margin: 26px 0 0;
+        font-size: 15px;
+        font-weight: 700;
       }
       .price-card ul {
         list-style: none;
         padding: 0;
-        margin: 27px 0;
+        margin: 20px 0 32px;
       }
       .price-card li {
-        margin: 12px 0;
-        color: #475d50;
-        font-size: 14px;
+        margin: 0;
+        padding: 11px 0;
+        border-top: 1px solid #ffffff14;
+        color: #cfd9cf;
+        font-size: 15px;
+        line-height: 1.55;
       }
       .price-card li:before {
-        content: "✓";
-        color: #9f674b;
-        margin-right: 10px;
+        content: "\2713";
+        color: var(--gold2);
+        margin-right: 12px;
       }
-      .price-desc {
-        max-width: 460px;
+      .detail {
+        margin-top: 52px;
       }
-      .price-desc h3 {
+      .detail h3 {
         font-family: var(--serif);
-        font-size: 39px;
+        font-size: 28px;
         font-weight: 400;
-        line-height: 1.12;
+        letter-spacing: -0.03em;
+        margin: 0 0 6px;
       }
-      .price-desc p {
-        color: #5d6d60;
-        font-size: 15px;
+      .detail p {
+        margin: 12px 0 0;
+        font-size: 16px;
+        color: #425a4b;
+        max-width: 560px;
       }
-      .price-small {
-        font-size: 12px;
-        color: #758076;
+      .fine {
+        margin: 34px 0 0;
+        font-size: 13px;
+        line-height: 1.65;
+        color: #5f6f63;
+        max-width: 560px;
       }
-      .links {
-        padding: 80px 0;
-        background: #081b15;
+      .pricing a:not(.btn) {
+        text-underline-offset: 3px;
       }
-      .links-heading {
-        color: var(--gold2);
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        margin-bottom: 20px;
-      }
-      .links a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 23px 0;
-        border-bottom: 1px solid #ffffff20;
-        text-decoration: none;
-        font-family: var(--serif);
-        font-size: 25px;
-      }
-      .links a:hover {
-        color: var(--gold2);
-      }
-      .links a span {
-        font-family: var(--sans);
-        font-size: 18px;
-        color: var(--gold);
-      }
+ 
+      /* Download */
       .download {
-        background: #e6dace;
-        color: #1c3529;
+        background: var(--sand);
         text-align: center;
-        padding: 115px 0;
+        padding: 120px 0;
       }
       .download-inner {
-        max-width: 840px;
+        max-width: 780px;
         margin: auto;
       }
+      .download .eyebrow {
+        justify-content: center;
+        color: #7a4830;
+      }
       .download h2 {
-        font-size: clamp(48px, 6.5vw, 84px);
-        margin: 20px 0;
+        margin: 22px 0;
+        font-size: clamp(46px, 6vw, 80px);
       }
       .download p {
-        color: #627164;
+        color: #4f6254;
         font-size: 17px;
+        margin: 0 auto;
+        max-width: 560px;
       }
       .store-buttons {
         display: flex;
         justify-content: center;
         gap: 13px;
         flex-wrap: wrap;
-        margin-top: 35px;
+        margin-top: 34px;
       }
       .store-btn {
         display: inline-flex;
@@ -826,10 +857,6 @@
         padding: 12px;
         text-decoration: none;
         border-radius: 6px;
-      }
-      .store-btn:focus-visible {
-        outline: 3px solid #986149;
-        outline-offset: 3px;
       }
       .store-btn img {
         display: block;
@@ -843,80 +870,82 @@
       .store-btn[data-store-link="google-play"] img {
         height: 72px;
       }
-      .subnote {
-        font-size: 12px !important;
-        margin-top: 17px !important;
+      .download .download-subscription {
+        font-size: 13px;
+        color: #4a5d4f;
+        max-width: 520px;
+        margin: 20px auto 0;
       }
+ 
+      /* Footer: one quiet line, deliberately small */
       .footer {
-        background: #071711;
+        background: var(--deep);
         border-top: 1px solid #ffffff18;
-        padding: 36px 0;
+        padding: 26px 0;
       }
       .footer-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 22px;
+        gap: 18px;
         flex-wrap: wrap;
-        color: #b6c1b6;
+        color: #a9b6aa;
         font-size: 12px;
       }
       .footer a {
-        margin-left: 19px;
+        margin-left: 22px;
         text-decoration: none;
       }
       .footer a:hover {
         color: var(--gold2);
       }
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-      @media (prefers-reduced-motion: no-preference) {
-        .js-reveal .reveal {
-          opacity: 0;
-          transform: translateY(18px);
-          transition:
-            opacity 0.7s ease,
-            transform 0.7s ease;
-        }
-        .js-reveal .reveal.visible {
-          opacity: 1;
-          transform: none;
-        }
-      }
+ 
+      /* Tablet */
       @media (max-width: 1020px) {
+        .nav-right {
+          gap: 16px;
+        }
+        .nav-link {
+          display: none;
+        }
+      }
+      @media (max-width: 920px) {
         .hero-layout {
           grid-template-columns: 1fr;
+          gap: 56px;
         }
-        .hero {
-          padding: 70px 0;
+        .hero h1 {
+          max-width: 11em;
         }
-        .hero-stage {
-          min-height: 435px;
-          max-width: 550px;
-          width: 100%;
-          margin: 0 auto;
+        .stage {
+          max-width: 500px;
         }
-        .film-grid {
+        .split {
           grid-template-columns: 1fr;
-          gap: 30px;
+          gap: 40px;
+        }
+        .section {
+          padding: 88px 0;
+        }
+        .legacy {
+          padding: 88px 0;
+        }
+        .screens {
+          display: flex;
+          gap: 16px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          padding-bottom: 20px;
+          scrollbar-width: thin;
+          scrollbar-color: #be9070 transparent;
         }
         .shot {
-          min-width: 32%;
-        }
-        .nav-right {
-          gap: 15px;
-        }
-        .step-list {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 25px;
-        }
-        .step:nth-child(3) {
-          border-left: 0;
-          padding-left: 0;
+          flex: 0 0 min(66%, 300px);
+          scroll-snap-align: start;
         }
       }
+ 
+      /* Phone */
       @media (max-width: 700px) {
         .container {
           width: min(100% - 36px, 1220px);
@@ -927,114 +956,98 @@
         .logo {
           height: 54px;
         }
-        .nav-link {
-          display: none;
+        .brand {
+          gap: 10px;
+        }
+        .brand-name {
+          font-size: 20px;
+        }
+        .nav-right {
+          gap: 0;
+          flex-shrink: 0;
         }
         .nav .btn {
-          padding: 0 13px;
-          min-height: 39px;
-          font-size: 11px;
+          padding: 0 14px;
+          min-height: 40px;
         }
         .hero {
-          padding: 62px 0 65px;
-          min-height: auto;
+          padding: 40px 0 64px;
         }
         .hero h1 {
-          font-size: clamp(49px, 12vw, 70px);
+          font-size: clamp(42px, 11.6vw, 58px);
+          margin-top: 22px;
         }
         .hero-intro {
-          font-size: 15px;
-        }
-        .hero-stage {
-          min-height: 330px;
-        }
-        .stage-quote {
           font-size: 16px;
-          padding: 13px;
+          margin: 22px 0 28px;
+        }
+        .hero-actions {
+          gap: 10px;
         }
         .hero-actions .btn {
           width: 100%;
+          min-height: 52px;
         }
-        .trust-inner {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 13px;
+        .hero-foot {
+          display: none;
         }
-        .trust span {
-          grid-column: 1/-1;
+        .hero-trial {
+          margin-top: 14px;
         }
-        .trust strong {
-          font-size: 11px;
+        .stage {
+          padding: 28px 0 14px;
         }
-        .section {
-          padding: 80px 0;
+        .print {
+          padding: 5px 5px 24px;
         }
-        .section-head h2 {
-          font-size: 43px;
+        .print figcaption {
+          font-size: 10px;
+          bottom: 6px;
         }
-        .problem-grid,
-        .feature-grid,
-        .price-layout {
+        .step {
           grid-template-columns: 1fr;
+          gap: 18px;
+          padding: 30px 0 32px;
         }
-        .problem-card {
-          padding: 23px;
-        }
-        .feature {
-          min-height: auto;
-          padding: 28px;
-        }
-        .product-top {
-          display: block;
-        }
-        .product-copy {
-          margin: 0 0 20px;
-        }
-        .shot {
-          min-width: 74%;
-          max-width: 300px;
-        }
-        .steps .step-list {
-          grid-template-columns: 1fr;
-          gap: 0;
-        }
-        .step,
-        .step:not(:first-child),
-        .step:nth-child(3) {
-          border-left: 0;
-          border-bottom: 1px solid #ccd0c5;
-          padding: 23px 0;
-        }
-        .step h3 {
-          margin: 12px 0;
-        }
-        .legacy h2 {
-          font-size: 46px;
-        }
-        .price-layout {
-          gap: 22px;
+        .problem {
+          padding: 28px 0 30px;
         }
         .price-card {
-          padding: 29px;
+          padding: 30px 24px;
+        }
+        .detail {
+          margin-top: 42px;
         }
         .download {
-          padding: 82px 0;
-        }
-        .download h2 {
-          font-size: 48px;
+          padding: 88px 0;
         }
         .store-btn {
-          width: 100%;
-          max-width: 310px;
+          padding: 10px;
         }
         .footer a {
-          margin: 0 17px 0 0;
+          margin: 0 18px 0 0;
         }
         .footer-row {
-          align-items: start;
+          align-items: flex-start;
+          flex-direction: column;
         }
-        .film h2 {
-          font-size: 46px;
+      }
+      @media (max-width: 390px) {
+        .nav-inner {
+          gap: 8px;
+        }
+        .brand {
+          gap: 8px;
+        }
+        .brand .logo {
+          height: 42px;
+        }
+        .brand-name {
+          font-size: 16px;
+        }
+        .nav .btn {
+          padding-inline: 11px;
+          gap: 6px;
         }
       }
       @media (prefers-reduced-motion: reduce) {
@@ -1045,144 +1058,10 @@
           transition: none !important;
         }
       }
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 14px;
-        flex-shrink: 0;
-        text-decoration: none;
-      }
-      .brand-name {
-        color: #d7c092;
-        font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 26px;
-        font-weight: 500;
-        font-synthesis: none;
-        line-height: 1.15;
-        letter-spacing: 0.2px;
-        white-space: nowrap;
-      }
-      @media (max-width: 700px) {
-        .nav-inner { gap: 12px; }
-        .brand { gap: 10px; }
-        .brand-name { font-size: 20px; }
-        .nav-right { gap: 0; flex-shrink: 0; }
-      }
-      @media (max-width: 390px) {
-        .nav-inner { gap: 8px; }
-        .brand { gap: 8px; }
-        .brand .logo { height: 42px; }
-        .brand-name { font-size: 16px; }
-        .nav .btn { padding-inline: 10px; gap: 6px; }
-      }
-      .subscription-note {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #526458;
-        margin: 18px 0;
-      }
-      .subscription-note a { text-underline-offset: 3px; }
-      .download .download-subscription {
-        font-size: 14px;
-        color: #526458;
-        max-width: 620px;
-        margin: 22px auto 0;
-      }
-      /* Early walkthrough: warm paper, forest green and a quiet conversion path. */
-      .film { background: var(--paper); color: var(--ink); padding: 88px 0 72px; border-bottom: 1px solid #d6d8cb; }
-      .film-grid { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 54px; }
-      .film .eyebrow { color: #986149; }
-      .film .italic { color: #a16b4f; }
-      .film h2 { font-size: clamp(42px, 4.6vw, 64px); margin: 20px 0; }
-      .film-copy > p { color: #526458; max-width: 470px; }
-      .film-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 26px; }
-      .film-pricing { color: var(--ink); font-size: 13px; font-weight: 700; text-underline-offset: 4px; }
-      .film .film-trial { font-size: 12px; line-height: 1.65; margin-top: 16px; }
-      .film-trial a { text-underline-offset: 3px; }
-      .film .video-frame { padding: 0; overflow: hidden; border: 1px solid #bfa387; background: #173127; box-shadow: 0 20px 48px #17312724; }
-      .film .video-frame iframe { border-radius: 0; }
-      .film .video-note { color: #526458 !important; margin: 12px 0 0; text-align: center; line-height: 1.5; }
-      .film a:focus-visible { outline: 3px solid #986149; outline-offset: 5px; }
-      @media (max-width: 1000px) {
-        .film-grid { grid-template-columns: 1fr; gap: 28px; }
-        .film-copy { max-width: 680px; }
-        .film-copy > p { max-width: 580px; }
-      }
-      @media (max-width: 700px) {
-        .film { padding: 58px 0 48px; }
-        .film-grid { gap: 26px; }
-        .film h2 { font-size: 44px; }
-        .film-actions { gap: 16px; margin-top: 22px; }
-        .film-actions .btn { white-space: normal; text-align: center; }
-        .film .eyebrow { font-size: 10px; letter-spacing: .14em; }
-      }
-      /* Full screenshots: the image determines the frame height, with no crop. */
-      .hero-stage {
-        width: 100%;
-        max-width: 580px;
-        margin-inline: auto;
-        min-height: 0;
-        height: auto;
-        aspect-ratio: 1 / 1.55;
-      }
-      .polaroid {
-        top: 40%;
-        left: 50%;
-        height: auto;
-        background: #e8ded0;
-        border-width: 6px;
-        border-bottom-width: 26px;
-      }
-      .polaroid img {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: auto;
-        object-fit: contain;
-        object-position: center;
-      }
-      .polaroid.one {
-        width: 44%;
-        aspect-ratio: auto;
-        transform: translate(-106%, -50%) rotate(-10deg);
-      }
-      .polaroid.two {
-        width: 44%;
-        aspect-ratio: auto;
-        transform: translate(6%, -50%) rotate(9deg);
-      }
-      .polaroid.three {
-        width: 43%;
-        aspect-ratio: auto;
-        transform: translate(-50%, -30%) rotate(-1deg);
-      }
-      .stage-quote {
-        bottom: 0;
-        right: 50%;
-        transform: translateX(50%);
-        width: max-content;
-        max-width: 100%;
-        text-align: center;
-        font-size: 20px;
-        padding: 17px 20px;
-      }
-      @media (max-width: 1020px) {
-        .hero-stage { max-width: 550px; }
-      }
-      @media (max-width: 700px) {
-        .polaroid {
-          border-width: 4px;
-          border-bottom-width: 19px;
-        }
-        .stage-quote {
-          font-size: 16px;
-          padding: 13px 14px;
-        }
-      }
     </style>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="nav">
       <div class="container nav-inner">
         <a class="brand" href="https://rootedmemories.com/" aria-label="Rooted Memories home">
@@ -1191,76 +1070,210 @@
         </a>
         <nav class="nav-right" aria-label="Main navigation">
           <a class="nav-link" href="#why">Our purpose</a>
-          <a class="nav-link" href="#features">Features</a>
-          <a class="nav-link" href="#film">Inside the app</a>
+          <a class="nav-link" href="#how">How it works</a>
+          <a class="nav-link" href="#app">Inside the app</a>
+          <a class="nav-link" href="#pricing">Pricing</a>
           <a class="btn btn-primary" href="#download"
-            >Get the app <span class="arrow">↗</span>
+            >Get the app <span class="arrow" aria-hidden="true">↗</span>
           </a>
         </nav>
       </div>
     </header>
-    <main>
-      <section class="hero">
+ 
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="container hero-layout">
-          <div class="reveal">
+          <div class="hero-copy">
             <div class="eyebrow">A private family photo archive</div>
-            <h1 class="headline">
-              Your family's photographs,
-              <span class="italic">all in one place.</span>
+            <h1 class="headline" id="hero-title">
+              Keep the stories
+              <span class="italic">behind your family's photographs.</span>
             </h1>
-            <p class="hero-intro">Create a private family tree, invite relatives and bring your photos together. Tag the people in each picture and keep the stories alongside them, whether the photos were taken yesterday or fifty years ago.</p>
+            <p class="hero-intro">
+              Rooted Memories brings your family's photographs together in one private place,
+              organised around the people in them. Relatives add their own, and everyone helps write
+              down who was there and what was happening.
+            </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#download"
-                >Start your family archive <span class="arrow">↗</span>
+                >Start your family archive <span class="arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="btn btn-outline" href="#film"
-                >Watch the app walkthrough <span class="arrow">↗</span>
+              <a class="btn btn-outline" href="#app"
+                >Watch the app walkthrough <span class="arrow" aria-hidden="true">↗</span>
               </a>
             </div>
+            <p class="hero-trial">
+              Free for 14 days, then £3.99 a month or £39.99 a year. Billed through the App Store or
+              Google Play.
+            </p>
             <div class="hero-foot">
               <span>Private, invite-only family trees</span>
               <span>Photos organised by person</span>
             </div>
           </div>
-          <div class="hero-stage" aria-hidden="true">
-            <div class="stage-glow"></div>
-            <div class="stage-ring"></div>
-            <div class="stage-ring"></div>
-            <div class="polaroid one">
-              <img src="https://rootedmemories.com/polaroid-member-profile.2.webp?v=1" alt="" />
+          <div class="stage">
+            <div class="stage-glow" aria-hidden="true"></div>
+            <div class="stage-ring" aria-hidden="true"></div>
+            <div class="stage-ring inner" aria-hidden="true"></div>
+            <div class="prints">
+              <figure class="print left">
+                <img
+                  src="https://rootedmemories.com/polaroid-family-memories.2.webp?v=1"
+                  alt="The Family Memories gallery in the Rooted Memories app, with photographs grouped by year"
+                />
+                <figcaption>Memories by year</figcaption>
+              </figure>
+              <figure class="print centre">
+                <img
+                  src="https://rootedmemories.com/polaroid-family-tree.2.webp?v=1"
+                  alt="A family tree in the Rooted Memories app"
+                  fetchpriority="high"
+                />
+                <figcaption>The family tree</figcaption>
+              </figure>
+              <figure class="print right">
+                <img
+                  src="https://rootedmemories.com/polaroid-member-profile.2.webp?v=1"
+                  alt="One person's photographs on their member profile in the Rooted Memories app"
+                />
+                <figcaption>A person's gallery</figcaption>
+              </figure>
             </div>
-            <div class="polaroid two">
-              <img src="https://rootedmemories.com/polaroid-family-memories.2.webp?v=1" alt="" />
-            </div>
-            <div class="polaroid three">
-              <img src="https://rootedmemories.com/polaroid-family-tree.2.webp?v=1" alt="" />
-            </div>
-            <div class="stage-quote">The stories behind the photos.</div>
           </div>
         </div>
       </section>
-      <div class="trust">
-        <div class="container trust-inner">
-          <span>What you can do</span>
-          <strong>Invite family to contribute</strong>
-          <strong>Tag people in photos</strong>
-          <strong>Look back through the years</strong>
+ 
+      <section class="section why on-cream" id="why" aria-labelledby="why-title">
+        <div class="container split">
+          <div class="split-aside sticky">
+            <h2 class="headline" id="why-title">
+              A photo can last forever.
+              <span class="italic">Its story doesn't always.</span>
+            </h2>
+            <p>
+              You might have a photo of your grandparents and no idea where it was taken or who else
+              was there, and the person who could tell you may no longer be around to ask. The same
+              thing will happen to the photos we're taking today if the details aren't kept with
+              them.
+            </p>
+          </div>
+          <div>
+            <div class="problems">
+              <article class="problem">
+                <h3>Photos in different places</h3>
+                <p>
+                  Everyone has their own photos. Some are on phones, some on old computers, and
+                  plenty are buried in family WhatsApp chats.
+                </p>
+              </article>
+              <article class="problem">
+                <h3>Missing details</h3>
+                <p>
+                  After a few years, it can be hard to remember when a photo was taken, who was
+                  there or what was happening that day.
+                </p>
+              </article>
+              <article class="problem">
+                <h3>The photos we take today</h3>
+                <p>
+                  The pictures we take of our children now will be the old family photographs
+                  somebody looks through years from now.
+                </p>
+              </article>
+            </div>
+            <p class="reframe">
+              Rooted Memories gives families somewhere to keep their photos
+              <em>with the names and stories that go with them.</em>
+            </p>
+            <p class="more">
+              <a href="https://rootedmemories.com/organise-family-photos/"
+                >Read about organising your family photos</a
+              >
+            </p>
+          </div>
         </div>
-      </div>
-      <section class="section film" id="film" aria-labelledby="film-title">
-        <div class="container film-grid">
-          <div class="film-copy">
-            <div class="eyebrow">A look inside the app</div>
-            <h2 class="headline" id="film-title">
+      </section>
+ 
+      <section class="section how on-dark" id="how" aria-labelledby="how-title">
+        <div class="container split">
+          <div class="split-aside sticky">
+            <h2 class="headline" id="how-title">
+              A family tree <span class="italic">with the photos attached.</span>
+            </h2>
+            <p>
+              Each person has their own gallery. Family members can add photographs, tag who's in
+              them and look back through the years.
+            </p>
+          </div>
+          <div>
+            <ol class="steps">
+              <li class="step">
+                <div class="step-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 29V8.95M11.5 29h9M16 17L11.79 13.35M16 19L20.18 14.11M16 26L11.13 21.32M16 27L20.42 22.58"/><g fill="currentColor" stroke="none"><circle cx="16" cy="4.5" r="2.8"/><circle cx="8.5" cy="10.5" r="2.7"/><circle cx="23" cy="10.8" r="2.7"/><circle cx="8" cy="18.3" r="2.7"/><circle cx="23.5" cy="19.5" r="2.7"/></g></svg></div>
+                <div>
+                  <h3>Start with your family tree</h3>
+                  <p>
+                    Add the people in your family. Each person gets their own place, with the
+                    photographs and memories connected to them.
+                  </p>
+                </div>
+              </li>
+              <li class="step">
+                <div class="step-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18.5 5H9a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V12.5Z"/><path d="M18.5 5v5a2.5 2.5 0 0 0 2.5 2.5h5"/><circle cx="14.5" cy="15" r="2.5"/><path d="M9.5 23c.5-4.7 9.5-4.7 10 0"/><circle cx="22" cy="20" r="1.1" fill="currentColor" stroke="none"/></svg></div>
+                <div>
+                  <h3>Tag people in each photo</h3>
+                  <p>
+                    A photo of three people can appear in all three of their galleries. You only
+                    need to upload it once.
+                  </p>
+                </div>
+              </li>
+              <li class="step">
+                <div class="step-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 27V13M16 20C8 20 5 15 5 9c7 0 11 3 11 11ZM16 15c0-7 4-10 11-10 0 7-4 10-11 10ZM7 28h18"/><path d="M9 25v3M23 25v3"/><circle cx="16" cy="7" r="1.6" fill="currentColor" stroke="none"/></svg></div>
+                <div>
+                  <h3>Keep the details with each photo</h3>
+                  <p>
+                    Add a caption so people know where a picture was taken, who was there or why you
+                    kept it.
+                  </p>
+                </div>
+              </li>
+              <li class="step">
+                <div class="step-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="9" r="3"/><circle cx="6.5" cy="14" r="2.5"/><circle cx="25.5" cy="14" r="2.5"/><path d="M10.5 23v-2.5a5.5 5.5 0 0 1 11 0V23M2.5 25v-3a4 4 0 0 1 5.5-3.7M29.5 25v-3a4 4 0 0 0-5.5-3.7M12 27h8"/></svg></div>
+                <div>
+                  <h3>Add photos together</h3>
+                  <p>
+                    Invite relatives to the same tree so everyone can add the photographs they've
+                    kept over the years.
+                  </p>
+                </div>
+              </li>
+              <li class="step">
+                <div class="step-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 5v22M11 8h4M11 16h4M11 24h4"/><g fill="currentColor" stroke="none"><circle cx="7" cy="8" r="1.8"/><circle cx="7" cy="16" r="1.8"/><circle cx="7" cy="24" r="1.8"/></g><circle cx="22" cy="16" r="6.5"/><path d="M22 12v4l3 2"/></svg></div>
+                <div>
+                  <h3>Look back through the years</h3>
+                  <p>
+                    Photos are grouped by date, so you can scroll through someone's childhood,
+                    family holidays and everything in between.
+                  </p>
+                </div>
+              </li>
+            </ol>
+            <p class="more">
+              <a href="https://rootedmemories.com/how-it-works/">Getting started with Rooted Memories</a>
+              <span aria-hidden="true">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+              <a href="https://rootedmemories.com/what-is-rooted-memories/">What is Rooted Memories?</a>
+            </p>
+          </div>
+        </div>
+      </section>
+ 
+      <section class="section app on-cream" id="app" aria-labelledby="app-title">
+        <div class="container split">
+          <div class="split-aside sticky">
+            <h2 class="headline" id="app-title">
               See how <span class="italic">Rooted Memories works.</span>
             </h2>
             <p>A short walkthrough of the family tree, the galleries and how everything fits together.</p>
-            <div class="film-actions">
-              <a class="btn btn-primary" href="#download">Start your family archive <span class="arrow" aria-hidden="true">↗</span></a>
-              <a class="film-pricing" href="#pricing">See plans &amp; pricing</a>
-            </div>
-          </div>
-          <div class="film-player">
             <div class="video-frame">
               <iframe
                 src="https://www.youtube.com/embed/ri1RHhGfY38"
@@ -1271,240 +1284,136 @@
                 allowfullscreen
               ></iframe>
             </div>
-            <p class="video-note">A look inside Rooted Memories</p>
+            <a class="text-link" href="#pricing">See plans &amp; pricing</a>
+          </div>
+          <div>
+            <p class="screens-intro">
+              Screenshots from the app: the family tree, individual galleries and how photographs
+              are connected to people.
+            </p>
+            <div class="screens" id="shotTrack" aria-label="Rooted Memories app screenshots">
+              <figure class="shot">
+                <img
+                  src="https://rootedmemories.com/app-1.webp?v=1"
+                  alt="Rooted Memories app screenshot showing the archive"
+                  loading="lazy"
+                />
+                <figcaption>01 / Create the tree</figcaption>
+              </figure>
+              <figure class="shot">
+                <img
+                  src="https://rootedmemories.com/app-2.webp?v=1"
+                  alt="Rooted Memories app screenshot showing how the tree is managed"
+                  loading="lazy"
+                />
+                <figcaption>02 / Manage the tree</figcaption>
+              </figure>
+              <figure class="shot">
+                <img
+                  src="https://rootedmemories.com/app-3.webp?v=1"
+                  alt="Rooted Memories app screenshot showing a person's photographs"
+                  loading="lazy"
+                />
+                <figcaption>03 / View their photos</figcaption>
+              </figure>
+              <figure class="shot">
+                <img
+                  src="https://rootedmemories.com/app-4.webp?v=1"
+                  alt="Rooted Memories app screenshot showing a browsable gallery of memories"
+                  loading="lazy"
+                />
+                <figcaption>04 / Browse memories</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
-      <section class="section why" id="why">
-        <div class="container">
-          <div class="section-head reveal">
-            <div class="eyebrow">The reason we exist</div>
-            <h2 class="headline">
-              A photo can last forever.
-              <span class="italic">Its story doesn't always.</span>
+ 
+      <section class="legacy on-dark" id="privacy" aria-labelledby="privacy-title">
+        <div class="container legacy-inner">
+          <div class="legacy-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 3.5c3 2.5 6.5 3.7 10 4v8.2c0 5.7-4.2 10-10 13-5.8-3-10-7.3-10-13V7.5c3.5-.3 7-1.5 10-4Z"/><rect x="11.5" y="14" width="9" height="7.5" rx="1.8"/><path d="M13 14v-2a3 3 0 0 1 6 0v2"/><circle cx="16" cy="17.7" r=".9" fill="currentColor" stroke="none"/></svg></div>
+          <h2 class="headline" id="privacy-title">
+            Private to <span class="italic">your family.</span>
+          </h2>
+          <p>
+            Your tree is private and invite-only. As the Admin you decide who joins, and the people
+            you invite can add photographs and tag who's in them. There are no adverts in the app,
+            and we don't sell your photographs or personal stories to advertisers.
+          </p>
+          <p class="more">
+            <a href="https://rootedmemories.com/private-family-archive/">Sharing privately with family</a>
+          </p>
+        </div>
+      </section>
+ 
+      <section class="section pricing on-cream" id="pricing" aria-labelledby="pricing-title">
+        <div class="container split">
+          <div class="split-aside sticky">
+            <div class="eyebrow" style="color: var(--gold-deep)">Our preservation promise</div>
+            <h2 class="headline" id="pricing-title" style="margin-top: 24px">
+              Your photos stay, <span class="italic">even if you cancel.</span>
             </h2>
             <p>
-              You might have a photo of your grandparents and no idea where it was taken or who else was there. The same thing can happen to photos we're taking today if we don't keep the details with them.
+              Once a Tree has had a successful paid subscription, we won't automatically delete its
+              photos or stories if you cancel. Your family can still view everything. You only need
+              to subscribe again to add or edit memories.
+            </p>
+            <p style="font-size: 14px; margin-top: 18px">
+              <a href="https://rootedmemories.com/terms-of-service/">Full terms</a>
             </p>
           </div>
-          <div class="problem-grid">
-            <article class="problem-card reveal">
-              <div class="problem-no">01</div>
-              <h3>Photos in different places</h3>
+          <div>
+            <div class="price-card">
+              <div class="eyebrow">Rooted Memories</div>
+              <div class="price-row">
+                <span class="price">£3.99</span>
+                <small>/ month per tree</small>
+              </div>
+              <div class="price-row">
+                <span class="price">£39.99</span>
+                <small>/ year per tree</small>
+              </div>
+              <p class="price-save">Save 16% compared with 12 monthly payments.</p>
+              <p class="price-trial">14-day free trial</p>
+              <ul>
+                <li>One subscription covers the whole family</li>
+                <li>30 GB storage per Tree, enough for approximately 50,000 photographs, depending on file size</li>
+                <li>Invite family members to contribute</li>
+                <li>People-centred galleries and tagging</li>
+                <li>Photos, captions and shared memories</li>
+                <li>Your price stays locked for as long as your subscription remains active</li>
+              </ul>
+              <a class="btn btn-primary" href="#download"
+                >Get started <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="detail">
+              <h3>How the free trial works</h3>
               <p>
-                Everyone has their own photos. Some are on phones, some on old computers, and plenty are buried in family WhatsApp chats.
+                New Trees start with a 14-day free trial. You start it through the App Store
+                or Google Play, which asks for a payment method and shows the price and dates before
+                you confirm. Your plan then begins automatically unless you cancel in your
+                subscription settings before the trial ends.
               </p>
-            </article>
-            <article class="problem-card reveal">
-              <div class="problem-no">02</div>
-              <h3>Missing details</h3>
               <p>
-                After a few years, it can be hard to remember when a photo was taken, who was there or what was happening that day.
+                If you decide not to subscribe, the Tree becomes read-only when the trial ends and
+                is deleted 30 days later. You can subscribe at any point before then to keep it.
               </p>
-            </article>
-            <article class="problem-card reveal">
-              <div class="problem-no">03</div>
-              <h3>The photos we take today</h3>
-              <p>
-                The pictures we take of our children now will be the old family photographs somebody looks through years from now.
-              </p>
-            </article>
-          </div>
-
-          <div class="reframe reveal">
-            Rooted Memories gives families somewhere to keep their photos
-            <em>with the names and stories that go with them.</em>
-          </div>
-        </div>
-      </section>
-
-      <section class="section features" id="features">
-        <div class="container">
-          <div class="section-head reveal">
-            <div class="eyebrow">How it works</div>
-            <h2 class="headline">
-              A family tree <span class="italic">with the photos attached.</span>
-            </h2>
-            <p>
-              Each person has their own gallery. Family members can add photographs, tag who's in them and look back through the years.
+            </div>
+            <p class="fine">
+              Photographs are stored at a size made for viewing in the app, so it is worth keeping
+              your originals too. The full details are in the
+              <a href="https://rootedmemories.com/terms-of-service/">Terms of Service</a>.
             </p>
           </div>
-          <div class="feature-grid">
-            <article class="feature reveal">
-              <div class="feature-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 29V8.95M11.5 29h9M16 17L11.79 13.35M16 19L20.18 14.11M16 26L11.13 21.32M16 27L20.42 22.58"/><g fill="currentColor" stroke="none"><circle cx="16" cy="4.5" r="2.8"/><circle cx="8.5" cy="10.5" r="2.7"/><circle cx="23" cy="10.8" r="2.7"/><circle cx="8" cy="18.3" r="2.7"/><circle cx="23.5" cy="19.5" r="2.7"/></g></svg></div>
-              <h3>Start with your family tree</h3>
-              <p>
-                Add the people in your family. Each person gets their own place, with the photographs and memories connected to them.
-              </p>
-            </article>
-            <article class="feature reveal">
-              <div class="feature-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18.5 5H9a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V12.5Z"/><path d="M18.5 5v5a2.5 2.5 0 0 0 2.5 2.5h5"/><circle cx="14.5" cy="15" r="2.5"/><path d="M9.5 23c.5-4.7 9.5-4.7 10 0"/><circle cx="22" cy="20" r="1.1" fill="currentColor" stroke="none"/></svg></div>
-              <h3>Tag people in each photo</h3>
-              <p>
-                A photo of three people can appear in all three of their galleries. You only need to upload it once.
-              </p>
-            </article>
-            <article class="feature reveal">
-              <div class="feature-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 5v22M11 8h4M11 16h4M11 24h4"/><g fill="currentColor" stroke="none"><circle cx="7" cy="8" r="1.8"/><circle cx="7" cy="16" r="1.8"/><circle cx="7" cy="24" r="1.8"/></g><circle cx="22" cy="16" r="6.5"/><path d="M22 12v4l3 2"/></svg></div>
-              <h3>Look back through the years</h3>
-              <p>
-                Photos are grouped by date, so you can scroll through someone's childhood, family holidays and everything in between.
-              </p>
-            </article>
-            <article class="feature reveal">
-              <div class="feature-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="9" r="3"/><circle cx="6.5" cy="14" r="2.5"/><circle cx="25.5" cy="14" r="2.5"/><path d="M10.5 23v-2.5a5.5 5.5 0 0 1 11 0V23M2.5 25v-3a4 4 0 0 1 5.5-3.7M29.5 25v-3a4 4 0 0 0-5.5-3.7M12 27h8"/></svg></div>
-              <h3>Add photos together</h3>
-              <p>
-                Invite relatives to the same tree so everyone can add the photographs they've kept over the years.
-              </p>
-            </article>
-            <article class="feature reveal">
-              <div class="feature-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 3.5c3 2.5 6.5 3.7 10 4v8.2c0 5.7-4.2 10-10 13-5.8-3-10-7.3-10-13V7.5c3.5-.3 7-1.5 10-4Z"/><rect x="11.5" y="14" width="9" height="7.5" rx="1.8"/><path d="M13 14v-2a3 3 0 0 1 6 0v2"/><circle cx="16" cy="17.7" r=".9" fill="currentColor" stroke="none"/></svg></div>
-              <h3>Keep it within the family</h3>
-              <p>
-                Your tree is private and invite-only. You decide who can join.
-              </p>
-              <p style="margin-top: 12px;">
-                Rooted Memories is a private space for your family to keep and share photographs and stories. There are no adverts in the app, and we don't sell your photographs or personal stories to advertisers. Your family decides who gets access.
-              </p>
-            </article>
-            <article class="feature reveal">
-              <div class="feature-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 27V13M16 20C8 20 5 15 5 9c7 0 11 3 11 11ZM16 15c0-7 4-10 11-10 0 7-4 10-11 10ZM7 28h18"/><path d="M9 25v3M23 25v3"/><circle cx="16" cy="7" r="1.6" fill="currentColor" stroke="none"/></svg></div>
-              <h3>Keep the details with each photo</h3>
-              <p>
-                Add a caption so people know where a picture was taken, who was there or why you kept it.
-              </p>
-            </article>
-          </div>
         </div>
       </section>
-
-      <section class="section product" id="preview">
-        <div class="container">
-          <div class="product-top">
-            <div class="section-head reveal">
-              <div class="eyebrow">Screenshots from the app</div>
-              <h2 class="headline">
-                Have a look <span class="italic">inside Rooted Memories.</span>
-              </h2>
-            </div>
-            <p class="product-copy">The family tree, individual galleries and how photographs are connected to people.</p>
-          </div>
-          <div
-            class="screens"
-            id="shotTrack"
-            tabindex="0"
-            aria-label="Rooted Memories app screenshots"
-          >
-            <div class="shot">
-              <img
-                src="https://rootedmemories.com/app-1.webp?v=1"
-                alt="Rooted Memories app screenshot showing the archive"
-                loading="lazy"
-              />
-              <div class="shot-caption">01 / Create the tree</div>
-            </div>
-            <div class="shot">
-              <img
-                src="https://rootedmemories.com/app-2.webp?v=1"
-                alt="Rooted Memories app screenshot"
-                loading="lazy"
-              />
-              <div class="shot-caption">02 / Manage the tree</div>
-            </div>
-            <div class="shot">
-              <img
-                src="https://rootedmemories.com/app-3.webp?v=1"
-                alt="Rooted Memories app screenshot"
-                loading="lazy"
-              />
-              <div class="shot-caption">03 / View their photos</div>
-            </div>
-            <div class="shot">
-              <img
-                src="https://rootedmemories.com/app-4.webp?v=1"
-                alt="Rooted Memories app screenshot"
-                loading="lazy"
-              />
-              <div class="shot-caption">04 / Browse memories</div>
-            </div>
-          </div>
-          <div class="carousel-nav">
-            <button class="round" id="prevBtn" aria-label="Previous screenshot">‹</button>
-            <button class="round" id="nextBtn" aria-label="Next screenshot">›</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="section pricing" id="pricing">
-        <div class="container price-layout">
-          <div class="price-desc reveal">
-            <div class="eyebrow">Our preservation promise</div>
-            <h3>Your photos stay, even if you cancel.</h3>
-            <p>Once a Tree has had a successful paid subscription, we won't automatically delete its photos or stories if you cancel. Your family can still view everything. You only need to subscribe again to add or edit memories.</p>
-            <p class="price-small"><a href="https://rootedmemories.com/terms-of-service/">Full terms</a>.</p>
-          </div>
-          <div class="price-card reveal">
-            <div class="eyebrow">Rooted Memories</div>
-            <div class="price-row">
-              <span class="price">£3.99</span>
-              <small>/ month per tree</small>
-            </div>
-            <div
-              class="price-row"
-              style="border-top: 1px solid #d5d0c2; padding-top: 19px; flex-wrap: wrap"
-            >
-              <span class="price">£39.99</span>
-              <small>/ year per tree</small>
-            </div>
-            <p
-              style="color: #805137; font-size: 14px; font-weight: 750; margin: 0 0 18px"
-            >
-              Save 16% compared with 12 monthly payments.
-            </p>
-            <p style="color: #617366; font-size: 14px; margin: 0">
-              14-day free trial
-            </p>
-            <ul>
-              <li>One subscription covers the whole family</li>
-             <li>30 GB storage per Tree, enough for approximately 50,000 photographs, depending on file size</li>
-              <li>Invite family members to contribute</li>
-              <li>People-centred galleries and tagging</li>
-              <li>Photos, captions and shared memories</li>
-              <li>Your price stays locked for as long as your subscription remains active</li>
-            </ul>
-            <p class="subscription-note">After your free trial, you can choose a monthly or yearly plan. You won't be charged unless you subscribe. Paid plans renew automatically until cancelled through Apple or Google. <a href="https://rootedmemories.com/terms-of-service/">Terms</a>.</p>
-            <a class="btn btn-primary" href="#download"
-              >Get started <span class="arrow">↗</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="links">
-        <div class="container">
-          <div class="links-heading">More about Rooted Memories</div>
-          <a href="https://rootedmemories.com/what-is-rooted-memories/"
-            >What is Rooted Memories? <span>↗</span>
-          </a>
-          <a href="https://rootedmemories.com/private-family-archive/"
-            >Sharing privately with family <span>↗</span>
-          </a>
-          <a href="https://rootedmemories.com/organise-family-photos/"
-            >Organising your family photos <span>↗</span>
-          </a>
-          <a href="https://rootedmemories.com/how-it-works/">Getting started with Rooted Memories <span>↗</span> </a>
-        </div>
-      </section>
-
-      <section class="download" id="download">
+ 
+      <section class="download on-cream" id="download" aria-labelledby="download-title">
         <div class="container download-inner">
-          <div class="eyebrow" style="justify-content: center; color: #986149">
-            Get started
-          </div>
-          <h2 class="headline">
-            Start your
-            <span class="italic">family archive.</span>
+          <div class="eyebrow">Get started</div>
+          <h2 class="headline" id="download-title">
+            Start your <span class="italic">family archive.</span>
           </h2>
           <p>
             Create your family tree, invite the people you'd like to include and start adding photographs.
@@ -1519,7 +1428,7 @@
               rel="noopener noreferrer"
               aria-label="Download Rooted Memories for iPhone"
             >
-              <img src="data:image/svg+xml;base64,PHN2ZyBpZD0ibGl2ZXR5cGUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjExOS42NjQwNyIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDExOS42NjQwNyA0MCI+CiAgPHRpdGxlPkRvd25sb2FkX29uX3RoZV9BcHBfU3RvcmVfQmFkZ2VfVVMtVUtfUkdCX2Jsa180U1ZHXzA5MjkxNzwvdGl0bGU+CiAgPGc+CiAgICA8Zz4KICAgICAgPGc+CiAgICAgICAgPHBhdGggZD0iTTExMC4xMzQ3NywwSDkuNTM0NjhjLS4zNjY3LDAtLjcyOSwwLTEuMDk0NzMuMDAyLS4zMDYxNS4wMDItLjYwOTg2LjAwNzgxLS45MTg5NS4wMTI3QTEzLjIxNDc2LDEzLjIxNDc2LDAsMCwwLDUuNTE3MS4xOTE0MWE2LjY2NTA5LDYuNjY1MDksMCwwLDAtMS45MDA4OC42MjdBNi40Mzc3OSw2LjQzNzc5LDAsMCwwLDEuOTk3NTcsMS45OTcwNyw2LjI1ODQ0LDYuMjU4NDQsMCwwLDAsLjgxOTM1LDMuNjE4MTZhNi42MDExOSw2LjYwMTE5LDAsMCwwLS42MjUsMS45MDMzMiwxMi45OTMsMTIuOTkzLDAsMCwwLS4xNzkyLDIuMDAyQy4wMDU4Nyw3LjgzMDA4LjAwNDg5LDguMTM3NywwLDguNDQ0MzRWMzEuNTU4NmMuMDA0ODkuMzEwNS4wMDU4Ny42MTEzLjAxNTE1LjkyMTlhMTIuOTkyMzIsMTIuOTkyMzIsMCwwLDAsLjE3OTIsMi4wMDE5LDYuNTg3NTYsNi41ODc1NiwwLDAsMCwuNjI1LDEuOTA0M0E2LjIwNzc4LDYuMjA3NzgsMCwwLDAsMS45OTc1NywzOC4wMDFhNi4yNzQ0NSw2LjI3NDQ1LDAsMCwwLDEuNjE4NjUsMS4xNzg3LDYuNzAwODIsNi43MDA4MiwwLDAsMCwxLjkwMDg4LjYzMDgsMTMuNDU1MTQsMTMuNDU1MTQsMCwwLDAsMi4wMDM5LjE3NjhjLjMwOTA5LjAwNjguNjEyOC4wMTA3LjkxODk1LjAxMDdDOC44MDU2Nyw0MCw5LjE2OCw0MCw5LjUzNDY4LDQwSDExMC4xMzQ3N2MuMzU5NCwwLC43MjQ2LDAsMS4wODQtLjAwMi4zMDQ3LDAsLjYxNzItLjAwMzkuOTIxOS0uMDEwN2ExMy4yNzksMTMuMjc5LDAsMCwwLDItLjE3NjgsNi44MDQzMiw2LjgwNDMyLDAsMCwwLDEuOTA4Mi0uNjMwOCw2LjI3NzQyLDYuMjc3NDIsMCwwLDAsMS42MTcyLTEuMTc4Nyw2LjM5NDgyLDYuMzk0ODIsMCwwLDAsMS4xODE2LTEuNjE0Myw2LjYwNDEzLDYuNjA0MTMsMCwwLDAsLjYxOTEtMS45MDQzLDEzLjUwNjQzLDEzLjUwNjQzLDAsMCwwLC4xODU2LTIuMDAxOWMuMDAzOS0uMzEwNi4wMDM5LS42MTE0LjAwMzktLjkyMTkuMDA3OC0uMzYzMy4wMDc4LS43MjQ2LjAwNzgtMS4wOTM4VjkuNTM2MTNjMC0uMzY2MjEsMC0uNzI5NDktLjAwNzgtMS4wOTE3OSwwLS4zMDY2NCwwLS42MTQyNi0uMDAzOS0uOTIwOWExMy41MDcxLDEzLjUwNzEsMCwwLDAtLjE4NTYtMi4wMDIsNi42MTc3LDYuNjE3NywwLDAsMC0uNjE5MS0xLjkwMzMyLDYuNDY2MTksNi40NjYxOSwwLDAsMC0yLjc5ODgtMi43OTk4LDYuNzY3NTQsNi43Njc1NCwwLDAsMC0xLjkwODItLjYyNywxMy4wNDM5NCwxMy4wNDM5NCwwLDAsMC0yLS4xNzY3NmMtLjMwNDctLjAwNDg4LS42MTcyLS4wMTA3NC0uOTIxOS0uMDEyNjktLjM1OTQtLjAwMi0uNzI0Ni0uMDAyLTEuMDg0LS4wMDJaIiBzdHlsZT0iZmlsbDogI2E2YTZhNiIvPgogICAgICAgIDxwYXRoIGQ9Ik04LjQ0NDgzLDM5LjEyNWMtLjMwNDY4LDAtLjYwMi0uMDAzOS0uOTA0MjktLjAxMDdhMTIuNjg3MTQsMTIuNjg3MTQsMCwwLDEtMS44NjkxNC0uMTYzMSw1Ljg4MzgxLDUuODgzODEsMCwwLDEtMS42NTY3NC0uNTQ3OSw1LjQwNTczLDUuNDA1NzMsMCwwLDEtMS4zOTctMS4wMTY2LDUuMzIwODIsNS4zMjA4MiwwLDAsMS0xLjAyMDUxLTEuMzk2NSw1LjcyMTg2LDUuNzIxODYsMCwwLDEtLjU0My0xLjY1NzIsMTIuNDEzNTEsMTIuNDEzNTEsMCwwLDEtLjE2NjUtMS44NzVjLS4wMDYzNC0uMjEwOS0uMDE0NjQtLjkxMzEtLjAxNDY0LS45MTMxVjguNDQ0MzRTLjg4MTg1LDcuNzUyOTMuODg3Nyw3LjU0OThhMTIuMzcwMzksMTIuMzcwMzksMCwwLDEsLjE2NTUzLTEuODcyMDcsNS43NTU1LDUuNzU1NSwwLDAsMSwuNTQzNDYtMS42NjIxQTUuMzczNDksNS4zNzM0OSwwLDAsMSwyLjYxMTgzLDIuNjE3NjgsNS41NjU0Myw1LjU2NTQzLDAsMCwxLDQuMDE0MTcsMS41OTUyMWE1LjgyMzA5LDUuODIzMDksMCwwLDEsMS42NTMzMi0uNTQzOTRBMTIuNTg1ODksMTIuNTg1ODksMCwwLDEsNy41NDMuODg3MjFMOC40NDUzMi44NzVIMTExLjIxMzg3bC45MTMxLjAxMjdhMTIuMzg0OTMsMTIuMzg0OTMsMCwwLDEsMS44NTg0LjE2MjU5LDUuOTM4MzMsNS45MzgzMywwLDAsMSwxLjY3MDkuNTQ3ODUsNS41OTM3NCw1LjU5Mzc0LDAsMCwxLDIuNDE1LDIuNDE5OTMsNS43NjI2Nyw1Ljc2MjY3LDAsMCwxLC41MzUyLDEuNjQ4OTIsMTIuOTk1LDEyLjk5NSwwLDAsMSwuMTczOCwxLjg4NzIxYy4wMDI5LjI4MzIuMDAyOS41ODc0LjAwMjkuODkwMTQuMDA3OS4zNzUuMDA3OS43MzE5My4wMDc5LDEuMDkxNzlWMzAuNDY0OGMwLC4zNjMzLDAsLjcxNzgtLjAwNzksMS4wNzUyLDAsLjMyNTIsMCwuNjIzMS0uMDAzOS45Mjk3YTEyLjczMTI2LDEyLjczMTI2LDAsMCwxLS4xNzA5LDEuODUzNSw1LjczOSw1LjczOSwwLDAsMS0uNTQsMS42Nyw1LjQ4MDI5LDUuNDgwMjksMCwwLDEtMS4wMTU2LDEuMzg1Nyw1LjQxMjksNS40MTI5LDAsMCwxLTEuMzk5NCwxLjAyMjUsNS44NjE2OCw1Ljg2MTY4LDAsMCwxLTEuNjY4LjU0OTgsMTIuNTQyMTgsMTIuNTQyMTgsMCwwLDEtMS44NjkyLjE2MzFjLS4yOTI5LjAwNjgtLjU5OTYuMDEwNy0uODk3NC4wMTA3bC0xLjA4NC4wMDJaIi8+CiAgICAgIDwvZz4KICAgICAgPGcgaWQ9Il9Hcm91cF8iIGRhdGEtbmFtZT0iJmx0O0dyb3VwJmd0OyI+CiAgICAgICAgPGcgaWQ9Il9Hcm91cF8yIiBkYXRhLW5hbWU9IiZsdDtHcm91cCZndDsiPgogICAgICAgICAgPGcgaWQ9Il9Hcm91cF8zIiBkYXRhLW5hbWU9IiZsdDtHcm91cCZndDsiPgogICAgICAgICAgICA8cGF0aCBpZD0iX1BhdGhfIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgZD0iTTI0Ljc2ODg4LDIwLjMwMDY4YTQuOTQ4ODEsNC45NDg4MSwwLDAsMSwyLjM1NjU2LTQuMTUyMDYsNS4wNjU2Niw1LjA2NTY2LDAsMCwwLTMuOTkxMTYtMi4xNTc2OGMtMS42NzkyNC0uMTc2MjYtMy4zMDcxOSwxLjAwNDgzLTQuMTYyOSwxLjAwNDgzLS44NzIyNywwLTIuMTg5NzctLjk4NzMzLTMuNjA4NS0uOTU4MTRhNS4zMTUyOSw1LjMxNTI5LDAsMCwwLTQuNDcyOTIsMi43Mjc4N2MtMS45MzQsMy4zNDg0Mi0uNDkxNDEsOC4yNjk0NywxLjM2MTIsMTAuOTc2MDguOTI2OSwxLjMyNTM1LDIuMDEwMTgsMi44MDU4LDMuNDI3NjMsMi43NTMzLDEuMzg3MDYtLjA1NzUzLDEuOTA1MS0uODg0NDgsMy41Nzk0LS44ODQ0OCwxLjY1ODc2LDAsMi4xNDQ3OS44ODQ0OCwzLjU5MS44NTExLDEuNDg4MzgtLjAyNDE2LDIuNDI2MTMtMS4zMzEyNCwzLjMyMDUxLTIuNjY5MTRhMTAuOTYyLDEwLjk2MiwwLDAsMCwxLjUxODQyLTMuMDkyNTFBNC43ODIwNSw0Ljc4MjA1LDAsMCwxLDI0Ljc2ODg4LDIwLjMwMDY4WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgICAgPHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMjIuMDM3MjUsMTIuMjEwODlhNC44NzI0OCw0Ljg3MjQ4LDAsMCwwLDEuMTE0NTItMy40OTA2Miw0Ljk1NzQ2LDQuOTU3NDYsMCwwLDAtMy4yMDc1OCwxLjY1OTYxLDQuNjM2MzQsNC42MzYzNCwwLDAsMC0xLjE0MzcxLDMuMzYxMzlBNC4wOTkwNSw0LjA5OTA1LDAsMCwwLDIyLjAzNzI1LDEyLjIxMDg5WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICAgICAgPGc+CiAgICAgICAgICA8cGF0aCBkPSJNNDIuMzAyMjcsMjcuMTM5NjVoLTQuNzMzNGwtMS4xMzY3MiwzLjM1NjQ1SDM0LjQyNzI3bDQuNDgzNC0xMi40MThoMi4wODNsNC40ODM0LDEyLjQxOEg0My40MzhaTTM4LjA1OTEsMjUuNTkwODJoMy43NTJsLTEuODQ5NjEtNS40NDcyN2gtLjA1MTc2WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik01NS4xNTk2OSwyNS45Njk3M2MwLDIuODEzNDgtMS41MDU4Niw0LjYyMTA5LTMuNzc4MzIsNC42MjEwOWEzLjA2OTMsMy4wNjkzLDAsMCwxLTIuODQ4NjMtMS41ODRoLS4wNDN2NC40ODQzOGgtMS44NTg0VjIxLjQ0MjM4SDQ4LjQzMDJ2MS41MDU4NmguMDM0MThhMy4yMTE2MiwzLjIxMTYyLDAsMCwxLDIuODgyODEtMS42MDA1OUM1My42NDUsMjEuMzQ3NjYsNTUuMTU5NjksMjMuMTY0MDYsNTUuMTU5NjksMjUuOTY5NzNabS0xLjkxMDE2LDBjMC0xLjgzMy0uOTQ3MjctMy4wMzgwOS0yLjM5MjU4LTMuMDM4MDktMS40MTk5MiwwLTIuMzc1LDEuMjMwNDctMi4zNzUsMy4wMzgwOSwwLDEuODI0MjIuOTU1MDgsMy4wNDU5LDIuMzc1LDMuMDQ1OUM1Mi4zMDIyNywyOS4wMTU2Myw1My4yNDk1MywyNy44MTkzNCw1My4yNDk1MywyNS45Njk3M1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNNjUuMTI0NTMsMjUuOTY5NzNjMCwyLjgxMzQ4LTEuNTA1ODYsNC42MjEwOS0zLjc3ODMyLDQuNjIxMDlhMy4wNjkzLDMuMDY5MywwLDAsMS0yLjg0ODYzLTEuNTg0aC0uMDQzdjQuNDg0MzhoLTEuODU4NFYyMS40NDIzOEg1OC4zOTV2MS41MDU4NmguMDM0MThBMy4yMTE2MiwzLjIxMTYyLDAsMCwxLDYxLjMxMiwyMS4zNDc2NkM2My42MDk4OCwyMS4zNDc2Niw2NS4xMjQ1MywyMy4xNjQwNiw2NS4xMjQ1MywyNS45Njk3M1ptLTEuOTEwMTYsMGMwLTEuODMzLS45NDcyNy0zLjAzODA5LTIuMzkyNTgtMy4wMzgwOS0xLjQxOTkyLDAtMi4zNzUsMS4yMzA0Ny0yLjM3NSwzLjAzODA5LDAsMS44MjQyMi45NTUwOCwzLjA0NTksMi4zNzUsMy4wNDU5QzYyLjI2NzExLDI5LjAxNTYzLDYzLjIxNDM4LDI3LjgxOTM0LDYzLjIxNDM4LDI1Ljk2OTczWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik03MS43MTA0NywyNy4wMzYxM2MuMTM3NywxLjIzMTQ1LDEuMzM0LDIuMDQsMi45Njg3NSwyLjA0LDEuNTY2NDEsMCwyLjY5MzM2LS44MDg1OSwyLjY5MzM2LTEuOTE4OTUsMC0uOTYzODctLjY3OTY5LTEuNTQxLTIuMjg5MDYtMS45MzY1MmwtMS42MDkzNy0uMzg3N2MtMi4yODAyNy0uNTUwNzgtMy4zMzg4Ny0xLjYxNzE5LTMuMzM4ODctMy4zNDc2NiwwLTIuMTQyNTgsMS44NjcxOS0zLjYxNDI2LDQuNTE4NTUtMy42MTQyNiwyLjYyNCwwLDQuNDIyODUsMS40NzE2OCw0LjQ4MzQsMy42MTQyNmgtMS44NzZjLS4xMTIzLTEuMjM5MjYtMS4xMzY3Mi0xLjk4NzMtMi42MzM3OS0xLjk4NzNzLTIuNTIxNDguNzU2ODQtMi41MjE0OCwxLjg1ODRjMCwuODc3OTMuNjU0MywxLjM5NDUzLDIuMjU0ODgsMS43OWwxLjM2ODE2LjMzNTk0YzIuNTQ3ODUuNjAyNTQsMy42MDY0NSwxLjYyNiwzLjYwNjQ1LDMuNDQyMzgsMCwyLjMyMzI0LTEuODUwNTksMy43NzgzMi00Ljc5Mzk1LDMuNzc4MzItMi43NTM5MSwwLTQuNjEzMjgtMS40MjA5LTQuNzMzNC0zLjY2N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNODMuMzQ2MjEsMTkuMjk5OHYyLjE0MjU4aDEuNzIxNjh2MS40NzE2OEg4My4zNDYyMXY0Ljk5MTIxYzAsLjc3NTM5LjM0NDczLDEuMTM2NzIsMS4xMDE1NiwxLjEzNjcyYTUuODA3NTIsNS44MDc1MiwwLDAsMCwuNjExMzMtLjA0M3YxLjQ2Mjg5YTUuMTAzNTEsNS4xMDM1MSwwLDAsMS0xLjAzMjIzLjA4NTk0Yy0xLjgzMywwLTIuNTQ3ODUtLjY4ODQ4LTIuNTQ3ODUtMi40NDQzNFYyMi45MTQwNkg4MC4xNjI2MlYyMS40NDIzOEg4MS40NzlWMTkuMjk5OFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNODYuMDY1LDI1Ljk2OTczYzAtMi44NDg2MywxLjY3NzczLTQuNjM4NjcsNC4yOTM5NS00LjYzODY3LDIuNjI1LDAsNC4yOTQ5MiwxLjc5LDQuMjk0OTIsNC42Mzg2NywwLDIuODU2NDUtMS42NjExMyw0LjYzODY3LTQuMjk0OTIsNC42Mzg2N0M4Ny43MjYwOSwzMC42MDg0LDg2LjA2NSwyOC44MjYxNyw4Ni4wNjUsMjUuOTY5NzNabTYuNjk1MzEsMGMwLTEuOTU0MS0uODk1NTEtMy4xMDc0Mi0yLjQwMTM3LTMuMTA3NDJzLTIuNDAwMzksMS4xNjIxMS0yLjQwMDM5LDMuMTA3NDJjMCwxLjk2MTkxLjg5NDUzLDMuMTA2NDUsMi40MDAzOSwzLjEwNjQ1UzkyLjc2MDI3LDI3LjkzMTY0LDkyLjc2MDI3LDI1Ljk2OTczWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik05Ni4xODYwNiwyMS40NDIzOGgxLjc3MjQ2djEuNTQxaC4wNDNhMi4xNTk0LDIuMTU5NCwwLDAsMSwyLjE3NzczLTEuNjM1NzQsMi44NjYxNiwyLjg2NjE2LDAsMCwxLC42MzY3Mi4wNjkzNHYxLjczODI4YTIuNTk3OTQsMi41OTc5NCwwLDAsMC0uODM1LS4xMTIzLDEuODcyNjQsMS44NzI2NCwwLDAsMC0xLjkzNjUyLDIuMDgzdjUuMzcwMTJoLTEuODU4NFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNMTA5LjM4NDMsMjcuODM2OTFjLS4yNSwxLjY0MzU1LTEuODUwNTksMi43NzE0OC0zLjg5ODQ0LDIuNzcxNDgtMi42MzM3OSwwLTQuMjY4NTUtMS43NjQ2NS00LjI2ODU1LTQuNTk1NywwLTIuODM5ODQsMS42NDM1NS00LjY4MTY0LDQuMTkwNDMtNC42ODE2NCwyLjUwNDg4LDAsNC4wODAwOCwxLjcyMDcsNC4wODAwOCw0LjQ2NTgydi42MzY3MmgtNi4zOTQ1M3YuMTEyM2EyLjM1OCwyLjM1OCwwLDAsMCwyLjQzNTU1LDIuNTY0NDUsMi4wNDgzNCwyLjA0ODM0LDAsMCwwLDIuMDkwODItMS4yNzM0NFptLTYuMjgyMjMtMi43MDIxNWg0LjUyNjM3YTIuMTc3MywyLjE3NzMsMCwwLDAtMi4yMjA3LTIuMjk3ODVBMi4yOTIsMi4yOTIsMCwwLDAsMTAzLjEwMjA3LDI1LjEzNDc3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8L2c+CiAgICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJfR3JvdXBfNCIgZGF0YS1uYW1lPSImbHQ7R3JvdXAmZ3Q7Ij4KICAgICAgPGc+CiAgICAgICAgPHBhdGggZD0iTTM3LjgyNjE5LDguNzMxYTIuNjM5NjQsMi42Mzk2NCwwLDAsMSwyLjgwNzYyLDIuOTY0ODRjMCwxLjkwNjI1LTEuMDMwMjcsMy4wMDItMi44MDc2MiwzLjAwMkgzNS42NzA5MlY4LjczMVptLTEuMjI4NTIsNS4xMjNoMS4xMjVhMS44NzU4OCwxLjg3NTg4LDAsMCwwLDEuOTY3NzctMi4xNDYsMS44ODEsMS44ODEsMCwwLDAtMS45Njc3Ny0yLjEzMzc5aC0xLjEyNVoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTQxLjY4MDY4LDEyLjQ0NDM0YTIuMTMzMjMsMi4xMzMyMywwLDEsMSw0LjI0NzA3LDAsMi4xMzM1OCwyLjEzMzU4LDAsMSwxLTQuMjQ3MDcsMFptMy4zMzMsMGMwLS45NzYwNy0uNDM4NDgtMS41NDY4Ny0xLjIwOC0xLjU0Njg3LS43NzI0NiwwLTEuMjA3LjU3MDgtMS4yMDcsMS41NDY4OCwwLC45ODM4OS40MzQ1NywxLjU1MDI5LDEuMjA3LDEuNTUwMjlDNDQuNTc1MjIsMTMuOTk0NjMsNDUuMDEzNjksMTMuNDI0MzIsNDUuMDEzNjksMTIuNDQ0MzRaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik01MS41NzMyNiwxNC42OTc3NWgtLjkyMTg3bC0uOTMwNjYtMy4zMTY0MWgtLjA3MDMxbC0uOTI2NzYsMy4zMTY0MWgtLjkxMzA5bC0xLjI0MTIxLTQuNTAyOTNoLjkwMTM3bC44MDY2NCwzLjQzNmguMDY2NDFsLjkyNTc4LTMuNDM2aC44NTI1NGwuOTI1NzgsMy40MzZoLjA3MDMxbC44MDI3My0zLjQzNmguODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik01My44NTM1NCwxMC4xOTQ4Mkg1NC43MDl2LjcxNTMzaC4wNjY0MWExLjM0OCwxLjM0OCwwLDAsMSwxLjM0Mzc1LS44MDIyNSwxLjQ2NDU2LDEuNDY0NTYsMCwwLDEsMS41NTg1OSwxLjY3NDh2Mi45MTVoLS44ODg2N1YxMi4wMDU4NmMwLS43MjM2My0uMzE0NDUtMS4wODM1LS45NzE2OC0xLjA4MzVhMS4wMzI5NCwxLjAzMjk0LDAsMCwwLTEuMDc1MiwxLjE0MTExdjIuNjM0MjhoLS44ODg2N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTU5LjA5Mzc3LDguNDM3aC44ODg2N3Y2LjI2MDc0aC0uODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik02MS4yMTc3OSwxMi40NDQzNGEyLjEzMzQ2LDIuMTMzNDYsMCwxLDEsNC4yNDc1NiwwLDIuMTMzOCwyLjEzMzgsMCwxLDEtNC4yNDc1NiwwWm0zLjMzMywwYzAtLjk3NjA3LS40Mzg0OC0xLjU0Njg3LTEuMjA4LTEuNTQ2ODctLjc3MjQ2LDAtMS4yMDcuNTcwOC0xLjIwNywxLjU0Njg4LDAsLjk4Mzg5LjQzNDU3LDEuNTUwMjksMS4yMDcsMS41NTAyOUM2NC4xMTIzMiwxMy45OTQ2Myw2NC41NTA4LDEzLjQyNDMyLDY0LjU1MDgsMTIuNDQ0MzRaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik02Ni40MDA5LDEzLjQyNDMyYzAtLjgxMDU1LjYwMzUyLTEuMjc3ODMsMS42NzQ4LTEuMzQ0MjRsMS4yMTk3My0uMDcwMzF2LS4zODg2N2MwLS40NzU1OS0uMzE0NDUtLjc0NDE0LS45MjE4Ny0uNzQ0MTQtLjQ5NjA5LDAtLjgzOTg0LjE4MjEzLS45Mzg0OC41MDA0OWgtLjg2MDM1Yy4wOTA4Mi0uNzczNDQuODE4MzYtMS4yNjk1MywxLjgzOTg0LTEuMjY5NTMsMS4xMjg5MSwwLDEuNzY1NjMuNTYyLDEuNzY1NjMsMS41MTMxOHYzLjA3NjY2aC0uODU1NDd2LS42MzI4MWgtLjA3MDMxYTEuNTE1LDEuNTE1LDAsMCwxLTEuMzUyNTQuNzA3QTEuMzYwMjYsMS4zNjAyNiwwLDAsMSw2Ni40MDA5LDEzLjQyNDMyWm0yLjg5NDUzLS4zODQ3N3YtLjM3NjQ2bC0xLjA5OTYxLjA3MDMxYy0uNjIwMTIuMDQxNS0uOTAxMzcuMjUyNDQtLjkwMTM3LjY0OTQxLDAsLjQwNTI3LjM1MTU2LjY0MTExLjgzNS42NDExMUExLjA2MTUsMS4wNjE1LDAsMCwwLDY5LjI5NTQzLDEzLjAzOTU1WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8cGF0aCBkPSJNNzEuMzQ4MTYsMTIuNDQ0MzRjMC0xLjQyMjg1LjczMTQ1LTIuMzI0MjIsMS44NjkxNC0yLjMyNDIyYTEuNDg0LDEuNDg0LDAsMCwxLDEuMzgwODYuNzloLjA2NjQxVjguNDM3aC44ODg2N3Y2LjI2MDc0aC0uODUxNTZ2LS43MTE0M2gtLjA3MDMxYTEuNTYyODQsMS41NjI4NCwwLDAsMS0xLjQxNDA2Ljc4NTY0QzcyLjA3MTgsMTQuNzcyLDcxLjM0ODE2LDEzLjg3MDYxLDcxLjM0ODE2LDEyLjQ0NDM0Wm0uOTE4LDBjMCwuOTU1MDguNDUwMiwxLjUyOTc5LDEuMjAzMTMsMS41Mjk3OS43NDksMCwxLjIxMTkxLS41ODMsMS4yMTE5MS0xLjUyNTg4LDAtLjkzODQ4LS40Njc3Ny0xLjUyOTc5LTEuMjExOTEtMS41Mjk3OUM3Mi43MjEyMSwxMC45MTg0Niw3Mi4yNjYxMywxMS40OTcwNyw3Mi4yNjYxMywxMi40NDQzNFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTc5LjIzLDEyLjQ0NDM0YTIuMTMzMjMsMi4xMzMyMywwLDEsMSw0LjI0NzA3LDAsMi4xMzM1OCwyLjEzMzU4LDAsMSwxLTQuMjQ3MDcsMFptMy4zMzMsMGMwLS45NzYwNy0uNDM4NDgtMS41NDY4Ny0xLjIwOC0xLjU0Njg3LS43NzI0NiwwLTEuMjA3LjU3MDgtMS4yMDcsMS41NDY4OCwwLC45ODM4OS40MzQ1NywxLjU1MDI5LDEuMjA3LDEuNTUwMjlDODIuMTI0NTMsMTMuOTk0NjMsODIuNTYzLDEzLjQyNDMyLDgyLjU2MywxMi40NDQzNFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTg0LjY2OTQ1LDEwLjE5NDgyaC44NTU0N3YuNzE1MzNoLjA2NjQxYTEuMzQ4LDEuMzQ4LDAsMCwxLDEuMzQzNzUtLjgwMjI1LDEuNDY0NTYsMS40NjQ1NiwwLDAsMSwxLjU1ODU5LDEuNjc0OHYyLjkxNUg4Ny42MDVWMTIuMDA1ODZjMC0uNzIzNjMtLjMxNDQ1LTEuMDgzNS0uOTcxNjgtMS4wODM1YTEuMDMyOTQsMS4wMzI5NCwwLDAsMC0xLjA3NTIsMS4xNDExMXYyLjYzNDI4aC0uODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik05My41MTUxNiw5LjA3MzczdjEuMTQxNmguOTc1NTl2Ljc0ODU0aC0uOTc1NTlWMTMuMjc5M2MwLC40NzE2OC4xOTQzNC42NzgyMi42MzY3Mi42NzgyMmEyLjk2NjU3LDIuOTY2NTcsMCwwLDAsLjMzODg3LS4wMjA1MXYuNzQwMjNhMi45MTU1LDIuOTE1NSwwLDAsMS0uNDgzNC4wNDU0MWMtLjk4ODI4LDAtMS4zODE4NC0uMzQ3NjYtMS4zODE4NC0xLjIxNTgydi0yLjU0M2gtLjcxNDg0di0uNzQ4NTRoLjcxNDg0VjkuMDczNzNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik05NS43MDQ2MSw4LjQzN2guODgwODZ2Mi40ODE0NWguMDcwMzFhMS4zODU2LDEuMzg1NiwwLDAsMSwxLjM3My0uODA2NjQsMS40ODMzOSwxLjQ4MzM5LDAsMCwxLDEuNTUwNzgsMS42Nzg3MXYyLjkwNzIzSDk4LjY5di0yLjY4OGMwLS43MTkyNC0uMzM1LTEuMDgzNS0uOTYyODktMS4wODM1YTEuMDUxOTQsMS4wNTE5NCwwLDAsMC0xLjEzMzc5LDEuMTQxNnYyLjYyOTg4aC0uODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik0xMDQuNzYxMjUsMTMuNDgxOTNhMS44MjgsMS44MjgsMCwwLDEtMS45NTExNywxLjMwMjczQTIuMDQ1MzEsMi4wNDUzMSwwLDAsMSwxMDAuNzMsMTIuNDYwNDVhMi4wNzY4NSwyLjA3Njg1LDAsMCwxLDIuMDc2MTctMi4zNTI1NGMxLjI1MjkzLDAsMi4wMDg3OS44NTYsMi4wMDg3OSwyLjI3VjEyLjY4OGgtMy4xNzk2OXYuMDQ5OGExLjE5MDIsMS4xOTAyLDAsMCwwLDEuMTk5MjIsMS4yOSwxLjA3OTM0LDEuMDc5MzQsMCwwLDAsMS4wNzEyOS0uNTQ1OVptLTMuMTI2LTEuNDUxMTdoMi4yNzQ0MWExLjA4NjQ3LDEuMDg2NDcsMCwwLDAtMS4xMDg0LTEuMTY2NUExLjE1MTYyLDEuMTUxNjIsMCwwLDAsMTAxLjYzNTI3LDEyLjAzMDc2WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==" alt="Download on the App Store" />
+              <img width="144" height="48" src="data:image/svg+xml;base64,PHN2ZyBpZD0ibGl2ZXR5cGUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjExOS42NjQwNyIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDExOS42NjQwNyA0MCI+CiAgPHRpdGxlPkRvd25sb2FkX29uX3RoZV9BcHBfU3RvcmVfQmFkZ2VfVVMtVUtfUkdCX2Jsa180U1ZHXzA5MjkxNzwvdGl0bGU+CiAgPGc+CiAgICA8Zz4KICAgICAgPGc+CiAgICAgICAgPHBhdGggZD0iTTExMC4xMzQ3NywwSDkuNTM0NjhjLS4zNjY3LDAtLjcyOSwwLTEuMDk0NzMuMDAyLS4zMDYxNS4wMDItLjYwOTg2LjAwNzgxLS45MTg5NS4wMTI3QTEzLjIxNDc2LDEzLjIxNDc2LDAsMCwwLDUuNTE3MS4xOTE0MWE2LjY2NTA5LDYuNjY1MDksMCwwLDAtMS45MDA4OC42MjdBNi40Mzc3OSw2LjQzNzc5LDAsMCwwLDEuOTk3NTcsMS45OTcwNyw2LjI1ODQ0LDYuMjU4NDQsMCwwLDAsLjgxOTM1LDMuNjE4MTZhNi42MDExOSw2LjYwMTE5LDAsMCwwLS42MjUsMS45MDMzMiwxMi45OTMsMTIuOTkzLDAsMCwwLS4xNzkyLDIuMDAyQy4wMDU4Nyw3LjgzMDA4LjAwNDg5LDguMTM3NywwLDguNDQ0MzRWMzEuNTU4NmMuMDA0ODkuMzEwNS4wMDU4Ny42MTEzLjAxNTE1LjkyMTlhMTIuOTkyMzIsMTIuOTkyMzIsMCwwLDAsLjE3OTIsMi4wMDE5LDYuNTg3NTYsNi41ODc1NiwwLDAsMCwuNjI1LDEuOTA0M0E2LjIwNzc4LDYuMjA3NzgsMCwwLDAsMS45OTc1NywzOC4wMDFhNi4yNzQ0NSw2LjI3NDQ1LDAsMCwwLDEuNjE4NjUsMS4xNzg3LDYuNzAwODIsNi43MDA4MiwwLDAsMCwxLjkwMDg4LjYzMDgsMTMuNDU1MTQsMTMuNDU1MTQsMCwwLDAsMi4wMDM5LjE3NjhjLjMwOTA5LjAwNjguNjEyOC4wMTA3LjkxODk1LjAxMDdDOC44MDU2Nyw0MCw5LjE2OCw0MCw5LjUzNDY4LDQwSDExMC4xMzQ3N2MuMzU5NCwwLC43MjQ2LDAsMS4wODQtLjAwMi4zMDQ3LDAsLjYxNzItLjAwMzkuOTIxOS0uMDEwN2ExMy4yNzksMTMuMjc5LDAsMCwwLDItLjE3NjgsNi44MDQzMiw2LjgwNDMyLDAsMCwwLDEuOTA4Mi0uNjMwOCw2LjI3NzQyLDYuMjc3NDIsMCwwLDAsMS42MTcyLTEuMTc4Nyw2LjM5NDgyLDYuMzk0ODIsMCwwLDAsMS4xODE2LTEuNjE0Myw2LjYwNDEzLDYuNjA0MTMsMCwwLDAsLjYxOTEtMS45MDQzLDEzLjUwNjQzLDEzLjUwNjQzLDAsMCwwLC4xODU2LTIuMDAxOWMuMDAzOS0uMzEwNi4wMDM5LS42MTE0LjAwMzktLjkyMTkuMDA3OC0uMzYzMy4wMDc4LS43MjQ2LjAwNzgtMS4wOTM4VjkuNTM2MTNjMC0uMzY2MjEsMC0uNzI5NDktLjAwNzgtMS4wOTE3OSwwLS4zMDY2NCwwLS42MTQyNi0uMDAzOS0uOTIwOWExMy41MDcxLDEzLjUwNzEsMCwwLDAtLjE4NTYtMi4wMDIsNi42MTc3LDYuNjE3NywwLDAsMC0uNjE5MS0xLjkwMzMyLDYuNDY2MTksNi40NjYxOSwwLDAsMC0yLjc5ODgtMi43OTk4LDYuNzY3NTQsNi43Njc1NCwwLDAsMC0xLjkwODItLjYyNywxMy4wNDM5NCwxMy4wNDM5NCwwLDAsMC0yLS4xNzY3NmMtLjMwNDctLjAwNDg4LS42MTcyLS4wMTA3NC0uOTIxOS0uMDEyNjktLjM1OTQtLjAwMi0uNzI0Ni0uMDAyLTEuMDg0LS4wMDJaIiBzdHlsZT0iZmlsbDogI2E2YTZhNiIvPgogICAgICAgIDxwYXRoIGQ9Ik04LjQ0NDgzLDM5LjEyNWMtLjMwNDY4LDAtLjYwMi0uMDAzOS0uOTA0MjktLjAxMDdhMTIuNjg3MTQsMTIuNjg3MTQsMCwwLDEtMS44NjkxNC0uMTYzMSw1Ljg4MzgxLDUuODgzODEsMCwwLDEtMS42NTY3NC0uNTQ3OSw1LjQwNTczLDUuNDA1NzMsMCwwLDEtMS4zOTctMS4wMTY2LDUuMzIwODIsNS4zMjA4MiwwLDAsMS0xLjAyMDUxLTEuMzk2NSw1LjcyMTg2LDUuNzIxODYsMCwwLDEtLjU0My0xLjY1NzIsMTIuNDEzNTEsMTIuNDEzNTEsMCwwLDEtLjE2NjUtMS44NzVjLS4wMDYzNC0uMjEwOS0uMDE0NjQtLjkxMzEtLjAxNDY0LS45MTMxVjguNDQ0MzRTLjg4MTg1LDcuNzUyOTMuODg3Nyw3LjU0OThhMTIuMzcwMzksMTIuMzcwMzksMCwwLDEsLjE2NTUzLTEuODcyMDcsNS43NTU1LDUuNzU1NSwwLDAsMSwuNTQzNDYtMS42NjIxQTUuMzczNDksNS4zNzM0OSwwLDAsMSwyLjYxMTgzLDIuNjE3NjgsNS41NjU0Myw1LjU2NTQzLDAsMCwxLDQuMDE0MTcsMS41OTUyMWE1LjgyMzA5LDUuODIzMDksMCwwLDEsMS42NTMzMi0uNTQzOTRBMTIuNTg1ODksMTIuNTg1ODksMCwwLDEsNy41NDMuODg3MjFMOC40NDUzMi44NzVIMTExLjIxMzg3bC45MTMxLjAxMjdhMTIuMzg0OTMsMTIuMzg0OTMsMCwwLDEsMS44NTg0LjE2MjU5LDUuOTM4MzMsNS45MzgzMywwLDAsMSwxLjY3MDkuNTQ3ODUsNS41OTM3NCw1LjU5Mzc0LDAsMCwxLDIuNDE1LDIuNDE5OTMsNS43NjI2Nyw1Ljc2MjY3LDAsMCwxLC41MzUyLDEuNjQ4OTIsMTIuOTk1LDEyLjk5NSwwLDAsMSwuMTczOCwxLjg4NzIxYy4wMDI5LjI4MzIuMDAyOS41ODc0LjAwMjkuODkwMTQuMDA3OS4zNzUuMDA3OS43MzE5My4wMDc5LDEuMDkxNzlWMzAuNDY0OGMwLC4zNjMzLDAsLjcxNzgtLjAwNzksMS4wNzUyLDAsLjMyNTIsMCwuNjIzMS0uMDAzOS45Mjk3YTEyLjczMTI2LDEyLjczMTI2LDAsMCwxLS4xNzA5LDEuODUzNSw1LjczOSw1LjczOSwwLDAsMS0uNTQsMS42Nyw1LjQ4MDI5LDUuNDgwMjksMCwwLDEtMS4wMTU2LDEuMzg1Nyw1LjQxMjksNS40MTI5LDAsMCwxLTEuMzk5NCwxLjAyMjUsNS44NjE2OCw1Ljg2MTY4LDAsMCwxLTEuNjY4LjU0OTgsMTIuNTQyMTgsMTIuNTQyMTgsMCwwLDEtMS44NjkyLjE2MzFjLS4yOTI5LjAwNjgtLjU5OTYuMDEwNy0uODk3NC4wMTA3bC0xLjA4NC4wMDJaIi8+CiAgICAgIDwvZz4KICAgICAgPGcgaWQ9Il9Hcm91cF8iIGRhdGEtbmFtZT0iJmx0O0dyb3VwJmd0OyI+CiAgICAgICAgPGcgaWQ9Il9Hcm91cF8yIiBkYXRhLW5hbWU9IiZsdDtHcm91cCZndDsiPgogICAgICAgICAgPGcgaWQ9Il9Hcm91cF8zIiBkYXRhLW5hbWU9IiZsdDtHcm91cCZndDsiPgogICAgICAgICAgICA8cGF0aCBpZD0iX1BhdGhfIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgZD0iTTI0Ljc2ODg4LDIwLjMwMDY4YTQuOTQ4ODEsNC45NDg4MSwwLDAsMSwyLjM1NjU2LTQuMTUyMDYsNS4wNjU2Niw1LjA2NTY2LDAsMCwwLTMuOTkxMTYtMi4xNTc2OGMtMS42NzkyNC0uMTc2MjYtMy4zMDcxOSwxLjAwNDgzLTQuMTYyOSwxLjAwNDgzLS44NzIyNywwLTIuMTg5NzctLjk4NzMzLTMuNjA4NS0uOTU4MTRhNS4zMTUyOSw1LjMxNTI5LDAsMCwwLTQuNDcyOTIsMi43Mjc4N2MtMS45MzQsMy4zNDg0Mi0uNDkxNDEsOC4yNjk0NywxLjM2MTIsMTAuOTc2MDguOTI2OSwxLjMyNTM1LDIuMDEwMTgsMi44MDU4LDMuNDI3NjMsMi43NTMzLDEuMzg3MDYtLjA1NzUzLDEuOTA1MS0uODg0NDgsMy41Nzk0LS44ODQ0OCwxLjY1ODc2LDAsMi4xNDQ3OS44ODQ0OCwzLjU5MS44NTExLDEuNDg4MzgtLjAyNDE2LDIuNDI2MTMtMS4zMzEyNCwzLjMyMDUxLTIuNjY5MTRhMTAuOTYyLDEwLjk2MiwwLDAsMCwxLjUxODQyLTMuMDkyNTFBNC43ODIwNSw0Ljc4MjA1LDAsMCwxLDI0Ljc2ODg4LDIwLjMwMDY4WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgICAgPHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMjIuMDM3MjUsMTIuMjEwODlhNC44NzI0OCw0Ljg3MjQ4LDAsMCwwLDEuMTE0NTItMy40OTA2Miw0Ljk1NzQ2LDQuOTU3NDYsMCwwLDAtMy4yMDc1OCwxLjY1OTYxLDQuNjM2MzQsNC42MzYzNCwwLDAsMC0xLjE0MzcxLDMuMzYxMzlBNC4wOTkwNSw0LjA5OTA1LDAsMCwwLDIyLjAzNzI1LDEyLjIxMDg5WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICAgICAgPGc+CiAgICAgICAgICA8cGF0aCBkPSJNNDIuMzAyMjcsMjcuMTM5NjVoLTQuNzMzNGwtMS4xMzY3MiwzLjM1NjQ1SDM0LjQyNzI3bDQuNDgzNC0xMi40MThoMi4wODNsNC40ODM0LDEyLjQxOEg0My40MzhaTTM4LjA1OTEsMjUuNTkwODJoMy43NTJsLTEuODQ5NjEtNS40NDcyN2gtLjA1MTc2WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik01NS4xNTk2OSwyNS45Njk3M2MwLDIuODEzNDgtMS41MDU4Niw0LjYyMTA5LTMuNzc4MzIsNC42MjEwOWEzLjA2OTMsMy4wNjkzLDAsMCwxLTIuODQ4NjMtMS41ODRoLS4wNDN2NC40ODQzOGgtMS44NTg0VjIxLjQ0MjM4SDQ4LjQzMDJ2MS41MDU4NmguMDM0MThhMy4yMTE2MiwzLjIxMTYyLDAsMCwxLDIuODgyODEtMS42MDA1OUM1My42NDUsMjEuMzQ3NjYsNTUuMTU5NjksMjMuMTY0MDYsNTUuMTU5NjksMjUuOTY5NzNabS0xLjkxMDE2LDBjMC0xLjgzMy0uOTQ3MjctMy4wMzgwOS0yLjM5MjU4LTMuMDM4MDktMS40MTk5MiwwLTIuMzc1LDEuMjMwNDctMi4zNzUsMy4wMzgwOSwwLDEuODI0MjIuOTU1MDgsMy4wNDU5LDIuMzc1LDMuMDQ1OUM1Mi4zMDIyNywyOS4wMTU2Myw1My4yNDk1MywyNy44MTkzNCw1My4yNDk1MywyNS45Njk3M1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNNjUuMTI0NTMsMjUuOTY5NzNjMCwyLjgxMzQ4LTEuNTA1ODYsNC42MjEwOS0zLjc3ODMyLDQuNjIxMDlhMy4wNjkzLDMuMDY5MywwLDAsMS0yLjg0ODYzLTEuNTg0aC0uMDQzdjQuNDg0MzhoLTEuODU4NFYyMS40NDIzOEg1OC4zOTV2MS41MDU4NmguMDM0MThBMy4yMTE2MiwzLjIxMTYyLDAsMCwxLDYxLjMxMiwyMS4zNDc2NkM2My42MDk4OCwyMS4zNDc2Niw2NS4xMjQ1MywyMy4xNjQwNiw2NS4xMjQ1MywyNS45Njk3M1ptLTEuOTEwMTYsMGMwLTEuODMzLS45NDcyNy0zLjAzODA5LTIuMzkyNTgtMy4wMzgwOS0xLjQxOTkyLDAtMi4zNzUsMS4yMzA0Ny0yLjM3NSwzLjAzODA5LDAsMS44MjQyMi45NTUwOCwzLjA0NTksMi4zNzUsMy4wNDU5QzYyLjI2NzExLDI5LjAxNTYzLDYzLjIxNDM4LDI3LjgxOTM0LDYzLjIxNDM4LDI1Ljk2OTczWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik03MS43MTA0NywyNy4wMzYxM2MuMTM3NywxLjIzMTQ1LDEuMzM0LDIuMDQsMi45Njg3NSwyLjA0LDEuNTY2NDEsMCwyLjY5MzM2LS44MDg1OSwyLjY5MzM2LTEuOTE4OTUsMC0uOTYzODctLjY3OTY5LTEuNTQxLTIuMjg5MDYtMS45MzY1MmwtMS42MDkzNy0uMzg3N2MtMi4yODAyNy0uNTUwNzgtMy4zMzg4Ny0xLjYxNzE5LTMuMzM4ODctMy4zNDc2NiwwLTIuMTQyNTgsMS44NjcxOS0zLjYxNDI2LDQuNTE4NTUtMy42MTQyNiwyLjYyNCwwLDQuNDIyODUsMS40NzE2OCw0LjQ4MzQsMy42MTQyNmgtMS44NzZjLS4xMTIzLTEuMjM5MjYtMS4xMzY3Mi0xLjk4NzMtMi42MzM3OS0xLjk4NzNzLTIuNTIxNDguNzU2ODQtMi41MjE0OCwxLjg1ODRjMCwuODc3OTMuNjU0MywxLjM5NDUzLDIuMjU0ODgsMS43OWwxLjM2ODE2LjMzNTk0YzIuNTQ3ODUuNjAyNTQsMy42MDY0NSwxLjYyNiwzLjYwNjQ1LDMuNDQyMzgsMCwyLjMyMzI0LTEuODUwNTksMy43NzgzMi00Ljc5Mzk1LDMuNzc4MzItMi43NTM5MSwwLTQuNjEzMjgtMS40MjA5LTQuNzMzNC0zLjY2N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNODMuMzQ2MjEsMTkuMjk5OHYyLjE0MjU4aDEuNzIxNjh2MS40NzE2OEg4My4zNDYyMXY0Ljk5MTIxYzAsLjc3NTM5LjM0NDczLDEuMTM2NzIsMS4xMDE1NiwxLjEzNjcyYTUuODA3NTIsNS44MDc1MiwwLDAsMCwuNjExMzMtLjA0M3YxLjQ2Mjg5YTUuMTAzNTEsNS4xMDM1MSwwLDAsMS0xLjAzMjIzLjA4NTk0Yy0xLjgzMywwLTIuNTQ3ODUtLjY4ODQ4LTIuNTQ3ODUtMi40NDQzNFYyMi45MTQwNkg4MC4xNjI2MlYyMS40NDIzOEg4MS40NzlWMTkuMjk5OFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNODYuMDY1LDI1Ljk2OTczYzAtMi44NDg2MywxLjY3NzczLTQuNjM4NjcsNC4yOTM5NS00LjYzODY3LDIuNjI1LDAsNC4yOTQ5MiwxLjc5LDQuMjk0OTIsNC42Mzg2NywwLDIuODU2NDUtMS42NjExMyw0LjYzODY3LTQuMjk0OTIsNC42Mzg2N0M4Ny43MjYwOSwzMC42MDg0LDg2LjA2NSwyOC44MjYxNyw4Ni4wNjUsMjUuOTY5NzNabTYuNjk1MzEsMGMwLTEuOTU0MS0uODk1NTEtMy4xMDc0Mi0yLjQwMTM3LTMuMTA3NDJzLTIuNDAwMzksMS4xNjIxMS0yLjQwMDM5LDMuMTA3NDJjMCwxLjk2MTkxLjg5NDUzLDMuMTA2NDUsMi40MDAzOSwzLjEwNjQ1UzkyLjc2MDI3LDI3LjkzMTY0LDkyLjc2MDI3LDI1Ljk2OTczWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik05Ni4xODYwNiwyMS40NDIzOGgxLjc3MjQ2djEuNTQxaC4wNDNhMi4xNTk0LDIuMTU5NCwwLDAsMSwyLjE3NzczLTEuNjM1NzQsMi44NjYxNiwyLjg2NjE2LDAsMCwxLC42MzY3Mi4wNjkzNHYxLjczODI4YTIuNTk3OTQsMi41OTc5NCwwLDAsMC0uODM1LS4xMTIzLDEuODcyNjQsMS44NzI2NCwwLDAsMC0xLjkzNjUyLDIuMDgzdjUuMzcwMTJoLTEuODU4NFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNMTA5LjM4NDMsMjcuODM2OTFjLS4yNSwxLjY0MzU1LTEuODUwNTksMi43NzE0OC0zLjg5ODQ0LDIuNzcxNDgtMi42MzM3OSwwLTQuMjY4NTUtMS43NjQ2NS00LjI2ODU1LTQuNTk1NywwLTIuODM5ODQsMS42NDM1NS00LjY4MTY0LDQuMTkwNDMtNC42ODE2NCwyLjUwNDg4LDAsNC4wODAwOCwxLjcyMDcsNC4wODAwOCw0LjQ2NTgydi42MzY3MmgtNi4zOTQ1M3YuMTEyM2EyLjM1OCwyLjM1OCwwLDAsMCwyLjQzNTU1LDIuNTY0NDUsMi4wNDgzNCwyLjA0ODM0LDAsMCwwLDIuMDkwODItMS4yNzM0NFptLTYuMjgyMjMtMi43MDIxNWg0LjUyNjM3YTIuMTc3MywyLjE3NzMsMCwwLDAtMi4yMjA3LTIuMjk3ODVBMi4yOTIsMi4yOTIsMCwwLDAsMTAzLjEwMjA3LDI1LjEzNDc3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8L2c+CiAgICAgIDwvZz4KICAgIDwvZz4KICAgIDxnIGlkPSJfR3JvdXBfNCIgZGF0YS1uYW1lPSImbHQ7R3JvdXAmZ3Q7Ij4KICAgICAgPGc+CiAgICAgICAgPHBhdGggZD0iTTM3LjgyNjE5LDguNzMxYTIuNjM5NjQsMi42Mzk2NCwwLDAsMSwyLjgwNzYyLDIuOTY0ODRjMCwxLjkwNjI1LTEuMDMwMjcsMy4wMDItMi44MDc2MiwzLjAwMkgzNS42NzA5MlY4LjczMVptLTEuMjI4NTIsNS4xMjNoMS4xMjVhMS44NzU4OCwxLjg3NTg4LDAsMCwwLDEuOTY3NzctMi4xNDYsMS44ODEsMS44ODEsMCwwLDAtMS45Njc3Ny0yLjEzMzc5aC0xLjEyNVoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTQxLjY4MDY4LDEyLjQ0NDM0YTIuMTMzMjMsMi4xMzMyMywwLDEsMSw0LjI0NzA3LDAsMi4xMzM1OCwyLjEzMzU4LDAsMSwxLTQuMjQ3MDcsMFptMy4zMzMsMGMwLS45NzYwNy0uNDM4NDgtMS41NDY4Ny0xLjIwOC0xLjU0Njg3LS43NzI0NiwwLTEuMjA3LjU3MDgtMS4yMDcsMS41NDY4OCwwLC45ODM4OS40MzQ1NywxLjU1MDI5LDEuMjA3LDEuNTUwMjlDNDQuNTc1MjIsMTMuOTk0NjMsNDUuMDEzNjksMTMuNDI0MzIsNDUuMDEzNjksMTIuNDQ0MzRaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik01MS41NzMyNiwxNC42OTc3NWgtLjkyMTg3bC0uOTMwNjYtMy4zMTY0MWgtLjA3MDMxbC0uOTI2NzYsMy4zMTY0MWgtLjkxMzA5bC0xLjI0MTIxLTQuNTAyOTNoLjkwMTM3bC44MDY2NCwzLjQzNmguMDY2NDFsLjkyNTc4LTMuNDM2aC44NTI1NGwuOTI1NzgsMy40MzZoLjA3MDMxbC44MDI3My0zLjQzNmguODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik01My44NTM1NCwxMC4xOTQ4Mkg1NC43MDl2LjcxNTMzaC4wNjY0MWExLjM0OCwxLjM0OCwwLDAsMSwxLjM0Mzc1LS44MDIyNSwxLjQ2NDU2LDEuNDY0NTYsMCwwLDEsMS41NTg1OSwxLjY3NDh2Mi45MTVoLS44ODg2N1YxMi4wMDU4NmMwLS43MjM2My0uMzE0NDUtMS4wODM1LS45NzE2OC0xLjA4MzVhMS4wMzI5NCwxLjAzMjk0LDAsMCwwLTEuMDc1MiwxLjE0MTExdjIuNjM0MjhoLS44ODg2N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTU5LjA5Mzc3LDguNDM3aC44ODg2N3Y2LjI2MDc0aC0uODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik02MS4yMTc3OSwxMi40NDQzNGEyLjEzMzQ2LDIuMTMzNDYsMCwxLDEsNC4yNDc1NiwwLDIuMTMzOCwyLjEzMzgsMCwxLDEtNC4yNDc1NiwwWm0zLjMzMywwYzAtLjk3NjA3LS40Mzg0OC0xLjU0Njg3LTEuMjA4LTEuNTQ2ODctLjc3MjQ2LDAtMS4yMDcuNTcwOC0xLjIwNywxLjU0Njg4LDAsLjk4Mzg5LjQzNDU3LDEuNTUwMjksMS4yMDcsMS41NTAyOUM2NC4xMTIzMiwxMy45OTQ2Myw2NC41NTA4LDEzLjQyNDMyLDY0LjU1MDgsMTIuNDQ0MzRaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik02Ni40MDA5LDEzLjQyNDMyYzAtLjgxMDU1LjYwMzUyLTEuMjc3ODMsMS42NzQ4LTEuMzQ0MjRsMS4yMTk3My0uMDcwMzF2LS4zODg2N2MwLS40NzU1OS0uMzE0NDUtLjc0NDE0LS45MjE4Ny0uNzQ0MTQtLjQ5NjA5LDAtLjgzOTg0LjE4MjEzLS45Mzg0OC41MDA0OWgtLjg2MDM1Yy4wOTA4Mi0uNzczNDQuODE4MzYtMS4yNjk1MywxLjgzOTg0LTEuMjY5NTMsMS4xMjg5MSwwLDEuNzY1NjMuNTYyLDEuNzY1NjMsMS41MTMxOHYzLjA3NjY2aC0uODU1NDd2LS42MzI4MWgtLjA3MDMxYTEuNTE1LDEuNTE1LDAsMCwxLTEuMzUyNTQuNzA3QTEuMzYwMjYsMS4zNjAyNiwwLDAsMSw2Ni40MDA5LDEzLjQyNDMyWm0yLjg5NDUzLS4zODQ3N3YtLjM3NjQ2bC0xLjA5OTYxLjA3MDMxYy0uNjIwMTIuMDQxNS0uOTAxMzcuMjUyNDQtLjkwMTM3LjY0OTQxLDAsLjQwNTI3LjM1MTU2LjY0MTExLjgzNS42NDExMUExLjA2MTUsMS4wNjE1LDAsMCwwLDY5LjI5NTQzLDEzLjAzOTU1WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8cGF0aCBkPSJNNzEuMzQ4MTYsMTIuNDQ0MzRjMC0xLjQyMjg1LjczMTQ1LTIuMzI0MjIsMS44NjkxNC0yLjMyNDIyYTEuNDg0LDEuNDg0LDAsMCwxLDEuMzgwODYuNzloLjA2NjQxVjguNDM3aC44ODg2N3Y2LjI2MDc0aC0uODUxNTZ2LS43MTE0M2gtLjA3MDMxYTEuNTYyODQsMS41NjI4NCwwLDAsMS0xLjQxNDA2Ljc4NTY0QzcyLjA3MTgsMTQuNzcyLDcxLjM0ODE2LDEzLjg3MDYxLDcxLjM0ODE2LDEyLjQ0NDM0Wm0uOTE4LDBjMCwuOTU1MDguNDUwMiwxLjUyOTc5LDEuMjAzMTMsMS41Mjk3OS43NDksMCwxLjIxMTkxLS41ODMsMS4yMTE5MS0xLjUyNTg4LDAtLjkzODQ4LS40Njc3Ny0xLjUyOTc5LTEuMjExOTEtMS41Mjk3OUM3Mi43MjEyMSwxMC45MTg0Niw3Mi4yNjYxMywxMS40OTcwNyw3Mi4yNjYxMywxMi40NDQzNFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTc5LjIzLDEyLjQ0NDM0YTIuMTMzMjMsMi4xMzMyMywwLDEsMSw0LjI0NzA3LDAsMi4xMzM1OCwyLjEzMzU4LDAsMSwxLTQuMjQ3MDcsMFptMy4zMzMsMGMwLS45NzYwNy0uNDM4NDgtMS41NDY4Ny0xLjIwOC0xLjU0Njg3LS43NzI0NiwwLTEuMjA3LjU3MDgtMS4yMDcsMS41NDY4OCwwLC45ODM4OS40MzQ1NywxLjU1MDI5LDEuMjA3LDEuNTUwMjlDODIuMTI0NTMsMTMuOTk0NjMsODIuNTYzLDEzLjQyNDMyLDgyLjU2MywxMi40NDQzNFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTg0LjY2OTQ1LDEwLjE5NDgyaC44NTU0N3YuNzE1MzNoLjA2NjQxYTEuMzQ4LDEuMzQ4LDAsMCwxLDEuMzQzNzUtLjgwMjI1LDEuNDY0NTYsMS40NjQ1NiwwLDAsMSwxLjU1ODU5LDEuNjc0OHYyLjkxNUg4Ny42MDVWMTIuMDA1ODZjMC0uNzIzNjMtLjMxNDQ1LTEuMDgzNS0uOTcxNjgtMS4wODM1YTEuMDMyOTQsMS4wMzI5NCwwLDAsMC0xLjA3NTIsMS4xNDExMXYyLjYzNDI4aC0uODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik05My41MTUxNiw5LjA3MzczdjEuMTQxNmguOTc1NTl2Ljc0ODU0aC0uOTc1NTlWMTMuMjc5M2MwLC40NzE2OC4xOTQzNC42NzgyMi42MzY3Mi42NzgyMmEyLjk2NjU3LDIuOTY2NTcsMCwwLDAsLjMzODg3LS4wMjA1MXYuNzQwMjNhMi45MTU1LDIuOTE1NSwwLDAsMS0uNDgzNC4wNDU0MWMtLjk4ODI4LDAtMS4zODE4NC0uMzQ3NjYtMS4zODE4NC0xLjIxNTgydi0yLjU0M2gtLjcxNDg0di0uNzQ4NTRoLjcxNDg0VjkuMDczNzNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik05NS43MDQ2MSw4LjQzN2guODgwODZ2Mi40ODE0NWguMDcwMzFhMS4zODU2LDEuMzg1NiwwLDAsMSwxLjM3My0uODA2NjQsMS40ODMzOSwxLjQ4MzM5LDAsMCwxLDEuNTUwNzgsMS42Nzg3MXYyLjkwNzIzSDk4LjY5di0yLjY4OGMwLS43MTkyNC0uMzM1LTEuMDgzNS0uOTYyODktMS4wODM1YTEuMDUxOTQsMS4wNTE5NCwwLDAsMC0xLjEzMzc5LDEuMTQxNnYyLjYyOTg4aC0uODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik0xMDQuNzYxMjUsMTMuNDgxOTNhMS44MjgsMS44MjgsMCwwLDEtMS45NTExNywxLjMwMjczQTIuMDQ1MzEsMi4wNDUzMSwwLDAsMSwxMDAuNzMsMTIuNDYwNDVhMi4wNzY4NSwyLjA3Njg1LDAsMCwxLDIuMDc2MTctMi4zNTI1NGMxLjI1MjkzLDAsMi4wMDg3OS44NTYsMi4wMDg3OSwyLjI3VjEyLjY4OGgtMy4xNzk2OXYuMDQ5OGExLjE5MDIsMS4xOTAyLDAsMCwwLDEuMTk5MjIsMS4yOSwxLjA3OTM0LDEuMDc5MzQsMCwwLDAsMS4wNzEyOS0uNTQ1OVptLTMuMTI2LTEuNDUxMTdoMi4yNzQ0MWExLjA4NjQ3LDEuMDg2NDcsMCwwLDAtMS4xMDg0LTEuMTY2NUExLjE1MTYyLDEuMTUxNjIsMCwwLDAsMTAxLjYzNTI3LDEyLjAzMDc2WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==" alt="Download on the App Store" />
             </a>
             <a
               class="store-btn"
@@ -1529,18 +1438,20 @@
               rel="noopener noreferrer"
               aria-label="Get Rooted Memories on Google Play"
             >
-              <img src="data:image/png;base64,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" alt="Get it on Google Play" />
+              <img width="186" height="72" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
             </a>
           </div>
+          <p class="download-subscription">
+            Start with a 14-day free trial. Billed through the App Store or Google Play, and you can
+            cancel in your subscription settings.
+          </p>
         </div>
       </section>
     </main>
-
+ 
     <footer class="footer">
       <div class="container footer-row">
-        <div>
-          © <span id="year"> </span> Rooted Memories®.
-        </div>
+        <div>© <span id="year"> </span> Rooted Memories®.</div>
         <div>
           <a href="https://rootedmemories.com/terms-of-service/">Terms</a>
           <a href="https://rootedmemories.com/privacy/">Privacy</a>
@@ -1551,38 +1462,19 @@
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
-      const track = document.getElementById("shotTrack");
-      document.getElementById("prevBtn").addEventListener("click", () =>
-        track.scrollBy({
-          left: -track.clientWidth * 0.7,
-          behavior: "smooth",
-        }),
-      );
-      document.getElementById("nextBtn").addEventListener("click", () =>
-        track.scrollBy({
-          left: track.clientWidth * 0.7,
-          behavior: "smooth",
-        }),
-      );
-      if (
-        "IntersectionObserver" in window &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      ) {
-        document.documentElement.classList.add("js-reveal");
-        const o = new IntersectionObserver(
-          (entries) =>
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.classList.add("visible");
-                o.unobserve(e.target);
-              }
-            }),
-          {
-            threshold: 0.08,
-          },
-        );
-        document.querySelectorAll(".reveal").forEach((el) => o.observe(el));
+ 
+      // The screenshot strip scrolls sideways on small screens, so make it reachable by keyboard there.
+      const shotTrack = document.getElementById("shotTrack");
+      function syncShotTrack() {
+        if (shotTrack.scrollWidth > shotTrack.clientWidth + 1) {
+          shotTrack.setAttribute("tabindex", "0");
+        } else {
+          shotTrack.removeAttribute("tabindex");
+        }
       }
+      syncShotTrack();
+      window.addEventListener("load", syncShotTrack);
+      window.addEventListener("resize", syncShotTrack);
       document.querySelectorAll("[data-store-link]").forEach((link) =>
         link.addEventListener("click", () => {
           if (typeof window.fbq === "function") {
@@ -1602,3 +1494,4 @@
     </script>
   </body>
 </html>
+ 
