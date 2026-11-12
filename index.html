@@ -404,7 +404,7 @@
         width: 100%;
         max-width: 600px;
         margin-inline: auto;
-        padding: 40px 0 28px;
+        padding: 40px 16px 28px;
       }
       .stage-glow {
         position: absolute;
@@ -441,7 +441,8 @@
       .print {
         position: relative;
         margin: 0;
-        padding: 7px 7px 31px;
+        padding: 7px 7px 46px;
+        container-type: inline-size;
         background: #e8decd;
         box-shadow:
           0 2px 3px #0004,
@@ -454,26 +455,26 @@
       }
       .print figcaption {
         position: absolute;
-        left: 4px;
-        right: 4px;
-        bottom: 8px;
+        left: 9px;
+        right: 9px;
+        bottom: 10px;
         text-align: center;
         font-family: var(--serif);
         font-style: italic;
         font-size: 12px;
-        line-height: 1;
+        font-size: clamp(9px, 6.4cqi, 13px);
+        line-height: 1.2;
         color: #55463a;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        text-wrap: balance;
       }
+      /* The centre print overlaps its neighbours, so their captions keep clear of that edge. */
       .print.left figcaption {
         text-align: left;
-        padding-left: 4px;
+        right: 17%;
       }
       .print.right figcaption {
         text-align: right;
-        padding-right: 4px;
+        left: 17%;
       }
       .print.left {
         z-index: 1;
@@ -1014,14 +1015,27 @@
           margin-top: 14px;
         }
         .stage {
-          padding: 28px 0 14px;
+          padding: 28px 12px 14px;
         }
         .print {
-          padding: 5px 5px 24px;
+          padding: 5px 5px 38px;
         }
         .print figcaption {
-          font-size: 10px;
-          bottom: 6px;
+          left: 6px;
+          right: 6px;
+          bottom: 7px;
+        }
+        .print.left figcaption {
+          right: 17%;
+        }
+        .print.right figcaption {
+          left: 17%;
+        }
+        .print.left {
+          transform: translateY(-4%) rotate(-4deg);
+        }
+        .print.right {
+          transform: translateY(-17%) rotate(3.5deg);
         }
         .step {
           grid-template-columns: 1fr;
